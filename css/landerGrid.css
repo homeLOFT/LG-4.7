@@ -1,0 +1,87 @@
+/* Lander */
+
+.landGrid {
+  display:block;
+  text-align:center;
+  list-style:none;
+  background:url(http://www.leathergroups.com/common/images/hdr_bg.png) 0px 99%;
+  background-repeat: repeat-x;
+  padding:15px 0;
+  margin:0px;
+}
+.landGrid > li {
+  display:inline-block;
+  font-family: "open sans";
+  font-size: 1.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  letter-spacing: 0.05em;
+  text-align: center;
+  vertical-align:top;
+  font-weight: 400;
+  max-width:48%;
+  margin:5px;			
+}
+.landGrid > li > img {
+  max-width:100%;
+  height:auto;
+}
+.landGrid h1 {
+  display: block;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 5px 0 0 5px;
+}
+.landGrid p {
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 3px 0 5px 5px;
+}
+ul.promoGrid {
+  max-width: 100%;
+  text-align: center;
+  list-style: none;
+  height: auto;
+  padding: 0;
+}
+.promoGrid li {
+  display:inline-block;
+  max-width:48%;
+}
+.promoGrid img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width:767px) {
+.promoGrid li {
+  display:inline-block;
+  max-width:85%;
+}
+}
+@media screen and (max-width:600px) {
+.landGrid {
+  background:none;
+  padding:0;
+  }
+.landGrid > li {
+  max-width:100%;
+  background: url(http://www.leathergroups.com/common/images/hdr_bg.png) 0px 99%;
+  background-repeat: repeat-x;
+  padding:5px 0 10px 0;
+  margin:0 5px;
+}
+.landGrid h1 {
+  font-size:1.5em;
+}
+.landGrid p {
+  margin:3px 5px 5px 5px;
+}
+.promoGrid li {
+  display:inline-block;
+  max-width:100%;
+}
+}

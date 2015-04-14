@@ -1,0 +1,3 @@
+DirectoryIndex home.php
+# to prevent pages blocked by mod_security from redirecting to customer zone
+ErrorDocument 406 default

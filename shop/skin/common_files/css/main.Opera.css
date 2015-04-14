@@ -1,0 +1,18 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * General CSS stylesheet (override for Opera)
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    cff04bd99069eb8277e168fa8dbca192ba2df350, v2 (xcart_4_4_0_beta_2), 2010-05-28 12:53:04, main.Opera.css, igoryan
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+#content-container,
+#center-main
+{
+  overflow: visible;
+}

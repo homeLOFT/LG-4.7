@@ -1,0 +1,31 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * CloudSearch settings CSS stylesheet
+ *	
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author	   Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    5f3b084d555f5521e1fc0b90bcf4c774274dc258, v1 (xcart_4_6_0), 2013-05-28 11:01:49, admin.css, random
+ * @link	   http://www.x-cart.com/
+ * @see		   ____file_see____
+ */
+
+.general-settings {
+  display: none;
+}
+
+h1 {
+  display: none;
+}
+
+.cloud-search-iframe-wrapper {
+  margin: 20px 0;
+  width: 940px;
+}
+
+.cloud-search-iframe {
+  width: 940px;
+  height: 700px;
+  overflow: hidden;
+}

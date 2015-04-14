@@ -1,0 +1,28 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * TaxCloud module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    fafb6e680e507242d4d3dc09c88872c868cb70b4, v1 (xcart_4_5_0), 2012-04-06 10:32:27, main.css, ferz
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+div.taxcloud-cert {
+  text-align: right;
+  margin-right: 5px;
+  margin-top: 16px;
+}
+
+div.taxcloud-cert span.navlink {
+  font-size: 11px;
+  color: #043FA0;
+}
+
+a.unset-cert-link {
+  margin-left: 10px;
+}
+

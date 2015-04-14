@@ -1,0 +1,166 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Add To Cart Popup module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    31ad5c1596556ed56d438ec7fcac9f2086a2ba99, v4 (xcart_4_6_2), 2013-12-04 14:11:03, main.css, random
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+.product-added .thumbnail {
+  margin: 0;
+}
+
+.product-added .details {
+  margin: 3px 0 0 20px;
+}
+
+.product-added .title {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+.product-added .price {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-added .rating {
+  padding-left: 8px;
+  text-align: left;
+}
+
+.product-added .rating .creviews-rating {
+  display: none;
+}
+
+.product-added .price .product-price-value {
+  color: #b51a00;
+}
+
+.product-added .price .product-alt-price-value {
+  color: #787878;
+}
+
+.product-added .cart {
+  text-align: center;
+  border: 7px solid #d0d0d0;
+  border-radius: 14px;
+  padding: 10px 0 15px 0;
+  color: #444;
+  width: 145px;
+}
+
+.product-added .cart .header {
+  /*border-bottom: 1px solid #a0a0a0;*/
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-added .cart .label {
+  font-weight: bold;
+}
+
+.product-added .cart ul {
+  margin: 10px 0 14px 0;
+  padding: 0;
+}
+
+.product-added .cart ul li {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+}
+
+.product-added .cart-outer {
+  background: url(images/arrow_right_gray.png) no-repeat 0 50%;
+  padding-left: 64px;
+}
+
+.product-added h1 {
+  font-weight: normal;
+  color: #a0a0a0;
+  padding: 0;
+  margin: 30px 0 20px 0;
+  font-size: 24px;
+}
+
+.product-added .upselling .rating {
+  padding-left: 31px;
+}
+
+.product-added .upselling.details {
+  margin: 0 0 10px;
+}
+
+.product-added .upselling.details td {
+  padding: 0 5px;
+}
+
+.product-added .upselling .creviews-rating-box {
+  padding-bottom: 0;
+}
+
+.product-added .upselling .title {
+  margin-bottom: 5px;
+}
+
+.product-added .upselling .price {
+  margin: 5px 0;
+}
+
+.product-added .upselling .buy {
+  margin-top: 7px;
+}
+
+.product-added .ui-dialog-content .ui-button { 
+  background: #ededed url(images/bg_gradient.png) 0 0 repeat-x !important;
+  background: -moz-linear-gradient(top, #ededed 0%, #c4c4c4 100%) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#c4c4c4)) !important;
+  background: -webkit-linear-gradient(top, #ededed 0%,#c4c4c4 100%) !important;
+  background: -o-linear-gradient(top, #ededed 0%,#c4c4c4 100%) !important;
+  background: -ms-linear-gradient(top, #ededed 0%,#c4c4c4 100%) !important;
+  background: linear-gradient(top, #ededed 0%,#c4c4c4 100%) !important;
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset !important;
+  -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#c4c4c4')"; /* IE8+ */
+}
+
+.product-added .ui-button .ui-button-text {
+  display: block !important;
+  line-height: 1.4 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+.product-added .buttons_line {
+  min-width: 390px;
+}
+
+.product-added .button-spacer {
+  padding: 0 5px;
+}
+
+.product-added .proceed-to-checkout .ui-button-text {
+  background: transparent url(images/proceed_to_checkout.gif) right 7px no-repeat;
+  padding-right: 40px;
+  margin-right: 7px;
+}
+
+.product-added hr {
+  border-bottom: 1px solid #dfdfdf;
+  background: none;
+}
+
+.product-added.ui-widget {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+}

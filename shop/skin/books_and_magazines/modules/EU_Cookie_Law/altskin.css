@@ -1,0 +1,19 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * EU Cookie Law module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    75eb1e48064361a5b25ba08e2509c5cb97322282, v1 (xcart_4_6_2), 2013-10-04 08:15:08, altskin.css, random
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+div#eucl_panel {
+  border: 1px solid #675347;
+}
+div#eucl_panel #eucl_panel_countdown {
+  line-height: 27px;
+  color: #d9453f;
+}

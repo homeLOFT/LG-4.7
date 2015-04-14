@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS xcart_xps_orders,xcart_xps_products,xcart_xps_subscriptions;

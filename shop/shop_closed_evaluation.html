@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>The store is closed</title>
+<style type="text/css">
+<!--
+html, body {
+	background-color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 11px;
+}
+#page-container {
+	position: relative;
+	min-height: 100%;
+}
+#header {
+	width: 100%;
+	height: 110px;
+}
+#header .line1 {
+	height: auto;
+	padding: 5px;
+}
+#header .line1 .logo {
+	margin-left: 18%;
+}
+#header .line1 .logo img {
+	width: auto;
+	height: auto;
+}
+#header .line2 {
+	width: 100%;
+	border: none;
+	border-top: 1px solid #cb480c;
+	border-bottom: 1px solid #cb480c;
+	background: url(skin/common_files/images/head_linebg.gif) repeat-x top;
+	height: 39px;
+}
+#center {
+	padding-bottom: 60px;
+}
+#dialog-message {
+	border: none;
+	margin-left: 20%;
+	margin-right: 20%;
+	min-height: 120px;
+	vertical-align: middle;
+	text-align: left;
+}
+#dialog-message #icon {
+	float: left;
+	width: 100px;
+}
+#dialog-message #main {
+	margin-left: 100px;
+}
+#dialog-message h1 {
+	margin: 10px 0px;
+	padding: 0;
+	font-size: 14px;
+	color: #3e3104;
+}
+#dialog-message .message {
+	color: #a10000;
+	font-weight: bold;
+}
+#dialog-message a {
+	color: #043fa0;
+	font-weight: bold;
+}
+#footer {
+	height: 39px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	overflow: hidden;
+	float: left;
+}
+#footer .box {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #cb480c;
+  padding: 0px;
+}
+#footer .subbox {
+  border-top: #ffd30d 1px solid;
+  background: #f4f5f7 none;
+  height: 40px;
+  vertical-align: middle;
+  padding: 0px;
+}
+#footer .subbox .left {
+  background: transparent none;
+  margin-left: 18%;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+div.button {
+  border: 0 none;
+  background: transparent none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 10px 0 0;
+  white-space: nowrap;
+  background: transparent url(skin/common_files/images/but_right.png) no-repeat right top;
+  float: left;
+}
+
+div.button div,
+div.button a
+{
+  display: block;
+  font-size: 11px;
+  text-decoration: none;
+  outline-style: none;
+}
+
+
+div.button {
+  background: transparent url(skin/ideal_comfort/images/custom/but_bg.png) no-repeat right -33px;
+}
+div.button a,
+div.button div {
+  background: transparent url(skin/ideal_comfort/images/custom/but_bg.png) no-repeat left -33px;
+  padding: 0px 3px 0px 13px;
+  line-height: 32px;
+  font-family: tahoma, geneva, arial, verdana, helvetica, sans-serif;
+  color: #4f4f4f;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+
+div.evaluation-notice {
+  border: solid 5px #c3c3c3;
+  background: #f8f8f8;
+  padding: 2px 18px 8px 18px;
+  color: #2c3e49;
+  margin-bottom: 25px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  font-size: 14px;
+  width: 60%;
+  margin-left: 20%;
+}
+
+div.evaluation-notice p.license-warning {
+  color: #970e0e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+div.evaluation-notice p.evaluation-notice-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+div.evaluation-notice div.evaluation-notice-button {
+  width: 100%;
+  text-align: center;
+}
+
+div.evaluation-notice div.evaluation-notice-button div.button {
+  display: inline-block;
+  float: center;
+}
+
+/**
+ * float-box finisher
+ */
+.clearing {
+  height: 0;
+  font-size: 0;
+  clear: both;
+}
+
+-->
+</style>
+</head>
+<body>
+	<div id="page-container">
+
+  	<div id="header">
+		<div class="line1">
+			<div class="logo">
+				<img src="skin/common_files/images/xlogo.gif" alt="" />
+			</div>
+		</div> 
+		<div class="line2">
+			&nbsp;
+        </div>
+	</div>
+
+	<div id="center">
+		<div id="dialog-message">
+			<div id="icon">
+				<img src="skin/common_files/images/lock.jpg" alt="" />
+			</div>
+			<div id="main">
+				<h1>The store is closed</h1>
+				<p class="message">We are temporarily closed for maintenance. Sorry for the inconvenience. Please check back soon.</p>
+			</div>
+		</div>
+
+<!--
+    {*Synchronize changes with skin/common_files/customer/evaluation.tpl*}
+
+	{if $shop_evaluation eq 'EVALUATION' and $show_evaluation_notice}
+	<div class="evaluation-notice">
+	  <p class="evaluation-notice-title">{$lng.txt_evaluation_notice_title|substitute:'XC_Version':$shop_type}</p>
+	  <p>{$lng.txt_evaluation_notice}</p>
+	  <div class="evaluation-notice-button">
+		{include file='customer/buttons/button.tpl' button_title=$lng.lbl_purchase_license href='http://www.x-cart.com/buy.html?utm_source=xcart&amp;utm_medium=licence_message_customer_link&amp;utm_campaign=licence_message_customer' target='_blank'}
+		<div class="clearing"></div>
+	  </div>
+	  <p class="license-warning">{$lng.txt_evaluation_notice_warning}</p>
+	</div>
+	{/if}
+-->
+		<div class="evaluation-notice">
+			<p class="evaluation-notice-title">Your X-Cart installation is licensed for evaluation purposes only</p>
+			<p>You cannot use this installation for real sales without buying a license, but you can build your web-site during free evaluation.<br><br>For details refer to <a class="external_link" target="_blank" href="http://www.x-cart.com/license-agreement-classic.html?utm_source=xcart&amp;utm_medium=licence_message_link&amp;utm_campaign=licence_message">X-Cart license agreement</a>.</p>
+			<div class="evaluation-notice-button">
+				<div onclick="javascript: self.location = 'http://www.x-cart.com/buy.html?utm_source=xcart&amp;utm_medium=licence_message_customer_link&amp;utm_campaign=licence_message_customer'; if (event) event.cancelBubble = true;" title="Purchase License" class="button">
+					<a onclick="javascript: if (event) event.cancelBubble = true;" href="http://www.x-cart.com/buy.html?utm_source=xcart&amp;utm_medium=licence_message_customer_link&amp;utm_campaign=licence_message_customer" target="_blank">Purchase License</a>
+				</div>
+
+				<div class="clearing"></div>
+			</div>
+			<p class="license-warning">Removing this message without buying a license is prohibited and will result in legal proceedings.</p>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="box">
+		  <div class="subbox">
+    		<div class="left">Powered by X-Cart shopping cart software</div>
+  		  </div>
+		</div>		
+	</div>
+
+    </div>
+</body>
+</html>

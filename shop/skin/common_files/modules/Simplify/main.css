@@ -1,0 +1,139 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Simplify module CSS stylesheet
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    main.css.tpl, v 1.0.0 2013/08/23 08:47:15 chemisk Exp $
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+div#simplify-payment-form,
+ul#opc-sections li.opc-section div#simplify-payment-form {
+    width: 300px;
+}
+
+div#simplify-payment-form div.simplify-cc-header,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-header {
+    background: #f60;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid white;
+    height: 50px;
+    text-align: center;
+}
+
+div#simplify-payment-form div.simplify-cc-header h2,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-header h2 {
+    font-size: 18px;
+    line-height: 51px;
+    padding: 0px;
+    color: #fff;
+}
+
+div#simplify-payment-form div.simplify-cc-header h2:before,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-header h2:before {
+    content: "\f023";
+    font-family: FontAwesome;
+    font-size: 31px;
+    display: block;
+    float: left;
+    padding-left: 14px;
+    width: 10px;
+    position: relative;
+    top: -1px;
+    font-weight: normal;
+}
+
+div#simplify-payment-form div.simplify-cc-content,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content {
+    background-color: #eee;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+div#simplify-payment-form div.simplify-cc-content label,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content label {
+    font-family: Arial;
+    font-size: 16px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+div#simplify-payment-form div.simplify-cc-content input,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content input {
+    border-radius: 5px;
+    height: 20px;
+    max-width: 250px;
+    display: inline-block;
+}
+
+div#simplify-payment-form div.simplify-cc-content input[type="text"]:focus,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content input[type="text"]:focus {
+    border-color: rgba(255,102,0,0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,102,0,0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,102,0,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,102,0,0.6);
+}
+
+div#simplify-payment-form div.simplify-cc-content select,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content select {
+    height: 28px;
+    border-radius: 5px;
+}
+
+div#simplify-payment-form div.simplify-cc-content .simplify-logo,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content .simplify-logo {
+    background: url(simplify.png) no-repeat right top;
+    height: 45px;
+}
+
+div#simplify-payment-form div.simplify-cc-content div,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content div {
+    padding-bottom: 20px;
+}
+
+div#simplify-payment-form div.simplify-cc-content div:last-child,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content div:last-child {
+    padding-bottom: 0px;
+}
+
+div#simplify-payment-form div.simplify-cc-content .simplify-error-fld,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content .simplify-error-fld {
+    border-color: #f00;
+}
+
+div#simplify-payment-form div.simplify-cc-content span.simplify-error-msg,
+ul#opc-sections li.opc-section div#simplify-payment-form div.simplify-cc-content span.simplify-error-msg {
+    color: #f00;
+    padding: 5px;
+    display: inline-block;
+}
+
+div#simplify-payment-form.test-mode div.simplify-cc-content:before,
+ul#opc-sections li.opc-section div#simplify-payment-form.test-mode div.simplify-cc-content:before {
+    content: "Test mode";
+    color: #f00;
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(-50deg);
+    display: inline-block;
+    font-size: 35px;
+    opacity: 0.2;
+    left: 20%;
+    margin-top: 20%;
+    position: relative;
+}
+
+div#simplify-payment-form.test-mode div.simplify-cc-content div:nth-child(2),
+ul#opc-sections li.opc-section div#simplify-payment-form.test-mode div.simplify-cc-content div:nth-child(2){
+    margin-top: -30%;
+}

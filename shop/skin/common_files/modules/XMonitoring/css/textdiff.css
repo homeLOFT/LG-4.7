@@ -1,0 +1,60 @@
+/*
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+/**
+ * CSS stylesheet for admin area diffs section
+ *
+ * @category   Modules
+ * @package    X-Monitoring
+ * @subpackage Skin
+ * @author     Michael Bugrov <mixon@x-cart.com> 
+ * @version    e1db5cf03524aef7b3d94390d4b4baa6311fd42b, v2 (xcart_4_5_5), 2013-02-07 17:35:38, textdiff.css, aim
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+*/
+h1, h2, h3, h4, pre, div {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+pre *, pre.prettyprint, pre.prettyprint *, h1, h2, div.diff-index {
+    font-family: monospace;
+}
+
+div.diff-help {
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+pre, div.diff-index {
+    border: black solid 1px;
+    padding: 5px 10px;
+    color: #000;
+    background-color: #fafafa;
+}
+
+div.diff-content {
+    padding-top: 2px;
+}
+
+/* hunk declaration */
+pre span.dec {
+    color: #999;
+    font-weight: bolder;
+}
+/* deleted text */
+pre span.src {
+    background-color: #fdd;
+    color: red;
+}
+/* inserted text */
+pre span.str {
+    background-color: #dfd;
+    color: green;
+}

@@ -1,0 +1,33 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * One Page Checkout module CSS stylesheet
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    0a922533bc368382b94c56b723f764008cf4c0a5, v3 (xcart_4_7_0), 2015-02-12 22:35:54, altskin.css, mixon
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+table.totals tr td.total,
+table.totals tr td.total-name,
+table.totals tr td.total-value,
+table.totals tr td.total-value-alt,
+table.totals span.total-name
+{
+  font-weight: bold;
+  text-transform: none;
+  padding: 5px 5px 5px 0;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+table.totals tr.total td.total-value-alt {
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+.field-container a {
+  margin: -2px -2px -4px 5px;
+}

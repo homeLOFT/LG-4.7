@@ -1,0 +1,1877 @@
+1caa81e92c3a917d5b2469a3c5804c7929db0e5d, v58 (xcart_4_7_0), 2015-03-04 11:41:00, CHANGELOG, aim
+
+------------------ X-CART v4.7.0 BETA RELEASED
+
+*DESIGN AND APPEARANCE* 
+[*] 27 Feb 2015, aim - Improvement (0143428, 0142428): New 'Light Responsive' skin added. Thanks to Polyansky.
+[*] 09 Jan 2015, aim - Improvement (0142780): Updated the jQuery Cookie Plugin from v1.4.0 to v1.4.1 [jquery_cookie.js]
+[*] 09 Jan 2015, aim - Improvement (0142777): Updated jquery.blockUI.min.js to v20141123/version=2.70 from v20131009/version=2.66
+[*] 19 Feb 2015, aim - Improvement (0141071, 0143336): Updated jQuery UI to v1.11.3.
+[*] 30 Dec 2014, aim - Improvement (0142508): Upgraded jQuery to the latest version (jQuery 2.x).
+[!] 12 Feb 2015, mixon - Bug (0143254): SO: Bonus section was displayed distorted on the cart page in some skins.
+[!] 06 Feb 2015, mixon - Bug (0137613): The "Search for users" popup dialog had a vertical scrollbar even when it was not needed.
+[!] 13 Jan 2014, aim - Bug (0142819): Small display glitch for books_and_magazines. Fixed. Thanks to Nogard.
+[!] 25 Dec 2014, mixon - Bug (0137613): Advertisement banners were displayed incorrectly on certain admin pages. Fixed. 
+
+*BACKOFFICE*
+[*] 24 Feb 2015, aim - Improvement (0143373): Added the collapse OK files feature during upgrade.
+[*] 30 Jan 2015, aim - Improvement (0143088): The 'Clear templates' operation is no longer needed. The tool has been removed from the admin area.
+[*] 12 Jan 2015, aim - Improvement (0142770): Optimized the 'Check database integrity' tool. Thanks to Abr.
+[*] 27 Dec 2014, aim - Improvement (0142674, 0117916): Smarty3.x upgrade. Added a new tool to check tpl syntax http://site.com/xcart/admin/check_tpl_syntax.php?standalone=1
+[*] 18 Dec 2014, aim - Improvement (0142569): Admin ajax handler admin/get_block.php is now used in the admin area instead of the customer script get_block.php.
+[!] 03 Feb 2015, aim - Bug (0143134): fCommerce Go configuration page was blank on Windows servers. Fixed.
+
+*USERS*
+[!] 03 Dec 2014, aim - Bug (0142078, 0042766, 0044155): AOM: The second address line (Address Line 2) could not be removed. Address Book: Address Line 2 of the "Ship To" Address remained populated after changing from the default address to a different address from the Address Book. Fixed. [Advanced_Order_Management, One_Page_Checkout]
+
+*PAYMENTS*
+[*] 13 Feb 2015, aim - Improvement (0142683): Small security improvement for PayPal.
+[*] 12 Feb 2015, aim - Improvement (0143245): X-Payments Connector: New order id for recharges is now sent to X-Payments. Other changes related to X-Payments 2.1.2. Thanks2Random. [XPayments_Connector]
+[*] 13 Jan 2015, mixon - Improvement (0142317): PayPal Express Checkout: In-Context checkout is limited to only the Express checkout solution.
+[*] 17 Dec 2014, mixon - Improvement (0142346): Paypal Standard: Added line items support. Improved the totals check function.
+[!] 19 Feb 2015, random - Bug (0143002): X-Payments Connector: Customer IP is now preserved when order is placed. [XPayments_Connector]
+[!] 15 Jan 2015, mixon - Bug (0139751): PayPal: US codes in the NNNNN-NNNN format were not saved correctly when zip4 support was disabled. Fixed.
+
+*TAXES*
+[*] 16 Feb 2015, aim - Improvement (0143286): func_tax_price calculated taxes differently than common cart tax functions. Affected cases: multiple taxes, Product_Options[variants], Google Shopping, taxed discount, wholesale taxed prices. Fixed.
+[!] 03 Mar 2015, aim - Bug (0143467): Customer's tax_exempt property was not applied for gift wrapping tax rates when the 'Calculate in general way' tax scheme was used. Fixed.
+[!] 27 Feb 2015, mixon - Bug (0142431, 0140457): Tax rate value was not displayed on the tax rate configuration page. Fixed.
+[!] 11 Feb 2015, mixon - Bug (0115826): Taxes and shipping cost were calculated incorrectly for customers with an empty address book, even when "Presume that a not logged in customer is from the default country" option was enabled.
+[!] 09 Feb 2015, mixon - Bug (0143201, 0142431): Taxes for Anonymous and Registered customers were calculated differently for the same address and product set. Fixed.
+[!] 03 Dec 2014, mixon - Bug (0142365): Tax number was not validated if libcurl was not available in the func_http_get_request function.
+
+*CHECKOUT*
+[*] 24 Dec 2014, mixon - Improvement (0142317): PayPal Express Checkout: In-Context checkout support added.
+[!] 24 Feb 2015, aim - Bug (0142616): X-Payments payment methods were not working properly with gift certificates. Fixed. Thanks2Random.
+
+*ORDERS*
+[!] 04 Dec 2014, aim - Bug (0142322): Amazon Checkout orders: The Order receipt email notification did not show the correct payment method. Fixed.
+[!] 01 Dec 2014, aim - Bug (0142348): Pay by Amazon was not showing under the list of payment methods on the search for orders page. Fixed. Thanks to Vjk.
+
+*MODULES/ADD-ONS*
+[*] 04 Mar 2015, mixon - Improvement (0142431): AOM: Order edit functionality re-factoring. Added a new feature for editing the shipping method name.
+[*] 02 Mar 2015, mixon - Improvement (0142431): AOM: Added support for changing the order payment method surcharge in AOM.
+[*] 28 Feb 2015, mixon - Improvement (0142431, 0130103): AOM: Provider name is now shown on the products edit page. Catalog price is now used by default for newly added products.
+[*] 26 Feb 2015, aim - Improvement (0142843, 0142860): MultiCurrency: Currency rates were not updated automatically. Fixed. Added an alternative GeoIP service. Thanks2Phoenix.  [XMultiCurrency]
+[*] 26 Feb 2015, mixon - Improvement (0142926): Simplify Commerce: Updated the Simplify integration SDK. Added the Hosted integration address feature.
+[*] 20 Feb 2015, aim - Improvement (0143342): POS system: Added a new setting "'Pos order is processed' notification to customer". Sometimes the barcode scanner added two items to the basket instead of one. Fixed.
+[*] 19 Feb 2015, mixon - Improvement (0142467): Simplify Commerce: Improved debug logs usage. Logging is now enabled in devmode by default.
+[*] 19 Feb 2015, mixon - Improvement (0142431): AOM: Module re-factoring related to profile fields, taxes, discounts and other features. 
+[*] 10 Feb 2015, mixon - Improvement (0143161, 0142448): New module 'Custom Order Statuses' added for Platinum and Goldplus editions. [XOrder_Statuses]
+[*] 04 Feb 2015, mixon - Improvement (0142431, 0130102): AOM: Fixed the look of the Edit order totals section. Multiple interface corrections related to module display logic.
+[*] 20 Jan 2015, mixon - Improvement (0142926): Simplify Commerce: Updated the Hosted Payments integration. As special form is no longer supported, it was replaced with special button.
+[*] 27 Dec 2014, mixon - Improvement (0141899): UPS: Updated package limits for UPS. Updated Registration API and Licensing API, wsdl and xsd files.
+[*] 22 Dec 2014, mixon - Improvement (0142467): Simplify Commerce: Added support for the Hosted Payments integration.
+[*] 09 Dec 2014, aim - Improvement (0142440): Bestsellers: Added sorting by sales_stats in the Bestsellers section. Thanks to Mike White.
+[*] 02 Dec 2014, aim - Improvement (0142349): Pay with Amazon: Added the 'Pay with Amazon' button for One page checkout. EU endpoints are now supported. Other small changes. Thanks to Vjk.
+[!] 03 Mar 2015, mixon - Bug (0142431): AOM: Taxes were displayed incorrectly (old values) in order preview. Fixed.
+[!] 03 Mar 2015, mixon - Bug (0142431):  When a user chose to restore the original value of an order field using the "Revert to original" control element, and that field had a related enabled checkbox option affecting the field value (for example, "Other"), the enabled checkbox option was not reset to the default unchecked state. Fixed.
+[!] 03 Mar 2015, mixon - Bug (0142431, 0139105): AOM: Discounts and taxes were calculated incorrectly for orders edited via AOM. Fixed.
+[!] 02 Mar 2015, mixon - Bug (0142431): AOM: Discounts added to an order via AOM were calculated differently than discounts applied the regular way via the store's customer front end. Fixed.
+[!] 28 Feb 2015, mixon - Bug (0136896): AOM: Email validation was not performed on the edit customer information page. Fixed.
+[!] 28 Feb 2015, mixon - Bug (0142431): AOM: Disabled taxes were not shown in the order, even those that were enabled at the time of order placement. Fixed.
+[!] 28 Feb 2015, mixon - Bug (0142431): AOM: Multiple fixes related to tax calculation scheme in AOM. Order edit functionality re-factoring.
+[!] 28 Feb 2015, mixon - Bug (0136896): AOM: Email validation was not performed on the edit customer information page. Fixed.
+[!] 28 Feb 2015, mixon - Bug (0142431): AOM: Taxes were not applied for orders and new products added via AOM. Fixed.
+[!] 26 Feb 2015, mixon - Bug (0142431): AOM: Orders created via AOM had incomplete extra data info. Fixed.
+[!] 25 Feb 2015, mixon - Bug (0142431): AOM: Incorrect / old style user reference was used in code. Fixed.
+[!] 25 Feb 2015, mixon - Bug (0142431): AOM: W3C validation error related to the data-* attribute usage in XHTML customer front end. Fixed.
+[!] 12 Feb 2015, mixon - Bug (0120995): AOM: Edit products section, the "Update quantity in stock after the changes are applied" was not working correctly. Fixed.
+[!] 12 Feb 2015, mixon - Bug (0118554): AOM: Incorrect capture amount was displayed on the capture button on the order modify page. Fixed.
+[!] 05 Feb 2015, mixon - Bug (0142142): Affiliate: The category list for Partner Product search for adding product banner was formed incorrectly. Fixed. 
+[!] 03 Feb 2015, mixon - Bug (0140942, 0142280): AOM: The section for editing ordered products was displayed incorrectly (The Current/Original tables got wider with every subsequent product). Fixed.
+[!] 03 Feb 2015, mixon - Bug (0141778): AOM: Advanced Order Management worked incorrectly with disabled payment methods and surcharges. Fixed.
+[!] 02 Feb 2015, mixon - Bug (0130095): AOM: History of changes popup did not use the General settings::Primary currency display format setting. Fixed.
+Thanks2Chemisk.
+[!] 20 Jan 2015, mixon - Bug (0142947): Simplify Commerce: The list of payment methods added during the current login session was not cleared when the module was disabled. Fixed.
+[!] 30 Dec 2014, mixon - Bug (0130253): Affiliate: Numeric login for old login scheme issue. Fixed.
+[!] 05 Dec 2014, mixon - Bug (0142325): X-Payments Subscriptions: PHP Fatal error: Call to undefined function func_select_product. Fixed. Thanks to Isden.
+[!] 05 Dec 2014, mixon - Bug (0141905): Customer Reviews: Added the option to use Client IP instead of Proxy IP if proxy is detected.
+[!] 01 Dec 2014, aim - Bug (0142333): AntiFraud Service: Typo in func_is_high_risk_country related to $config['high_risk_countries'] variable. Fixed. [Anti_Fraud]
+
+*IMPORT/EXPORT*
+[!] 25 Feb 2015, mixon - Bug (0143075): Product membership could not be set to NONE by product import.
+[!] 10 Feb 2015, aim - Bug (0143215): Orders export froze if orders with deleted products were exported. Fixed.
+
+*INTERFACE*
+[*] 03 Mar 2015, aim - Improvement (0143461): Added autofocus on the first field of the 'Edit options' dialog in the cart.
+[*] 12 Feb 2015, aim - Improvement (0143204): Added the 'current' element for the smarty $speed_bar array in the customer area to highlight the current speed tab.
+[*] 03 Feb 2015, aim - Improvement (0117108, 0116029, 0116075, 0116076, 0117916): Smarty3.x upgrade. It is no longer needed to clear the var/templates_c directory. Added a new smarty setting $compile_id_based_on_filters (enabled by default). Added the func_get_cache_dirs function. Thanks to Abr.
+[*] 02 Feb 2015, aim - Improvement (0143110, 0142630, 0117916): Smarty3.x upgrade. Moved security settings to the new class XC_Smarty_Security. Added changeSecurity() method. direct_access_security is now enabled. Added nl2br to allowed php_modifiers.
+[*] 28 Jan 2015, aim - Improvement (0143050, 0143042, 0142630, 0117916): Smarty3.x upgrade. XAuth/Social Login adaptation. fCommerce_Go adaptation. $smarty->_current_file is changed to $smarty->template_resource in prefilters and postfilters.
+[*] 27 Jan 2015, aim - Improvement (0143017, 0142630, 0117916): Removed the duplicated smarty function include/templater/plugins/function.html_select_date.php in favor of the default function function.html_select_date.php. Removed the duplicated smarty function include/templater/plugins/function.fetch.php in favor of the default function function.fetch.php.
+[*] 19 Jan 2015, aim - Improvement (0142894, 0117916): Smarty3.x upgrade. Changed PHP time_limit to 5 min to meet smarty compile time for complex templates. The COMPILED_TPL_CHECK_MD5 feature has been removed.
+[*] 20 Dec 2014, aim - Improvement (0142595, 0117916): Preparation for upgrade to Smarty3.1. == Unquoted Strings == is quoted in parameters for smarty tags. Changed the obsolete syntax {%sectionname.varname%} to {$smarty.section.sectionname.varname}. == Delimiters and whitespace == fix. Changed { foo } to {foo}.
+
+*USABILITY*
+[*] 23 Jan 2015, mixon - Improvement (0115467): Added the Print packing slip button for orders.
+
+*SECURITY*
+[*] 29 Jan 2015, aim - Improvement (0143059): htmlpurifier upgraded from 4.3.0 to 4.6.0 VERSION (used for untrusted providers and Gift_Registry/XAffiliate modules).
+
+*PERFORMANCE*
+[*] 03 Mar 2015, aim - Improvement (0143449): Optimization recommendations for when the store site goes into production are added to .htaccess. Thanks2Abr.
+[*] 13 Feb 2015, aim - Improvement (0143257): Optimized some AJAX requests.
+[*] 03 Feb 2015, aim - Improvement (0143101): sessid binary(32) is now used instead of sessid char(32) for session tables. Thanks2Abr. Binary data must use trim str_replace in php conditions. Added the func_binary_empty function to check binary strings filled with zero.
+[*] 29 Jan 2015, aim - Improvement (0143072): setcookie-xid is not called for ajax and aux scripts now. Some ajax errors are cached for 1 hour. Thanks2Abr.
+[*] 28 Jan 2015, aim - Improvement (0143045): The setting 'Use cache for language variables' is now enabled by default. This should boost X-Cart performance on slow mysql servers.
+[*] 14 Jan 2015, aim - Improvement (0142847): Small optimization. Replaced time() call with XC_TIME constant.
+[*] 13 Jan 2015, aim - Improvement (0142827, 0142630): Smarty optimization. Replaced register_outputfilter('func_postprocess_output') with register_postfilter('func_postprocess_output').
+[*] 19 Dec 2014, aim - Improvement (0142593): Changed memory limit from 32M to 96M. (The memory limit is used if the default value is less then 96M)
+[*] 19 Dec 2014, aim - Improvement (0142594): Small product search optimization. ORDER BY NULL is now used when sort order does not matter. http://dev.mysql.com/doc/refman/5.7/en/select.html#idm140169758571744
+[*] 19 Dec 2014, aim - Improvement (0142590, 0142513): Session optimization. unix_timestamp is no longer saved in sessions.
+[*] 18 Dec 2014, aim - Improvement (0142570, 0142513): Session optimization. Expiry is updated every 200 sec instead of the former value of 10 sec. Added the x_session_get_var function.
+[*] 09 Dec 2014, aim - Improvement (0142395): Small optimization related to func_order_data function.
+[*] 04 Dec 2014, aim - Improvement (0142381): Session history is no longer used when http/https domains are the same. Cookie conflict is no longer tracked in X-Cart sessions.
+
+*MISCELLANEOUS* 
+[*] 03 Mar 2015, aim - Improvement (0143478): Updated the COPYRIGHT notice.
+[*] 30 Jan 2014, aim - Improvement (0126716): Added the ability to cache false/null/''(empty) values via func_data_cache_get/func_get_cache_func. Cache format is changed for all caches. The change breaks all custom func_data_cache_get/func_get_cache_func calls. Thanks2Abr.
+[*] 30 Jan 2014, aim - Improvement (0143078): Binary-safe Mysql BLOB type is now used instead of TEXT type to store serialized data.
+[*] 26 Jan 2015, aim - Improvement (0143013): The minimum supported PHP version is now 5.3.0.
+[*] 13 Jan 2015, mixon - Improvement (0142746): Address book and Contact us form: Changed the default field order for the fields Country, State and County. The field Country now goes first.
+[*] 11 Dec 2014, mixon - Improvement (0132406): Admin is no longer incorrectly redirected to the Customer front end if error 406 occurs in the Admin back end
+(Could happen when CleanURLs were enabled). Thanks to Abr.
+[*] 03 Dec 2014, aim - Improvement (0142326): Added IPv6 support for sessions.
+[!] 11 Feb 2015, aim - Bug (0143223): There was a white screen when corrupted caches were used. Fixed.
+[!] 20 Jan 2015, mixon - Bug (0142933): Missing language variable lbl_email_username. Fixed.
+[!] 08 Dec 2014, mixon - Bug (0142110): SMTP Server name entered into the SMTP server field was not trimmed on save and sometimes caused connection errors due to invisible space or tab symbols. Fixed.
+[!] 03 Dec 2014, mixon - Bug (0142365): IP validation was not working correctly if libcurl was not available in the func_get_address_by_ip function.
+
+
+------------------ X-CART v4.6.6 RELEASED
+
+*DESIGN AND APPEARANCE* 
+[!] 13 Nov 2014, mixon - Bug (0140852): Address book: Address delete button was displayed on the second line if FLC checkout was used. Fixed. [Fast Lane Checkout]
+[!] 05 Nov 2014, mixon - Bug (0141624): The Log in section on the Checkout page was displayed incorrectly if Fast Lane Checkout module was used. Fixed. [flc Fast_Lane_Checkout]
+[!] 05 Nov 2014, mixon - Bug (0141889): Incorrect usage of spacer_black.gif in Ideal comfort skin CSS. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+
+*BACKOFFICE*
+[!] 05 Nov 2014, aim - Bug (0064739): The 'GnuPG/PGP binary path' and 'path to Perl interpreter' settings could not be saved when PHP:open_basedir directive was used. Fixed.
+[!] 05 Nov 2014, aim - Bug (0142039): Database Backup/Restore feature did not work properly when xcart_xmonitoring_fsystem had rows. Fixed. [XMonitoring]
+[*] 06 Nov 2014, aim - Improvement (0142008): The built-in DB Backup feature does not depend on SOAP extension now.
+
+*PAYMENTS*
+[*] 21 Nov 2014, mixon - Improvement (0140767): Updated Sage Pay Form integration to v3.
+[*] 21 Nov 2014, mixon - Improvement (0140767): Updated Sage Pay Server integration to v3.
+[*] 12 Nov 2014, mixon - Improvement (0141943): Added a new module: Simplify Commerce by MasterCard.
+
+*TAXES*
+[*] 12 Nov 2014, mixon - Improvement (0140852): Replaced tax exemption option with tax calculation scheme option selector. Taxes are no longer calculated when a valid EU tax number is provided by customer.
+[!] 18 Nov 2014, aim - Bug (0140862): AvaTax did not work for anonymous customers. Fixed. Thanks to John Notgrass and Isden.
+[!] 11 Nov 2014, aim - Bug (0141660, 0114785): DST+SH tax was not applied to SH when the cart contained a free shipping product. Fixed. Thanks to Mccornic.
+[!] 11 Nov 2014, aim - Bug (0129007): Added a test case for multiple taxes like (TxHerberg : Absolute +2.00 $ , =DST) (TPS : + 5.00 % , =DST + SH + TxHeberg) (TVQ : + 9.50 % , =DST + SH + TxHeberg + TPS)
+[!] 10 Nov 2014, mixon - Bug (0140852): The tax option "Allow customers to modify their tax number after tax exemption is enabled" was not working correctly when One Page Checkout module was used.
+
+*SHIPPING*
+[!] 12 Nov 2014, aim - Bug (0142124): New disabled shipping methods were not displayed in the admin area. Fixed. Added new USPS methods.
+
+*CHECKOUT*
+[!] 21 Nov 2014, aim - Bug (0142231, 0044112): iFrame from X-Payments did not load on the one page checkout. Thanks to Random.
+
+*MODULES/ADD-ONS*
+[*] 14 Nov 2014, aim - Improvement (0137365): Google Analytics: Added support for Google Universal Analytics. https://support.google.com/analytics/answer/2790010?hl=en
+[*] 11 Nov 2014, aim - Improvement (0142079): Google Shopping: The "identifier exists" attribute can now be specified. More info: https://support.google.com/merchants/answer/160161?hl=en#exemptions
+[!] 11 Nov 2014, aim - Bug (0141914, 0043981): AOM: Product variants could not be added to an order via AOM if the quantity in stock of their base product was 0. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[-] 13 Nov 2014, aim - Other (0142135): Removed the module Lexity Live.
+[!] 21 Nov 2014, aim - Bug (0142018): There was a problem with Hidden Categories and 'On Sale' - a product in a hidden category was still showing on sale list. Thanks to Vjk.
+
+*MISCELLANEOUS* 
+[*] 21 Nov 2014, aim - Improvement (0142150): Removed the obsolete 'Compatibility with old product storage routine' option.
+[*] 06 Nov 2014, aim - Improvement (0142008): Improved SOAP service class. Direct calls to SoapClient methods were prohibited.
+[*] 06 Nov 2014, aim - Improvement (0141723): Replaced module codes with English translations (as displayed in admin backend) in the include/version.php script.
+[!] 21 Nov 2014, aim - Bug (0142232): "NetworkError: 406 Not Acceptable - skin/common_files/lib/jquery.cookie.js" error. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[!] 17 Nov 2014, aim - Bug (0142164): PHP Warning: rename(/var/cache,/var/trash_cache7964043) [function.rename]: No such file or directory in /include/func/func.backoffice.php on line 739. Fixed. Related to the func_remove_xcart_caches function.
+[!] 05 Nov 2014, aim - Bug (0142026): "Data truncated for column 'amount'" SQL error in strict mode. Fixed.
+
+------------------ X-CART v4.6.5 RELEASED
+
+*DESIGN AND APPEARANCE* 
+[*] 26 Aug 2014, mixon - Improvement (0140387): Made the email address selectable in the top admin profile menu.
+[*] 25 Aug 2014, mixon - Improvement (0140387): Quicksearch help info is now hidden automatically on lost focus.
+[*] 25 Aug 2014, mixon - Improvement (0140387): Moved the Help menu tab to top menu for Partners area.
+[*] 20 Aug 2014, mixon - Improvement (0140387): Improved Admin back end usability. Moved the Storefront links to top menu. Changed the Quicksearch menu.
+[*] 13 Aug 2014, mixon - Improvement (0140387): Improved Admin back end usability. Replaced the profile link with top menu. Moved the Help tab to top menu.
+[!] 18 Oct 2014, aim - Bug (0141815): IE11 was using IE7 compatibility mode for X-Cart running on local domains like localhost/xlocal. Fixed.
+
+*BACKOFFICE*
+[*] 22 Oct 2014, aim - Improvement (0141476): Added a tooltip related to the 'filter out Flat Rate options' USPS new feature. Thanks to Dohtur.
+[*] 20 Oct 2014, aim - Improvement (0141829): Replaced the outdated link http://help.x-cart.com/index.php?title=X-Payments:PayPal with http://help.x-cart.com/index.php?title=X-Cart:Adding_and_enabling_PayPal_payment_methods_in_X-Cart.
+[*] 23 Sep 2014, aim - Improvement (0138880): Product catalog cache is now cleared when a product is created or becomes available.
+[*] 12 Sep 2014, aim - Improvement (0141277): Added a warning message related to security settings.
+[*] 09 Sep 2014, aim - Improvement (0135667): Specific IP and email addresses are now displayed in the error message text related to access to restricted resources [Main page :: File management, Patch/Upgrade center, Security settings]
+[*] 01 Sep 2014, aim - Improvement (0141143): Added a warning in the Admin area dashboad (Top message) regarding incompatible configurations for the "Select the order in which products should be displayed within a category" and "Use simple sorting by productid on all the product related pages" settings.
+[*] 29 Aug 2014, aim - Improvement (0141132): The report bug link from the help section now contains the pre-filled X-Cart version.
+[*] 26 Aug 2014, aim - Improvement (0138309): When the number of enabled shipping methods does not exceed the limit set by the max_input_vars variable in server settings, the 'Check all' link is displayed for USPS methods.
+[!] 04 Sep 2014, aim - Bug (0141210): Display issue on the Main page :: Real-time processors options :: U.S.P.S. options page in the Admin area. Fixed.
+
+*USERS*
+[!] 07 Oct 2014, aim - Bug (0141635): Tax exemption could not be disabled on the ' Main page :: Users management :: Modify customer profile ' page when the setting 'Enable tax exemption for customers' was enabled. Fixed.
+
+*PAYMENTS*
+[*] 21 Aug 2014, mixon - Improvement (0133418): PayPal line items info is now passed to PayPal only if the order contains fewer than 20 products.
+[*] 14 Aug 2014, mixon - Improvement (0140547): Cybersource SA: Added support for the 'Billing information' option. Required info is now passed to the gateway.
+[!] 26 Sep 2014, mixon - Bug (0139675): Switching the Test/Live mode setting for PayPal Payments Advanced on or off now changes the Test/Live mode setting for PayPal Express Checkout accordingly.
+[!] 19 Sep 2014, aim - Bug (0139209): The error "Invalid request sent by the merchant: Calculated hash does not match the hash in the request." related to 'First Data Global Gateway - Connect 2.0' and 'EMEA' region. Fixed.
+[!] 15 Sep 2014, aim - Bug (0139364): Gift certificates were not used correctly as a payment method when an online payment method was cancelled or failed. Fixed. Thanks to Random.
+[!] 14 Aug 2014, mixon - Bug (0140880): Wrong URL for Barclay ePDQ essential (basic). Fixed.
+[!] 29 Jul 2014, mixon - Bug (0140545): Cybersource SA: The positions of the Transaction and Cancel URLs in the payment method help info were reversed. Fixed.
+
+*SHIPPING*
+[*] 08 Oct 2014, mixon - Improvement (0137229): UPS registration API related changes. Replaced XML registration API with SOAP. UPS registration UI improvements.
+[*] 18 Sep 2014, aim - Improvement (0141043): Implemented support for the updated USPS Web Tools APIs.
+[*] 25 Sep 2014, mixon - Improvement (0115888): Australia Post integration updated according to the Postage Assessment Calculation (PAC) API. 
+[*] 05 Sep 2014, aim - Improvement (0094031): Added a new setting for UPS 'Split the shipment into multiple packages if its weight/dimensions exceed the limitations:' in the Admin area.
+[*] 03 Sep 2014, aim - Improvement (0141043, 0141184): Now the user can choose USPS Commercial Rates/Commercial Plus Rates (cheaper in most cases). If there are no selected services in the 'Services:' select box on the ' Main page :: Real-time processors options :: U.S.P.S' configuration page, all possible services are returned. Thanks to Dohtur.
+[*] 27 Aug 2014, aim - Improvement (0133855): Added a new checkbox setting 'Display price in the title of the shipping label link' on the ' Main page :: General settings :: Shipping Label Generator ' page to avoid errors like "Error: A shipping label cannot be generated for the selected shipping method."
+[*] 26 Aug 2014, aim - Improvement (0139192): Added the ability to use the 'Priority Mail Express Padded Flat Rate Envelope, 12.5 x 9.5' container to support methods like 'USPS Priority Mail Express 1-DayTM Padded Flat Rate Envelope 10:30 AM Delivery' or 'USPS Priority Mail Express 1-DayTM Padded Flat Rate Envelope'. Upper case is used for all containers now according to https://www.usps.com/business/web-tools-apis/rate-calculator-api.htm#_Toc378922331
+[*] 14 Aug 2014, mixon - Improvement (0130056): Added support for different rate types for FedEx shipping integration.
+[*] 08 Aug 2014, mixon - Improvement (0140369): Added a Help message for the FedEx Purpose of shipment type setting.
+[*] 07 Aug 2014, mixon - Improvement (0140369): Shipping purpose option configuration is hidden in the case of the old v9 integration.
+[*] 07 Aug 2014, mixon - Improvement (0124821): FedEx realtime shipping errors are now written to shipping error logs in short view in production mode.
+[!] 08 Sep 2014, aim - Bug (0141233): USPS rates were not obtained for the FIRST CLASS/FLAT combination when machinable=false. Fixed (Forced the use of machinable=true for when this combination is used).
+[!] 04 Sep 2014, aim - Bug (0141206, 0141043): In the situation when a certain shipping service is available at both standard and commercial rates, the cheapest rates are supposed to be used. Sometimes this was not the case. Fixed.
+[!] 26 Aug 2014, mixon - Bug (0141089): FedEx: No rates were displayed if the option "Shipment is scheduled for Saturday delivery" was enabled. Fixed.
+[!] 12 Aug 2014, mixon - Bug (0112325): FedEx: For some FedEx methods, shipping cost was not displayed when the weight of items was very small and was considered equal to zero. Fixed. [rounding issue] 
+[!] 12 Aug 2014, mixon - Bug (0127442): FedEx: X-Cart was ignoring the dimensional decimal places rather than rounding up to the next whole value. Fixed.
+[!] 30 Jul 2014, mixon - Bug (0140369): FedEx: The optional param PurposeOfShipmentType was not passed to the FedEx server, which caused an error for non US countires. Fixed (in v14).
+
+*CHECKOUT*
+[!] 15 Sep 2014, aim - Bug (0139243): Multiple gift certificates could not be applied when One_Page_Checkout(OPC) was used. Fixed.
+
+*MODULES/ADD-ONS*
+[*] 06 Oct 2014, aim - Improvement (0140550): X-Payments Connector updated. Smart import of payment methods. PayPal Pro methods now work properly. Various other bug fixes. Thanks to Random.
+[*] 15 Sep 2014, aim - Improvement (0105962): Improved error message text related to Gift certificate and Discount coupons.
+[*] 25 Aug 2014, mixon - Improvement (0141045): Login with PayPal: Updated some instructions. Important parts are now shown in bold.
+[*] 25 Aug 2014, aim - Improvement (0140723): Banner_System: On the Banners list page, the category selector box was displayed incorrectly. Fixed.
+[*] 25 Aug 2014, aim - Improvement (0140874): Checkout by Amazon: Corrected the wrong link for the 'Sign up for Checkout by Amazon' button on the 'Main page :: General settings :: Checkout by Amazon' page.
+[*] 15 Aug 2014, aim - Improvement (0140874): Checkout by Amazon: Added a new setting, 'Override the "Display product price including tax" option for product prices sent to Amazon', to enable the use of VAT inclusive prices on the Amazon side and VAT exclusive prices on the X-Cart side.
+[*] 05 Aug 2014, aim - Improvement (0140723): Banner_System: Added a new setting, 'Display category selector in the banner list'.
+[*] 05 Aug 2014, aim - Improvement (0140723): Banner_System: Added the ability to change the category on the 'Banner content' page.
+[*] 05 Aug 2014, aim - Improvement (0140723): Refactoring for Banner_System. Changed the banner categories functionality.
+[*] 04 Aug 2014, aim - Improvement (0140723): Banner category is now deleted from the xcart_banners_categories table when the category is deleted.
+[*] 16 Jul 2014, aim - Improvement (0129548): Changed the default value for xcart_modules.author from 'qualiteam' to 'other'. Thanks to Chemisk.
+[!] 18 Oct 2014, aim - Bug (0139342): X-Payments: API requests via SSL were failing on some servers. Fixed. Thanks to Random and Isden.
+[!] 17 Oct 2014, aim - Bug (0141792, 0139736): X-Auth: The "Sign in" link was not displayed when Social Login module was used. Fixed. Thanks to Phoenix.
+[!] 16 Oct 2014, aim - Bug (0141769): PayPal Login: PayPal no longer supports SSLv3. Updated PayPal SDK.
+[!] 08 Oct 2014, aim - Bug (0141664): Pay with Amazon: Fulfillment staff was not able to capture amazon payments. Fixed. Thanks to Vjk. [Amazon_Payments_Advanced, Pay with Amazon]
+[!] 08 Oct 2014, aim - Bug (0141647): CloudSearch: Multiple fixes related to Cloud Search. Thanks to Nikita.
+[!] 07 Oct 2014, mixon - Bug (0133711): RMA: It was possible to return more items than ordered via the Admin backend. Fixed.
+[!] 06 Oct 2014, aim - Bug (0141511): MultiCurrency: Multiple fixes related to XMultiCurrency module. Thanks to Phoenix.
+[!] 02 Oct 2014, aim - Bug (0105008): XML Sitemap: Disabled categories and their child categories where present in the sitemap. Fixed. 
+[!] 19 Sep 2014, mixon - Bug (0141359): Login with PayPal: A Javascript error "Uncaught SecurityError" was generated if the settings "Use secure protocol (HTTPS) for login, registration, checkout and payment pages" and "Redirect customers from HTTPS to HTTP" were enabled. Fixed.
+[!] 17 Sep 2014, aim - Bug (0141357): TaxCloud: Changed the shipping TIC from 10010 to 11010 according to https://taxcloud.net/tic/default.aspx http://go.qtmsoft.com/mes=538678873 https://bt.x-cart.com/view.php?id=42839
+[!] 17 Sep 2014, aim - Bug (0141362): New Arrivals: New Arrivals products had wrong prices when product option surcharges were used. Fixed.
+[!] 09 Sep 2014, aim - Bug (0141246): Extra Fields: The option "Display default values in all extra fields for which non-default values have not been defined" did not work. Fixed. Added the ability to use 0 as an extra field value.
+[!] 05 Sep 2014, aim - Bug (0141075): Pay with Amazon module was not passing the freight charges (using real-time UPS) to Amazon Payments. Fixed. Thanks to Vjk. [Amazon_Payments_Advanced, Pay with Amazon]
+[!] 05 Sep 2014, aim - Bug (0139594): Back in stock product notifications were not sent when quantity on hand went from "0" to "1". Fixed. [Product_Notifications]
+[!] 25 Aug 2014, aim - Bug (0141031): There was a problem with Hidden Categories and New Arrivals - a product in a hidden category was still showing in new arrivals. Fixed. Thanks to Vjk.
+[!] 08 Aug 2014, aim - Bug (0140837): AOM: SQL error related to Advanced_Order_Management. Fixed. [Advanced_Order_Management]
+[!] 08 Aug 2014, aim - Bug (0129191): AOM: The 'History of changes' was showing the "Product has been deleted" text when, in fact, the product had been added [Advanced_Order_Management]. Fixed.
+[!] 08 Aug 2014, aim - Bug (0140819): AOM: When an order was placed via Order > create new order, inventory was not affected. The same problem when a new product was added to an order in the Admin area. Fixed. [Advanced_Order_Management]
+[!] 31 Jul 2014, aim - Bug (0135784): AvaTax: PHP Fatal error: Class 'SoapClient' not found. Fixed.
+[!] 01 Jul 2014, aim - Bug (0139698, 0036147)] AOM: Order total and item price changed by themselves during order modification. Fixed.
+
+*LANGUAGES*
+[*] 16 Sep 2014, aim - Improvement (0130040): Added language variables for some module instructions. Thanks to Chemisk. [Lexity]
+[*] 28 Aug 2014, aim - Improvement (0135856): Changed the description of the setting 'USPS ID (used for address verification)' to 'USPS ID (used for address verification - required field)' for TaxCloud module.
+[*] 27 Aug 2014, aim - Improvement (0138398): Adjusted the tooltip related to the 'Enable merchant key based blowfish encryption method' setting. Thanks to Seyfin.
+
+*INTERFACE*
+[*] 22 Sep 2014, aim - Improvement (0141364): Added the ability to use company name in the From email field. The supported format is 'Your Company Name '.
+[*] 16 Sep 2014, aim - Improvement (0141101): Renamed 'Bill Me Later' to 'PayPal Credit'.
+[*] 11 Aug 2014, aim - Improvement (0140854): Add_to_cart_popup popup dialog works correctly with Escape and Enter keys now. Thanks to Nikita.
+[*] 04 Aug 2014, aim - Improvement (0135630): Added autofocus on the first input box for the 'Contact us' page. 
+[*] 17 Jul 2014, aim - Improvement (0135630): Added autofocus on the first input box for login/register/search/edit address_book/edit profile pages.
+
+*USABILITY*
+[*] 10 Sep 2014, mixon - Improvement (0140387): Slight improvements to profile drop-down menu and search box.
+[*] 26 Aug 2014, mixon - Improvement (0140387): Small usability improvements related to top admin menu.
+
+*SECURITY*
+[*] 20 Oct 2014, aim - Improvement (0141803): Disabled forced use of SSL protocol for some shipping and payment methods. Tls is now used in force mode instead of SSLv3.
+[*] 11 Sep 2014, aim - Improvement (0133944): Improvement related to the registration of administrator user profiles and import.
+[!] 27 Aug 2014, aim - Bug (0139965): Merchant Key based blowfish encryption method could not be disabled. Fixed.
+[!] 06 Aug 2014, aim - Bug (0125895): The Password recovery page was opened via HTTP even if HTTPS for login page option was enabled. Fixed.
+
+*PERFORMANCE*
+[*] 18 Sep 2014, aim - Improvement (0141367): Optimized the function to obtain option surcharges. The function is used in most product lists including New Arrivals, Recently viewed products, Bestsellers, categories products', etc. [Product_Options]
+[*] 12 Aug 2014, aim - Improvement (0140659): Session/modules/smarty are not started for 404 pages when clean URLs are used.
+[*] 11 Aug 2014, aim - Improvement (0140823): Small optimization for Egoods module. More optimal type is used for xcart_download_keys.download_key.
+[*] 07 Aug 2014, aim - Improvement (0140823): Optimization for func_order_data and Egoods module.
+
+*MISCELLANEOUS* 
+[*] 09 Oct 2014, mixon - Improvement (0141661): Improved SOAP service class. Added requirements checking and assertions.
+[*] 07 Oct 2014, mixon - Improvement (0105526): Payment section is now hidden for orders with zero totals. Admin specified payment method is now used by default.
+[*] 02 Sep 2014, mixon - Improvement (0140387): Changed the Admin back end logo link url to avoid double redirects.
+[*] 21 Aug 2014, mixon - Improvement (0140533): Improved the evaluation detection function.
+[*] 01 Aug 2014, mixon - Improvement (0140398): PHP Warning: Missing argument. Fixed.
+[!] 22 Oct 2014, aim - Bug (0141844): Warning: mb_strlen() [function.mb-strlen]: Unknown encoding "" in include/func/func.core.php. Fixed. Thanks to Joe.
+[!] 21 Oct 2014, aim - Bug (0141841): White screen on the 'Home :: Saved credit cards' page caused by the 'Call to undefined function check_payment_methods() in saved_cards.php on line 107' error. Fixed. [XPayments_Connector].
+[!] 09 Oct 2014, mixon - Bug (0141677): Warning: First parameter must either be an object or the name of an existing class in include/func/func.soap.php on line 325. Fixed.
+[!] 03 Oct 2014, mixon - Bug (0140365): The file cart_icon.png was missing in CSS styles for the ideal_comfort and ideal_responsive skins. Fixed.
+[!] 19 Sep 2014, aim - Bug (0141391): The Benchmark tool (the one that is enabled by the BENCH constant) was not displayed when zlib.output_compression was on. Fixed.
+[!] 01 Sep 2014, mixon - Bug (0140387): Storefront close / open link was visible to fulfillment staff users. Fixed.
+[!] 21 Aug 2014, mixon - Bug (0132312): Unexpected redirect in case of a missing slash in xcart_web_dir in config. Fixed.
+[!] 11 Aug 2014, mixon - Bug (0140533): X-Cart Licensing did not recognize domains that were registered with www after they were switched to without www, or vise versa. Fixed. Now domains started with www and the ones without www are the same domain in license terms.
+[!] 07 Aug 2014, mixon - Bug (0139214): FedEx options (php 5.5) page issue. Fixed.
+[!] 06 Aug 2014, mixon - Bug (0140530): The "top message" was missing when Books & Magazines skin was used with One Page Checkout. Fixed. [OPC]
+[!] 03 Jul 2014, mixon - Bug (0140398): PayPal activation message subject encoding was incorrect. Fixed.
+
+------------------ X-CART v4.6.4 RELEASED
+
+*DESIGN AND APPEARANCE* 
+[*] 12 Mar 2014, mixon - Improvement (0138586): IE detection corrected, due to recent MSIE User agent changes.
+[!] 10 May 2014, aim - Bug (0139613): The top message about the format of tax service name did not say that tax service name must not contain spaces. Fixed.
+
+*INTERFACE*
+[!] 16 Jun 2014, aim - Bug (0140080): Search function returned all products not filtereted by substring phrase. Fixed using HTML5 placeholder tag. Thanks to Seyfin.
+
+*BACKOFFICE*
+[*] 10 Jun 2014, aim - Improvement (0139527): Added Test mode notes for eSelect Plus - Hosted Paypages payment gateway.
+[*] 10 Jun 2014, aim - Improvement (0139526): Added setup notes for the eSelect Plus - Hosted Paypages payment gateway. Thanks to Seyfin.
+[*] 28 Mar 2014, aim - Improvement (0139033): Added a tooltip for the 'Reply-To newsletter email address' setting (related to the problem of emails getting blocked by Gmail).
+[!] 05 Jun 2014, aim - Bug (0140013): Refund error top message was not displayed. Fixed.
+[!] 21 May 2014, aim - Bug (0139634): No error message was shown when an invalid format was used for coupons in the Provider area. Fixed.
+[!] 28 Apr 2014, aim - Bug (0139488): Duplicated variant SKU was not highlighted on the product modify page. Fixed.
+[!] 13 May 2014, aim - Bug (0139679): Some error messages were displayed without html tags. Fixed.
+[!] 24 Mar 2014, mixon - Bug (0138924): Lexity was not loaded via HTTPS in Admin area. Fixed.
+[!] 24 Mar 2014, aim - Bug (0138938): Some queries did not free resourses on the product modify page. Fixed.
+[!] 07 Mar 2014, aim - Bug (0138754): Debug console did not work in Webmaster mode. Fixed. Changed lib/function.assign_debug_info.php.
+
+*PRODUCTS*
+[!] 10 Jun 2014, aim - Bug (0139577): The 'Out of stock' message was not shown properly when the option 'Show quantity selector as input textbox' was used. Fixed.
+
+*USERS*
+[*] 28 May 2014, aim - Improvement (0139885, 0137155): Added the ability to search for and export users who placed an order without creating a user account. [Anonymous customers]
+
+*PAYMENTS*
+[*] 25 Jun 2014, mixon - Improvement (0139722): Updated iDeal Rabobank Professional (v.3.3.1), added 2048 bits certificates support. Added debug support for iDEAL, added default params, etc. Plus some code cleanup.
+[*] 05 Jun 2014, mixon, - Improvement (0137075): Replaced CyberSource Form with CyberSource - Secure Acceptance Web/Mobile.
+[*] 07 May 2014, mixon - Improvement (0126513): Added ePDQ essential integration.
+[!] 16 Apr 2014, mixon - Bug (0139001): PayPal Express checkout total mismatch issue (Error: [PayPal response] Transaction refused because of an invalid argument. See additional error messages for details.: The totals of the cart item amounts do not match order amounts). Fixed.
+[!] 18 Mar 2014, aim - Bug (0109797): 'ePDQ - CPI' used http POST request + 'Invoicing address line 2 is too long' error. Fixed. Card Security Code (CSC) is mandatory now. 
+
+*SHIPPING*
+[*] 25 Jun 2014, aim - Improvement (0140234): Shipping engines like USPS/FeDEX are now not run if address fields like s_country are empty. Calculation of shipping quotes for offline methods is allowed. Thanks to Seyfin.
+[*] 10 Jun 2014, mixon - Improvement (0136087): Updated FedEx shipping carrier integration (now v.14 and uses SOAP as a communication layer). Support for v9 rates was kept to avoid compatibility issues.
+[*] 10 Jun 2014, mixon - Improvement (0136087): FedEx shipping carrier integration: Dry Ice weight should be in kilograms. Fixed.
+[*] 17 Mar 2014, aim - Improvement (0138868): Insurance Coverage is disabled by default for Canada Post to enable Small Packet methods.
+[!] 28 May 2014, aim - Bug (0139886): 1-800Courier and seller address feature did not work in X-Cart Platinum edition.
+[!] 28 May 2014, mixon - Bug (0139761): DHL/Airborne: Shipping rates could not be calculated if state name length exceeded the maximum allowed length of 10 characters (This caused problems when a customer entered a state name manually for a country that was marked as 'has states' but did not have states defined, and that name was longer than 10 characters). Fixed. Thanks to Isden.
+[!] 27 May 2014, mixon - Bug (0139762): DHL/Airborne: The mandatory fields Street and City were not passed to DHL in some cases. Fixed. Thanks to Isden.
+[!] 19 May 2014, mixon - Bug (0139745): DHL/Airborne: "Error: 2556: Country invalid" was returned when an attempt was made to retrieve rates for UK. Fixed.
+
+*CHECKOUT*
+[!] 11 Mar 2014, mixon - Bug (0138521) Fast Lane Checkout & PayPal Express Checkout: Incorrect checkout flow issue. Fixed.
+
+*ORDERS*
+[*] 16 Apr 2014, aim - Improvement (0139300): Filtering by sku(productcode) works as 'sku*' mask now on the order search page.
+[!] 22 Apr 2014, mixon - Bug (0119170): Capture button on edited orders displayed a wrong/misleading amount. Fixed.
+
+*MODULES/ADD-ONS*
+[*] 01 Jul 2014, aim - Improvement (0139142, 0139142, 0135661, 013566): X-Payments Connector: Added the ability to manually save credit cards for future re-use. New configuration page. Lite interface was not working properly in Fast Lane Checkout. Fixed. Other fixes. Thanks to Random.
+[!] 01 Jul 2014, aim - Bug (0140380): X-Payments Connector: Charset detection fail in some shops resulting in empty address fields. Fixed.
+[*] 09 Jun 2014, aim - Improvement (0139715): X-Payments Subscriptions: PayPal methods supported via X-Payments can now be used for subscriptions. Thanks to Mdk. [XPayments]
+[*] 25 Apr 2014, aim - Improvement (0139453): Updated CloudSearch module to 1.3.4. Added Infinite Scroll support. Thanks2Nikita.
+[*] 24 Apr 2014, aim - Improvement (0138702): Added Pay with Amazon module. Thanks2Vjk. [PayWithAmazon]
+[*] 18 Apr 2014, mixon - Improvement (0135256): HTTPS test is now performed automatically on checkout if it has not been performed yet.
+[*] 26 Mar 2014, mixon - Improvement (0122287): PayPal_Login: Minor improvements related to error handling. Added a more detailed message describing the reason for log in failure.
+[!] 01 Jul 2014, random - Bug (0140380): X-Payments Connector: Charset detection fail in some shops resulting in empty address fields. Fixed.
+[!] 30 Jun 2014, mixon - Bug (0133338): Antifraud service did not check orders placed via PayPal Advanced. Fixed.
+[!] 23 Jun 2014, aim - Bug (0140205): Users were always registered as 'anonymous' in the admin area even when logged in. Thanks to Gss. [Product_Notifications]
+[!] 29 May 2014, aim - Bug (0138772): RMA vs. anonymous customers: An incorrect link was formed to the profile of an anonymous user. Fixed.
+[!] 27 May 2014, mixon - Bug (0139689): Google Shopping: Products could not be imported when no Manufacturer was specified. Fixed. Thanks to Seyfin.
+[!] 27 May 2014, mixon - Bug (0136764): X-Payments Connector: Sometimes during checkout, when a payment method was supposed to be added to or removed from the list of available payment methods as a result of a discount coupon aplied or shipping method changed, the payment methods list was not updated correctly. Fixed.
+[!] 23 May 2014, mixon - Bug (0139699): X-AOM: The "Use other discount" option was not applied to the order total. Fixed.
+[!] 22 May 2014, mixon - Bug (0139227): X-AOM: Shipping cost was not showing in the order invoice. Fixed.
+[!] 24 Apr 2014, mixon - Bug (0139204): X-ProductNotifications: All product variants were shown in Admin back end instead of the one selected by the customer. Fixed. Thanks2Gss.
+[!] 22 Apr 2014, mixon - Bug (0136524): X-Auth: JS error on the place order page: "ReferenceError: jQuery is not defined". Fixed. Thanks2Phoenix.
+[!] 22 Apr 2014, mixon - Bug (0139164): Compability issue: Javascript error 'jQuery object not defined' on checkout page if X-Payments's 'Use iframe' option and X-Auth module were enabled. Fixed.
+[!] 04 Apr 2014, mixon - Bug (0135256): If there was at least one payment method working via X-Payments, the user was redirected to HTTPS on checkout pages, even when HTTPS was not configured. Fixed.
+[!] 31 Mar 2014, aim - Bug (0139043): Products Map: Products with a slash character in the product name were sometimes not displayed in Products Map. Fixed. Thanks2Snake.
+[!] 25 Mar 2014, mixon - Bug (0138937): Products Map: Products with names starting from numbers did not work. Fixed.
+[!] 18 Mar 2014, mixon - Bug (0138809): PayPal_Login: Double-clicking the Login with PayPal button caused an error in IE. Added popup focus.
+[!] 17 Mar 2014, mixon - Bug (0138856): PayPal_Login: Sometimes PayPal returned full state name instead of state code. Fixed.
+
+*LANGUAGES*
+[*] 26 Mar 2014, mixon  - Improvement (0138730): Updated a language label.
+[!] 28 Mar 2014, aim  - Bug (0138966): Hot Products: New Arrivals did not support group product editing mode. Fixed. Thanks2Chemisk.
+
+*IMPORT/EXPORT*
+[!] 25 Apr 2014, aim - Bug (0139225): Error related to variants and the 'delete all existing data before importing' feature. Fixed.
+[!] 24 Mar 2014, mixon - Bug (0138632): Variant code was not exported correctly for the Wholesale prices section. Fixed
+
+*SECURITY*
+[*] 08 May 2014, aim - Improvement (0135256): Added HTTPS connection test results option signature to increase security.
+[*] 13 Mar 2014, aim - Improvement (0138824): Small security improvement.
+
+*PERFORMANCE*
+[*] 25 Jun 2014, aim - Improvement (0140320): Removed duplicate processor_file key for the xcart_payment_methods table.
+[*] 20 Jun 2014, aim - Improvement (0139661): Janrain Engage/Social Login: Log-in took a very long time sometimes. Fixed. Thanks to Phoenix.
+[*] 04 Jun 2014, aim - Improvement (0140026): mysql query cache did not work correctly sometimes. Fixed.
+[*] 04 Jun 2014, aim - Improvement (0140011, 0130603): Some queries are run in destructor[mysqli].
+[*] 04 Jun 2014, aim - Improvement (0140011, 0130603): Some queries are run in asynchronous mode[mysqli]
+[*] 30 May 2014, aim - Improvement (0139957): Optimization for xcart_customers queries. Moved the default_saved_card_orderid field to a separate table xcart_customer_xpc_saved_cards.default_xpc_orderid.
+[*] 30 May 2014, aim - Improvement (0139962): Optimization for xcart_customers queries. Moved xcart_customers.cookie_access to a separate table xcart_customer_eu_cookie_accesses.eu_cookie_access.
+[*] 23 May 2014, aim - Improvement (0139784): Optimization related to platinum edition and $sql_tbl[customers].activity flag.
+[*] 15 May 2014, aim - Improvement (0139713): Optimization for all xcart_customers queries. Moved xcart_customers.cart field to a separate table xcart_customer_saved_carts.saved_cart.
+[*] 14 Apr 2014, aim - Improvement (0139253): Opimization for bestsellers on the product.php page.
+[*] 17 Apr 2014, aim - Improvement (0139323): Opimization for the Cloud_Search module. Join with variants is used only when it is really necessary. Inner join is used instead of left join. IFNULL is not used in select fields.
+
+*MISCELLANEOUS* 
+[*] 25 Jun 2014, mixon - Improvement (0135256): Refactored and improved some code related to HTTPS detection.
+[*] 24 Jun 2014, mixon - Improvement (0136087): Updated some requirements related to FedEx shipping carrier integration.
+[*] 23 Jun 2014, mixon - Improvement (0139761): Improved code format.
+[*] 23 Jun 2014, mixon - Improvement (0139471): If a user chose to enable PayPal during X-Cart installation, PayPal was configured incorrectly. Fixed.
+[*] 23 Jun 2014, mixon - Improvement (0139001): Code cleanup, removed some spaces.
+[*] 13 Jun 2014, mixon - Improvement (0135581): Removed the skins "vivid_dreams" and "fashion_mosaic" from X-Cart distribution.
+[*] 29 Apr 2014, mixon - Improvement (0139445): Hyphen is now allowed in URL's anchor. Thanks2Polyansky.
+[*] 23 Apr 2014, mixon - Improvement (0139164): Minor improvements related to XAuth module init procedure.
+[*] 22 Apr 2014, mixon - Improvement (0138944): Performance optimization: func_is_valid_ip, multiple call of the same function (trim) is replaced with
+value.
+[*] 21 Apr 2014, mixon - Improvement (0139356): Replaced font tag with span in the Customer front end.
+[*] 18 Apr 2014, aim - Improvement (0139341): Updated province codes for Belgium. Thanks to Isden.
+[*] 26 Mar 2014, mixon - Improvement (0138856): Fixed a PHP notice.
+[*] 24 Mar 2014, aim - Improvement (0138948, 0130603): Added support for Mysqli.
+[*] 13 Mar 2014, aim - Improvement (0138817): Added the ability to debug libcurl.
+[!] 18 Jun 2014, aim - Bug (0140203, 0043518): White screen caused by low pcre. Fixed the backtrack_limit setting. Thanks to Joe.
+[!] 13 Jun 2014, mixon - Bug (0136285): Contact us form: Several errors related to form work and validation. Fixed.
+[!] 27 May 2014, mixon - Bug (0139804): SQL errors in case of incorrect data entered on the product modify page. Fixed.
+[!] 19 May 2014, mixon - Bug (0139720): PayPal Express Checkout: Discount label was passed incorrectly. Fixed.
+[!] 19 May 2014, mixon - Bug (0139455): When product management page in the store's back end was opened via https, the product url for customers was also formed using https. Fixed.
+[!] 19 May 2014, mixon - Bug (0139544): cc_bean_interaco.php: PHP Fatal error: Call to undefined function func_userinfo(). Fixed. Thanks to Isden.
+[!] 28 Apr 2014, mixon - Bug (0139257): Cleanup: Removed code related to product options that existed in X-Cart 3.5.x.
+[!] 22 Apr 2014, mixon - Bug (0139385): Payment failed error (instead of redirect) if customer canceled the order and 'returned to store' from PayPal's payment page. Fixed. Now, if the order is canceled on the side of PayPal Standard, the customer is redirected to the store's checkout page; the order remains in the "Not finished" status.
+[!] 22 Apr 2014, mixon - Bug (0138944): The function func_is_valid_ip did not work with IPv6 like ::1. Fixed.
+[!] 16 Apr 2014, aim - Bug (0139298): Notice: Undefined index: enable_outofstock_products in modules/Product_Options/func.php. Fixed.
+[!] 31 Mar 2014, aim - Bug (0139078): SQL error "Duplicate entry 'en-opt_icons_levels_limit' for key 'PRIMARY'". Fixed. [Flyout_Menus]
+[!] 25 Mar 2014, aim - Bug (0138967): SQL error "Field 'comment' doesn't have a default value" in MySQL strict mode (related to Survey module). Fixed.
+[!] 18 Mar 2014, mixon - Bug (0138730): Incorrect error message was written to logs when inactive static pages were accessed. Fixed.
+[!] 11 Mar 2014, mixon - Bug (0131589): Database integrity check performed after adding a root level static page detected errors ("The table xcart_pages contains some records for which related data in the table xcart_clean_urls has not been found:.."). Fixed.
+
+------------------ X-CART v4.6.3 RELEASED
+
+*DESIGN AND APPEARANCE*
+[!] 14 Feb 2014, mixon - Bug (0138239) Ideal Responsive & Ideal comfort: Special Offer promo block was not properly aligned + Some other minor design and appearance issues on the cart page. Fixed.
+
+*BACKOFFICE*
+[!] 28 Feb 2014, mixon - Bug (0138314): CSS inliner related PHP errors. Fixed. Added PHP compability checks.
+[!] 25 Feb 2014, aim - Bug (0138516): Static pages were not deleted on some PHP versions. Fixed.
+[!] 21 Feb 2014, aim - Bug (0138547): Fatal error: Call to undefined function func_store_login_action(). Related to check integrity feature. Fixed. 
+
+*PAYMENTS*
+[!] 24 Feb 2014, mixon - Bug (0138495): Global Gateway E4SM: When Global Gateway E4SM was used, the "Your order was lost" error was sometimes generated. Fixed.
+
+*SHIPPING*
+[*] 03 Mar 2014, aim - Improvement (0138671): Renamed 'USPS First-Class Mail##R## Letter' to 'USPS First-Class Mail##R## Stamped Letter'.
+
+*MODULES/ADD-ONS*
+[*] 27 Feb 2014, mixon - Improvement (0134510): Reworked the Login with PayPal module (former PayPalAuth) according to the new API.
+[!] 26 Feb 2014, mixon - Bug (0138573): Checkout by Amazon: The 'Pay with Amazon' button was not aligned properly with the other elements on the cart page. Fixed. [Amazon_Checkout]
+[!] 24 Feb 2014, mixon - Bug (0136815) MailChimp: An SQL error occurred when importing newslists from MailChimp. Fixed. [Adv_Mailchimp_Subscription]
+[!] 14 Feb 2014, mixon - Bug (0138415): Checkout by Amazon: PHP errors related to the removal of Google Checkout module. Fixed. [Amazon_Checkout]
+[!] 14 Feb 2014, mixon - Bug (0138436) XML Sitemap: Out-of-stock products were not included into XML Sitemap. Fixed.
+[!] 11 Feb 2014, aim - Bug (0138372): Feature Comparison: Changed default step from 1 to 10 for empty orderby field. Thanks to Adrian Matei.
+
+*PERFORMANCE*
+27 Feb 2014, mixon - Improvement (0138595): Amazon Checkout javascript moved to body bottom to speed up page display.
+
+*MISCELLANEOUS* 
+[*] 28 Feb 2014, mixon - Improvement (0138314): Improved PHP version check for CSS inliner. If the option "Automatically convert CSS to inline styles in HTML emails" is enabled on PHP versions earlier than 5.3, a warning message is displayed and the option is automatically disabled.
+[*] 27 Feb 2014, aim - Improvement (0138616): Added _POST _GET vars to sql error logs. Fixed an SQL error.
+[*] 24 Feb 2014, mixon - Improvement (0138436): Updated XML Sitemap & Out-of-stock Products conditions.
+[!] 21 Feb 2014, mixon - Bug (0099691): Purchase Order number was missing from plain text emails. Fixed.
+[!] 19 Feb 2014, aim - Bug (0138517): Formatting problem in navigation.tpl. Fixed.
+[!] 19 Feb 2014, mixon - Bug (0136108): Product search by category and manufacturer return no results. Fixed.
+
+------------------ X-CART v4.6.2 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 24 Jan 2014, aim - Improvement (0119796, 0136312, 0136746, 0136719, 0136658, 0136690, 0136592, 0136336, 0136334, 0136319): Updated jQuery to 1.10.2.
+[*] 25 Dec 2013, random - Improvement (0134575): Ideal Responsive: Implemented responsive e-mail notifications based on ZURB Ink library. Implemented email notifications automatic style inliner to make sure notifications are displayed correctly in Gmail and other apps.
+[*] 25 Dec 2013, random - Improvement (0135876, 0137490): Ideal Responsive skin mobile layout was greatly improved. Also FLC is now resizing up to 1200px only.
+[*] 22 Nov 2013, random - Improvement (0137041): Ideal Responsive skin can now display the product list in up to 7 columns depending on the screen resolution.
+[*] 19 Nov 2013, aim - Improvement (0136898, 0136967): Empty fields were not marked in ideal_responsive. Popup alerts were not displayed. Fixed.
+[*] 14 Nov 2013, random - Improvement (0136324): Popup dialogs now move together with page scroll.
+[*] 07 Nov 2013, aim - Improvement (0136719, 0119796): Updated jquery to 1.10.2. Fixed the 'Stop running this script?' IE8 popup message. Changed $.browser.msie to (versionIE > -1 && versionIE <= 8.0). Added assert prevent usage of load_defer with wrong file param. Removed Flyout Menus JS bug workarounds for IE6-8 and Safari browser.
+[*] 07 Nov 2013, aim - Improvement (0126918): Updated jQuery UI to 1.10.2.
+[*] 06 Nov 2013, aim - Improvement (0136658, 0119796): Fixed some PHP notices.
+[*] 31 Oct 2013, random - Improvement (0136313): Implemented some CSS changes often required for custom design.
+[*] 18 Oct 2013, aim - Improvement (0136334, 0119796): Updated jQuery Cookie Plugin from version 2010 to version Wed Oct 16 12:17:58 2013 v1.4.0
+[*] 18 Oct 2013, aim - Improvement (0136336, 0119796): Removed jquery bgiframe plugin (IE6 is no longer supported).
+[*] 17 Oct 2013, aim - Improvement (0136310): Updated jCarousel from version 0.2.8 to version 0.2.9
+[!] 22 Jan 2014, mixon - Bug (0137990): Gift certificate code got wrapped over several lines in email. Fixed.
+[!] 22 Jan 2014, mixon - Bug (0136894): W3C validation error because of an unclosed img tag on the product details page. Fixed. Thanks2Abr.
+[!] 20 Jan 2014, random - Bug (0137822): Ideal Responsive: Users Online module was not displayed correctly. Fixed.
+[!] 14 Jan 2014, mixon - Bug (0136266): Image selection popup dialog content appearance issue. Fixed.
+[!] 14 Jan 2014, mixon - Bug (0133538): Ideal Comfort: Header misalignment issue. Fixed.
+[!] 09 Jan 2014, mixon - Bug (0137788): Ideal Responsive: Button text ("Added") did not fit on the Add to cart button for featured products. Fixed.
+[!] 09 Jan 2014, mixon - Bug (0137567): Ideal Responsive: Featured products were aligned differently on small resolutions. Fixed.
+[!] 04 Jan 2014, random - Bug (0137468): Ideal Responsive: Sometimes products sort options were not displayed properly. Fixed.
+[!] 26 Dec 2013, random - Bug (0133910): Ideal Responsive: Welcome page did not take up all of the available space when Bestsellers panel was disabled. Fixed.
+[!] 25 Dec 2013, random - Bug (0137582): Ideal Responsive: Extra fields were not aligned properly when editing an address in address book. Fixed.
+[!] 04 Dec 2013, random - Bug (0137171): A border appeared around the close button in dialogs after jquery UI update. Fixed.
+[!] 13 Dec 2013, random - Bug (0137362): Category thumbnails could be generated incorrectly in Ideal Responsive. Fixed.
+[!] 14 Nov 2013, aim - Bug (0136869): Outdated IE and Firefox bugs workarounds. Removed.
+[!] 14 Nov 2013, aim - Bug (0125624): Google Checkout button was not shown in minicart menu for Chrome and IE9. Fixed.
+
+*INTERFACE*
+[*] 31 Jan 2014, aim - Improvement (0138182): Added autofocus on login input field for admin/provider login pages.
+[*] 24 Jan 2014, aim - Improvement (0137171): Popup dialogs can be closed by escape now. Focus is set to the first input field in the popup dialog.
+[*] 20 Sep 2013, random - Improvement (0135833): Added a "Modify this product" link to the product preview page.
+[!] 09 Jan 2013, aim - Bug (0137772): Even if the Socialize module was disabled, it placed some code on every page. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[!] 08 Jan 2013, random - Bug (0137717): Ideal Responsive: The top note on the cart page had an incorrect width. Fixed.
+[!] 26 Dec 2013, random - Bug (0137490): Ideal Responsive: New user registration fields were not displayed properly in Fast Lane Checkout. Fixed.
+[!] 04 Dec 2013, random - Bug (0135939): Expand all / Collapse all links were displayed when any real-time methods were enabled, but real-time shipping was disabled. Fixed.
+[!] 12 Nov 2013, aim - Bug (0107405): Hitting the 'Enter' key did nothing and disabled the 'Submit' button on registration in IE8. Fixed.
+
+*BACKOFFICE*
+[*] 22 Jan 2014, mixon - Improvement (0103968) Added clickable links to memberships list page for quick access to lists of users with specific memberships.
+[*] 16 Jan 2014, aim - Improvement (0137916): var/cache is now removed completly when 'Force cache generation' feature is used on the 'Main page :: Maintenance' page.
+[*] 27 Dec 2013, aim - Improvement (0137631): Added an anchor to the 'Export packs' section for the 'Exporting has been successfully completed' message.
+[*] 25 Dec 2013, aim - Improvement (0137612):  When a URL like 'admin/configuration.php#tr_stats_search_max_period' is used, the respective option is now highlighted.
+[*] 19 Nov 2013, aim - Improvement (0136985): Compiled templates can now be cleared individually.
+[!] 16 Jan 2014, aim - Bug (0137212): Disabled Product options module was causing a Fatal error when products were deleted. Fixed.
+[!] 09 Jan 2014, aim - Bug (0137794): X-Cart settings were not saved on the Main page :: General settings :: * pages on goDaddy hosting. Fixed. Thanks2Isden.
+[!] 05 Jan 2014, aim - Bug (0137705): Call to a member function assign() on a non-object related to XPayments_Subscriptions module. Fixed. [X-Payments Subscriptions]
+[!] 04 Jan 2014, aim - Bug (0135278): Products in Recently_Viewed/Upselling_Products/Recommended_Products/Bestsellers sections were displayed without taxes applied. Fixed.
+[!] 14 Nov 2013, aim - Bug (0136795): When 'Maximum length of page title element' was used in the Admin area, the page title in the Admin area was sometimes displayed as ~~~~| lbl_general_settings |~~~~~. Fixed.
+[!] 28 Oct 2013, aim - Bug (0136386): In X-Cart Gold/GoldPlus editions, when a search for user information was done using the Quick Search form in the store's back end ("u [keyword(s)]" type of queries), the links to found users in the search results were not formed correctly. Fixed.
+[!] 13 Sep 2013, random - Bug (0135757): Variant images uploading was broken. Fixed.
+
+*USERS*
+[!] 12 Dec 2013, aim - Bug (0137410): Quotation mark symbols ' and " could not be used in user passwords. Fixed.
+[!] 06 Dec 2013, aim - Bug (0137070): The password for the current admin account could not be changed at the same time with the email/username. Fixed.
+[!] 06 Dec 2013, aim - Bug (0137070): Undefined variable: subscription in include/register.php notice. Fixed.
+
+*PRODUCTS*
+[*] 30 Jan 2014, aim - Improvement (0112692): A product is no longer available via a direct link if the setting 'Check only main category condition for products selection and product search' is used and the product's main category is disabled.
+[*] 27 Dec 2013, aim - Improvement (0137587, 0136999): Added a setting 'Store search phrases for the last N days'.
+[*] 18 Dec 2013, aim - Improvement (0137467): Added the Sort by Sales feature for catalog pages. Set the default order to DESC for sales_stats.
+[!] 23 Jan 2014, aim - Bug (0112692): A product from a disabled category was available via a direct link. Fixed.
+
+*PAYMENTS*
+[*] 17 Jan 2014, mixon - Improvement (0137866, 0137865): viaKlix 2.0 payment bought by Virtual Merchant. Removed from X-Cart.
+[*] 15 Jan 2014, mixon - Improvement (0135858): Virtual Merchant - Merchant Provided Form: slight code refactoring.
+[*] 15 Nov 2013, random - Improvement (0136361): The popup with iframe for some payment methods did not fit onto the screen in Ideal Responsive skin mobile layout. Changed to show it on a separate page.
+[*] 27 Sep 2013, joss - Improvement (0135992): Worldpay US payment gateway (X-Payments): Added some fields for the invoice.
+[!] 21 Jan 2014, mixon - Bug (0136955): When an order was paid for using Check offline payment method, no payment data was sent to admin. Fixed.
+[!] 14 Jan 2014, mixon - Bug (0135858): Virtual Merchant - Merchant Provided Form: Invalid country code issue. Fixed.
+[!] 04 Dec 2013, random - Bug (0136361): PayPal Advanced/Payflow Link and Pro Hosted: iframe was not showing the scrollbar. Fixed.
+[!] 13 Nov 2013, random - Bug (0136657): Bill Me Later orders were marked as placed in test mode even though actually PayPal was in live mode. Fixed.
+[!] 31 Oct 2013, random - Bug (0136485): Bill Me Later was not working with PayPal Standard in Fast Lane Checkout mode. Fixed.
+
+*SHIPPING*
+[*] 03 Feb 2014, aim - Improvement (0137974): An email notification is now sent to admin when a new shipping method is added.
+[*] 28 Jan 2014, mixon - Improvement (0136214): InterShipper: Updated the codes in xcart_shipping table.
+[*] 22 Jan 2014, aim - Improvement (0134829, 0137827): Added a new multiple select box on the USPS options page to handle the "Service not available" error. Added new services FIRST CLASS METERED and FIRST CLASS HFP COMMERCIAL. Made 'PRIORITY EXPRESS HFP' and 'PRIORITY EXPRESS HFP COMMERCIAL' disabled by default to avoid 'Service not available' error. Added new <GroundOnly> param for 'Standard Post' service. Fixed a PHP notice.
+[*] 17 Jan 2014, aim - Improvement (0137827): USPS API changes.
+[!] 29 Jan 2014, aim - Bug (0138137, 0137827): Some USPS methods were missing when <service>ALL</service> was used.
+[!] 22 Jan 2014, mixon - Bug (0133400): USPS Order tracking button issue. Fixed.
+[!] 21 Jan 2014, aim - Bug (0137977): "v9" prefix was removed from the fedex XML response. FedEx Shipping Cost Calculation was broken. Fixed.
+[!] 26 Dec 2013, aim - Bug (0107492): Products with shipping freight were taken into account for manual shipping rates calculation when the option 'Do not calculate shipping rates for products with defined shipping freight' was set.
+
+*CART*
+[*] 19 Nov 2013, aim - Improvement (0136973): Added ZIP code validation for the shipping estimator for submit action.
+[!] 26 Dec 2013, aim - Bug (0136892): Social login was not loading the saved cart. Fixed. Renamed func_restore_cart_from_profile to func_restore_serialized_cart.
+
+*CHECKOUT*
+[*] 27 Dec 2013, aim - Improvement (0136437): At checkout, Firstname and Lastname fields are prefilled from the appropriate personal details fields.
+
+*ORDERS*
+[!] 10 Jan 2014, aim - Bug (0136317): Customers could not pay partially with a gift certificate. Fixed. Thanks2Joss.
+[!] 17 Dec 2013, aim - Bug (0137467): The message "One of the products you have in cart is out of stock" was displayed on checkout to anonymous customers when the server was overloaded. Fixed.
+[!] 06 Nov 2013, aim - Bug (0136344): Fixed some JS errors on the print invoice page in the Customer area. Added $development_mode_enabled smarty var.
+
+*MODULES/ADD-ONS*
+[*] 03 Feb 2014, mixon - Improvement (0136436): Image verification: Gift certificate module state is now checked on module init.
+[*] 01 Feb 2014, aim - Improvement (0137853): Social Login: Integration with new Janrain API and other changes. Thanks to Phoenix.
+[*] 28 Jan 2014, mixon - Improvement (0138112): PayPal Access: PayPal Access integration is outdated, the module was disabled in DB.
+[*] 23 Jan 2014, aim - Improvement (0137904): Multiple improvements for XMultiCurrency module. Thanks to Phoenix.
+[*] 22 Jan 2014, mixon - Improvement (0127198): fCommerceGo: Improved error reporting and debug functions.
+[*] 17 Jan 2014, aim - Improvement (0137813): XPayments_Subscriptions module optimization. Thanks to Mdk. [X-Payments Subscriptions]
+[*] 14 Jan 2014, mixon - Improvement (0136286): Removed Wibiya module from X-Cart (Wibiya will be discontinuing their services).
+[*] 09 Jan 2014, random - Improvement (0137795): CloudSearch module updated to 1.3.1. Thanks to Nikita.
+[*] 27 Dec 2013, aim - Improvement (0136999): Removed Advanced_Statistics module. Made some changes to text labels.
+[*] 09 Dec 2013, random - Improvement (0135876, 0137287): Ideal Responsive skin is now set as default.
+[*] 04 Dec 2013, aim - Improvement (0093858, 0108139, 0101704): The module Recommended_Products no longer depends on Advanced_Statistics. Now it depends on real orders, including orders submitted by buyers without a registered user account. Added new options: Show random products, Customers who bought this also bought, Customers who bought this also bought + Random products.
+[!] 31 Jan 2014, mixon - Bug (0138080): Product options: Unexpected behavior of product variants filter on the product variants page in Admin backend. Fixed.
+[!] 25 Jan 2014, mixon - Bug (0138045): Special Offers: SQL error while adding a new geographic location condition. Fixed.
+[!] 25 Jan 2014, mixon - Bug (0137332): TaxCloud: Errors were generated for non US orders. Fixed. Thanks2Svowl.
+[!] 24 Jan 2014, mixon - Bug (0138081): Product options: Incorrect price was displayed on the search results page. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[!] 24 Jan 2014, aim - Bug (0133789): Shipping labels were not generated for 'USPS First-ClassTM Package Service shipping method'. Fixed. [Shipping_Label_Generator]
+[!] 20 Jan 2014, mixon - Bug (0135836): X-RMA: An anonymous customer could not file a product return request. Fixed.
+[!] 20 Jan 2014, mixon - Bug (0136625): Product Notifications: Call to undefined function func_select_product. Fixed. Thanks2Isden.
+[!] 10 Jan 2014, aim - Bug (0137402) Add To Cart Popup vs Socialize: When the option "Show social buttons on the matrix products list" was used, a blank page opened on the Add To Cart Popup page. Fixed.
+[!] 05 Jan 2014, aim - Bug (0137703): MultiCurrency: 'get address by IP' function timeout caused a major slowdown in the site's performance. Fixed.
+[!] 04 Dec 2013, random - Bug (0136967): Social Login: Sharing from cart was not working on several skins. Fixed.
+[!] 04 Dec 2013, random - Bug (0137246): Add to cart popup: Alternative checkout button was not aligned properly in Ideal Responsive skin. Fixed.
+[!] 29 Nov 2013, random - Bug (0137172): Social Login: Design issues in the Social sharing feature. Fixed.
+[!] 11 Nov 2013, random - Bug (0136779): Add to cart popup: Proceed to checkout button was not properly placed in Ideal Responsive skin when viewing in IE.
+Fixed.
+[!] 23 Sep 2013, random - Bug (0135589): Klarna: Wrong encoding in error messages. Fixed. Thanks to Tito.
+[!] 20 Sep 2013, random - Bug (0135830): Bill Me Later: It was not possible to disable banners for a specific page. The payment method was not disabled on the checkout page when the module was inactive. Fixed.
+
+*LANGUAGES*
+[*] 31 Jan 2014, aim - Improvement (0136146): A new language variable lbl_saving is now used on the product details page instead of lbl_save.
+[*] 17 Jan 2014, aim - Improvement (0137918) Added a note for the product modify page: 'Note that the new product will become availaible in the Customer area after cache expiration (Around 1 hour)'.
+[*] 31 Oct 2013, aim - Improvement (0136570): Changed the text of the note 'Your account has been created. You will be notified when you are accepted to the partner program.' to 'Your account has been created.' Related to provider registration.
+
+*IMPORT/EXPORT*
+[*] 31 Jan 2014, aim - Improvement (0136217): 'PASSWORD' field is optional now. Thanks2Seyfin.
+[!] 08 Jan 2014, aim - Bug (0137763): An empty charset was used when an export CSV file was downloaded. Fixed.
+[!] 08 Jan 2014, aim - Bug (0137749): "Access denied" error when an import CSV file was downloaded. Fixed. Thanks to Giovanni Codovilli.
+
+*USABILITY*
+[*] 22 Jan 2014, mixon - Improvement (0136436): Added Gift certificate validation feature for unregistered customers. Improved image verification options.
+
+*SECURITY*
+[*] 31 Jan 2014, aim - Improvement (0137649): Added logs for PHP injection attempts on shared hostings.
+[*] 26 Dec 2013, aim - Improvement (0136000): Security improvement related to Product_Configurator(Product Wizard) module.
+[*] 04 Dec 2013, aim - Improvement (0137193): Security improvement related to Product_Configurator(Product Wizard) module.
+[*] 03 Nov 2013, aim - Improvement (0135923): Security improvement.
+
+*PERFORMANCE*
+[*] 07 Jan 2014, aim - Improvement (0137649): The COMPILED_TPL_CHECK_MD5 feature is now disabled by default.
+[*] 27 Dec 2013, aim - Improvement (0137648, 0133673): fCommerce_Go optimization related to selection of bestsellers.
+[*] 26 Dec 2013, aim - Improvement (0137614): Replaced PHP rand() with mt_rand().
+[*] 26 Dec 2013, aim - Improvement (0137621): Expired data from visitors' environment statistics (all except for the last two years) is now deleted automatically.
+[*] 26 Dec 2013, aim - Improvement (0137624): Expired login history statistics (all except for the last two years) are now deleted automatically.
+[*] 24 Dec 2013, aim - Improvement (0137545, 0133673): Optimized the Bestsellers section. [Bestsellers, Advanced_Statistics]
+[*] 29 Nov 2013, aim - Improvement (0137115): Optimization for the 'Customers also bought'/'You may also like' product list. Renamed XCVariantsSQL::isOptimizationEnabled() to XCVariantsSQL::isVariantsExist(). [Add_to_cart_popup,Recommended_Products]
+
+*MISCELLANEOUS*
+[*] 14 Jan 2014, mixon - Improvement (0137279): Updated some X-Cart links.
+[*] 21 Nov 2013, aim - Improvement (0137020): Smarty updated to version 2.6.28.
+[!] 26 Dec 2013, aim - Bug (0137628): Incorrect integer value: 'Zilux' for column 'avail' sql error in strict mode (related to product_modify.php). Fixed.
+[!] 11 Dec 2013, aim - Bug (0137384): An error message is now written to log files when skin dir is not readable.
+[!] 29 Nov 2013, aim - Bug (0137164): Warning: Illegal string offset 'products'/Notice: Uninitialized string offset: 0. Fixed. [Manufacturers]
+[!] 21 Nov 2013, aim - Bug (0137007): There was no routine for clearing the subdirectories of the var/cache directory. Fixed. Now any files older than 1 month (except for the ones in the /var/log/ directory) are removed automatically.
+[!] 12 Nov 2013, aim - Bug (0136802): PHP Notice: Undefined index: membershipid in modules/Special_Offers/func.php. Fixed.
+[!] 26 Oct 2013, aim - Bug (0136328): PHP Notice: Undefined index: REQUEST_METHOD related to cron.php. Fixed.
+
+------------------ X-CART v4.6.1 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 19 Aug 2013, random - Improvement (0127336): Improved popups and messages design.
+[*] 07 Aug 2013, random - Improvement (0122919): Background overlay for popup dialogs is now a bit darker for better visibility.
+[*] 18 Jul 2013, random - Improvement (0131539): Now all skins do not force IE to use IE8 mode (latest mode is used).
+[!] 04 Sep 2013, random - Bug (0135551): Add to cart popup module-specific styles was contained in the Ideal Responsive base skin CSS file. Fixed.
+[!] 29 Aug 2013, aim - Bug (0135426): Multiple TYPO errors in templates related to {include file=...} smarty call. Fixed.
+[!] 07 Aug 2013, aim - Bug (0119175): Flyout menus were highlighted instead of greyed out like the rest of the site when a popup dialog was displayed. Fixed.
+[!] 01 Aug 2013, aim - Bug (0121928): Popup title and price were not shown for the Books & Magazines skin for simple product lists. Fixed. Thanks2Russoz.
+[!] 03 Jul 2013, aim - Bug (0134156): "&" symbols were not displaying properly. Fixed.
+
+*INTERFACE*
+[*] 11 Sep 2013, aim - Improvement (0135620): Do not show 'Compare' checkboxes if the 'Compare selected' button is not available. [Feature_Comparison]
+[*] 06 Sep 2013, aim - Improvement (0135620): Now empty fields in forms (like on the registration page) are now highlighted in red all at once.
+[!] 11 Aug 2013, aim - Bug (0135072): HTML Catalog was not generated properly for international categories/products. Fixed.
+[!] 09 Aug 2013, aim - Bug (0135018): Error message related to protected mode for security sensitive operations contained broken links. Fixed. Thanks2Joss.
+[!] 11 Jul 2013, random - Bug (0134391): There were some misprints when editing a customer's profile in AOM. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[!] 11 Jun 2013, aim - Bug (0133769): Some labels were missing. Fixed.
+[!] 04 Jun 2013, random - Bug (0133411): Address error messages were not displayed properly during registration in One Page Checkout. Fixed.
+
+*BACKOFFICE*
+[*] 10 Sep 2013, aim - Improvement (0135684): Added list of new payment methods supported by X-Payments 2.0.
+[*] 02 Sep 2013, random - Improvement (0134806): The shipping methods page now displays only active real-time shipping methods (The methods are enabled/disabled on a separate page). By default all real-time shipping methods are now disabled.
+[*] 16 Aug 2013, aim - Improvement (0135117): Renamed the language variable txt_canadapost_account_note to txt_cpc_account_note. Adjusted names for some Canada Post options. Thanks to Dohtur and Seyfin.
+[!] 28 Aug 2013, random - Bug (0128796): Admin area pages were loaded very slowly when internet connection was not accessible on the server. Fixed.
+[!] 27 Aug 2013, aim - Bug (0133320): Affiliates/Help/Goodies menus were displayed incorrectly in Webmaster mode. Fixed. Thanks2Russoz.
+[!] 27 Aug 2013, aim - Bug (0135332): Wrong templates were displayed in the popup window in Webmaster mode. Fixed.
+[!] 13 Aug 2013, random - Bug (0135091): Database integrity check error message indicated that the check had been "completed successfully". Fixed.
+[!] 12 Aug 2013, random - Bug (0135060): SQL error in Strict mode when adding a shipping method with an empty weight limit. Fixed.
+[!] 11 Aug 2013, aim - Bug (0134155): 'Products' link was missing from 'Catalog' menu in Webmaster mode. Fixed. Thanks to ADDISON.
+[!] 29 Jul 2013, aim - Bug (0134743): Assertion message ("Some queries was not free via mysql_free_result()") related to product modify page. Fixed.
+[!] 25 Jul 2013, aim - Bug (0134320): New Arrivals & fCommerce_Go : PHP Fatal error: Call to undefined function func_new_arrivals_search_categories_fields(). Fixed.
+[!] 24 Jul 2013, aim - Bug (0134615): func_remove_xcart_caches was not restoring default directories and .htaccess files. Fixed.
+[!] 24 Jul 2013, aim - Bug (0134667): Assertion 'func_get_langvar_by_name: lang var not found' related to func_patch_status function. Fixed.
+[!] 24 Jul 2013, aim - Bug (0134613): SQL error "Incorrect integer value: '' for column 'provider' at row 1" during user deletion procedure. Fixed.
+[!] 27 Jun 2013, aim - Bug (0133966): When the store admin enabled/disabled activity for a provider, product count for categories containing products of this provider, as displayed in flyout menus, was not recalculated. Fixed.
+[!] 27 Jun 2013, aim - Bug (0133997): The 'Remove data' tool in the Admin area Maintenance section did not clear the xcart_order_status_history table. Fixed.
+[!] 21 Jun 2013, aim - Bug (0133820): SQL error related to the 'Database Backup/Restore' feature. Fixed.
+[!] 11 Jun 2013, aim - Bug (0133604): Notice: Undefined variable: store_language error. Fixed.
+[!] 07 Jun 2013, aim - Bug (0133475): Sometimes duplicated products appeared in the Admin area. Fixed.
+
+*USERS*
+[*] 09 Aug 2013, aim - Improvement (0135044): The 'Forgot password' page is no longer accessible to customers after successful login. Thanks to Steve Stoyanov (Cflsystems).
+[*] 25 Jul 2013, aim - Improvement (0134677): Message shown to the user is now included in the login error notification sent to site_administrator.
+[!] 19 Jun 2013, aim - Bug (0133799): Sometimes "Administrator's login failure" notification was sent when a customer's login failed with a wrong captcha. Fixed.
+
+*PRODUCTS*
+[*] 31 Jul 2013, aim - Improvement (0134231): JS code is now allowed for category description.
+[!] 05 Sep 2013, aim - Bug (0135582): There was an SQL error when Update Inventory is used in Platinum edition. Fixed.
+[!] 28 Aug 2013, aim - Bug (0111355; B:0040068): A clone product with special characters in product name was causing a PHP Error. Fixed.
+[!] 15 Aug 2013, aim - Bug (0135129): A product was sometimes not added to the shopping cart after the browser had been opened. Fixed.
+[!] 05 Aug 2013, aim - Bug (0134893): The 'Sort by' functionality did not work in the 'Featured Products' section. Fixed.
+[!] 26 Jul 2013, random - Bug (0134729): An SQL error was generated when adding a wholesale price in MySQL strict mode. Fixed.
+[!] 26 Jul 2013, aim - Bug (0134441): A clean URL was not created sometimes when a space was used in productcode. Fixed. Thanks2Abr.
+[!] 23 Jul 2013, aim - Bug (0134485): When the store admin enabled activity for a provider, the provider's products were not displayed in the storefront. Fixed.
+[!] 10 Jun 2013, aim - Bug (0133546): SQL error related to Next/Previous products feature. Fixed.
+[!] 10 Jun 2013, aim - Bug (0133543): Blank product page caused by the 'PHP Fatal error: Cannot call method self::arg1PlusArg2() or method does not exist ' error. Fixed. Related to Next/Previous products feature and PHP version < 5.3.0.
+
+*IMAGES*
+[!] 01 Aug 2013, aim - Bug (0134861): SQL error "Field 'image' doesn't have a default value"  in MySQL strict mode. Fixed.
+
+*PAYMENTS*
+[*] 10 Sep 2013, random - Improvement (0135686): Now all PayPal payment methods use common PAYPAL_DEBUG constant to check if debug mode is activated.
+[!] 09 Sep 2013, aim - Bug (0133249): X-Payments lite interface feature was decreasing products quantity each time payment form loads. Fixed. Thanks to Snake.
+[!] 21 Aug 2013, aim - Bug (0135223): FirstData e4 Hosted: Production URL was used in test mode. Fixed.
+[!] 16 Aug 2013, aim - Bug (0115589):  Sage Pay Go - Server protocol: When a payment transaction failed, 'Access denied' message was displayed on the 'Your order is being placed...' page. Fixed. Thanks2Klyuev.
+[!] 31 Jul 2013, aim - Bug (0134205): Payment method name was displayed incorrectly in log files. Fixed. Thanks2Klyuev.
+[!] 11 Jul 2013, random - Bug (0133742): Amazon Simple Pay: Callback did not work due to invalid signature. Signature was not calculated correctly if the
+"Collect Shipping Address" option was enabled. It was not possible to disable the "Collect Shipping Address" option. Fixed. Thanks2Isden.
+[!] 04 Jul 2013, aim - Bug (0134191): All payment gateways were always displayed; changing the country was not affecting the list. Fixed.
+[!] 03 Jul 2013, random - Bug (0134190): PayPal was not displayed in the Payment gateways list even if it had not been yet added. Fixed.
+[!] 02 Jul 2013, random - Bug (0133979): PayPal Payments Pro configuration link was not available. Fixed. Routine for adding PayPal methods refactored.
+[!] 26 Jun 2013, random - Bug (0133955): There was an order total mismatch error for PayPal payments when Gift Wrapping was available, but not used. Fixed.
+
+*SHIPPING*
+[*] 30 Jul 2013, random - Improvement (0134418): USPS update for 28-July-2013 changes in API.
+[!] 27 Aug 2013, aim - Bug (0134561): UPS Access License Response: The XML document is not well formed (10001) error related to UPS registration. Fixed.
+[!] 22 Aug 2013, aim - Bug (0135232): Canada Post: Debug info was not shown for the "Test Realtime Shipping Rates Calculation" feature. Fixed.
+[!] 16 Aug 2013, aim - Bug (0135117): Canada Post: Error "customer-number value '0000xxxxxxxxx' is not a valid instance of type". Fixed. Thanks2Seyfin.
+
+*CART*
+[*] 12 Sep 2013, aim - Improvement (0135721): Now page is scrolled down to coupon entry box if coupon code is invalid.
+[!] 30 Jul 2013, aim - Bug (0134773): Continue Shopping button on the cart page did not redirect to the product page. Fixed. Thanks2Seyfin.
+
+*CHECKOUT*
+[*] 06 Aug 2013, aim - Improvement (0134971): Removed separate error pages related to the "Minimum/Maximum allowed order subtotal" limitations in favour of system error messages. Thanks to Steve Stoyanov (Cflsystems).
+
+*ORDERS*
+[*] 07 Aug 2013, aim - Improvement (0133975): Initial order id can now be changed to a greater value.
+[!] 09 Sep 2013, aim - Bug (0135619): Links to enable Antifraud module were displayed in customer order notifications. Fixed.  Thanks to Seyfin.
+
+*MODULES/ADD-ONS*
+[*] 11 Sep 2013, joss - Improvement (0135017): X-Payments Connector updated to support X-Payments 2.0 features and other.
+[*] 10 Sep 2013, random - Improvement (0135662): Removed ability to enable X-Monitoring module during installation.
+[*] 09 Sep 2013, random - Improvement (0134749): Lexity is now disabled by default and corresponding option is removed from installer.
+[*] 09 Sep 2013, aim - Improvement (0135612): Offer name is displayed on the "Our special offers" page if the offer description is missing. [Advanced_Order_Management]
+[*] 07 Sep 2013, random - Improvement (0135488): Bill Me Later module with ability to show pre-defined banners is added. [Bill_Me_Later]
+[*] 30 Aug 2013, aim - Improvement (0135394): Refactoring of Special Offers routines in func_calculate_single and other.
+[*] 23 Aug 2013, aim - Improvement (0135236): Google Product Feed: Product Main Image is now used instead of product thumbnail. [Froogle]
+[*] 24 Jul 2013, aim - Improvement (0133795): Added 'Search for products matching any selected options/all selected options' radio buttons for the 'Multiple option selector' option of product class. [Feature_Comparison]
+[*] 24 Jul 2013, random - Improvement (0134533): Add To Cart Popup: Added a couple of options allowing to use "Related products" for upselling in the popup.
+[*] 23 Jul 2013, random - Improvement (0134580): Add To Cart Popup: Optimization for the random upselling products feature.
+[*] 17 Jul 2013, random - Improvement (0134359): Add To Cart Popup: Replaced upselling products custom "Add to cart" button with common "Buy now" elements.
+[*] 24 May 2013, random - Improvement (0133199): Hot Products module updated. Thanks to Chemisk.
+[!] 11 Sep 2013, random - Bug (0135589): Klarna: error messages was in wrong encoding. Fixed. Thanks to Tito.
+[!] 10 Sep 2013, random - Bug (0134703): Advanced Customer Reviews: links in review reminders were not showing a message that login is required. Fixed. Thanks to Karina.
+[!] 10 Sep 2013, random - Bug (0133914): Banner System: banner navigation feature wasn't working properly when using Ideal Responsive skin. Fixed.
+[!] 09 Sep 2013, joss - Bug (0132491): Switching between X-Payments payment methods on checkout was not working properly sometimes. Fixed.
+[!] 05 Sep 2013, random - Bug (0135589): Klarna: "Get address" feature was not working. Fixed.
+[!] 04 Sep 2013, aim - Bug (0115418): Special Offers - "Give bonus for each instance of these sets" offers was not working properly. Fixed.
+[!] 30 Aug 2013, random - Bug (0092770): Feature Comparison: When a product was added to cart, the Feature Comparison panel disappeared. Fixed. Thanks to Russoz.
+[!] 30 Aug 2013, aim - Bug (0135461): Special Offers: PHP notices on the managing conditions page. Fixed.
+[!] 27 Aug 2013, aim - Bug (0115418, 0135360): Fixed SQL error related to Special Offers.
+[!] 23 Aug 2013, aim - Bug (0110820): AOM: Wrong shipping/billing addresses were used to calculate modified cart on the 'Modify order' page. Fixed. Corrected the template. Fixed some PHP notices. [Advanced_Order_Management, AOM, destination zone, taxes, shipping].
+[!] 22 Aug 2013, random - Bug (0121940): X-Payments Connector: Renamed the option "Cardholder data must be collected in X-Payments'" to "Customers enter CC details on the X-Payments side".
+[!] 22 Aug 2013, aim - Bug (0135250): Product Wizard: SQL error in MySQL strict mode. Fixed. [Product Configurator]
+[!] 19 Aug 2013, aim - Bug (0135173): AOM: Product options were not prefilled in the Advanced Order Management. Fixed. [X-AOM]
+[!] 15 Aug 2013, aim - Bug (0135106): Gift Registry: Sometimes Gift_Registry could not be disabled in the Admin area. Fixed. [Wishlist]
+[!] 14 Aug 2013, aim - Bug (0132537): AOM: Actual product stock was not shown after editing ordered products. Fixed.
+[!] 14 Aug 2013, aim - Bug (0115031): Customer's 'Tax exemption' was taken into account instead of order's 'Tax exemption'. Fixed. [AOM, Advanced_Order_Management & taxes & tax exemption]
+[!] 14 Aug 2013, aim - Bug (0129519): AOM: Deleting/disabling a product lead to a 404 error. Fixed. Thanks2Snake.
+[!] 09 Aug 2013, random - Bug (0135045): Special Offers: Page not found error was displayed for an existing product if it was eligible for an offer with a bonus product that had been deleted from the database. Fixed.
+[!] 26 Jul 2013, aim - Bug (0134262): Feature Comparison: All feature variants were deleted on class deletion. Fixed. Assert added. Thanks2Mdk.
+[!] 25 Jul 2013, aim - Bug (0134716): SQL error "Incorrect integer value: '' for column 'fclassid' at row 1" in strict SQL mode for Feature Comparison 'Add product class' feature. Fixed.
+[!] 18 Jul 2013, random - Bug (0134540): Add To Cart Popup: There was an unclosed "table" html tag in a template. Fixed.
+[!] 17 Jul 2013, random - Bug (0123967): Add To Cart Popup: Popup content was not destroyed after closing the popup. Fixed.
+[!] 16 Jul 2013, random - Bug (0124017): Add To Cart Popup: Customizing its template with JavaScript code was making the popup to open multiple times. Fixed.
+[!] 11 Jul 2013, random - Bug (0134402): Feature Comparison: "Compare selected" and "Add to comparison list" buttons were not working in some cases. Fixed.
+[!] 27 Jun 2013, aim - Bug (0133449): Flyout Menus: Menu cache was not updated properly when a product's categories were changed on the product modify page.
+[!] 26 Jun 2013, aim - Bug (0133959): Flyout Menus worked incorrectly with the option "Cache the menu" enabled and the option 'Always show root categories in the category list' disabled. Fixed.
+[!] 26 Jun 2013, aim - Bug (0131638): Flyout Menus: Menu cache was not updated properly when category data was edited and HTTPS protocol was used.
+[!] 14 Jun 2013, aim - Bug (0115418): Add_to_cart_popup window displayed products being offered to the customer for free ('Offer products for free' special offer bonus) instead of the products being purchased. Fixed. [Special_Offers]
+
+*LANGUAGES*
+[*] 29 Jul 2013, aim - Improvement (0118996): Renamed the "Enable email notifications for...about placed orders" label to "'Order is placed' notification to..."
+[!] 30 Aug 2013, random - Bug (0125658): There was an unused label "lbl_paypal_api_vendor". Removed.
+[!] 26 Aug 2013, aim - Bug (0134206): Adjusted the note 'You should click "Apply changes" button to save the changes'. Thanks to ADDISON.
+[!] 16 Aug 2013, aim - Bug (0135136): Some modules/options did not have descriptions in xcart_languages tables, so they could not be edited in Webmaster mode. Thanks to ADDISON.
+
+*IMPORT/EXPORT*
+[*] 30 Jul 2013, aim - Improvement (0134721): Added Server locale info to the Environment info section on the 'Main page :: Summary' page.
+[*] 30 Jul 2013, aim - Improvement (0101673): Added the error message "The length of the \'{{value}}\' string exceeds the maximum string length of \'{{maxlength}}\' characters for the \'{{field}}\' field." (related to productcode maxlength restriction). Thanks2Russoz.
+[*] 24 Jun 2013, aim - Improvement (0078387): It is now possible to update wholesale prices by import. Added a comment for xcart_pricing table.
+
+*PATCH/UPGRADE*
+[*] 25 Jul 2013, random - Improvement (0133294): Patch routine now accepts patches generated by GIT.
+
+*USABILITY*
+[*] 31 Jul 2013, random - Improvement (0133511): Product preview in the store's back end now opens the actual product page.
+[*] 07 Jun 2013, aim - Improvement (0133448): Page title for pages in the back end is now more informative.
+[!] 01 Aug 2013, random - Bug (0128800): Correct image verification code was not accepted during checkout if Email account activation was enabled. Fixed.
+
+*SECURITY*
+[*] 28 Aug 2013, aim - Improvement (0135383): Small security improvement.
+[*] 21 Aug 2013, aim - Improvement (0135209): Small improvement related to sessions.
+[*] 16 Aug 2013, aim - Improvement (0133501): Added an error message for the case when admin login is blocked by the ADMIN_ALLOWED_IP constant in config.php file.
+[*] 09 Aug 2013, aim - Improvement (0135013): Random suffixes are now added to usernames in the installer in the "Username as login" mode.
+[*] 18 Jun 2013, aim - Improvement (0133717): Security improvement related to customers.
+[!] 06 Jun 2013, aim - Bug (0133472): Security fix related to orders.
+
+*PERFORMANCE*
+[*] 30 Jul 2013, aim - Improvement (0108574): Small improvement related to 'Visitors environment statistics'. Thanks2Abr.
+[*] 18 Jul 2013, random - Improvement (0130594): Removed IE6/IE7 compatibility workarounds. Continued.
+
+*MISCELLANEOUS*
+[*] 09 Sep 2013, aim - Improvement (0135639): Support Helpdesk URL is changed to secure.x-cart.com.
+[*] 09 Sep 2013, aim - Improvement (0135407): Unused code is removed from products_t.tpl. Thanks to Lehach.
+[*] 30 Aug 2013, aim - Improvement (0135370): Deleted Estonian Kroon and Slovak Koruna currencies. Changed the code for Kwacha (Zambia) from ZMK to ZMW.
+[*] 14 Aug 2013, aim - Improvement (0135079): class.XCSignature.php code style issue. Fixed.
+[*] 06 Aug 2013, aim - Improvement (0134963): Added PHP Wrappers for smarty {alter_currency }/{currency } plugins.
+[*] 05 Aug 2013, random - Improvement (0134794): Added new demo products.
+[*] 30 Jul 2013, aim - Improvement (0134776): Some requirements for check_requirements.php are now displayed in DEVELOPMENT_MODE only.
+[*] 30 Jul 2013, aim - Improvement (0134249): A wrong message related to IP address changes was displayed sometimes. Fixed. In config.php, it is now possible to specify the values for security related constants like PROTECT_ESD_AND_TEMPLATES, PROTECT_DB_AND_PATCHES and PROTECT_XID_BY_IP as 'FALSE' (surrounded by quotation marks), not just FALSE (without quotation marks). Thanks2Snake.
+[*] 27 Jul 2013, random - Improvement (0128916): Removed the ads section from the Admin back end dashboard. Continued.
+[*] 11 Jul 2013, random - Improvement (0134379): Removed unused code for payment methods configuration.
+[!] 26 Aug 2013, aim - Bug (0134272): "CURLOPT_SSL_VERIFYHOST with value 1 is deprecated and will be removed as of libcurl 7.28.1." error in log files. Fixed.
+[!] 16 Aug 2013, random - Bug (0133390): Fatal error if config.php file was missing. Fixed.
+[!] 09 Aug 2013, random - Bug (0135027): There was a PHP notice when previewing a generated thumbnail. Fixed.
+[!] 08 Aug 2013, random - Bug (0135002): Automatic product thumbnail generation was not working in DEVELOPMENT_MODE. Fixed.
+[!] 11 Jul 2013, random - Bug (0134404): An SQL error occurred when adding a new category in Strict mode. Fixed.
+[!] 02 Jul 2013, aim - Bug (0134112): PHP Parse error: syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ']' in sql_vars.php on line 9. Fixed.
+[!] 19 Jun 2013, aim - Bug (0133803): Sometimes there was an SQL error when saving login history. Fixed.
+[!] 07 Jun 2013, aim - Bug (0133526): open_basedir restriction in effect error in installer. Fixed.
+[!] 07 Jun 2013, aim - Bug (0133523): Duplicate entry error for xcart_states table. Fixed.
+
+------------------ X-CART v4.6 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 28 May 2013, random - Improvement (0133277): Enlarged the font size for the "Installation complete" notification.
+[*] 09 Apr 2013, random - Improvement (0132069): Added ability for modules to define additional CSS for the back end.
+[*] 05 Apr 2013, random - Improvement (0129748): Added a new skin: Ideal Responsive.
+[!] 30 May 2013, random - Bug (0133112): Product Price was not displayed in printable product lists when a Vivid Dreams skin was used. Fixed.
+[!] 28 May 2013, random - Bug (0133266): Line breaks in contact form mail were stripped. Fixed.
+[!] 22 Mar 2013, random - Bug (0130455): Top menu design in the back end was not resizing correctly on wide screens. Fixed.
+[!] 21 Mar 2013, random - Bug (0131522): Location and storefront status in Admin back end were displayed inside the content area. Fixed.
+[!] 20 Mar 2013, random - Bug (0131023): With skins using a black background the text on PayPal Advanced & Payflow link iframe was partially not visible. Fixed.
+[!] 14 Mar 2013, random - Bug (0125805): Warnings were displayed when tax rates were being edited on PHP 5.4. Fixed.
+[!] 19 Feb 2013, aim - Bug (0130082): Minicart totals were not loaded until a page refresh in IE. Fixed. Thanks2Klyuev.
+[!] 19 Feb 2013, random - Bug (0130455): Back-end top menu design was not resizing correctly on wide screens. Fixed.
+[!] 19 Feb 2013, random - Bug (0130483, 0130466): The section "In this section/See also" in the backend was not properly aligned sometimes. Fixed.
+[!] 18 Feb 2013, random - Bug (0130407): Back-end top menu design was broken when PHP notices were displayed. Fixed.
+
+*INTERFACE*
+[*] 17 Apr 2013, random - Improvement (0132140): Added context help for the back end. Thanks to Nikita.
+[!] 17 May 2013, aim - Bug (0127631): Sometimes a separate entry for Discounted Subtotal was shown at checkout when Discounted Subtotal was equal to Subtotal and was not supposed to be displayed. Fixed. Thanks2Klyuev.
+[!] 14 May 2013, aim - Bug (0132542): When on password change a user entered a password that coincided with the previous one, a wrong error message was displayed. Fixed. Thanks2Elaine.
+
+*BACKOFFICE*
+[*] 31 May 2013, aim - Improvement (0131274): Adjusted the error message related to non-unique productcodes.
+[*] 22 May 2013, random - Improvement (0131958): Added payment methods supported by X-Payments 2.0.
+[*] 22 May 2013, random - Improvement (0110784): Updated TinyMce editor to version 3.5.8.
+[*] 16 May 2013, aim - Improvement (0130765): Common shipping options are located in a separate template now.
+[*] 14 May 2013, aim - Improvement (0131822): Improvement related to func_flush, long operations and gzip buffer. Thanks2Abr.
+[*] 13 May 2013, aim - Improvement (0132688): Added a link to InterShipper on the 'Main page :: General settings :: Shipping' page. Renamed Intershipper to InterShipper.
+[*] 22 Feb 2013, aim - Improvement (0130608): Added links to the help article for the 80 81 82 83 error pages.
+[!] 10 May 2013, aim - Bug (0117708): Sometimes duplicate entries for some products appeared in product search results in the Admin area. Fixed.
+[!] 19 Feb 2013, aim - Bug (0130476): There was a Smarty error when a language was deleted. Fixed.
+[!] 19 Feb 2013, aim - Bug (0130081): There was a problem with the note 'The information provided by the customer may not be displayed correctly if it was entered in a language different from the one you are using currently. To be able to view this information, switch the language selector at the top of the page to {{language}}.' Fixed. Thanks2Chemisk.
+
+*USERS*
+[*] 23 Apr 2013, aim - Improvement (0091620): Updated the list of UK (Great Britain) states (counties).
+[!] 05 Mar 2013, random - Bug (0130951): Passwords containing the "<" symbol were truncated after being submitted. Fixed.
+
+*PRODUCTS*
+[!] 22 May 2013, random - Bug (0133113): SQL ERROR: Column 'productid' in field list is ambiguous when editing a product. Fixed.
+[!] 10 May 2013, aim - Bug (0132831): Disabled bestsellers were used in HTML catalog. Fixed.
+[!] 10 May 2013, aim - Bug (0131260): When a product had options of the 'Price Modifier' type, and the option listed first modified the price of the product, the price of the product on the category products page and in the 'Recently viewed' box was different. [Product_Options]
+
+*IMAGES*
+[*] 19 May 2013, aim - Improvement (0130097): Added automatic thumbnail regeneration for the situation where "Maximum thumbnail width" or "Maximum thumbnail height" values are changed.
+[*] 01 Mar 2013, aim - Improvement (0103227): The Pos. field is now automatically filled with default orderby values (like 10, 20, 30...) for new images. Thanks2ADDISON.
+
+*PAYMENTS*
+[*] 03 Jun 2013, random - Improvement (0130327): Added PayPal Bill Me Later checkout option.
+[*] 27 May 2013, random - Improvement (0119296): Added Klarna Payments module.
+[*] 16 May 2013, random - Improvement (0131574): X-Payments: Added a hint for the "IP addresses for X-Payments callbacks" option.
+[*] 06 May 2013, random - Improvement (0116481, 0131029): Updated First Data Global Gateway Connect to version 2.0.
+[*] 25 Apr 2013, random - Improvement (0098968, 0120506): Updated Amazon Simple Pay method.
+[*] 23 Apr 2013, aim - Improvement (0125793): PayPal supports UK (Great Britain) counties now.
+[*] 19 Apr 2013, random - Improvement (0128747): Renamed GoEmerchant - EZ Payment Gateway Secure Payment Form to EZ Payment Gateway Standard Form.
+[*] 19 Apr 2013, random - Improvement (0130567): WorldPay: Updated the link to Merchant Interface login page.
+[*] 27 Mar 2013, random - Improvement (0128366, 0131647): PayPal order total details are displayed more accurately now.
+[*] 14 Mar 2013, random - Improvement (0128366): PayPal order total details are now displayed more accurately.
+[!] 31 May 2013, aim - Bug (0133343): NAB Transact Hosted payment page: Order total miscalculation issue. Fixed.
+[!] 27 May 2013, random - Bug (0131098): Wrong cancel link for Quantum payment gateway. Fixed.
+[!] 14 May 2013, random - Bug (0132868): Payment gateways available for all countries were not displayed when à specific country was selected. Fixed.
+[!] 24 Apr 2013, random - Bug (0130379): FirstData Global Gateway e4 - Hosted Payment Pages was displayed only when "All countries" filter was enabled. Fixed.
+[!] 12 Apr 2013, random - Bug (0131027): Paypal Pro Hosted: Order tax and shipping totals are now passed to the gateway.
+[!] 25 Feb 2013, aim - Bug (0130639): Authorize.Net: SIM did not work in test mode. Fixed. Thanks2Stan.
+
+*SHIPPING*
+[*] 31 May 2013, aim - Improvement (0133344): Small improvement related to Fedex and packages.
+[*] 17 May 2013, aim - Improvement (0132975): All states are now selected by default in installer.
+[*] 15 May 2013, aim - Improvement (0132933): Added a new shipping method: USPS Express Mail##R## International Padded Flat Rate Envelope. Thanks2Seyfin.
+[!] 03 May 2013, aim - Bug (0131315): The USPS container type selected in the module settings was ignored if any of the product dimensions exceeded 12". Fixed.
+[*] 20 Mar 2013, aim - Improvement (0130311): Added the link 'To calculate shipping cost please enter an address on the Checkout page' on the cart page for registered users with an empty address.
+[*] 18 Mar 2013, aim - Improvement (0131262): The upper weight limit for InterShipper was set inaccurately. Fixed. Added a new constant XCPhysics::GRAMS_PER_LB(453.59237).
+[*] 15 Mar 2013, aim - Improvement (0127415): Updated Canada Post rating services API.
+[!] 14 Mar 2013, aim - Bug (0131263): Intershipper module errors were not logged nor output onto the screen. Fixed.
+
+*TAXES*
+[!] 27 Mar 2013, random - Bug (0131664): Tax on shipping was applied twice. Fixed.
+
+*MODULES/ADD-ONS*
+[*] 27 May 2013, random - Improvement (0127966): CloudSearch: Updated the module to version 1.2.0. Thanks to Nikita.
+[*] 27 May 2013, random - Improvement (0132701): Product Notifications: Updated some icons.
+[*] 24 May 2013, random - Improvement (0133158): Advanced Customer Reviews: init optimization.
+[*] 22 May 2013, random - Improvement (0130905): Advanced Customer Reviews: Updated the module. Thanks to Karina.
+[*] 20 May 2013, random - Improvement (0130740): Hot Products: Updated the module. Thanks to Chemisk.
+[*] 08 May 2013, random - Improvement (0132096): Froogle/Google Base module renamed to Google Shopping.
+[*] 30 Apr 2013, random - Improvement (0127757): Added AvaTax module. Thanks to Nikita.
+[*] 30 Apr 2013, random - Improvement (0130844): Social Login: Updated the module. Thanks to Anachronos.
+[*] 25 Apr 2013, aim - Improvement (0121704): Added Next-Previous Products feature.
+[*] 23 Apr 2013, aim - Improvement (0132487): Checkout by Amazon now supports UK (Great Britain) counties. Thanks2Hermann Pruem.
+[*] 10 Apr 2013, random - Improvement (0131265): X-Monitoring: Updated the module.
+[*] 05 Apr 2013, random - Improvement (0117746, 0131930): Redesign of Modules section in Admin back end.
+[*] 27 Mar 2013, random - Improvement (0131620): SnS Connector: Removed the module.
+[*] 13 Mar 2013, random - Improvement (0130249): MultiCurrency: Updated the module.
+[*] 11 Mar 2013, aim - Improvement (0131133): Checkout by Amazon: Weight in kg is now used for EU and UK Amazon servers. Thanks2Hermann.
+[*] 07 Mar 2013, aim - Improvement (0129556): Checkout by Amazon: Added the 'Checkout by Amazon order details widget' feature. Added EndPoints for the UK and DE versions. Thanks2Hermann.
+[*] 22 Feb 2013, aim - Improvement (0124515): Antifraud: Added Antifraud screening info for order notifications.
+[!] 30 May 2013, aim - Bug (0131122): TaxCloud: There was a fatal error related to TaxCloud and non-US addresses. Fixed.
+[!] 29 May 2013, random - Bug (0130982): Socialize: Buttons were not displayed properly on some pages. Fixed.
+[!] 27 May 2013, random - Bug (0133178): MailChimp (advanced): Redirect after unsubscribe was not working. Fixed.
+[!] 27 May 2013, random -Bug (0131091): Wishlist: Wrong links in the Wishlist carousel. Fixed.
+[!] 27 May 2013, random -Bug (0133153): Product Notifications: The module was not working with the "Use new module initialization routine" option disabled. Fixed.
+[!] 27 May 2013, random -Bug (0133154): Product Notifications: 'Back in stock' notifications were not working for products without variants. Fixed. Thanks to Snake.
+[!] 22 May 2013, random - Bug (0115138): RMA: Credit amount did not include taxes. Fixed.
+[!] 22 May 2013, random - Bug (0130893): Advanced Customer Reviews: Review reminder email subject encoding was not defined correctly. Fixed. Also fixed canonical URLs for the reviews.php?productid=XX pages.
+[!] 13 May 2013, aim - Improvement (0132839): fCommerce_Go: 'Subscribe' button was not working correctly. Fixed. Thanks2Klyuev.
+[!] 03 May 2013, aim - Bug (0131769): Email Account Activation: Account was not getting activated. Fixed. Thanks2Seyfin.
+[!] 03 May 2013, aim - Bug (0132408): Banner System: Home page banner was displayed twice for vivid_dreams_* skins. Fixed. Thanks2Snake.
+[!] 30 Apr 2013, aim - Bug (0132266): Antifraud: When sending a request to the Antifraud server from X-Cart, the HTTPS module (OpenSSL executable) returned a
+reply which could not be parsed properly causing the "Antifraud service key expired!" error. Fixed.
+[!] 02 Apr 2013, aim - Bug (0129738): Bestsellers[On_Sale]: The path to image.php was used instead of the images/T path to display a thumbnail image. Fixed. Thanks2Karina.
+[!] 01 Apr 2013, random - Bug (0131835): Banner System was trying to load func.images.php which did not exist. Fixed.
+[!] 28 Mar 2013, random - Bug (0130780): Socialize: Pinterest button was not displayed when using HTTP protocol. Fixed.
+[!] 28 Mar 2013, aim - Bug (0131697): Feature Comparison: There was an SQL error related to the Feature_Comparison module. Fixed. Thanks2Nogard.
+[!] 15 Mar 2013, random - Bug (0130837): Social Login: There was some debug code left in Social Login module. Removed.
+[!] 14 Mar 2013, random - Bug (0130744): MailChimp: A PHP Fatal error occurred on the mailchimp_news.php page in some cases. Previously imported news lists disappeared after switching the store to another language. Fixed.
+[!] 13 Mar 2013, random - Bug (0131211): MultiCurrency: There was a notice "Undefined index: mc_default_currency" when MultiCurrency module was enabled. Fixed.
+[!] 07 Mar 2013, aim - Bug (0117791): Checkout by Amazon: Shippings/Taxes were sometimes not calculated correctly on the Amazon side. Fixed.
+[!] 25 Feb 2013, random - Bug (0110747): CloudZoom functionality was incorrectly applied to product variant images. Disabled it for variant images.
+[!] 25 Feb 2013, random - Bug (0130656): CloudZoom: Narrow detailed product images were not centered. Fixed.
+[!] 25 Feb 2013, random - Bug (0130634): Socialize: There was a misprint in the "Follow us on Pinterest" label. Fixed.
+[!] 22 Feb 2013, aim - Bug (0130571): Sitemap: Fixed a cache problem. Thanks2Barni.
+[!] 19 Feb 2013, aim - Bug (0130439): Banner System: Banners added for a specific category were displayed not only in that category, but on any pages with $cat parameter like reviews.php?productid=XXX&cat=YYY or help.php?cat=YYY. Fixed. Thanks2Karina. Thanks2Joliaj.
+[!] 18 Feb 2013, aim - Bug (0129800): Advanced Customer Reviews: There was a problem with the "sign in" links on the product reviews page (registered customer could not log in). Fixed. Thanks2Karina.
+[!] 26 Jan 2013, aim - Bug (0129556): Checkout by Amazon: Customer names containing more than one space were getting broken. Fixed.
+
+*LANGUAGES*
+[*] 03 May 2013, aim - Improvement (0131478): Adjusted an error message related to payment method responses.
+[!] 30 Apr 2013, aim - Bug (0132149): Fixed a wrong note related to InterShipper.
+
+*IMPORT/EXPORT*
+[*] 15 Mar 2013, aim - Improvement (0131293): Improved messages about errors in the import file. Fixed some PHP notices.
+[!] 05 Apr 2013, aim - Bug (0131985): There was an SQL error "Field 'description' doesn't have a default value" for xcart_categories table. Fixed.
+
+*USABILITY*
+[!] 26 Nov 2012, random - Bug (0127928): One Page Checkout: A wrong shipping method could be selected after profile modification. Fixed.
+
+*SECURITY*
+[*] 30 May 2013, random - Improvement (0133137): Security improvement.
+[*] 25 Feb 2013, aim - Improvement (0130634): HTTP protocol was used for ProxyPay payment gateway callbacks even if $config.Security.use_https_login was set to 'Y'. Fixed.
+[*] 08 Feb 2013, aim - Improvement (0130174): Moved XCSignature* classes to a separate file.
+
+*PERFORMANCE*
+[*] 17 May 2013, aim - Improvement (0124669): Optimization for the rebuild prices process.
+[*] 17 May 2013, aim - Improvement (0130596): Optimization for the Users_online feature. C zone. Thanks2Abr.
+[*] 17 May 2013, aim - Improvement (0132128): avail field from xcart_categories table is now duplicated in xcart_products_categories table.
+[*] 17 May 2013, aim - Improvement (0132122): Optimization related to Recently_Viewed products. Renamed rviewed_products variable to recently_viewed_products.
+[*] 17 May 2013, aim - Improvement (0132351): A separate cache dir is now used for search queries.
+[*] 16 May 2013, aim - Improvement (0132088, 0132829, 0132817, 0132982, 0132992): Optimization for func_search_products and images. DISTINCT is now used instead of GROUP BY. Changed from_tbls format for func_search_products function.
+[*] 16 May 2013, aim - Improvement (0132598): Disabled MYSQL query_cache for DEVELOPMENT_MODE. long_query_time is now set to 5 sec.
+[*] 15 May 2013, random - Improvement (1325320): Moved initialization for several modules from the init.php file to functions.
+[*] 15 May 2013, aim - Improvement (0111325): Optimization for 'Edit languages' page. Thanks2Abr.
+[*] 14 May 2013, aim - Improvement (0132695): Removed x_session_save before func_header_location/func_display calls.
+[*] 14 May 2013, aim - Improvement (0131739): Data that has not been changed is no longer saved in xcart_sessions_data. Thanks2Random.
+[*] 13 May 2013, aim - Improvement (0132830): Optimization for Product_Options-classes feature.
+[*] 10 May 2013, aim - Improvement (0132744): Optimization for func_search_products. Removed some left joins. func_get_low_cost_sql_groupby is no longer run for some queries.
+[*] 07 May 2013, aim - Improvement (0132742): Small optimization related to Feature_Comparison and product search.
+[*] 03 May 2013, aim - Improvement (0131715): During the periods when the store is idle (with a minimal number of visitors) OPTIMIZE and ANALYZE SQL table can now be run.
+[*] 03 May 2013, aim - Improvement (0129058): Small optimization for Categories in the Customer area. Thanks2Abr.
+[*] 03 May 2013, aim - Improvement (0110928): Garbage is now cleared out of session_history sql table.
+[*] 30 Apr 2013, aim - Improvement (0132630): Optimized the expired sessions clearing routine.
+[*] 30 Apr 2013, aim - Improvement (0121848): Adjusted the Robot list. [Spider, Crawler]
+[*] 30 Apr 2013, aim - Improvement (0106429): Garbage is now cleared out of session_unknown_sid sql table every year.
+[*] 29 Apr 2013, aim - Improvement (0132602): Categories improvement for Customer area.
+[*] 29 Apr 2013, aim - Improvement (0132210): Categories improvement for Admin area. Thanks2Abr.
+[*] 29 Apr 2013, aim - Improvement (0132310): Import optimization. Thanks2Abr.
+[*] 26 Apr 2013, aim - Improvement (0102620): Small optimization for Detailed_Product_Images. Thanks2Abr.
+[*] 26 Apr 2013, aim - Improvement (0132583): Small optimization for Category details and Product details pages. Thanks2Abr.
+[*] 25 Apr 2013, aim - Improvement (0131031): Small optimization for Extra_Fields. Thanks2Abr.
+[*] 25 Apr 2013, aim - Improvement (0132333): is_readable is now used instead of file_exists in XCart engine.
+[*] 25 Apr 2013, aim - Improvement (0118718): Small optimization for Manufacturers.
+[*] 24 Apr 2013, aim - Improvement (0131551): ORDER BY NULL/DISTINCT is used to avoid the overhead of sorting that GROUP BY produces. [func_build_quick_prices]
+[*] 23 Apr 2013, aim - Improvement (0132354): Fixed issues with cache clearing on highly loaded servers.
+[*] 23 Apr 2013, aim - Improvement (0132332): Small optimization for XCart engine related to $var_dirs variable.
+[*] 17 Apr 2013, aim - Improvement (0132334): Upgraded PEAR Cache_Lite to 1.7.15 version.
+[*] 16 Apr 2013, aim - Improvement (0132187): Optimization for catalog and search pages (cached product IDs are used).
+[*] 15 Apr 2013, aim - Improvement (0132236): Number of search results pages is no longer counted for Product_Configurator products.
+[*] 12 Apr 2013, aim - Improvement (0132217): Added ANALYZE table for 'Optimize tables' tool.
+[*] 11 Apr 2013, aim - Improvement (0132168): COUNT(DISTINCT) is now used instead of db_num_rows.
+[*] 11 Apr 2013, aim - Improvement (0132175): Optimization for 'Customer also bought' products.
+[*] 09 Apr 2013, random - Improvement (0130594): Removed IE6/IE7 compatibility workarounds.
+[*] 09 Apr 2013, aim - Improvement (0131512): Optimization for Product_Options-variants feature. Inner join is used instead of left join in SQL queries.
+[*] 08 Apr 2013, aim - Improvement (0132025): Manufacturers/bestsellers/new_arraivals lists are no longer obtained for the cart and checkout pages.
+[*] 03 Apr 2013, aim - Improvement (0131908): Reduced title_tag/meta_description/meta_keywords sizes to varchar(255). Thanks2Rocky.
+[!] 04 Apr 2013, aim - Bug (0131428): DB resources were not available for some SQL queries. Fixed.
+
+*MISCELLANEOUS*
+[*] 31 May 2013, aim - Improvement (0131555): HTTPONLY mode is now used for setcookie for the EU_Cookie_Law and XMultiCurrency modules.
+[*] 29 May 2013, random - Improvement (0128916): Removed the ads section from the Admin back end dashboard.
+[*] 15 May 2013, aim - Improvement (0125892): Added assert to func_query_first* functions related to non-select queries.
+[*] 06 May 2013, random - Improvement (0132706): Removed the sha1 function wrapper file as unused.
+[*] 23 Apr 2013, random - Improvement (0132492): Moved scripts from "js/admin" to "admin/js".
+[*] 11 Apr 2013, random - Improvement (0131172): Added a banner to Taxes section.
+[*] 08 Apr 2013, random - Improvement (0131172): Removed an unused language variable.
+[*] 21 Feb 2013, aim - Improvement (0130595): cleanup.php is no longer protected by Auth code in DEVELOPMENT_MODE.
+[*] 19 Feb 2013, aim - Improvement (0130077): Now a SEO friendly redirect from HTTPS to HTTP is used. Thanks2Abr.
+[!] 30 May 2013, aim - Bug (0133203): There was an SQL error related to 'Compatibility with old product storage routine' feature. Fixed.
+[!] 27 May 2013, random - Bug (0130963): func_secure_update_config_signatures called from func_register_admin_ip could be unavailable. Fixed.
+[!] 17 May 2013, aim - Bug (0131661): "Call to undefined function xml_parser_create()" error. Fixed.
+[!] 17 May 2013, aim - Bug (0133033): There were some PHP notices on the cart page. Fixed.
+[!] 15 May 2013, aim - Bug (0132737): There were some PHP notices in installer. Fixed.
+[!] 03 May 2013, aim - Bug (0132589): Deprecated MYSQL SET OPTION syntax and SQL_MAX_JOIN_SIZE were used. Removed.
+[!] 20 Mar 2013, aim - Bug (0130994): There was a PHP error "Warning: Invalid argument supplied for foreach() in ... func.mail.php". Fixed.
+[!] 13 Mar 2013, random - Bug (0131239): There was a misprint in func.core.php causing a PHP notice. Fixed.
+[!] 21 Feb 2013, random - Bug (0130468): If x_load('product') was not executed before calling func_add_to_cart(), func_add_to_cart() failed. Fixed.
+[!] 20 Feb 2013, aim - Bug (0130512): There was an SQL error in strict mode related to the 'Update option group' feature. Fixed.
+[!] 19 Feb 2013, aim - Bug (0130450): Upgrade process stopped on error regardless of the checkbox "Tick here to continue upgrading regardless of then found problems" being checked. Fixed.
+
+------------------ X-CART v4.5.5 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 08 Feb 2013, random - Improvement (0130156): Improved Products Map layout. Thanks to Lehach.
+[*] 07 Feb 2013, random - Improvement (0130047): Improved Sitemap layout. Thanks to Lehach.
+[!] 11 Feb 2013, aim - Bug (0125623): The tooltip displayed on mouseover for a bestseller product contained information pertaining to another product. Fixed. Thanks2Klyuev.
+[!] 17 Jan 2013, aim - Bug (0129177): HTML tags were displayed for alt and title attributes. Fixed.
+[!] 06 Dec 2012, random - Bug (0128547): Notes for General settings were not aligned properly. Fixed.
+[!] 04 Dec 2012, random - Bug (0128490): There was a misprint "!notitle" in skin/ideal_comfort/customer/buttons/button.tpl. Fixed.
+[!] 22 Nov 2012, random - Bug (0128065): When extra fields available for the Advanced search page had overly long names or were too many, they sometimes did not fit on the page. Fixed.
+
+*INTERFACE*
+[*] 22 Nov 2012, random - Improvement (0128038): Added the links "Suggest a feature" and "Post a bug-request" to the Help menu in X-Cart backend.
+[*] 22 Nov 2012, random - Improvement (0128160): There was a PHP 5.4 warning inside JS code at One Page Checkout when the customer's address had not yet been entered. Fixed.
+[*] 20 Nov 2012, random - Improvement (0125896): Added an Image verification form to the Password recovery page.
+[!] 08 Nov 2012, aim - Bug (0110219): "Per page" selector was not displayed sometimes for products in a category when featured products were defined for that category. Fixed (Assert added).
+
+*BACKOFFICE*
+[*] 17 Jan 2013, aim - Improvement (0128999): Refactoring for func_mc_get_country_by_ip function. Added cache.
+[*] 07 Dec 2012, aim - Improvement (0128544): A TYPO error was fixed for the 'Main page :: Payment methods' page.
+[*] 28 Nov 2012, aim - Improvement (0128302): Adjusted the top note for the "Main page :: Summary" page. Thanks2Ferz.
+[*] 09 Nov 2012, aim - Improvement (0127803): Added a tooltip for the 'The secret key to access a closed customers front end' setting about the allowed format.
+[!] 13 Nov 2012, aim - Bug (0127875): The temporary .patch.sql.swp file was treated like the usual file to be uploaded during an upgrade. Fixed.
+
+*USERS*
+[*] 16 Jan 2013, aim - Improvement (0128928): Refactoring for the 'Password reset' functionality. Added functions func_send_mail_password_recover/func_generate_password_reset_key. Removed the usertype field.
+[*] 14 Dec 2012, aim - Improvement (0128744): Small adjustment for the Change password feature.
+[!] 13 Dec 2012, aim - Bug (0128685): A TYPO error was fixed for func_userinfo function.
+[!] 13 Dec 2012, aim - Bug (0128700): Removed obsolete code from admin register_account.tpl file.
+[!] 21 Nov 2012, random - Bug (0128130): Account status was not saved when a user was created from Admin backend. Fixed.
+[!] 26 Oct 2012, aim - Bug (0127412): An error (Error ID: 78) occurred during the deletion of an admin user in Admin area. Fixed.
+
+*PRODUCTS*
+[!] 13 Nov 2012, aim - Bug (0127888): There was a JS error: "check_quantity is not defined" (Add to Cart Popup did not work sometimes). Fixed.
+[!] 07 Nov 2012, aim - Bug (0127705): There was a JS error: "products_data is not defined". Fixed.
+[!] 07 Nov 2012, aim - Bug (0127708): Users of Firebug add-on for Firefox configured to show Network errors saw the error "NetworkError: 404 Not Found - skin/common_files/modules/Cloud_Search/images/ajax-loader.gif". Fixed. Thanks2Nikita.
+
+*PAYMENTS*
+[*] 06 Feb 2013, random - Improvement (0125629): X-Payments iframe (lite interface) experience improved. Thanks to Nikita.
+[*] 05 Feb 2013, random - Improvement (0127942): X-Payments: Added API version selector.
+[*] 24 Jan 2013, aim - Improvement (0128375): Renamed 'Global Gateway E4SM' to 'First Data Global Gateway e4 - Hosted Payment Pages'.
+[*] 22 Jan 2013, random - Improvement (0127762): Added PayPal Website Payment Pro Hosted and related changes.
+[*] 17 Jan 2013, random - Improvement (0126908): PayPal: If order status is already "Completed", it will not be updated to "Processed" after returning from the payment gateway now.
+[*] 16 Jan 2013, random - Improvement (0129492): PayPal Transaction details are now automatically filled in after order is placed (only for applicable methods).
+[*] 07 Dec 2012, random - Improvement (0128487): Authorize.Net payment gateway is now available in the UK.
+[*] 16 Nov 2012, random - Improvement (0127982): PayPal: Added Express Checkout specific fields to PayPal Payments Pro and Website Payments Pro Payflow Edition settings.
+[*] 15 Nov 2012, aim - Improvement (0127366): The Submit button was not displayed for custom payment methods sometimes. Fixed. Thank2Seyfin.
+[*] 12 Nov 2012, aim - Improvement (0127808): Authorize.Net: SIM: Using a long 'Order prefix' lead to "your order was lost". Added a tooltip.
+[*] 09 Nov 2012, aim - Improvement (0127792): 'NAB Transact - Hosted Payment Page': Added a new setting ('Send detailed cart info to the payment page') to avoid possible problems with failed orders.
+[*] 08 Nov 2012, aim - Improvement (0127724): Added a tooltip on the Payment Methods page in Admin area.
+[*] 06 Nov 2012, random - Improvement (0127643): "RBS WorldPay - Business Gateway" renamed to "WorldPay - Business Gateway".
+[!] 11 Feb 2013, aim - Bug (0130220): Bug related to Antifraud risk factor exceeded vs force Authorize-only mode. Fixed. Thanks2Seyfin.
+[!] 11 Feb 2013, aim - Bug (0128050): Admin area Payment Methods: JS error for IE8 was fixed. Thanks2Feakie.
+[!] 11 Feb 2013, aim - Bug (0129870): Address line 2 was not passed to 2Checkout. Fixed. Thanks2Seyfin.
+[!] 11 Feb 2013, random - Bug (0127204): Under certain conditions X-Payments was capturing money but indicating the order was lost. Fixed.
+[!] 11 Feb 2013, random - Bug (0129136): X-Payments order could be lost if the user's profile was edited during One Page Checkout. Fixed.
+[!] 23 Jan 2013, aim - Bug (0117933): DIBS payment gateway did not work when PHP register_globals was off. Fixed. Thanks2Amee.
+[!] 22 Jan 2013, aim - Bug (0128145): Global Gateway E4SM ('First Data Global Gateway e4 - Hosted Payment Pages') incorrectly processed declined transactions. Fixed. Thanks2Klyuev.
+[!] 28 Dec 2012, random - Bug (0129022): HeidelPay was on the list of payment gateways supported by X-Payments. Removed.
+[!] 21 Dec 2012, random - Bug (0128053): X-Payments connector was not displaying the last 4 digits of CC numbers. Fixed. Thanks to Joss.
+[!] 19 Nov 2012, random - Bug (0128055): PayPal methods were not disabled correctly when the country was changed. Fixed.
+[!] 17 Nov 2012, aim - Bug (0127935): PayPal Advanced: If Express Checkout was used (in the Auth only mode), capture/void was not working. Fixed. Added a test.
+[!] 14 Nov 2012, aim - Bug (0127736): Netbilling gateway: Payment Form did not work for Pro/Platinum packages. Fixed. Thanks2Stan.
+[!] 14 Nov 2012, aim - Bug (0127877): PayPal Express Checkout: In Shortcut mode other methods were not disabled after returning to One Page checkout. Fixed. Added Selenium test.
+[!] 14 Nov 2012, random - Bug (0127877): func_is_confirmed_paypal_express() showed PHP notices sometimes. Fixed.
+[!] 06 Nov 2012, random - Bug (0127643): WorldPay - Business Gateway was not available for countries other than US. Fixed.
+[!] 26 Oct 2012, random - Bug (0127435): PayPal Advanced and Payflow Link: Errors during payment process were parsed incorrectly. Fixed.
+
+*SHIPPING*
+[*] 16 Jan 2013, aim - (0129060): Updated USPS API: renamed two USPS methods; updated the weight limit for 'Express Mail International Flat Rate Envelope'.
+[!] 14 Nov 2012, aim - Bug (0099136): ROLLBACK for COMMIT:53302 The option 'List of shipping methods available for an order that contains (in addition to products with non-free shipping) some products with free shipping should be defined based on the weight of the entire order (weight of the products with free shipping included)' did not work correctly. Fixed.
+
+*ORDERS*
+[!] 09 Nov 2012, aim - Bug (0127752): Google Maps did not work for UK addresses. Fixed. Thanks2Lurker.
+
+*CART*
+[!] 11 Feb 2013, aim - Bug (0128680): The postal/zip code for the Gift Certificate was not displayed in cart. Fixed. Thanks2Snake.
+
+*MODULES/ADD-ONS*
+[*] 08 Feb 2013, random - Improvement (0129965): CloudSearch: Updated the module to version 1.1.0. Thanks to Nikita.
+[*] 16 Jan 2013, random - Improvement (0129491): fCommerce Go and Social Login: Removed HTTP_GET_VARS compatibility.
+[*] 11 Jan 2013, random - Improvement (0129156): fCommerce Go: Updated the module.
+[*] 25 Dec 2012, aim - Improvement (0128932): Social Login: Added the password reset link for SocialLogin auto-generated users.
+[*] 24 Dec 2012, random - Improvement (0128810): Hot Products: Updated the module to add some new features.
+[*] 20 Dec 2012, random - Improvement (0128846): Product Notifications: Added a check for whether the customer is already subscribed to notifications.
+[*] 20 Dec 2012, random - Improvement (0128690): Social Login: Corrected some language variables.
+[*] 17 Dec 2012, random - Improvement (0128603): Added X-Monitoring module.
+[*] 12 Dec 2012, aim - Improvement (0128660):  PayPalAuth: Removed unused func_ppa_get_user_data function.
+[*] 07 Dec 2012, aim - Improvement (0128573): Added PHP email checking for the giftcert form.
+[*] 04 Dec 2012, random - Improvement (0128483): Socialize: Removed unused "addslashes" modifier from a page template.
+[*] 16 Nov 2012, aim - Improvement (0127952): Add to Cart Popup: Improved descriptions and labels for the 'Add to Cart Popup' Module. Thanks2Seyfin. Thanks2Dohtur.
+[!] 11 Feb 2013, aim - Bug (0125843): TaxCloud: Shipping charge was incorrect. [Default address]. Thanks2Svowl.
+[!] 11 Feb 2013, aim - Bug (0130214): TaxCloud: Errors were generated if the product had product options (related to the ItemID field). Thanks2Klyuev.
+[!] 11 Feb 2013, aim - Bug (0130217):  Advanced Customer Reviews: White screen appeared on the admin/modules.php page. Fixed.
+[!] 08 Feb 2013, random - Bug (0130148): Product Notifications: Notification management was not working properly when Product Options module was disabled. Fixed. Thanks to Gss.
+[!] 07 Feb 2013, aim - Bug (0130055): There was an SQL error in Customer area when Feature_Comparison was disabled. Fixed.
+[!] 28 Jan 2013, aim - Bug (0129806): Sitemap: There was an SQL error. Fixed. Thanks2Nogard.
+[!] 22 Jan 2013, aim - Bug (0129656): Product Notifications: The button 'Click here to be notified when this item is nearly out of stock' did not work for ideal_comfort skin. Fixed. Thanks2Gss.
+[!] 18 Dec 2012, random - Bug (0128449): Banner System: There was a misprint in a template causing a Smarty error in Secure mode. Fixed.
+[!] 05 Jan 2013, aim - Bug (0129141): fCommerce Go: Custom admin directory name was not supported. Fixed. Thanks2Snake.
+[!] 27 Dec 2012, aim - Bug (0128961): Advanced Customer Reviews: The setting "Who must be allowed to add reviews" did not work correctly with the "customers who bought product" value selected. Fixed. Thanks2Karina.
+[!] 20 Dec 2012, random - Bug (0128846): Product Notifications: Notification subscription buttons were not displayed on products list (multicolumn mode) even when the corresponding options were enabled. Fixed.
+[!] 20 Nov 2012, aim - Bug (0128098): TaxCloud: Added a warning message related to PHP Fatal error: Class 'SoapClient' not found.
+[!] 20 Nov 2012, random - Bug (0128115): Advanced Customer Reviews: Required constants were not defined causing review reminders not to be sent. Fixed. Thanks to Karina.
+[!] 09 Nov 2012, aim - Bug (0127763): There were some PHP notices related to orders in Admin area. Fixed.
+[!] 08 Nov 2012, aim - Bug (0127760): XML_Sitemap: Submit of custom forms caused a PHP warning. Fixed.
+[!] 07 Nov 2012, aim - Bug (0127688): Advanced Customer Reviews: Product image(P) was used for customer reviews menu. Fixed. Thanks2Karina.
+[!] 01 Nov 2012, random - Bug (0127502): MailChimp Basic: There was a fatal error during customer registration. Fixed.
+[!] 01 Nov 2012, random - Bug (0127303): Special Offers: func_get_offers_productid_sub was working incorrectly if multiple categories were specified in arguments. Fixed.
+[!] 01 Nov 2012, random - Bug (0126511): X-Payments Connector: There were some backwards compatiblity functions that caused issues. Removed.
+
+*IMPORT/EXPORT*
+[!] 14 Dec 2012, aim - Bug (0128743): There were some SQL errors related to import of users in strict mode. Fixed.
+
+*USABILITY*
+[*] 11 Feb 2013, random - Improvement (0126582): The storefront open/close link in Admin back end is now located at the top of page.
+[*] 02 Nov 2012, random - Improvement (0123371, 0098610): Password recovery can now search for an account by email even in the 'Login as username' mode. A proper error message is now shown for suspended accounts.
+[!] 02 Nov 2012, random - Bug (0098607): Number of failed login attempts given to a user before his or her account was actually suspended was greater by one attempt than the number defined in the General settings. Fixed.
+
+*SECURITY*
+[*] 12 Feb 2013, aim - Improvement (0130048): Security improvement for XPayments_Connector module.
+[*] 08 Feb 2013, aim, random - Improvement (0128588, 0128458): Security improvement for admin sessions.
+[*] 30 Jan 2013, aim - Improvement (0129814): Security improvement for passwords and secure keys.
+[*] 30 Jan 2013, aim - Improvement (0129859):  Security improvement for Social Login feature. Security improvement for reset passwords feature. Renamed xcart_change_password table to xcart_reset_passwords.
+[*] 29 Jan 2013, aim - Improvement (0129850): Security improvement for installer.
+[*] 29 Jan 2013, aim - Improvement (0129473): Security improvement related to config.
+[*] 24 Jan 2013, random - Improvement (0128629): Changed the default values for some security options.
+[*] 24 Jan 2013, aim - Improvement (0129020): Security improvement related to customers.
+[*] 22 Jan 2013, random - Improvement (0128438): Improvement for log files.
+[*] 22 Jan 2013, aim - Improvement (0128497): Added a check for default (unsecure) values of security keys, blowfish key and auth code.
+[*] 18 Jan 2013, aim - Improvement (0128449): Smarty security mode is now enabled. Changed smarty->secure_dir to skin folder.
+[*] 15 Jan 2013, aim - Improvement (0129408): Refactoring for the include/admin_security.php file. Changed the file to func_check_admin_security_redirect() function.
+[*] 11 Jan 2013, random - Improvement (0128566): Moved security settings from top.inc.php and config.php to the class structure. Moved "disallowed_file_exts" and "compiled_tpl_check_md5" settings from DB to config.php.
+[*] 27 Dec 2012, aim - Improvement (0128633): Security improvement for admin User Access Control feature.
+[*] 26 Dec 2012, aim - Improvement (0128356): Added protected mode. Changes to files, database and security settings are now disabled by default.
+[*] 26 Dec 2012, aim - Improvement (0128784): Security improvement for encrypted data.
+[*] 24 Dec 2012, aim - Improvement (0128885): Refactoring for the 'Re-generate Blowfish encryption key' feature. Multi-key feature added.
+[*] 18 Dec 2012, aim - Improvement (0128783): Security improvement for images.
+[*] 18 Dec 2012, aim - Improvement (0128653): Cryptographic hash is now stored in the database instead of encrypted user passwords.
+[*] 17 Dec 2012, aim - Improvement (0128758): Security improvement for installer.
+[*] 13 Dec 2012, random - Improvement (0128654): Security improvement for some .htaccess.
+[*] 13 Dec 2012, random - Improvement (0128695): Installation Auth code is now required to be supported as auth_code parameter for the cleanup.php script.
+[*] 12 Dec 2012, aim - Improvement (0128674): User passwords are not sent by email now.
+[*] 11 Dec 2012, aim - Improvement (0128631): Made an adjustment for Protected mode. Added verfication by IP for security changes.
+[*] 07 Dec 2012, aim - Improvement (0128577): Security improvement for Advanced_Customer_Reviews module.
+[*] 07 Dec 2012, aim - Improvement (0128580): Security improvement for admin login page (Turned off the autocomplete feature for admin password).
+[*] 06 Dec 2012, aim - Improvement (0128448): Added unique secret keys for each store.
+[*] 05 Dec 2012, random - Improvement (0128527): Smarty security improvement.
+[*] 05 Dec 2012, aim - Improvement (0128521): Security improvement for the admin User Access Control feature.
+[*] 03 Dec 2012, aim - Improvement (0128313): Weak passwords are disabled for admin accounts by default.
+[*] 03 Dec 2012, random - Improvement (0128419): Empty MySQL password is not allowed during installation now.
+[*] 29 Nov 2012, aim - Improvement (0128304): PHP setting register_globals=off is now required by default.
+[*] 27 Nov 2012, aim - Improvement (0128268): Security improvement related to users.
+[*] 27 Nov 2012, aim - Improvement (0128243): Security improvement against XSS attacks.
+[*] 26 Nov 2012, aim - Improvement (0128254): Security improvement related to POST/GET methods.
+
+*PERFORMANCE*
+[*] 29 Jan 2013, random - Improvement (0129786): Added tiny thumbnails for products and corresponding image cache. Thanks to Karina.
+[*] 17 Jan 2013, aim - Improvement (0129181): Small optimization for service scripts like image.php (related to Social Login module).
+[*] 20 Dec 2012, aim - Improvement (0128841): Optimization for check_requirements.php.
+[*] 12 Dec 2012, random - Improvement (0128586): Moved some rarely used back-end functions from func.core.php to func.backoffice.php.
+[*] 07 Dec 2012, aim - Improvement (0128535): Small optimization for X-Cart sessions.
+
+*MISCELLANEOUS*
+[*] 01 Feb 2013, aim - Improvement (0129936): After the re-genertion of the blowfish key, the previous values of the blowfish and security keys are now preserved as comments to the respective lines in config.php.
+[*] 23 Jan 2013, aim - Improvement (0129653): All HTTPS requests are now HTTP 1.1 compatible.
+[*] 22 Jan 2013, aim - Improvement (0129373): x_load('debug'); call does not work without DEVELOPMENT_MODE now.
+[*] 05 Jan 2013, random - Improvement (0128729): Added test/live security profiles selector and other minor changes in installer.
+[*] 05 Jan 2013, random - Improvement (0128729): Added a link to the detailed requirements check in installer.
+[*] 24 Dec 2012, aim - Improvement (0128912): Refactoring for the 'Check IP registration codes expiration date' functionality (func_delete_expired_ip_register_codes).
+[*] 23 Nov 2012, aim - Improvement (0128206): Added 'SOAP support' checking to the check_requirements script.
+[!] 08 Feb 2013, random - Improvement (0130152): The General settings->Appearance options page contained the McAfee SECURE trust mark (30 days free) offer link which had expired. Removed.
+[!] 22 Jan 2013, aim - Bug (0129634): Package weight was wrong for UPS Shipping Labels. Fixed. Thanks2Seyfin.
+[!] 22 Jan 2013, aim - Bug (0129654): 'Re-generate Blowfish encryption key' feature did now work when SocialLogin module was disabled.
+[!] 21 Jan 2013, aim - Bug (0129583): Customer's session was lost if an admin user logged in when the customer was paying for an order. Fixed.
+[!] 12 Jan 2013, random - Bug (0129373): There were unused debug functions included in some files. Removed.
+[!] 09 Jan 2013, random - Bug (0129026): There was an unused template "auth.tpl". Removed.
+[!] 09 Jan 2013, aim - Bug (0129259): There were some PHP notices on the Users management page. Fixed.
+[!] 25 Dec 2012, aim - Bug (0128939): Event handling cycle was broken on the first FALSE handler. Fixed.
+[!] 17 Dec 2012, random - Bug (0128566): Install script was improperly including config multiple times. Install script was using include for required init script. Fixed.
+[!] 12 Dec 2012, random - Bug (0128587): There was a PHP 5.4 warning on the Summary page in Admin backend. Fixed.
+[!] 12 Dec 2012, random - Bug (0128661): There was a PHP notice during Blowfish regeneration. Fixed.
+[!] 22 Nov 2012, random - Bug (0128146): It was not possible to modify Product Search settings in MySQL Strict mode. Fixed.
+
+
+------------------ X-CART v4.5.4 RELEASED
+
+*DESIGN AND APPEARANCE*
+[!] 11 Oct 2012, aim - Bug (0115131): There were empty lines in source HTML code when the "Use speed-up tool for CSS" option was enabled. Fixed.
+[!] 11 Oct 2012, random - Bug (0126864): PayPal logo was accidentally placed in Ideal Comfort skin footer. Removed.
+[!] 10 Oct 2012, aim - Bug (0126929): Socialize buttons were not displayed for out-of-stock products. Fixed.
+
+*INTERFACE*
+[!] 17 Oct 2012, random - Bug (0123034): When the address book was opened in a popup on checkout, clicking on the "Add new address" box border closed the popup. Fixed.
+[!] 17 Oct 2012, random - Bug (0127141): Internal AJAX messages in a popup were not parsed correctly if another popup had been opened previously. Fixed.
+
+*BACKOFFICE*
+[!] 18 Oct 2012, aim - Bug (0127048): Removed a wrong log message from X-Cart Gold/GoldPlus editions.[user has turned OFF 'Simple_Mode' module]
+[!] 16 Oct 2012, aim - Bug (0127093): An SQL error was generated on the 'Main page :: General settings :: User Profiles' page in strict mode. Fixed.
+[!] 16 Oct 2012, aim - Bug (0127092): There was a PHP warning related to the "Main page :: General settings :: User Profiles" page. Fixed.
+[!] 16 Oct 2012, aim - Bug (0112444): Removed obsolete code related to func_get_address_book function.
+[!] 04 Oct 2012, aim - Bug (0126735): The 'Clear templates/X-Cart cache' tool in the 'Tools->Maintenance' section did not clear the var/cache dir. Fixed.
+[!] 26 Sep 2012, aim - Bug (0126491): The 'Optimize Tables' tool: There was no header and style sheet for the text (just dots and a text). Fixed.
+
+*PRODUCTS*
+[!] 19 Oct 2012, aim - Bug (0127215): Random keys were not cleared when products were removed. Fixed.
+
+*USERS*
+[*] 24 Oct 2012, random - Improvement (0101270): Added the ability to define additional fields for address book.
+[!] 23 Oct 2012, random - Bug (0127302): Zip+4 was missing in userinfo in some cases. Fixed.
+[!] 16 Oct 2012, random - Bug (0126771): Address book: When an address was entered with errors, the "Use as billing/shipping" checkboxes were displayed incorrectly. Fixed.
+[!] 16 Oct 2012, random - Bug (0126771): Address book: When a new address was entered with errors, after reloading no error messages were shown. Fixed.
+[!] 05 Oct 2012, aim - Bug (0126757): Seller address form used outdated JavaScript code for required fields validation. Fixed.
+
+*PAYMENTS*
+[*] 22 Oct 2012, aim - Improvement (0126553): Added First Data Global Gateway e4 Hosted Payment Pages.
+[*] 20 Oct 2012, random - Improvement (0126864): PayPal: Transaction ID in the order details now opens PayPal details page.
+[*] 09 Oct 2012, aim - Improvement (0126873): Changed the direct SQL query to func_get_pm_params call for payment methods. Thanks2Stan.
+[*] 27 Sep 2012, random - Improvement (0124744): One page checkout: The payment method's iframe is now displayed on the same page after an order is submitted.
+[!] 25 Oct 2012, aim - Bug (0127371): Test (Sandbox) Endpoint was changed for Paypal Express Checkout for API Signature Authentication Mechanism. Fixed.
+[!] 24 Oct 2012, random - Bug (0124236): PayPal Express Checkout on cancel was redirecting to cart even if called from the checkout process. Fixed.
+[!] 24 Oct 2012, random - Bug (0126290): PayPal activation link generated by installer was not redirecting the user to PayPal settings page. Fixed.
+[!] 23 Oct 2012, random - Bug (0126462): PayPal Express Checkout, Advanced and Payflow Link did not work correctly with the Zip+4 feature. Fixed.
+[!] 22 Oct 2012, random - Bug (0126258): PayPal: When a chosen method became unavailabe after changing the country, the section with its settings remained displayed. Fixed.
+[!] 22 Oct 2012, aim - Bug (0127289): Authorize.Net SIM: 'x_currency_code' parameter was not passed in the transaction request. Fixed. Thanks2Seyfin.
+[!] 17 Oct 2012, random - Bug (0126864): PayPal Express Checkout: Get your API credentials popup was not showing in IE. Fixed.
+[!] 15 Oct 2012, random - Bug (0126864): Some changes for PayPal certification.
+[!] 12 Oct 2012, aim - Bug (0126546): Netbilling gateway: Payment Form did not work correctly. Fixed. Thanks2Amee.
+
+*MODULES/ADD-ONS*
+[*] 12 Oct 2012, aim - Improvement (0124529): Made the system fingerprint generation step optional for modules installer.
+[*] 05 Oct 2012, aim - Improvement (0126581): Renamed the Product Configurator module to Product Wizard.
+[!] 24 Oct 2012, aim - Bug (0127291): Customer Reviews with Advanced Customer Reviews: Customer Feedback tab was displayed twice on the product details page. Fixed. Thanks2Karina.
+[!] 24 Oct 2012, random - Bug (0126227): MailChimp: PHP notices were generated when a user edited their name or email (Access to uninitialized
+variables). Fixed.
+[!] 24 Oct 2012, aim - Bug (0121300): Added Pinterest icon for books_and_magazines skin. Thanks2Skot.
+[!] 23 Oct 2012, aim - Bug (0127292): Socialize: 'Missing Required Property: The 'og:url' property is required, but not present' error in Facebook debugger. Fixed.
+[!] 23 Oct 2012, aim - Bug (0127294): Socialize: 'Meta Tags In Body: You have tags ouside of your . This is either because your was malformed and they fell lower in the parse tree, or you accidentally put your Open Graph tags in the wrong place. Either way you need to fix it before the tags are usable' error in Facebook debugger. Fixed.
+[!] 19 Oct 2012, aim - Bug (0127224): For orders that were created using fCommerce Go the icon showing that they were created using fCommerce Go was not displayed. Fixed.
+[!] 19 Oct 2012, aim - Bug (0127223): XML sitemap. An extra slash was added to URLs in the generated XML sitemap if the option 'Use root store page (http://example.com/) instead of home page (http://example.com/home.php) in the sitemap file' had been selected on the module configuration page. Fixed. Thanks2Seyfin.
+[!] 18 Oct 2012, random - Bug (0124355): PayPal Access instructions did not cover some options and parameters. Fixed.
+[!] 18 Oct 2012, aim - Bug (0126548): There was a conflict between AlteredCart's On Sale module & fCommerceGo & HotProducts (On_Sale). Fixed. Thanks2Skot.
+[!] 18 Oct 2012, aim - Bug (0127181): Advanced Customer Reviews: An SQL error was generated when a customer review was being edited in the Provider area. Fixed. Thanks2Karina.
+[!] 05 Oct 2012, aim - Bug (0126760): Mailchimp Subscription: A fatal error occurred when saving the module configuration options. Fixed.
+[!] 03 Oct 2012, aim - Bug (0126520): Product Notifications: Clicking the Enter key on the keyboard in order to subscribe to notifications about some product resulted in an add2cart action. Fixed. Thanks2Gss.
+[!] 27 Sep 2012, aim - Bug (0126529): EU_Cookie_Law sometimes did not work correctly with Adv_Mailchimp_Subscription. Fixed.
+[!] 27 Sep 2012, aim - Bug (0126521): There were some w3c errors on the products_map.php page. Fixed. Thanks2Karina.
+
+*IMPORT/EXPORT*
+[*] 16 Oct 2012, aim - Improvement (0106826): ZIP code can be empty or 0 (zero) in import files now.
+[!] 16 Oct 2012, aim - Bug (0106826): A wrong error message was displayed for incorrect zipcode field (Error on line 3: Unknown user for the address book record). Fixed.
+
+*IMAGES*
+[!] 16 Oct 2012, aim - Bug (0126053): Detailed Images: Preview image was missing in Firefox and Opera. Fixed.
+
+*LANGUAGES*
+[*] 18 Oct 2012, aim - Improvement (0123712): Added the Australian language. ['au','aus','Australian']
+[!] 08 Oct 2012, aim - Bug (0126812): The option for the right-to-left text direction in the 'Edit languages' section in Admin area did not work properly. Fixed.
+
+*PERFORMANCE*
+[*] 23 Oct 2012, abr - Improvement (0127301): Optimizes the Special_Offers module code.
+[*] 04 Oct 2012, abr - Improvement (0126564): Improved the data caching mechanism.
+
+*MISCELLANEOUS*
+[*] 25 Oct 2012, random - Improvement (0127368): include/version.php now displays GOLD PLUS/PLATINUM editions.
+[*] 23 Oct 2012, abr - Improvement (0126968): Re-designed the check requirements pages.
+[*] 23 Oct 2012, aim, abr - Improvement (0126968): Added some tests so that the check_requirements.php script can detect warnings correctly.
+[*] 22 Oct 2012, aim - Improvement (0127240): Optimized the "func_cat_tree_rebuild()" function.
+[*] 15 Oct 2012, abr - Improvement (0126925): The non-empty "open_basedir" PHP configuration option could cause a PHP Warning. Fixed.
+[*] 10 Oct 2012, abr - Improvement (0126960): PHP Warnings were displayed when the benchmark feature was enabled and the store was closed. Fixed.
+[*] 10 Oct 2012, abr - Improvement (0126963): Code unification.
+[*] 09 Oct 2012, aim - Improvement (0126701): Updated the currencies list according to http://www.currency-iso.org/dl_iso_table_a1.xml.
+[*] 04 Oct 2012, abr - Improvement (0125385): Optimized the func_query_hash() function. Added a test.
+[*] 28 Sep 2012, abr - Improvement (0126569): Improved JavaScript code indentation.
+[*] 28 Sep 2012, abr - Improvement (0126474): Per-session SQL options were not set on database reconnect. Fixed.
+[*] 28 Sep 2012, abr - Improvement (0126568): Replaced direct "func_array_map" function call with "func_stripslashes".
+[*] 27 Sep 2012, abr - Improvement (0126536): Added POSIX extension to the list of recommended PHP extensions.
+[!] 22 Oct 2012, aim - Bug (0127235): Clean URL for Publicity static page was missing in the demo data. Fixed.
+[!] 16 Oct 2012, random - Bug (0126771): AJAX popup content was being loaded twice. Fixed.
+[!] 18 Oct 2012, aim - Bug (0127045): Fixed some broken links for demo products.
+[!] 10 Oct 2012, abr - Bug (0126909): Non-unique module names were allowed. Fixed.
+[!] 04 Oct 2012, abr - Bug (0126718): There was a PHP Notice in func.templater.php. Fixed.
+[!] 05 Oct 2012, aim - Bug (0126757): There were some w3c errors. Fixed.
+[!] 05 Oct 2012, aim - Bug (0126757): There were some PHP notices. Fixed.
+[!] 28 Sep 2012, abr - Bug (0126544): The install.php script could not automatically fix permissions. Fixed.
+[!] 28 Sep 2012, abr - Bug (0126537): check_requirements.php generated a PHP notice. Fixed.
+
+------------------ X-CART v4.5.3 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 10 Sep 2012, aim - Improvement (0123321): Changed the way X-Cart evaluation notice is displayed in Customer and Admin areas.
+[*] 28 Aug 2012, aim - Improvement (0125617): Updated jQuery UI version from 1.8.17 to 1.8.23.
+[*] 23 Aug 2012, random - Improvement (0121698): Added the Wishlist tab to My account page.
+[*] 22 Aug 2012, random - Improvement (0125465): Added support for module-specific altskin.css files.
+[*] 16 Aug 2012, aim - Improvement (0123947): Help menu is now displayed in the left side menu column for ideal_comfort skin. Thanks2Seyfin.
+[!] 24 Sep 2012, aim - Bug (0122448): Books_and_magazines: The 'Users online' bar at page bottom was displayed twice. Fixed. Thanks2Lurker.
+[!] 20 Sep 2012, aim - Bug (0126273): Special offer and vivid_dreams_violet skins: There was a color issue related to Special_Offers. Fixed. Thanks2Lurker.
+[!] 20 Sep 2012, aim - Bug (0126257): Years in the copyright notice were shown as 2002-2008 instead of 2002-2012 for 404 HTML templates. Fixed for all skins.
+[!] 21 Aug 2012. random - Bug (0124484): One page checkout total cost in the Summary section had an incorrect style and position. Fixed.
+[!] 14 Sep 2012, aim - Improvement (0125795): Gift Certificate image in Ideal comfort skin was defined in a language variable. Fixed. Thanks2Seyfin.
+[!] 22 Aug 2012, random - Bug (0125465): One page checkout: In Ideal Comfort skin, a wrong style was used for the total cost in the Summary section. Fixed.
+[!] 14 Aug 2012, aim - Bug (0123832): ideal_comfort: Static pages were overlaid by payment_logos in the footer. Fixed. Thanks2Seyfin.
+[!] 31 Jul 2012, random - Bug (0124629): Usertype parameter was used in account activation link, although it was not necessary. Removed.
+[!] 14 Jul 2012, aim - Bug (0123989): There were some PHP 5.4 warnings. Fixed.
+
+*BACKOFFICE*
+[*] 11 Sep 2012, aim - Improvement (0117745, 0125766, 0125591): Changed the layout of the Payment methods page in the Admin area. The contents of the page is now organized into two tabs: Payment methods and Payment gateways. Payment gateways can now be filtered by country. The page now includes an information block where payment methods related news and updates will be displayed. Thanks2Feakie.
+[*] 05 Sep 2012, aim - Improvement (0125343): Added a new category to the Admin area top menu: "Goodies"; updated the content of the "Help" category. Added the 'More X-Cart templates' link on the General settings->Appearance page.
+
+*INTERFACE*
+[*] 31 Aug 2012, aim - Improvement (0115520): Multilanguage feature is added for Datepicker in the Àdmin area. [Localization, jQueryUI, internalization]
+[*] 07 Aug 2012, aim - Improvement (0124517): "Default site 'Title' tag" is no longer shown for the modal window.
+
+*PRODUCTS*
+[*] 06 Aug 2012, aim - Improvement (0124882): When a unit of a product variant was added to the shopping cart, the stock quantity of the selected variant was not diminished for the current user. Fixed.
+[!] 20 Sep 2012, aim - Bug (0126280): On Mysql 4.1.x an SQL error was generated when a product was cloned. Fixed.
+[!] 20 Aug 2012, aim - Bug (0125362): Product membership conditions were not taken into account when the setting "Do not check product's category availability and product's category membership on all the product related pages" was enabled. Thanks2Random.
+[!] 01 Aug 2012, aim - Bug (0124679): Key for include_cache smarty function was generated incorrectly (This could cause problems with displaying the Buy Now button). Fixed.
+
+*CATEGORIES*
+[!] 23 Aug 2012, aim - Bug (0123870): The current category path and name on the Category products page in the admin area were incorrect. Fixed. Thanks2Seyfin.
+
+*PAYMENTS*
+[*] 17 Sep 2012, random - Improvement (0124463): When PayPal Payments Advanced and Payflow Link are enabled in Admin area, PayPal Express Checkout is now also enabled.
+[*] 17 Sep 2012, random - Improvement (0126141): Minor text changes for payment systems/check/cc processors on the Payment methods page.
+[*] 03 Sep 2012, random - Improvement (0125785): PayPal Advanced and Payflow Link: func_paypal_convert_to_BasicAmountType is now used for costs.
+[*] 29 Aug 2012, random - Improvement (0125548): PayPal Express Checkout: Removed the ReqConfirmShipping option.
+[*] 16 Aug 2012, aim - Improvement (0124511, 0124450): Adjusted error handling for 1-step_checkout and XPayments_Connector. Thanks2Joss.
+[*] 14 Aug 2012, aim - Improvement (0119654): Amazon Simple Pay now works not only with the United States, but also with non-U.S. countries. Thanks2Seyfin.
+[*] 06 Aug 2012, aim - Improvement (0121865): PayPal: Changed the URL to the diagnostic page in the error message for the Main page :: Payment methods page.
+[!] 24 Sep 2012, random - Bug (0126294): PayPal Express Checkout: If a user returned from PayPal incorrectly, Express Checkout button was not displayed. Fixed. Thanks2Seyfin.
+[!] 19 Sep 2012, random - Bug (0126219): Embedded Express Checkout method payment system was not named correctly in the backend and could have a wrong note. Fixed.
+[!] 18 Sep 2012, random - Improvement (0126183): PayPal Express Checkout: The returned address was not saved for the user who was logged in. Fixed.
+[!] 12 Sep 2012, random - Bug (0125859, 0125860): PayPal Express Checkout: Profile information was not correctly sent as well as parsed after being returned. Fixed.
+[!] 10 Sep 2012, random - Bug (0125966): PayPal Express Checkout: When used with X-Payments, the Capture/Void/Refund features were not working. Fixed.
+[!] 10 Sep 2012, aim - Bug (0124450): There was a fatal error related to an old modules initialization error. Adjusted error handling for 1-step_checkout and XPayments_Connector. Thanks2Joss.
+[!] 07 Sep 2012, random - Bug (0125705): PayPal Express Checkout (US) settings were not displayed correctly in the Admin area. Fixed.
+[!] 07 Sep 2012, random - Bug (0125906): PayPal Express Checkout (Payflow): Refund feature was not working. Fixed.
+[!] 06 Sep 2012, random - Bug (0125844): PayPal Advanced and Payflow Link: Customers were allowed to change their address on the side of PayPal, but this feature was not supported in X-Cart. This feature is disabled now.
+[!] 06 Sep 2012, random - Bug (0125844): PayPal Advanced and Payflow Link: Address 2nd line was not passed to PayPal. Fixed.
+[!] 06 Sep 2012, random - Bug (0125872): PayPal Express Checkout (Payflow): Wrong Tender value was sent for Capture/Refund/etc. Fixed.
+[!] 06 Sep 2012, random - Bug (0125848, 0125840, 0125775): PayPal Express Checkout (Payflow): Shipping address was not passed, a customer who was logged in was required to click Place order twice, etc. Fixed.
+[!] 06 Sep 2012, random - Bug (0125874, 0125872): PayPal Express Checkout (Payflow): Capture/Void/etc did not work when Express was using Payflow Link/Advanced params. Fixed.
+[!] 05 Sep 2012, random - Bug (0125828): PayPal Advanced and Payflow Link: Supplier reference number was not passed to PayPal. Fixed.
+[!] 03 Sep 2012, random - Bug (0125703, 0125741, 0125705): PayPal Advanced and Payflow Link: Currency was not passed, PayPal config was stored incorrectly, etc. Fixed.
+[!] 31 Aug 2012, random - Bug (0109465): The "has_preauth" flag was not set correctly in the database for several payment methods. Fixed.
+[!] 29 Aug 2012, random - Bug (0125667): PayPal Express Checkout (UK only): Empty parameters were sent to PayPal as "1". Fixed.
+[!] 29 Aug 2012, random - Bug (0125673): PayPal Express Checkout (UK only): There was a misprint in testmode check. Fixed.
+[!] 28 Aug 2012, aim - Bug (0125606): Endpoint URLs for First Data Global Gateway Connect 1.0 were incorrect. Fixed.
+[!] 16 Aug 2012, aim - Bug (0124511, 0124450): There was a fatal error related to an old modules initialization error. Fixed. Thanks2Joss.
+[!] 02 Aug 2012, aim - Bug (0124728): Virtual Merchant: When an order was being paid for through Virtual Merchant payment gateway, the gateway returned errors saying that the values for the fields First Name (ssl_first_name) and Ship to First Name (ssl_ship_to_first_name) were too long. Fixed.
+[!] 02 Aug 2012, aim - Bug (0123427): Ogone payment method: callback did not work. Fixed. Thanks2Snake.
+
+*SHIPPING*
+[*] 21 Sep 2012, aim - Improvement (0126299): UPS Online Tools is now enabled for the developer X-Cart copy by default.
+[*] 17 Aug 2012, random - Improvement (0122086): 1-800Courier shipping carrier added. Thanks to Mccornic.
+[*] 10 Aug 2012, aim - Improvement (0124795): Test realtime shipping feature improvement. Added length/width/height/quantity/price settings. Thanks2Seyfin.
+[*] 10 Aug 2012, aim - Improvement (0124924): Added a sticky link to the 'FedEx SmartPost Hub Network' page on the 'FedEx options' page.
+[!] 07 Aug 2012, aim - Bug (0124902): In X-Cart PRO, UPS returned the "An origin postal code must be specified. (errorcode: 111107)" error if the provider's seller address was not specified. Fixed. Thanks2Klyuev.
+[!] 06 Aug 2012, aim - Bug (0124815): FedEx error: Insured Value was not allowed for SmartPost. Fixed. Thanks2Seyfin.
+
+*TAXES*
+[!] 05 Sep 2012, random - Bug (0125823): There was a PHP notice when using taxes. Fixed.
+
+*ORDERS*
+[!] 24 Sep 2012, aim - Bug (0126341): There was an SQL error related to orders search. Fixed. Thanks2Klyuev.
+[!] 03 Aug 2012, aim - Bug (0124800): Deleted products were not shown in orders. Fixed. Thanks2Seyfin.
+
+*USERS*
+[!] 31 Jul 2012, random - Bug (0124637): User account activation did not work in MySQL strict mode. Fixed.
+[!] 31 Jul 2012, random - Bug (0124630): 'Account activated' message showed userid instead of username. Fixed.
+[!] 27 Aug 2012, aim - Bug (0125539): Old passwords were not checked correctly (The setting 'Do not allow a user to submit a new password that is the same as any of the last four passwords they have used'). Fixed.
+
+*IMAGES*
+[!] 03 Aug 2012, aim - Bug (0124786): The alt text for images was not shown for detailed and product_thumbnail images. Fixed.
+
+*LANGUAGES*
+[*] 27 Aug 2012, aim - Improvement (0124827): Updated instructions for First Data Global Gateway - Connect. Thanks2Seyfin.
+[!] 02 Aug 2012, aim - Bug (0124732): Some language labels did not have a topic assigned. Fixed. Thanks2Abr.
+
+*IMPORT/EXPORT*
+[!] 19 Sep 2012, aim - Bug (0122284): Related Products import did now work correctly. Fixed. Thanks2Klyuev. [PRODUCT_LINKS]
+
+*MODULES/ADD-ONS*
+[*] 19 Sep 2012, aim - Improvement (0125275): Lexity module: Added the option 'Subscribe me to Lexity Updates' in Admin area.
+[*] 12 Sep 2012, abr - Improvement (0126054): X-Magnifier: Fixed a PHP notice.
+[*] 12 Sep 2012, aim - Improvement (0125119, 0125934, 0125935, 0125936, 0125939, 0125940, 0125946): CloudSearch feature added. Thanks2Nikita.
+[*] 11 Sep 2012, random - Improvement (0125101): MailChimp Newsletters built-in module renamed to MailChimp Basic.
+[*] 30 Aug 2012, aim - Improvement (0125707): X-Affiliate: The 'Ask for partner ID on checkout' setting is disabled by default. [XAffiliate]
+[*] 27 Aug 2012, aim - Improvement (0123369): Coupon codes can now be created with the Discount Coupons module disabled.
+[*] 15 Aug 2012, tito - Improvement (0124566): ProductNotifications module added.
+[*] 13 Aug 2012, tito - Improvement (0123294): f-Commerce Go module added.
+[*] 13 Aug 2012, random - Improvement (0124125): MailChimp Advanced module added. Thanks to Kuzma.
+[*] 08 Aug 2012, tito - Improvement (0124505): SocialLogin module added.
+[*] 07 Aug 2012, tito - Improvement 0123298) HotProducts module added.
+[*] 06 Aug 2012, aim - Improvement (0123295, 0124856, 0124808): MultiCurrency module added.
+[*] 03 Aug 2012, random - Improvement (0124216): Create order in back-end feature added to Advanced Order Management module.
+[*] 01 Aug 2012, random - Improvement (0121711): Email Account Activation module added.
+[*] 27 Jul 2012, tito - Improvement (0124327, 0123293): Advanced Customer Reviews module added.
+[*] 26 Jul 2012, random - Improvement (0124143): Banner System module added. Thanks to Joliaj.
+[!] 20 Sep 2012, random - Bug (0124673): Product Configurator: Product selection for slots was not working. Fixed.
+[!] 13 Sep 2012, abr - Bug (0126054): X-Magnifier image could not be uploaded bacause of an SQL error. Fixed.
+[!] 12 Sep 2012, aim - Bug (0125790): There was a problem related to lite payment interface and coupons. Fixed. Thanks2Joss. [1-step_checkout XPC XPayments_Connector]
+[!] 07 Sep 2012, aim - Bug (0125912): Facebook Like button was not shown for Dutch and some other languages. Fixed. [Socialize]
+[!] 03 Sep 2012, aim - Bug (0117669): Product options of the "Test area" type were not updated in AOM. Fixed. Thanks2fundaev.
+[!] 30 Aug 2012, aim - Bug (0125698): Fixed a potential SQL error for Sitemap module. Thanks2Seyfin.
+[!] 23 Aug 2012, aim - Bug (0124292): Products map did not work with multi-byte charsets. Fixed. [Unicode, languages]
+[!] 03 Aug 2012, aim - Bug (0124771): There was an SQL error related to Products_Map. Fixed.
+[!] 02 Aug 2012, random - Bug (0124699): Advanced Order Management was causing PHP notices. Fixed.
+
+*PERFORMANCE*
+[*] 15 Sep 2012, abr - Improvement (0125987): Optimized the cleanup mechinism for expired sessions.
+[*] 14 Sep 2012, aim - Improvement (0125897): Restored conditional Smarty_Compiler class loading.
+[*] 10 Sep 2012, abr - Improvement (0092045): Removed redundant indexes from the xcart_pricing database table.
+[*] 10 Sep 2012, abr - Improvement (0125910): Removed explicit 'USE INDEX' from SQL queries.
+[*] 07 Sep 2012, abr - Improvement (0125886): Removed redundant code.
+[*] 07 Sep 2012, abr - Improvement (0125889): SQL options optimization.
+[*] 07 Sep 2012, abr - Improvement (0125890): Removed redundant indexes from the xcart_products database table.
+[*] 23 Aug 2012, abr - Improvement (0125510): Improved the internal benchmark report.
+[*] 21 Aug 2012, abr - Improvement (0125404): Optimized an SQL query executed on the "Edit languages" page in the Admin area by replacing the "GROUP BY" statement with "DISTINCT".
+[*] 17 Aug 2012, aim - Improvement (0125298): Smarty uses var/cache/smarty_cache dir now instead of var/cache.
+[*] 03 Aug 2012, aim - Improvement (0124789): Small optimization for image.php.
+[!] 07 Sep 2012, abr - Bug (0114354): PHP configuration cache file corruption caused the requirements checking procedure to fail. Fixed.
+[!] 21 Aug 2012, abr - Bug (0125402): There was an unnecessary key in xcart_languages. Removed.
+[!] 20 Aug 2012, abr - Bug (0125363): func_unset was consuming more RAM than it freed. Fixed.
+
+*MISCELLANEOUS*
+[*] 24 Sep 2012, aim - Improvement (0126335): Converted the script skin/common_files/modules/Banner_System/js/jquery.cycle.all.js to Unix format. Thanks2Abr.
+[*] 15 Sep 2012, abr - Improvement (0126118): Improved the shop_closed_key hint.
+[*] 14 Sep 2012, abr - Improvement (0126044): Improved language variable names validation. Added assertion to the "func_get_langvar_by_name" function. A failed attemt to access a non-existing module configuration page now results in a warning.
+[*] 12 Sep 2012, abr - Improvement (0126029): Improved X-Cart's sessions mechanism.
+[*] 10 Sep 2012, abr - Improvement (0114354): Made some improvements to the PHP ini settings logging procedure.
+[*] 31 Aug 2012, random - Improvement (0125727): Changed the xcart_tbl_prefix variable to XC_TBL_PREFIX constant which is now used for declaration of the "sql_tbl" array.
+[*] 20 Aug 2012, abr - Improvement (0125363): Added assert() to prevent the 'Illegal offset type in ...' warning. Added a comment line to assert().
+[*] 20 Aug 2012, abr - Improvement (0125355): Improved logging of time in error logs.
+[*] 22 Aug 2012, abr - Improvement (0125480): Removed an inadequate log message generated by func_print_d() and improved the default function behaviour.
+[*] 20 Aug 2012, abr - Improvement (0125353): Corrected inappropriate output buffer usage.
+[*] 20 Aug 2012, aim - Improvement (0119091): Changed minimum PHP version to 5.2.0.
+[*] 17 Aug 2012, abr - Improvement (0125316): Smarty variables initialization.
+[*] 14 Aug 2012, aim - Improvement (0125150): Adjusted xcart_modules table to support new fields init_orderby/author/module_url.
+[*] 07 Aug 2012, aim - Improvement (0124585): There were a couple of typos in the admin/upgrade.php script. Fixed. Thanks2Seyfin.
+[*] 03 Aug 2012, random - Improvement (0124781): Added new wrapper function func_split_by_eol.
+[*] 30 Jul 2012, aim - Improvement (0124560): The links to Admin/Customer/Provider areas provided at the last step of X-Cart installation now open in a new window. Thanks2Nikita.
+[!] 22 Sep 2012, abr - Bug (0126334): The aggregated JS/CSS code was not ordered according to the "queue" parameter passed to the "load_defer" function. Fixed.
+[!] 22 Sep 2012, abr - Bug (0126333): Repeated {load_defer} function calls did not accumulate the values passed in the "direct_info" parameter. Fixed.
+[!] 20 Sep 2012, random - Bug (0126284): There was a fatal error when PayPal was enabled during installation. Fixed. Thanks2Seyfin.
+[!] 15 Sep 2012, abr - Bug (0126115): The cron.php relied on the REQUEST_METHOD server variable unavailable in CLI mode. Fixed.
+[!] 15 Sep 2012, abr - Bug (0126116): The cron.php script displayed no report. Fixed.
+[!] 15 Sep 2012, abr - Bug (0108270): 301 HTTP status was returned if the storefront was closed. Fixed (Changed the HTTP status to 503).
+[!] 15 Sep 2012, abr - Bug (0094529): If the 'Key for access to a temporarily closed shop' value was added using special characters, an incorrect URL was generated which could not be used to access the closed store. Fixed (Added shop_key validation).
+[!] 15 Sep 2012, abr - Bug (0126114): Running the cron.php script generated a PHP Fatal error. Fixed.
+[!] 14 Sep 2012, aim - Bug (0125976): There were some SQL errors related to xcart_giftreg_events table in strict mode. Fixed.
+[!] 14 Sep 2012, aim - Bug (0125976): There was a grammar mistake in the text of the err_giftreg_no_recipients_msg label. Fixed.
+[!] 07 Sep 2012, abr - Bug (0117717): Displaying a PHP notice caused the 'Your cart' section to be displayed in a wrong way. Fixed.
+[!] 07 Sep 2012, abr - Bug (0125915): There was a syntax error in customer/main/product_details.tpl. Fixed.
+[!] 28 Aug 2012, abr - Bug (0125632): PHP notices were generated during benchmark run as a result of attempts to access uninitialized elements of an array. Fixed.
+[!] 22 Aug 2012, abr - Bug (0125482): The description for the func_print_d() function was misleading. Corrected.
+[!] 22 Aug 2012, abr - Bug (0125462): There was no explicit "encoding" argument for htmlentities() and htmlspecialchars() functions. Fixed.
+[!] 22 Aug 2012, abr - Bug (0125430): Disabling Product Options module caused a PHP notice on product pages. Fixed.
+[!] 20 Aug 2012, aim - Bug (0125344): There were some SQL errors related to xcart_config table in strict mode. Fixed.
+[!] 20 Aug 2012, aim - Bug (0125346): There was a PHP warning: "Illegal string offset" in PHP 5.4. Fixed.
+[!] 15 Aug 2012, aim - Bug (0125230): There were some PHP notices. Fixed.
+[!] 06 Aug 2012, aim - Bug (0124810): SQL errors were generated when a product was added or modified in MySQL strict mode. Fixed.
+[!] 06 Aug 2012, aim - Bug (0124562): SQL errors were generated when a gift certificate was added in MySQL strict mode. Fixed.
+[!] 03 Aug 2012, aim - Bug (0124787): A fatal error occurred when the option 'Do not log changes in PHP configuration settings' was unchecked. Fixed. Thanks2Nogard.
+[!] 30 Jul 2012, aim - Bug (0124569): SQL errors were generated when a product was cloned in MySQL strict mode. Fixed.
+[!] 27 Jul 2012, aim - Bug (0124528): International data was imported using an incorrect character set in X-Cart installer. Fixed. Thanks2Nikita.
+[!] 26 Jul 2012, aim - Bug (0124514): There were some SQL errors in MySQL strict mode. Fixed.
+[!] 25 Jul 2012, random - Bug (0124461) Images were not displayed via the image.php script when Development Mode was enabled in X-Cart's config.php. Fixed.
+
+------------------ X-CART v4.5.2 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 11 Jul 2012, aim - Improvement (0122187, 0123862): Cart design changes for ideal_comfort skin. Added wishlist with jquery jcarousel to the cart page. Thanks2Sandra.
+[!] 12 Jul 2012, aim - Bug (0123907): Smarty/X-Cart cache/templates were not cleared on skin change. Fixed.
+[!] 09 Jul 2012, aim - Bug (0123711): Special menu was not displayed in IE8. Fixed. Thanks2Tito.
+[!] 09 Jul 2012, random - Bug (0123554): Typos in address_fields.tpl and help_contactus.tpl. Fixed.
+[!] 09 Jul 2012, aim - Bug (0123563): Become a provider link was not displayed in Customer area for ideal_comfort skin. Fixed.
+[*] 24 Jul 2012, random - Improvement (0124413): Sharpening parameters adjusted to improve quality of auto-generaged thumbnail images.
+
+*PAYMENTS*
+[*] 20 Jul 2012, tito - Improvement (0123286): In stores configured to accept payments through X-Payments, customers are no longer redirected to a separate page for entering their credit card details, but are allowed to enter them directly on X-Cart's checkout page. Thanks2Joss.
+[*] 13 Jul 2012, aim - Improvement (0119788): Added ACH Federal check processor integration. Thanks2Letun.
+[*] 10 Jul 2012, aim - Improvement (0123815): ISO-8859-1 charset is changed for UTF-8 for PayPal by default.
+[*] 10 Jul 2012, random - Improvement (0123758): Removed the option 'Suppress special characters in the data sent to PayPal'.
+[*] 26 Jun 2012, aim - Improvement (0118396) Added PayPal Access module. Thanks2Letun.
+[*] 26 Jun 2012, aim - Improvement (0118396) Added PayPal Advanced & Payflow Link integrations. Thanks2Letun.
+[!] 13 Jul 2012, random - Bug (0123759): PayPal Express Checkout button was not shown near each checkout button. Fixed.
+[!] 12 Jul 2012, aim - Bug (0086044): PayPal. When "Action to be performed on order placement" was set to "Auth only", and an order was captured, the refund failed. Fixed.
+[!] 11 Jul 2012, aim - Bug (0122696): A customer was not able to place a second order using PayPal Express. Fixed.
+[!] 09 Jul 2012, aim - Bug (0123606): GoEmerchant. EZ Payment Gateway Direct was listed as supported by X-Payments. Fixed.
+
+*SHIPPING*
+[*] 27 Jun 2012, random - Improvement (0122404): Added FedEx 2 Day A.M. shipping method.
+[!] 16 Jul 2012, aim - Bug (0123818): Fedex did not work when the value for state was 'Other' (countries without states). Fixed.
+
+*USERS*
+[!] 19 Jul 2012, aim - Bug (0119991): Email notifications contained outdated user info. Fixed.
+[!] 09 Jul 2012, aim - Bug (0123355): Operate As User function did not work. Fixed.
+
+*CHECKOUT*
+[!] 18 Jul 2012, aim - Bug (0123396): There was an AJAX error on the One_Page_Checkout page. Fixed.
+[!] 12 Jul 2012, aim - Bug (0123895): (PayPal Express) Line item details were passed on the SetExpressCheckout call, but not the DoExpressCheckoutPayment call.
+
+*ORDERS*
+[!] 27 Jun 2012, aim - Bug (0121660): Top sellers were not updated correctly on the dashboard. Fixed.
+
+*IMAGES*
+[!] 13 Jul 2012, aim - Bug (0123927): PHP notice was fixed for func_get_image_url_by_types function.
+
+*LANGUAGES*
+[*] 17 Jul 2012, aim - Improvement (0123665): Renamed lbl_gcheckout_or_use language variable to lbl_or_use.
+[!] 16 Jul 2012, aim - Bug (0123977): lbl_paypalauth_user_cannot_create_email text label was corrected.
+
+*MODULES/ADD-ONS*
+[*] 16 Jul 2012, aim - Improvement (0123108): (Detailed_Product_Images) Renamed popup_window_max_width/popup_window_max_height settings to det_image_popup_max_width/det_image_popup_max_height for CloudZoom widget.
+[*] 28 Jun 2012, random - Improvement (0121832): Lexity module added. Thanks to Svowl.
+[!] 17 Jul 2012, aim - Bug (0124084): Google Checkout caused a fatal error when XPayments_Connector was enabled. Fixed.
+[!] 16 Jul 2012, aim - Bug (0124022): There was a fatal error 'Call to undefined function func_xpay_func_load() in customer area' when X-Payments was disabled. Fixed.
+[!] 16 Jul 2012, aim - Bug (0123971): Fixed Warning: file_get_contents(https://assets.pinterest.com/js/pinit.js) error for Socialize module. Thanks2Skot.
+
+*PERFORMANCE*
+[*] 14 Jul 2012, aim - Improvement (0123983): Improved mcrypt PHP-extension availability checking: the check results are now cached (stored in session data).
+[*] 12 Jul 2012, aim - Improvement (0123886): Small optimization for init.php.
+[*] 12 Jul 2012, aim - Improvement (0123886): There was an SQL error on MySQL 4.1.x for Add_to_cart_popup module. Fixed.
+[*] 10 Jul 2012, aim - Improvement (0123806): Moved some JavaScript code to HEAD HTML tag from cart tpls.
+[*] 10 Jul 2012, aim - Improvement (0123753): Small optimization for check_useraccount.php file.
+[!] 25 Jul 2012, random - Bug (0123372): Cached images for detailed product images were not generated properly in some cases. Fixed.
+
+*MISCELLANEOUS*
+[*] 06 Jul 2012, random - Improvement (0123680): A few minor changes in admin/user_profiles.php.
+[!] 20 Jul 2012, aim - Bug (0124267):  Under certain conditions PHP notice "Undefined index..." was displayed (related to in /include/func/func.db.php). Fixed.
+[!] 24 Jul 2012, aim - Bug (0124370, 0124428) Cloud Zoom issue: Login popup & Flyout menu elements were displayed behind the product image. Fixed. Thanks2Seyfin.
+[!] 20 Jul 2012, aim - Bug (0124187): Corrected symbol validation for Products_Map module.
+[!] 20 Jul 2012, aim - Bug (0124112): Fixed some PHP notices on product details page.
+[!] 19 Jul 2012, random - Bug (0124217): Renamed "func_is_adresses_different" to "func_is_addresses_different".
+[!] 18 Jul 2012, aim - Bug (0124147): Fixed a PHP notice for payment/ps_paypal_pro_us.php.
+[!] 17 Jul 2012, aim - Bug (0124103): When a user logged in to Admin area opened customer registration page, it resulted in a redirect loop. Fixed.
+[!] 16 Jul 2012, random - Bug (0123818): Cosmetic changes in shipping/mod_FEDEX.php.
+[!] 11 Jul 2012, aim - Bug (0122696): Some PHP notices needed a fix. Fixed.
+[!] 10 Jul 2012, aim - Bug (0123749): News about new modules were displayed incorrectly. Fixed.
+[!] 10 Jul 2012, random - Bug (0123741): Under certain conditions PHP notice "Undefined index..." was displayed (related to /include/register.php). Fixed.
+[!] 09 Jul 2012, aim - Bug (0123736): There were some SQL errors related to xcart_config table in strict mode. Fixed.
+[!] 09 Jul 2012, random - Bug (0123715): Small optimization in include/register.php.
+[!] 05 Jul 2012, random - Bug (0123556): Duplicate variable declaration in func.user.php. Fixed.
+[!] 29 Jun 2012, random - Bug (0123314): Videos in the descriptions of some demo products with detailed images were displayed in a wrong way in Google Chrome. Fixed.
+[!] 27 Jun 2012, aim - Bug (0123159): There was a syntax error in Google_Analytics module (//<![CDATA[[CDATA[ was used instead of //<![CDATA[), which could result in errors during the processing of the page with XML parser. Fixed.
+[!] 24 Jul 2012, random - Bug (0124425): Fixed some PHP notices on admin/tools.php page.
+
+------------------ X-CART v4.5.1 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 22 May 2012, aim - Improvement (0121024): Normalized "Ideal comfort" skin CSS.
+[*] 25 Apr 2012, aim - Improvement (0121014): Adjusted the address book page for "Books and Magazines" skin. Thanks2Joliaj.
+[*] 26 Apr 2012, ferz - Improvement (121010): Books & Magazines skin:  Removed "3-columns" label.
+[*] 29 May 2012, aim - Improvement (0122107): Interline interval increased for 'Save as a new address/Update existing address' radio buttons on the register page for Fast Lane Checkout module.
+[*] 23 May 2012, aim - Improvement (0121887): Issued include_cache for books_and_magazines.
+[*] 17 May 2012, aim - Improvement (0121042): Adjustments for books_and_magazines and ideal_comfort skins.
+[*] 15 May 2012, aim - Improvement (0121042): Small adjustment for bottom links for the books_and_magazines skin. Adjusted test related to demo specific file.
+[*] 14 May 2012, aim - Improvement (0121042): Small adjustment for bottom links for the books_and_magazines skin. Thanks2Joliaj.
+[*] 14 May 2012, aim - Improvement (0121042): Recovered 'Special' section for books_and_magazines skin.
+[*] 14 May 2012, aim - Improvement (0121042): Changed 'Products per page' setting to 12 by default.
+[*] 14 May 2012, aim - Improvement (0121042): Moved 'Recently Viewed' section to the top for the books_and_magazines and ideal_comfort skins.
+[*] 07 Jun 2012, aim - Improvement (0122362): Changed Apply button to Continue button on the modify profile page for the One Page Checkout module.
+[*] 14 Jun 2012, aim - Improvement (0122653): In stores with enabled alternative checkout methods (PayPal Express Checkout, Google Checkout, Amazon Checkout), the standard Checkout link is no longer displayed; the standard and alternative checkout methods can be selected only from the mini-cart.
+[!] 28 May 2012, aim - Bug (0122026): 'Update existing address' checkbox was not displayed for ideal_comfort for One Page Checkout module. Fixed.
+[!] 30 May 2012, aim - Bug (0122127): Checkout/Checkout with paypal/Checkout with Amazon/Coogle checkout buttons were not displayed correctly for "Books and Magazines" skin in the ajax minicart.
+[!] 22 May 2012, aim - Bug (0121806): Icon sizes were not defined for books_and_magazines and ideal_comfort skins. Fixed.
+[!] 19 Jun 2012, aim - Bug (0122230): Checkout buttons had common styles in Ajax minicart. Fixed.
+[!] 20 Jun 2012, random - Bug (0121094): Company logo was not displayed in order invoice e-mail when Ideal comfort skin was enabled. Fixed.
+[-] 19 Jun 2012, aim - Bug (0122866): Removed Subscriptions module for books_and_magazines skin.
+[-] 28 May 2012, aim - Other (0121193): Removed "Artistic tunes" skins.
+
+*PAYMENTS*
+[*] 25 May 2012, aim - Improvement (0118323): Added 'Sign up for Authorize.net' button (Authorize.Net: SIM).
+[*] 23 May 2012, aim - Improvement (0121718): Added a couple of notes related to Website Payments Pro and X-Payments. Thanks2Seyfin.
+[*] 24 Apr 2012, ferz - Improvement (108751): Updated the CyberSource - Hosted Order Page integration.
+[*] 25 Jun 2012, aim - Improvement (0116099): Allied Wallet payment method added.
+[!] 05 Jun 2012, aim - Bug (0122431): There were multiple logical errors related to session data. Fixed.
+[!] 18 May 2012, aim - Bug (0121706): X-Cart overwrote max_execution_time php setting incorrectly. Fixed.
+[!] 18 Jun 2012, aim - Bug (0122728): PayPal: Refund amount was calculated wrongly. Fixed.
+
+*SHIPPING*
+[*] 30 Apr 2012, aim - Improvement (0121212): Adjusted UPS License Agreement display.
+[*] 18 May 2012, aim - Improvement (0121662): Converted ZIP code to \d{5} format for USPS module.
+[!] 14 May 2012, aim - Bug (0121144): UPS registration did not work. Fixed. Thanks2Seyfin.
+[!] 25 Apr 2012, ferz - Bug (119995): Fedex International Ground shipping method did not work in realtime calculations. Fixed. Thanks2Seyfin.
+
+*INTERFACE*
+[*] 04 May 2012, ferz - Improvement (104238): Corrected the 'txt_change_order_status' label on the Order details page (Admin area).
+[*] 22 May 2012, aim - Improvement (0121785): Removed a note related to Google Checkout from standard checkout pages.(Warning: If you are going to use Google Checkout and wish to redeem a discount coupon, please enter its code on Google Checkout's Place Order page.)
+
+*CART*
+[*] 25 May 2012, aim - Improvement (0121705): 'Add To Cart Popup' module added.Thanks2Nikita.
+[*] 14 Jun 2012, aim - Improvement (0122686): Refactored the minicart.php file. func_get_minicart_totals function.
+[!] 18 May 2012, aim - Bug (0121361): Non-ASCII product names were truncated incorrectly. Fixed.
+
+*CHECKOUT*
+[*] 15 Jun 2012, aim - Improvement (0122664): Adjusted the note 'If you already have an account please sign in' for the One_Page_Checkout module.
+
+*IMPORT/EXPORT*
+[*] 15 Jun 2012, aim - Improvement (0119417): Adjusted the text note "This directory will be used if an image file is specified without a file path; the path specified here must be absolute, e.g...".
+[!] 25 Apr 2012, ferz - Bug (121002): The phone field was not exported in 4.0.x compatible format export. Fixed. Thanksx2Snake.
+[!] 15 Jun 2012, aim - Bug (0119417): Thumbnail generation feature did not work correctly for large files (more then 500 lines). Fixed.
+[!] 15 Jun 2012, aim - Bug (0122739): The text notes "To generate thumbnails for imported images go to the Tools section and click the Generate thumbnails button" and "To re-slice imported images go to the Tools section and click the Re-slice magnified images button" were displayed twice on the last import page. Fixed.
+
+*LANGUAGES*
+[*] 18 Jun 2012, aim - Improvement (0122759): Changed the 'IP addresses for X-Payments callbacks' text note to 'IP addresses for X-Payments callbacks
+(optional)'.
+[!] 26 Apr 2012, ferz - Bug (121064): Typo in the "lbl_auto_resize_could_not_create_image" text label. Fixed.
+
+*CATEGORIES*
+[!] 07 Jun 2012, aim - Bug (0122500): Empty categories array was cached. Fixed.
+
+*PRODUCTS*
+[!] 21 Jun 2012, random - Bug (0122139): This page URL worked incorrectly when it was used after viewing Featured products. Fixed.
+
+*USERS*
+[!] 22 Jun 2012, aim - Bug (0123039): Blowfish key re-generation procedure adjusted.
+
+*PERFORMANCE*
+[*] 22 May 2012, aim - Improvement (0121802): Added function to warn about deprecated calls like '{include file=currency.tpl'.
+[*] 22 May 2012, aim - Improvement (0121802): Replaced currency.tpl calls with {currency smarty function for books_and_magazines and ideal_comfort skins. Thanks2Svowl.
+[*] 14 May 2012, aim - Improvement (0121496): Replaced customer/main/alter_currency_value.tpl calls with alter_currency smarty function for books_and_magazines and ideal_comfort skins.
+[*] 07 Jun 2012, aim - Improvement (0122524): Optimization for Categories management::Current category location select box. Thanks2Abr.
+[*] 08 Jun 2012, aim - Improvement (0122574): Optimization for func_get_category_parents function. Thanks2Abr.
+[*] 11 Jun 2012, aim - Improvement (0122609): Optimization for alt_skin/func_get_schemes functionality.
+[*] 11 Jun 2012, aim - Improvement (0122612): Small optimization for func_get_data_from_func function. Thanks2Abr.
+[*] 13 Jun 2012, aim - Improvement (0122674): Optimization for test_active_bouncer function.
+
+*MODULES/ADD-ONS*
+[*] 16 May 2012, aim - Improvement (0121089, 0121583): Special Offers: Added SQL tables for 'Check database integrity' functionality.
+[*] 16 May 2012, aim - Improvement (0121089): Special Offers: Added/corrected demo data for sql/demo/demo-offers.sql file.
+[*] 15 May 2012, aim - Improvement (0121089): GiftRegistry: Added/corrected demo data for sql/demo/demo-giftreg.sql file.
+[*] 15 May 2012, aim - Improvement (0121089): Survey: Added/corrected demo data for sql/demo/x-survey.sql file.
+[*] 25 May 2012, aim - Improvement (0122003): Customer Reviews: JS code related to product_details ajax call did not work properly for books_and_magazines skin. Fixed.
+[*] 04 Jun 2012, aim - Improvement (0122087): EU Cookie Law compliance module added.Thanks2Mccornic.
+[*] 11 Jun 2012, aim - Improvement (0122529): Affiliate: Optimized performance for the 'Affiliate plans' feature.
+[*] 11 Jun 2012, aim - Improvement (0122529): Affiliate: Refactored the 'Pending partner plan/Affiliate plan' feature on the 'Modify partner profile' page.
+[*] 25 Jun 2012, aim - Improvement (0097076): The CloudZoom module updated to support v1.0.2. The first detailed image is loaded by default now (instead of the main product image).Thanks2Seyfin.
+[!] 23 Apr 2012, aim - Bug (0120059): Checkout by Amazon: There was an error preventing the purchase of an item when a product did not have images. Fixed.
+[!] 26 Apr 2012, aim - Bug (0118317): Affiliate: There was a PHP Fatal error: Call to undefined function: func_get_login_by_userid() in /admin/partner_orders.php on line 183. Fixed.
+[!] 30 Apr 2012, aim - Bug (0121173): Flyout Menus: With some skins (Books & Magazinnes, Fasion Mosaic, Vivid Dreams) on the second level of flyout menus bullets were displayed in a wrong way. Cache key was fixed for FlyOut categories.
+[!] 04 May 2012, ferz - Bug (121288): X-Payments connector: HTTP protocol was allowed for X-Payments but not allowed for X-Cart connector. Fixed. Thanks2Abr.
+[!] 06 Jun 2012, aim - Bug (0122409): With the option "Allow adding a gift wrapping to orders" enabled, the gift wrap message box was displayed even if the option "Allow adding a greeting message to orders" was not enabled in Admin. Fixed.
+[!] 29 May 2012, aim - Bug (0122151): Special Offers: There was an SQL error related to Special Offers module and 'Do not check product\'s category availability and product\'s category membership on all the product related pages.' Fixed.
+[!] 18 May 2012, aim - Bug (0121728): Manufacturers: Tools -> Integrity check -> Missing relations for Manufacturers module. Fixed.
+[!] 11 Jun 2012, aim - Bug (0122529): Affiliate: Pending affiliate plans could not be assigned to users. Fixed. Also fixed some PHP warnings.
+[!] 15 Jun 2012, aim - Bug (0122477): Products map: When there were products with empty names, running <xcart_url>/products_map.php caused SQL errors. Fixed. Thanks2Klyuev.
+
+*MISCELLANEOUS*
+[*] 16 May 2012, aim - Improvement (0121089, 0121109): Added/corrected demo data for xcart_products_lng_* and xcart_categories_lng SQL tables.
+[*] 07 May 2012, aim - Improvement (0121376): Small adjustment for the 'Database Backup/Restore' tool related to charsets.
+[*] 14 May 2012, aim - Improvement (0121042): Converted windows text files to unix format.
+[*] 22 May 2012, aim - Improvement (0121802): Small adjustment for include/func/func.templater.php file.
+[*] 08 Jun 2012, aim - Improvement (0122552): SQL Table/key names are now quoted.
+[!] 18 May 2012, aim - Bug (0121729): UTF-8 was used as the default charset for Multibyte String extension(mb_string). Fixed.
+[!] 16 May 2012, aim - Bug (0121570): There were some SQL errors related to xcart_config table in strict mode. Fixed.
+[!] 14 May 2012, aim - Bug (121497): X-Cart installer did not work correctly with databases with nonASCII names. Fixed. Thanks2Klyuev.
+[!] 21 May 2012, aim - Bug (0121640): There were some SQL errors related to xcart_product_rnd_keys/xcart_products table in strict mode. Fixed.
+[!] 11 Jun 2012, aim - Bug (0122586): SQL statement "REPAIR TABLE " was wrong. Fixed. Thanks2Amee.
+[!] 11 Jun 2012, aim - Bug (0122602): admin/tools.php did not open sometimes (Related to 'Change user authentication mode' functionality). Fixed.
+[!] 11 Jun 2012, aim - Bug (0122606): There was a problem with PHP warning related to open_basedir and func_get_schemes function. Fixed.
+[!] 21 Jun 2012, aim - Bug (0122948): Fixed the notice "Undefined variable: additional_values in include/register.php on line 1028".
+
+------------------ X-CART v4.5.0 RELEASED
+
+*SHIPPING*
+
+[*] 16 Apr 2012, aim - Improvement (0120653): Changed the 'Number of grams in the unit of weight defined by the weight symbol' from '453.6' to '453.59237'.
+
+*PAYMENTS*
+
+[!] 16 Apr 2012, aim - Bug (0120280): PayPal PRO Direct Payment fails to work with X-Cart via X-Payments. Fixed.
+[!] 17 Apr 2012, aim - Bug (0120538): eWay merchant hosted payments error: XML not formatted correctly. Reason: Whitespace is not allowed. Fixed.
+[*] 18 Apr 2012, aim - Improvement (0120787): Changed schema for the xcart_cc_pp3_data table: sessid char(32) NOT NULL DEFAULT ''.
+
+*TAXES*
+
+[*] 16 Apr 2012, aim - Improvement (0120552): Changes related to TaxCloud module.
+
+*PRODUCTS*
+
+[*] 11 Apr 2012, aim - Improvement (0113856): Added 'Compatibility with old product storage routine' setting.
+[!] 20 Apr 2012, aim - Bug (0120314): Products Map fails to work with UTF-8. Fixed.
+
+*IMPORT/EXPORT*
+
+[*] 11 Apr 2012, aim - Improvement (0120543): Added data_type binary(3) field to xcart_import_cache.
+
+*USERS*
+
+[!] 16 Apr 2012, ferz - Bug (0120527): Address book: The state field remains in the profile after selecting a country without states. Fixed.
+
+*MODULES/ADD-ONS*
+
+[!] 13 Apr 2012, ferz - Bug (0120606): Froogle: Wholesale price used in some cases instead of original price. Fixed.
+[!] 16 Apr 2012, ferz - Bug (0120611): XML Sitemap: Clean URLs for categories generated with missing trailing '/'. Fixed.
+[!] 17 Apr 2012, aim - Bug (0120530): Antifraud problems: "declined_orders" and "completed_orders" calculated incorrectly. Fixed.
+[!] 18 Apr 2012, aim - Bug (0120551): Expired cache not removed in the TaxCloud module. Fixed.
+[!] 18 Apr 2012, aim - Bug (0120793): Cache not removed for the Amazon_Checkout module. Fixed.
+
+*PERFORMANCE*
+
+[*] 18 Apr 2012, aim - Improvement (0120785): Changed schema for the xcart_amazon_data table for Amazon_Checkout.
+
+*MISCELLANEOUS*
+[!] 02 Apr 2012, aim - Bug (0113021): 'I accept the "Terms & Conditions"' link fails to work when the shop closes on the partner registration page; 'X-Cart news' section fails to appear. Fixed.
+[*] 16 Apr 2012, aim - Improvement (0120597): Updated COMPATIBLE_VERSION constant to 4.5.x.
+[*] 16 Apr 2012, aim - Improvement (0120669): Moved help.qtmsoft.com to help.x-cart.com.
+[!] 17 Apr 2012, aim - Bug (0120708): Database integrity issue. Fixed.
+[*] 17 Apr 2012, aim - Improvement (0120328): Changed minimum MySQL version to 4.1.2.
+[!] 18 Apr 2012, aim - Bug (0120789): Typo in the db_connection function. Fixed.
+[!] 19 Apr 2012, aim - Bug (0106914): Admin top menu fails to work in iOS Safari browser (iPad/iPod). Fixed.
+
+----------------- X-CART v4.5.0 beta 1 RELEASED
+
+*CART*
+
+[!] 29 Feb 2012, aim - Bug (0119066): Online payment methods fail to appear in the customer area. Fixed.
+
+*SHIPPING*
+
+[*] 07 Mar 2012, aim - Improvement (0102330): Added new 'Split the shipment into multiple packages if its weight/dimensions exceed the limitations' setting for the USPS module.
+[*] 07 Mar 2012, aim - Improvement (0118585): Updated the USPS module.
+[*] 07 Mar 2012, aim - Improvement (0118131): USPS server does not support the testing.shippingapis.com URL. The production.shippingapis.com URL is hardcoded for the USPS module.
+[*] 07 Mar 2012, aim - Improvement (0117638): Added new methods for the USPS module.
+[*] 07 Mar 2012, aim - Improvement (0116832): Added new Priority Mail Regional Box A/B/C containers for the USPS module.
+[*] 09 Mar 2012, aim - Improvement (0068722): Removed depricated shipping methods for the USPS module.
+[*] 09 Mar 2012, aim - Improvement (0092331): Corrected weight limits for First Class methods for the USPS module.
+[*] 09 Mar 2012, aim - Improvement (0117303): Code refactoring for the USPS module. Removed global variable. Added functions: func_USPS_has_response_error, func_USPS_parse_methods, func_usps_save_pack_configuration_slg, func_USPS_prepare_rate_query, func_USPS_log_debug_information.
+[*] 12 Mar 2012, aim - Improvement (0117303, 0119371): Adjusted func_usps_check_shippingid, related to the shipping label generator module of the USPS module.
+[*] 12 Mar 2012, aim - Improvement (0108307): 'Value of content' is now related to order total for the USPS module.
+[*] 12 Mar 2012, aim - Improvement (0117303): Fixed the 'Invalid First Class Mail Type' error related to the USPS module.
+[*] 12 Mar 2012, aim - Improvement (0117303): Fixed the 'GIFT CARD FLAT RATE is an invalid container type for a REGULAR package and PRIORITY service' error in the USPS module.
+[*] 13 Mar 2012, aim - Improvement (0117303): Fixed the 'REGIONALRATEBOXB is an invalid container type for a REGULAR package and PRIORITY service' error in the USPS module.
+[*] 13 Mar 2012, aim - Improvement (0117303): Fixed the 'Service not available' error in the USPS module.
+[*] 13 Mar 2012, aim - Improvement (0117303): Added new methods to the USPS module.
+[*] 13 Mar 2012, aim - Improvement (0117303): Adjusted default settings for the USPS module.
+
+*PAYMENTS*
+
+[*] 02 Feb 2012, aim - Improvement (0118206): Changed PSiGate payment integration to the 'Interac Online' method (not involving credit cards).
+[*] 02 Feb 2012, aim - Improvement (0117648): Changed background for 'eSec - ReDirect' and 'DIBS' to 'Y', as it will be removed.
+[*] 06 Feb 2012, aim - Improvement (0117648): Added pop-up info window for deleted background payments methods for PCI-DSS compatibility.
+[*] 15 Feb 2012, aim - Improvement (0117652): Removed the 'Add CC manual processing' feature from the payment methods page.
+[*] 16 Feb 2012, aim - Improvement (0117652): Changed new payment method wizard.
+[*] 17 Feb 2012, aim - Improvement (0117652): 'Phone Ordering' is now the default method.
+[*] 17 Feb 2012, aim - Improvement (0117652): Adjusted the func_cart_add_offline_payment/func_get_offline_payment_methods tests.
+[*] 27 Feb 2012, aim - Improvement (0117652): Moved the certified_cart.gif logo from Authorize.Net: AIM payment method to Authorize.Net: SIM payment method.
+[!] 21 Mar 2012, aim - Improvement (0119820): PHP Fatal error: Call to undefined function func_set_cart_address() in payment/ps_paypal_pro_us.php. Fixed.
+[*] 21 Mar 2012, aim - Improvement (0119826): Changed wait limit for for customer return requests in the "Checkout by Amazon" module to 20 sec.
+[*] 21 Mar 2012, aim - Improvement (0119830): Slightly adjusted Amazon Checkout settings.
+[*] 09 Apr 2012, ferz - Improvement (0120433): Updated ProxyPay3 payment method.
+
+*PRODUCTS*
+
+[!] 14 Feb 2012, aim - Bug (0118594): Product page sometimes displays wrong product. Fixed.
+
+*CATEGORIES*
+
+[!] 27 Mar 2012, aim - Bug (0098989): Fixed category name on the 'Category products' page.
+
+*USERS*
+
+[!] 28 Mar 2012, aim - Bug (0119665): Wrong language in the 'Order is processed' notification to customers for anonymous customers. Fixed.
+
+*MODULES/ADD-ONS*
+
+[!] 06 Feb 2012, aim - Bug (0118239): XPayments_Connector shows warnings for the 'Direct debit processor' and 'Check processor' payment methods. Fixed.
+[!] 22 Mar 2012, aim - Bug (0119299): You are not allowed to access that resource! Id:32 error fixed for Amazon_Checkout.
+[!] 26 Mar 2012, ferz - Bug (0119958): Froogle: "The content in an attribute in an item exceeds 10 KB." error appears for long detailed product descriptions. Fixed.
+[!] 29 Mar 2012, ferz - Bug (0118507): Product sitemap causes SQL error with some configuration settings. Fixed.
+[*] 06 Apr 2012, ferz - Improvement (0118818): TaxCloud module integration.
+[*] 09 Apr 2012, ferz - Improvement (0120276): Added X-Payments connector link to the Payment methods section and the main menu.
+[*] 09 Apr 2012, aim - Improvement (0118814): Updated Socialize module. Added Pinterest feature.
+
+*LANGUAGES*
+
+[*] 22 Feb 2012, aim - Improvement (0117652): Removed obsolete language labels from language files.
+[*] 28 Feb 2012, aim - Improvement (0117652): Corrected some language variables.
+[*] 04 Apr 2012, ferz - Improvement (0120313): Updated welcome text.
+[*] 04 Apr 2012, aim - Improvement (0120290): Changed default charset SQL connection/results/client to UTF-8.
+
+*DESIGN AND APPEARANCE*
+
+[*] 27 Feb 2012, aim - Improvement (0117652): Removed unused CSS styles.
+[*] 22 Mar 2012, aim - Improvement (0118986): Removed unused CSS classes.
+[!] 22 Mar 2012, aim - Bug (0119738): Fixed W3C errors in the One_Page_Checkout module.
+[!] 27 Mar 2012, aim - Bug (0108889): Fixed W3C errors in the admin area.
+[!] 04 Apr 2012, ferz - Bug (0120284): Special characters in the SpeedBar text could cause W3C errors. Fixed.
+[*] 06 Apr 2012, ferz - Improvement (0120349): 'Books and Magazines', 'Ideal Comfort' skin integration.
+[*] 09 Apr 2012, aim - Improvement (0120100): Updated demo products.
+[*] 09 Apr 2012, aim - Improvement (0120449): Added index name to aggregated CSS file.
+
+*PERFORMANCE*
+
+[!] 06 Apr 2012, aim - Bug (0120406): International product descriptions are now stored in separate tables. Changed demo data.
+
+*SECURITY*
+
+[*] 07 Feb 2012, aim - Improvement (0117652): Removed several background CC methods.
+[*] 14 Feb 2012, aim - Improvement (0117652, 0118487): Removed code related to CC data checking.
+[*] 14 Feb 2012, aim - Improvement (0117652, 0118487): Removed obsolete CC-related settings.
+[*] 15 Feb 2012, aim - Improvement (0117652): Removed templates with the CC form.
+[*] 16 Feb 2012, aim - Improvement (0117652): Removed the 'Remove from customers\' profiles' feature.
+[*] 17 Feb 2012, aim - Improvement (0117652): Added the 'This function works with upgraded stores only' note to the 'Remove credit card information' function in the admin area.
+[*] 17 Feb 2012, aim - Improvement (0117652): Removed the popup help CVV2 window.
+[*] 17 Feb 2012, aim - Improvement (0117652): Removed credit card payment method from demo orders.
+[*] 21 Feb 2012, aim - Improvement (0117652): Removed the subscriptions module.
+[*] 01 Mar 2012, aim - Improvement (0118356): Adjusted security settings.
+
+*MISCELLANEOUS*
+
+[*] 24 Jan 2012, aim - Improvement (0117835): Disabled cleanup.php and "Maintenance->Clear templates/X-Cart cache" for the demo mode.
+[!] 06 Feb 2012, aim - Bug (0118314): XPayments_Connector: 'Warning! Payment methods have already been imported from X-Payments earlier. All previously imported payment methods will be removed from the database if you select to import payment methods again.' appears unconditionally. Fixed.
+[*] 14 Feb 2012, aim - Improvement (0117652): Removed obsolete language variables.
+[!] 15 Feb 2012, aim - Bug (0118611): TYPO in the "DIBS (FlexWin)" payment module. Fixed.
+[*] 15 Feb 2012, aim - Improvement (0117652): Removed unused code.
+[*] 01 Mar 2012, aim - Improvement (0119083): Updated a bundle of CA Root Certificates.
+[*] 01 Mar 2012, aim - Improvement (0117652): Adjusted selenium tests.
+[*] 15 Mar 2012, aim - Improvement (0119020): Updated inline advertisement in paid modules.
+[*] 15 Mar 2012, aim - Improvement (0117652): Updated xcart.sql
+[!] 20 Mar 2012, aim - Improvement (0119174, 0117303): Downgraded jQuery to version 1.6.4 due to multiple problems in MSIE and One_Page_Checkout module.
+[!] 26 Mar 2012, aim - Bug (0119962): SQL error appears on the include/version.php page when the Product_Options module is disabled. Fixed.
+[*] 27 Mar 2012, aim - Improvement (0119975): Changed License agreement.
+[*] 27 Mar 2012, aim - Improvement (0120047): Added favicon.ico to xcart_root.
+[!] 28 Mar 2012, aim - Bug (0120058): shop_closed.html fails to appear with clean URLs enabled. Fixed.
+[!] 02 Apr 2012, aim - Bug (0120210): SQL error "Duplicate entry for key 'page'" appears for the xcart_stats_pages table. Fixed.
+[*] 02 Apr 2012, ferz - Improvement (0120203): Removed developer's TODO comments from php files.
+

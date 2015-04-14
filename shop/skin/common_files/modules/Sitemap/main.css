@@ -1,0 +1,33 @@
+/*
+2a730fd4840227be84ac0aacc509d63416030d26, v2 (xcart_4_5_5), 2013-02-07 10:36:56, main.css, random
+vim: set ts=2 sw=2 sts=2 et:
+*/
+#Sitemap h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 15px 0;
+}
+#Sitemap ul {
+  list-style: none;
+  padding:0;
+}
+#Sitemap ul ul {
+  list-style: square inside none;
+  font-weight: bold;
+}
+#Sitemap ul ul ul {
+  padding-left: 20px;
+  list-style: none;
+  font-weight: normal;
+}
+#Sitemap ul ul ul.sitemap_categories_sub {
+	font-weight: bold;
+	list-style: none;
+}
+#Sitemap .sitemap_products a {
+  font-style: italic;
+  text-decoration: none;
+}
+#Sitemap .sitemap_products a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,117 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Advanced Order Management module CSS stylesheet
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    b6397f52c0805a9abb357bab5968f8e3077e10dc, v3 (xcart_4_7_0), 2015-03-02 14:40:44, admin.css, mixon
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+.aom-product-taxes {
+  padding: 10px;
+}
+
+.aom-product-taxes span {
+  white-space: nowrap;
+  font-size: 9px;
+}
+
+.aom-catalog-price,
+.aom-catalog-quantity {
+  display: inline-block;
+  padding-left: 20px;
+  color: #b51a00;
+}
+
+.aom-catalog-quantity {
+  color: #0ea655;
+}
+
+input.aom-value-is-changed,
+select.aom-value-is-changed,
+textarea.aom-value-is-changed {
+  background-color: #fcfcdd;
+}
+
+.aom-edit-value,
+.aom-restore-value,
+.aom-save-value {
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  display: inline-block;
+}
+
+.aom-edit-value {
+  background: transparent url(../../images/icon_pencil.png) no-repeat left top;
+}
+
+.aom-restore-value {
+  background: transparent url(../../images/icon_restore.png) no-repeat left top;
+}
+
+.aom-save-value {
+  background: transparent url(../../images/icon_checked.png) no-repeat left top;
+}
+
+table[summary="Products"] {
+  width: 100%;
+}
+
+table[summary="Products"] tr td {
+  text-align: center;
+}
+
+table[summary="Products"] tr td:first-child {
+  text-align: left;
+}
+
+.text-pre-block {
+  padding-top: 20px;
+}
+
+[data-aom-field-not-avail] a,
+[data-aom-field-not-found] a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+[data-aom-field-not-avail],
+[data-aom-field-not-avail] td,
+[data-aom-field-not-avail] td a {
+  color: #900;
+}
+
+[data-aom-field-not-found],
+[data-aom-field-not-found] td,
+[data-aom-field-not-found] td a {
+  color: #f00;
+}
+
+.aom-product-price div,
+.aom-display-price div,
+[data-aom-shipping-cost] div,
+[data-aom-discount-amount] div,
+[data-aom-coupon-discount-amount] div,
+[data-aom-payment-surcharge-amount] div {
+  display: inline-block;
+}
+
+.aom-calculator {
+  background: transparent url(../../images/calculator.svg) no-repeat left top;
+  width: 17px;
+  height: 17px;
+  background-size: 12px;
+  background-position: 2px top;
+  position: relative;
+  top: 3px;
+}
+
+.aom-calculator .aom-disabled {
+  background: transparent url(../../images/calculator_disabled.svg) no-repeat left top;
+}

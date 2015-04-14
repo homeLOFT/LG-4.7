@@ -1,0 +1,18 @@
+/*
+8ec8b858917c921a726e2197071ce74d020e5ead, v1 (xcart_4_6_0), 2013-04-02 16:43:59, altskin.Opera.css, random
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+.products .creviews-rating-box, .products .creviews-rating-box .creviews-vote-bar {
+	position:relative;
+	width:100%
+}
+ .products .creviews-rating-box .creviews-vote-bar ul.star-0 {
+	float:left;
+	left:95px;
+	clear:both;
+}
+.products .creviews-rating-box .creviews-rating{
+	top:20px;
+	position:relative;
+}

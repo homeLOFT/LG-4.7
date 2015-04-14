@@ -1,0 +1,17 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Socialize module CSS stylesheet
+ *
+ * @category    X-Cart
+ * @package     X-Cart
+ * @subpackage  CSS
+ * @author      Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version     c93a9047ef9e681f02c3dccb25c149f29177d976, v20 (xcart_4_5_5), 2013-02-08 14:12:42, altskin.css, random
+ * @link        http://www.x-cart.com/
+ * @see         ____file_see____
+ */
+
+#content-container,
+#center-main {
+  overflow: visible;
+}

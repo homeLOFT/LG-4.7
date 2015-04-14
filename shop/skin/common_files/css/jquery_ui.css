@@ -1,0 +1,83 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Override jquery ui styles than cannot be modified by themeroller
+ * 
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    4bb2522714d05de641b450dcf0ae97372e402eb0, v9 (xcart_4_6_2), 2014-01-24 17:41:59, jquery_ui.css, aim
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+.ui-dialog .ui-dialog-titlebar {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  background: #f2f2f2;
+  color: #000;
+  border: 0;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 7px;
+}
+.ui-dialog .ui-dialog-title {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 4px 16px 4px 0;
+}
+.ui-dialog {
+  -webkit-box-shadow: 0 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 0 10px rgba(0,0,0,0.3);
+  border-width: 0;
+  padding: 7px;
+  position: fixed!important;
+}
+.ui-dialog.ui-corner-all {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.ui-dialog.type-w .ui-dialog-titlebar {
+  background: #fcf8e3;
+  color: #c49f60;
+  border-bottom-color: #f3edcf;
+}
+.ui-dialog.type-i .ui-dialog-titlebar {
+  background: #d9edf7;
+  color: #3a87ad;
+  border-bottom-color: #b3d2e0;
+}
+.ui-dialog.type-e .ui-dialog-titlebar {
+  background: #f2dede;
+  color: #b94a48;
+  border-bottom-color: #dbbabe;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  border: 0;
+  outline: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  border: 0;
+  background: none;
+  font-weight: normal;
+  color: #3b3b3b;
+}
+.ui-dialog .ui-dialog-titlebar-close .ui-icon {
+  background: url(../images/dialog-close.png);
+}
+.ui-dialog .ui-dialog-titlebar-close.ui-state-hover .ui-icon {
+  background-position: 16px 0;
+}
+
+/**
+ * Cannot use solution from http://api.jqueryui.com/theming/stacking-elements/.
+ * Increase base z-index for jquery UI widgets like dialog
+ */
+.ui-front {
+    z-index:10000; /* The default is 100. */
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Jia Wang (ups) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ups="http://www.ups.com/XMLSchema" elementFormDefault="unqualified">
+	<xsd:element name="AccessLicenseRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Request" type="RequestType"/>
+				<xsd:element name="CompanyName" type="xsd:string"/>
+				<xsd:choice>
+					<xsd:element name="Address" type="AddressType"/>
+					<xsd:element name="AddressArtifactFormat" type="AddressArtifactFormatType"/>
+				</xsd:choice>
+				<xsd:element name="PrimaryContact" type="ContactType"/>
+				<xsd:element name="SecondaryContact" type="ContactType" minOccurs="0"/>
+				<xsd:element name="CompanyURL" type="xsd:string"/>
+				<xsd:element name="ShipperNumber" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="DeveloperLicenseNumber" type="xsd:string"/>
+				<xsd:element name="AccessLicenseProfile" type="AccessLicenseProfileType"/>
+				<xsd:element name="OnLineTool" type="OnLineToolType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="ClientSoftwareProfile" type="ClientSoftwareProfileType" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="ClientSoftwareProfileType">
+		<xsd:sequence>
+			<xsd:element name="SoftwareInstaller" type="xsd:string"/>
+			<xsd:element name="SoftwareProductName" type="xsd:string"/>
+			<xsd:element name="SoftwareProvider" type="xsd:string"/>
+			<xsd:element name="SoftwareVersionNumber" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ContactType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Title" type="xsd:string"/>
+			<xsd:element name="EMailAddress" type="xsd:string"/>
+			<xsd:element name="PhoneNumber" type="xsd:string"/>
+			<xsd:element name="FaxNumber" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element name="AddressLine1" type="xsd:string"/>
+			<xsd:element name="AddressLine2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="AddressLine3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="City" type="xsd:string"/>
+			<xsd:element name="StateProvinceCode" type="xsd:string"/>
+			<xsd:element name="PostalCode" type="xsd:string"/>
+			<xsd:element name="CountryCode" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressArtifactFormatType">
+		<xsd:sequence>
+			<xsd:element name="StreetNumberLow" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StreetName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StreetType" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostcodePrimaryLow" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OnLineToolType">
+		<xsd:sequence>
+			<xsd:element name="ToolID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ToolVersion" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AccessLicenseProfileType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode" type="xsd:string"/>
+			<xsd:element name="LanguageCode" type="xsd:string"/>
+			<xsd:element name="AccessLicenseText" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Start Common Request type -->
+	<xsd:complexType name="RequestType">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="TransactionReference" type="TransactionReferenceType" minOccurs="0"/>
+				<xsd:element name="RequestAction" type="xsd:string"/>
+				<xsd:element name="RequestOption" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransactionReferenceType">
+		<xsd:sequence>
+			<xsd:element name="CustomerContext" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

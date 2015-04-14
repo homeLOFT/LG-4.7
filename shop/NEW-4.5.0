@@ -1,0 +1,96 @@
+X-CART 4.5 NEW FEATURES
+========================
+
+DESIGN AND APPEARANCE
+----------------------
+
+Integrated 2 new skins:
+- Ideal Comfort (default)
+- Books and Magazines
+
+Added/Updated demo products and other related data. Added favicon.ico.
+
+
+SHIPPING
+---------
+
+- Updated USPS module. Added new configuration settings. 
+- Added/Updated shipping methods. Corrected weight limits. 
+- Code refactoring for USPS module. Fixed some issues related to the USPS module.
+
+
+SECURITY
+--------
+
+- Removed code related to CC data checking. Removed templates with CC form.
+- Adjusted security settings. Completely removed subscriptions module. 
+- Updated a bundle of CA Root Certificates.
+
+
+PAYMENT MODULES
+----------------
+
+Removed several background CC methods due to PCI-DSS standards:
+
+ - PayPal WPP Direct Payment
+ - GoEmerchant - EZ Payment Gateway Direct
+ - Virtual Merchant - Merchant Provided Form
+ - USA ePay
+ - SkipJack
+ - SecurePay - Non-Recurring Interface
+ - PSiGate - XML Direct
+ - Sage Pay Go - Direct protocol
+ - iTransact (Process USA) - XML scheme
+ - PlugnPay - Remote Auth method
+ - PayFlow - Pro
+ - Ogone - Direct
+ - NetRegistry e-commerce
+ - Netbilling gateway - Direct
+ - First Data Global Gateway - LinkPoint
+ - Innovative E-Commerce
+ - DIBS (cc_ideb.php)
+ - HeidelPay
+ - GoEmerchant - XML Gateway API
+ - eWAY Merchant Hosted Payment
+ - eSelect Plus - Direct Post
+ - eSec - Direct
+ - eSec - ReDirect
+ - eProcessingNetwork - Transparent Database Engine
+ - ePDQ - MPI XML 
+ - HSBC - XML API integration
+ - ECHOnline
+ - DirectOne - Direct Interface
+ - CyberSource - SOAP Toolkit API
+ - Caledon
+ - BluePay
+ - RBS WorldPay - Global Gateway
+ - Bean Stream
+ - ANZ eGate - Merchant-Hosted
+ - AuthorizeNet - AIM 
+
+Minor changes/Updates: 
+
+- PSiGate
+- DIBS (cc_dibs.php)
+- Authorize.Net
+- Paypal
+- Checkout by Amazon
+- ProxyPay3
+
+MISCELLANEOUS
+--------------
+
+- Switched database to the UTF-8 charset.
+- Removed some unused CSS classes, obsolete language labels.
+- International product descriptions are now stored 
+  in separate tables (Multi-language stores performance optimization).
+- Changed License agreement.
+
+ADD-ONS
+--------
+
+- TaxCloud module integration.
+- Updated Socialize module. Added Pinterest feature. 
+
+-------------------------------------------
+Please read the CHANGELOG for more details.

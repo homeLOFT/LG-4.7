@@ -1,0 +1,55 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * General CSS stylesheet for storefront pages
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    fe0d1d2f915bf6ced1ee6a46129cb9de508bdb21, v2 (xcart_4_5_0), 2012-04-06 15:01:57, main.css, aim
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+*/
+
+.buttons-row.soc-buttons-row {
+  margin-top: 15px;
+}
+
+.soc-buttons-row .soc-item {
+  float: left;
+  margin-right: 10px;
+}
+
+/* 
+  Service styles
+*/
+.top-margin-2 {
+  margin-top: 2px;
+}
+.top-margin-5 {
+  margin-top: 5px;
+}
+.top-margin-15 {
+  margin-top: 15px;
+}
+.top-margin-42 {
+  margin-top: 42px;
+}
+
+/*
+  Footer links
+*/
+ul.soc-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 6px;
+  display: inline;
+}
+ul.soc-footer-links li {
+  display: inline;
+  padding: 0;
+  margin-left: 8px;
+}
+ul.soc-footer-links li img {
+  vertical-align: middle;
+}

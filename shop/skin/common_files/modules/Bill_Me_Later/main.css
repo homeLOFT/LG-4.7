@@ -1,0 +1,30 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Bill Me Later settings CSS stylesheet
+ *	
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author	   Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    c4876f0dc3c1be77d432d7277a473c36b8ae058c, v1 (xcart_4_6_1), 2013-09-07 11:40:24, main.css, random
+ * @link	   http://www.x-cart.com/
+ * @see		   ____file_see____
+ */
+.paypal-bml-banner {
+  text-align: center;
+}
+.paypal-bml-banner img {
+  max-width: 100%;
+  height: auto;
+}
+.paypal-bml-banner.top {
+  margin-bottom: 10px;
+}
+.paypal-bml-banner.inline {
+  text-align: left;
+  margin-top: 10px;
+}
+.paypal-bml-banner.cart.inline {
+  margin-top: 0px;
+  position: absolute;
+}

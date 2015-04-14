@@ -1,0 +1,97 @@
+.jcarousel-skin-tango .jcarousel-container {
+	margin: 10px 0px;
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width:  auto;
+    padding: 0px 35px;
+}
+
+.jcarousel-skin-tango .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+  width:  auto;
+  margin: 0 auto;
+}
+
+.jcarousel-skin-tango ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.jcarousel-skin-tango ul li {
+  float: left;
+  width: 145px;
+  text-align: left;
+  margin: 0 30px 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-item {
+  width: 145px;
+  text-align: left;
+  margin: 0 30px 0 0;
+}
+.jcarousel-skin-tango .jcarousel-item:hover {
+  cursor: pointer;
+}
+
+.empty-cart .jcarousel-skin-tango ul li {
+  margin-right: 15px;
+}
+.empty-cart .jcarousel-skin-tango .jcarousel-item {
+  margin-right: 15px;
+}
+
+.jcarousel-skin-tango .jcarousel-item-placeholder {
+    background: #fff;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 43px;
+    right: 0px;
+    width: 21px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -21px 0;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    width: 21px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -21px 0;
+}
+
+.wl-carousel .image {
+  text-align: center;
+  margin: 0 auto 10px;
+  padding: 5px;
+}
+
+.wl-carousel .giftcert-item .image img {
+  margin-top: 35px;
+  width: 61px;
+}

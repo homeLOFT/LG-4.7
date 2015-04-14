@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Jia Wang (ups) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ups="http://www.ups.com/XMLSchema" elementFormDefault="unqualified">
+	<xsd:element name="AccessLicenseAgreementResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Response"/>
+				<xsd:element name="AccessLicenseText" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- ###########Start Response sub elements-->
+	<xsd:element name="Response">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TransactionReference" minOccurs="0"/>
+				<xsd:element name="ResponseStatusCode" type="xsd:string"/>
+				<xsd:element name="ResponseStatusDescription" type="xsd:string" minOccurs="0"/>
+				<xsd:element ref="Error" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TransactionReference">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CustomerContext" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="XpciVersion" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Error">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ErrorSeverity" type="xsd:string"/>
+				<xsd:element name="ErrorCode" type="xsd:string"/>
+				<xsd:element name="ErrorDescription" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="MinimumRetrySeconds" type="xsd:string" minOccurs="0"/>
+				<xsd:element ref="ErrorLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="ErrorDigest" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorLocation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ErrorLocationElementName" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ErrorLocationAttributeName" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- End Response sub elements -->
+</xsd:schema>

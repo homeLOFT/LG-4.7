@@ -1,0 +1,73 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * RPX styles
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    c6e943be1988dafca69802c03c1d2702308dd5ae, v2 (xcart_4_6_2), 2013-11-29 13:46:15, altskin.css, random
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+.xauth-horizontal .xauth-popup,
+.xauth-horizontal .xauth-or,
+.xauth-horizontal .xauth-form
+{
+  display: inline-block;
+}
+.xauth-horizontal {
+  position: relative;
+  white-space: nowrap;
+}
+.xauth-horizontal .xauth-or {
+  background: none;
+}
+
+.xauth-horizontal .xauth-or-background {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  background: transparent url(images/or_bg.png) no-repeat left center;
+  z-index: -1;
+  padding-right: 38px;
+}
+
+.xauth-vertical .xauth-or-background {
+  display: none;
+}
+
+.xauth-ss-button {
+  clear: both;
+}
+
+@media screen and (max-width:767px) {
+
+  .xauth-horizontal .xauth-popup,
+  .xauth-horizontal .xauth-or,
+  .xauth-horizontal .xauth-form
+  {
+    display: block;
+  }
+  .xauth-horizontal {
+    position: initial;
+    white-space: normal;
+    width: auto;
+  }
+  .xauth-horizontal .xauth-or {
+    background: none;
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  .xauth-horizontal .xauth-or-background {
+    display: none;
+  }
+
+  .xauth-horizontal .xauth-form,
+  .xauth-vertical .xauth-form
+  {
+    padding: 0;
+  }
+
+}

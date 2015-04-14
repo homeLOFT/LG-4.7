@@ -1,0 +1,31 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Bill Me Later settings CSS stylesheet
+ *	
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author	   Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    9eaf023b2315a54c3fb74263603f045340c72c0c, v2 (xcart_4_6_5), 2014-10-03 14:13:30, admin.css, mixon
+ * @link	   http://www.x-cart.com/
+ * @see		   ____file_see____
+ */
+#bml_config {
+ margin-bottom: 20px;
+}
+#bml_config img {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+#bml_config input {
+  float: right;
+  margin: 0 0 20px 20px;
+}
+#bml_bottom_notice {
+  margin-top: 20px;
+}
+#bml_bottom_notice,
+#bml_bottom_notice sup {
+  font-size: 10px;
+  color: #ccc;
+}

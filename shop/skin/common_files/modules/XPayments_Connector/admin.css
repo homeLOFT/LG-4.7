@@ -1,0 +1,168 @@
+/*
+155446750e3e6b7cd3a5762fcd3a2d4b4ccef150, v6 (xcart_4_6_5), 2014-09-24 08:39:41, admin.css, random
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+table.saved-cards th {
+  text-align: left;
+}
+
+table.saved-cards div.card-icon-container {
+  float: left;
+  height: 35px;
+  width: 70px;
+  overflow: hidden;
+}  
+
+table.saved-cards div.number {
+  height: 35px;
+  line-height: 35px;
+}
+
+
+table.saved-cards span.card {
+	display: inline-block;
+	width: 140px;
+	height: 70px;
+	zoom: 0.5;
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: 0 0 0;
+}
+
+table.saved-cards td.default-column,
+table.saved-cards th.default-column {
+  text-align: center;
+}
+
+table.saved-cards tr.button-row td {
+  padding-top: 10px;
+  text-align: center;
+}
+
+ul.saved-cards li {
+  list-style: none;
+}
+
+ul.saved-cards li label {
+  cursor: pointer;
+}
+
+ul.saved-cards li label input {
+  vertical-align: top;
+  margin-top: 4px;
+}
+
+ul.saved-cards span.card-icon-container {
+  display: inline-block;
+  height: 21px;
+  width: 42px;
+  overflow: hidden;
+}
+
+ul.saved-cards span.number {
+  display: inline-block;
+  height: 21px;
+  line-height: 21px;
+  vertical-align: top;
+}
+
+ul.saved-cards span.card {
+  display: inline-block;
+  width: 140px;
+  height: 70px;
+  zoom: 0.3;
+  -moz-transform: scale(0.3);
+  -moz-transform-origin: 0 0 0;
+}
+
+.saved-cards span.card.mc {
+  background: url(card_types.png) 0px 0px no-repeat;
+}
+
+.saved-cards span.card.visa {
+  background: url(card_types.png) 0px -71px no-repeat;
+}
+
+.saved-cards span.card.jcb {
+  background: url(card_types.png) 0px -141px no-repeat;
+}
+
+.saved-cards span.card.amex {
+  background: url(card_types.png) 0px -211px no-repeat;
+}
+
+.saved-cards span.card.dc {
+  background: url(card_types.png) 0px -281px no-repeat;
+}
+
+.saved-cards span.card.dicl {
+  background: url(card_types.png) 0px -351px no-repeat;
+}
+
+.saved-cards span.card.sw {
+  background: url(card_types.png) 0px -421px no-repeat;
+}
+
+.saved-cards span.card.cup {
+  background: url(card_types.png) 0px -491px no-repeat;
+}
+
+.saved-cards span.card.bc {
+  background: url(card_types.png) 0px -561px  no-repeat;
+}
+.xpc-options {
+  padding: 0;
+  margin: 0;
+}
+.xpc-options li {
+  list-style: none;
+  padding: 8px;
+  margin-bottom: -1px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.xpc-option-name,
+.xpc-option-value-container,
+.xpc-option-value,
+.xpc-option-help
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.xpc-option-name {
+  width: 50%;
+}
+.xpc-option-value-container {
+  width: 49%;
+  white-space: nowrap;
+}
+.xpc-option-error {
+  color: red;
+  font-style: italic;
+}
+.xpc-advanced-options-link {
+  padding: 8px;
+}
+.xpc-option-value,
+.xpc-options select,
+.xpc-options textarea,
+.xpc-options input,
+#xpc-deploy-entry
+{
+  max-width: 95%;
+}
+#xpc-deploy-page {
+  max-width: 800px;
+}
+#xpc-bundle-note {
+  margin-left: 14px;
+}
+.xpc-no-active-pm-warning span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.xpc-payment-error-cell {
+  background: #fff;
+}

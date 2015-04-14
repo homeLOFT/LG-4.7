@@ -1,0 +1,45 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * EU Cookie Law module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    75eb1e48064361a5b25ba08e2509c5cb97322282, v3 (xcart_4_6_2), 2013-10-04 08:15:08, main.css, random
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+div#eucl_panel {
+  border: 1px solid #aaa;
+	padding: 10px 15px 10px 15px;
+	display: none;
+	vertical-align: middle;
+  position: relative;
+  z-index: 100000;
+  background: #fff;
+  color: #000;
+}
+div#eucl_panel #eucl_panel_btn {
+	float: right;
+	padding: 7px 0px 0px 20px;
+  white-space: nowrap;
+}
+div#eucl_panel #eucl_panel_countdown {
+	padding: 0px 0px 0px 10px;
+	font-size: 18px;
+  white-space: nowrap;
+  color: #005d98;
+  display: inline-block;
+}
+div.save_close_btn {
+	float: right;
+  padding-right: 20px;
+}
+#eucl_desc ul {
+  margin: 0px;
+}
+div.eucl_dialog {
+  padding: 10px;
+  line-height: 14px;
+}

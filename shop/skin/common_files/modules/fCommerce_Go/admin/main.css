@@ -1,0 +1,141 @@
+/*0d0465915bddae9202730b9dcd479c6724c60147, v1 (xcart_4_5_5), 2013-01-11 13:17:36, main.css, random*/
+/*{literal}*/
+tr td.TableSeparator,
+.general-settings tr td.TableSeparator {
+  padding: 0 !important;
+}
+tr td.TableSeparator hr,
+.general-settings tr td.TableSeparator hr {
+  display: none;
+}
+h2.fb-shop-header,
+.general-settings h2.fb-shop-header {
+  font-size: 20px;
+  font-weight: normal;
+  color: inherit;
+  margin: 0;
+  padding: 30px 0 0px;
+}
+h2.fb-shop-header sup.categories-note,
+.general-settings h2.fb-shop-header sup.categories-note {
+  margin-left: 5px;
+  font-size: 20px;
+}
+h3.fb-shop-header,
+.general-settings h3.fb-shop-header {
+  font-size: 16px;
+  font-weight: normal;
+  color: inherit;
+  margin: 0;
+  padding: 15px 0 5px;
+}
+div.div-note {
+  padding: 10px;
+}
+div.div-note.highlighted {
+  border: dotted 3px #c43939;
+  background-color: #f7f6f4;
+  padding: 7px;
+}
+.fb-shop-texarea-title {
+  width: 300px;
+  margin-bottom: -14px;
+  position: relative;
+  line-height: 14px;
+}
+.fb-shop-check-line {
+  margin-bottom: 10px;
+}
+.fb-shop-styling-link {
+  font-weight: normal;
+  text-align: left;
+  margin: 4px 0px;
+}
+.general-settings tr td.small-separate,
+.general-settings tr td.small-separate img,
+td.small-separate,
+td.small-separate img {
+  height: 0;
+  padding: 2px;
+  margin: 0;
+}
+/* Categories listing */
+
+ul.fb-shop-categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0px;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item {
+  list-style: none;
+  padding: 4px 0 4px 18px;
+  display: block;
+  position: relative;
+  zoom: 1;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item.root-category {
+  margin-bottom: 4px;
+  padding-left: 0px;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item.white-bg {
+  background-color: #fff;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item label span,
+.general-settings ul.fb-shop-categories-list li.fb-shop-category-item label span {
+  font-size: 13px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item input {
+  vertical-align: middle;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item span.root-category-title,
+.general-settings ul.fb-shop-categories-list li.fb-shop-category-item span.root-category-title {
+  font-size: 14px !important;
+}
+ul.fb-shop-categories-list li.fb-shop-category-item label span.disabled {
+  opacity: .5;
+  filter: alpha(opacity=50);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+.general-settings tr table.ButtonTable td {
+  padding: inherit;
+}
+.general-settings tr td.Button {
+  padding: inherit;
+}
+
+div.module-plan-note p {
+  font-weight: normal;
+}
+
+span.expand-collapse {
+  display: block;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  background: transparent no-repeat center;
+  background-image: url({/literal}{$ImagesDir}{literal}/minus.gif);
+  cursor: pointer;
+}
+.subscribe-button {
+  font-size: 12px;
+}
+.module-plan-buttons .ui-button .ui-button-text {
+  font-weight: bold;
+}
+
+span.expand-collapse.closed {
+  background-image: url({/literal}{$ImagesDir}{literal}/plus.gif);
+}
+ul.fb-shop-categories-list.level-0 ul {
+  display: none;
+}
+ul.fb-shop-categories-list li.opened > ul {
+  display: block;
+}
+/*{/literal}*/

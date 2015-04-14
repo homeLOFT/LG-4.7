@@ -1,0 +1,29 @@
+/*
+2a30536f400a253c86be1a18eb00603b4ad45f18, v2 (xcart_4_5_1), 2012-06-22 11:52:57, altskin.FF.css, aim
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+button.add-to-cart-button{
+	width:38px !important;
+	margin-top:-2px !important;
+}
+.products-list button.add-to-cart-button{
+	width:auto !important;
+}
+button.light-button.add-to-cart-button{
+	width:auto !important;
+	margin-top:0px !important;
+}
+button.do-add2cart-error {
+  margin-top:0px !important;
+  width:55px !important;
+}
+
+button.do-add2cart-success{
+   margin-top:0px !important;
+   width:55px !important;
+}
+
+button.do-add2cart-wait {
+   margin-top:-1px !important;
+}

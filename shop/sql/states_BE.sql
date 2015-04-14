@@ -1,0 +1,11 @@
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Antwerpen','VAN','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Brabant wallon','WBR','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Brussel - Bruxelles','BRU','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Hainaut','WHT','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Limburg','VLI','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Liège','WLG','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Luxembourg','WLX','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Namur','WNA','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Oost-Vlaanderen','VOV','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('Vlaams-Brabant','VBR','BE');
+INSERT INTO xcart_states (state, code, country_code) VALUES ('West-Vlaanderen','VWV','BE');

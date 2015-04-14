@@ -1,0 +1,22 @@
+table.totals tr td.total,
+table.totals tr td.total-name,
+table.totals tr td.total-value,
+table.totals tr td.total-value-alt,
+table.totals span.total-name
+{
+  font-weight: bold;
+  text-transform: none;
+  padding: 5px 5px 5px 0;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+table.totals tr.total td.total-value-alt {
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+div.checkout-container textarea {
+  max-width: 99%;
+  position: relative;
+}

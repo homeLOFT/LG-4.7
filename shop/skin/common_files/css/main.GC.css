@@ -1,0 +1,16 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * General CSS stylesheet (overrides for Google Chrome)
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    e2f94e73d6820c792f0b4370044c7d76e019adeb, v4 (xcart_4_4_2), 2010-12-20 15:14:34, main.GC.css, ferz
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+.popup-dialog {
+  overflow: auto !important;
+}

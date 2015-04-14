@@ -1,0 +1,93 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ *
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    04fde8f686ed0be7315b88835142e1a07fc30925, v1 (xcart_4_6_2), 2014-01-04 06:59:41, main.css, random
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+.subscriptions .details {
+  width: 100%;
+  vertical-align: top;
+}
+.subscriptions .product-product {
+  font-weight: bold;
+  font-size: 14px;
+}
+.subscription-status {
+  font-weight: bold;
+}
+.subscription-status .active {
+	color: #1AB500;
+}
+.subscription-status .stopped {
+	color: #B51A00;
+}
+.subscription-status .finished {
+  color: #001AB5;
+}
+.subscriptions .image {
+  vertical-align: top;
+}
+.subscriptions .image img {
+  margin: 0 20px;
+}
+.subscriptions .descr {
+  padding-top: 15px;
+}
+
+.calendar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.subscription-calendar {
+	display: none;
+}
+.subscription-calendar .subscription-pending {
+/*  background-color: #001AB5;*/
+}
+.subscription-legend .subscription-pending a,
+.subscription-calendar .subscription-pending a {
+  border-color: #001AB5;
+  border-width: 2px;
+}
+.subscription-calendar .subscription-done {
+/*  background-color: #1AB500;*/
+}
+.subscription-legend .subscription-done a,
+.subscription-calendar .subscription-done a {
+  border-color: #1AB500;
+  border-width: 2px;
+}
+.subscription-calendar .subscription-failed {
+/*  background-color: #B51A00;*/
+}
+.subscription-legend .subscription-failed a,
+.subscription-calendar .subscription-failed a {
+  border-color: #B51A00;
+  border-width: 2px;
+}
+.subscription-legend.ui-datepicker {
+  display: block;
+  width: 100%;
+  border: none;
+}
+.subscription-legend .ui-datepicker-group {
+  width: 100%;
+}
+.subscription-legend td {
+  width: 95%;
+}
+.subscription-legend td.subscription-done,
+.subscription-legend td.subscription-failed,
+.subscription-legend td.subscription-pending {
+  width: 15px;
+}
+.subscription-legend a.ui-state-default {
+  width: 15px;
+}

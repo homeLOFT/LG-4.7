@@ -1,0 +1,15 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * XPayments Subscriptions
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    1911464f28228845e06b400a0c1330f94918227e, v1 (xcart_4_6_2), 2014-01-17 12:44:13, altskin.css, aim
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+table.product-properties .property-name2.xps-property-name {
+  display: inline-block;
+}

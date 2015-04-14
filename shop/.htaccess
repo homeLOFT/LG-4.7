@@ -1,0 +1,52 @@
+DirectoryIndex home.php index.php index.html index.htm
+
+# If you would like X-Cart to show informative message for errors caused
+# by opening of missing/deleted files (HTTP Error 404), please uncomment
+# the line below.
+# ErrorDocument 404 /404.php
+
+# NOTE: If you installed X-Cart into a subfolder (for example, to /store folder, so
+# it is available at http://www.example.com/store/home.php), you need to specify
+# full relative path to the 404.php script, for example, as follows:
+# ErrorDocument 404 /store/404.php
+
+# Show default error document for 404 errors caused by opening of image/media files.
+<Files ~ "\.(gif|jpe?g|png|js|css|swf|ico)$">
+	ErrorDocument 404 default
+</Files>
+
+ErrorDocument 401 default
+
+<Files ~ "\.(tgz|rar|zip|sql)$">
+	Order Deny,Allow
+	Deny from all
+</Files>
+
+
+# Uncomment the lines below once active development for your site has been completed.
+#FileETag none
+#<IfModule mod_expires.c>
+#ExpiresActive On
+#ExpiresByType image/* "access plus 5 weeks"
+#ExpiresByType text/* "access plus 5 weeks"
+#ExpiresByType application/x-shockwave-flash "access plus 5 weeks"
+#ExpiresByType application/x-javascript "access plus 1 hour"
+#ExpiresByType text/css "access plus 1 hour"
+#</IfModule>
+
+# Clean URLs [[[
+Options +FollowSymLinks -MultiViews -Indexes
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteBase /shop/
+
+	RewriteCond %{ENV:REDIRECT_STATUS} !^401$
+	RewriteCond %{REQUEST_URI} !^/shop/(payment|admin|provider|partner)/
+	RewriteCond %{REQUEST_FILENAME} !\.(gif|jpe?g|png|js|css|swf|php|ico)$
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteRule ^(.*)$ dispatcher.php [L]
+</IfModule>
+# /Clean URLs ]]]

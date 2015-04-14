@@ -1,0 +1,15 @@
+{*
+e1db5cf03524aef7b3d94390d4b4baa6311fd42b, v2 (xcart_4_5_5), 2013-02-07 17:35:38, menu.tpl, aim
+vim: set ts=2 sw=2 sts=2 et:
+*}
+<div class="bottom-links">
+  <ul>
+    <li><a href="help.php?section=contactus&amp;mode=update">{$lng.lbl_contact_us}</a></li>
+    {foreach from=$pages_menu item=p}
+      {if $p.show_in_menu eq 'Y'}
+        <li><a href="pages.php?pageid={$p.pageid}">{$p.title|amp}</a></li>
+      {/if}
+    {/foreach}
+  </ul>
+<div class="clearing"></div>
+</div>

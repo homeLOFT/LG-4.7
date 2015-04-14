@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Jia Wang (ups) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ups="http://www.ups.com/XMLSchema" elementFormDefault="unqualified">
+	<xsd:element name="AccessLicenseAgreementRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Request" type="RequestType"/>
+				<xsd:element name="DeveloperLicenseNumber" type="xsd:string"/>
+				<xsd:element name="AccessLicenseProfile" type="AccessLicenseProfileType"/>
+				<xsd:element name="OnLineTool" type="OnLineToolType" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="OnLineToolType">
+		<xsd:sequence>
+			<xsd:element name="ToolID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ToolVersion" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AccessLicenseProfileType">
+		<xsd:sequence>
+			<xsd:element name="CountryCode" type="xsd:string"/>
+			<xsd:element name="LanguageCode" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Start Common Request type -->
+	<xsd:complexType name="RequestType">
+		<xsd:sequence>
+			<xsd:sequence>
+				<xsd:element name="TransactionReference" type="TransactionReferenceType" minOccurs="0"/>
+				<xsd:element name="RequestAction" type="xsd:string"/>
+				<xsd:element name="RequestOption" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransactionReferenceType">
+		<xsd:sequence>
+			<xsd:element name="CustomerContext" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

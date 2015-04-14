@@ -1,0 +1,120 @@
+/*
+5eba2fb2ff75df4a18d07913b095c0b884b1e772, v2 (xcart_4_6_4), 2014-06-25 11:08:30, main.css, random
+vim: set ts=2 sw=2 sts=2 et:
+*/
+
+table.saved-cards {
+  max-width: 700px;
+}
+
+table.saved-cards th {
+  text-align: left;
+}
+
+table.saved-cards div.card-icon-container {
+  height: 35px;
+  width: 70px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}  
+
+table.saved-cards div.number {
+  height: 35px;
+  line-height: 35px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+table.saved-cards span.card {
+	display: inline-block;
+	width: 140px;
+	height: 70px;
+	zoom: 0.5;
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: 0 0 0;
+}
+
+table.saved-cards td.default-column,
+table.saved-cards th.default-column {
+  text-align: center;
+}
+
+table.saved-cards tr.button-row td {
+  padding-top: 10px;
+  text-align: left;
+}
+
+ul.saved-cards li {
+  list-style: none;
+}
+
+ul.saved-cards li label {
+  cursor: pointer;
+}
+
+ul.saved-cards li label input {
+  vertical-align: top;
+  margin-top: 4px;
+}
+
+ul.saved-cards span.card-icon-container {
+  display: inline-block;
+  height: 21px;
+  width: 42px;
+  overflow: hidden;
+}
+
+ul.saved-cards span.number {
+  display: inline-block;
+  height: 21px;
+  line-height: 21px;
+  vertical-align: top;
+}
+
+ul.saved-cards span.card {
+  display: inline-block;
+  width: 140px;
+  height: 70px;
+  zoom: 0.3;
+  -moz-transform: scale(0.3);
+  -moz-transform-origin: 0 0 0;
+}
+
+.saved-cards span.card.mc {
+  background: url(card_types.png) 0px 0px no-repeat;
+}
+
+.saved-cards span.card.visa {
+  background: url(card_types.png) 0px -71px no-repeat;
+}
+
+.saved-cards span.card.jcb {
+  background: url(card_types.png) 0px -141px no-repeat;
+}
+
+.saved-cards span.card.amex {
+  background: url(card_types.png) 0px -211px no-repeat;
+}
+
+.saved-cards span.card.dc {
+  background: url(card_types.png) 0px -281px no-repeat;
+}
+
+.saved-cards span.card.dicl {
+  background: url(card_types.png) 0px -351px no-repeat;
+}
+
+.saved-cards span.card.sw {
+  background: url(card_types.png) 0px -421px no-repeat;
+}
+
+.saved-cards span.card.cup {
+  background: url(card_types.png) 0px -491px no-repeat;
+}
+
+.saved-cards span.card.bc {
+  background: url(card_types.png) 0px -561px  no-repeat;
+}
+

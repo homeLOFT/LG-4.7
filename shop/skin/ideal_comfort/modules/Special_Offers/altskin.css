@@ -1,0 +1,15 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Special Offers module CSS stylesheet
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    d07c250171e7134c2ce639056f33e6cc5364def1, v2 (xcart_4_7_0), 2015-02-13 10:46:55, altskin.css, mixon
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+.offers-cart + hr + .cart-border {
+  border-top: 1px solid #b5b6b7;
+}

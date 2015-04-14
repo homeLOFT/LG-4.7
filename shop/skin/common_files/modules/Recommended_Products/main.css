@@ -1,0 +1,37 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Recommended products module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    616d4da9c72aa057d62e895b3bd394ab88d6f872, v2 (xcart_4_4_0_beta_2), 2010-05-31 06:08:28, main.css, igoryan
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+ul.rproducts {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.rproducts li {
+  margin: 0;
+  padding: 4px 0;
+  font-size: 7px;
+}
+
+ul.rproducts a:link,
+ul.rproducts a:visited,
+ul.rproducts a:hover,
+ul.rproducts a:active
+{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.printable .rproducts {
+  display: none;
+}

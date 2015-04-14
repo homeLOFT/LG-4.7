@@ -1,0 +1,129 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Add To Cart Popup module CSS stylesheet
+ *  
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
+ * @version    a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, altskin.css, aim
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+.product-added .thumbnail {
+  margin: 10px 5px;
+  float: left;
+}
+.product-added .thumbnail img {
+  max-width: 120px;
+  height: auto;
+}
+.product-added .details {
+  margin: 30px 0 0 10px;
+  float: left;
+  width: 150px;
+  text-align: center;
+}
+.product-added .cart-outer {
+  float: left;
+  margin-bottom: 20px;
+}
+.product-added hr {
+  clear: both;
+}
+.product-added .added-buttons {
+  text-align: center;
+}
+.product-added h1 {
+  margin: 20px 0 20px 20px;
+}
+.upselling-image {
+  position: relative;
+  text-align: center;
+}
+.upselling-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.product-added .products.products-div {
+  margin: 0;
+}
+.product-added .products .buy-now .quantity-title {
+  padding-right: 0;
+  width: auto;
+}
+.product-added .upselling.details {
+  width: 33.3%;
+  text-align: left;
+}
+.product-added .upselling .buy-now br {
+  display: none;
+}
+.product-added .upselling .title {
+  min-height: 52px;
+}
+.product-added .continue-shopping {
+  vertical-align: top;
+  margin-right: 5px;
+}
+.product-added .checkout-btn-container {
+  display: inline-block;
+}
+.product-added #alternative_checkouts {
+  position: relative;
+  right: 0;
+}
+
+.product-added.ui-widget {
+  font-family: inherit;
+}
+.product-added .ui-dialog-content .ui-button {
+  box-shadow: none !important;
+}
+.product-added .ui-dialog-content .ui-button.ui-state-default {
+  background-image: none !important;
+}
+.product-added .proceed-to-checkout .ui-button-text {
+  background-position: right 50%;
+  background-image: none;
+  padding-right: 1em;
+}
+.product-added .ui-button .ui-button-text {
+  font-size: 16px !important;
+  font-weight: normal !important;
+}
+.product-added .proceed-to-checkout .ui-button-text .fa {
+  margin-right: -5px;
+  margin-left: 6px;
+}
+
+@media screen and (max-width:767px) {
+  .product-added.ui-dialog .ui-dialog-content {
+    overflow-y: scroll !important;
+  }
+  .product-added .upselling.details {
+    width: 100%;
+    margin-bottom: 40px;
+    border: solid 1px #DBDBDB;
+    padding-bottom: 10px;
+  }
+  .product-added .cart-outer {
+    width: 285px;
+    background: none transparent;
+    padding-left: 0;
+  }
+  .product-added .added-buttons {
+    width: 100%;
+    text-align: center;
+  }
+  .continue-shopping.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+    margin-bottom: 10px;
+  }
+  .product-added .cart {
+    width: 100%;
+  }
+}
