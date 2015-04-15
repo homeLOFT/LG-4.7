@@ -11,6 +11,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
 {if $current_category.description ne ""}
   <div class="subcategory-descr">{$current_category.description|amp}</div>
+  <div class="catpromo">{$lng.lbl_catpromo}</div>
 {/if}
 
 {if $categories}
