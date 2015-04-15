@@ -7,7 +7,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
   <div class="line1">
     <div class="logo">
-      <a href="{$catalogs.customer}/home.php"><img src="../common/images/logo.png" alt="{$config.Company.company_name}" /></a>
+      <a href="http://www.leathergroups.com"><img src="../common/images/logo.png" alt="{$config.Company.company_name}" /></a>
     </div>
 
     {include file="customer/menu_cart.tpl"}
