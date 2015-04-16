@@ -64,8 +64,6 @@ vim: set ts=2 sw=2 sts=2 et:
 {load_defer_code type="css"}
 {include file="customer/service_body_js.tpl"}
 {load_defer_code type="js"}
-<<<<<<< HEAD
-=======
 
 <!-- Google Code for Remarketing Tag -->
 <!--------------------------------------------------
@@ -90,6 +88,5 @@ var google_remarketing_only = true;
 
 <a href="https://plus.google.com/100479727098477541780" rel="publisher"></a>
 
->>>>>>> refs/heads/staging
 </body>
 </html>
