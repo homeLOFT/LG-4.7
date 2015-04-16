@@ -11,9 +11,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
 <table class="block-grid three-up" summary="{$lng.lbl_summary|escape}">
   <tr>
-      <td style="padding-top: 30px !important;">
-        <img src="/common/images/logo.png" alt="" />
-      </td><td id="html_order_info">
+      <td id="html_order_info">
       <strong style="font-size: 28px; text-transform: uppercase;">
         {if $order.status eq 'A' or $order.status eq 'P' or $order.status eq 'C'}{$lng.lbl_receipt}{else}{$lng.lbl_invoice}{/if}
       </strong>
@@ -34,9 +32,11 @@ vim: set ts=2 sw=2 sts=2 et:
       {if $order.tracking}
       <br /><strong>{$lng.lbl_tracking_number}:</strong> {$order.tracking|escape}
       {/if}
-    </td><td class="invoice-right-info">
-      <strong>{$config.Company.company_name}</strong><br />
-      {$config.Company.location_address}, {$config.Company.location_city}<br />
+      </td><td style="padding-top: 30px !important;">
+        &nbsp;
+      </td><td class="invoice-right-info">
+       <img src="https://www.leathergroups.com/common/images/logo.png" alt="" /><br />
+       {$config.Company.location_address}, {$config.Company.location_city}<br />
       {$config.Company.location_zipcode}{if $config.Company.location_country_has_states}, {$config.Company.location_state_name}{/if}<br />
       {$config.Company.location_country_name}<br />
       {if $config.Company.company_phone}

@@ -12,7 +12,7 @@ vim: set ts=2 sw=2 sts=2 et:
 {if $config.Company.company_name}{$config.Company.company_name}<br />{/if}
 {if $config.Company.company_phone}{$lng.lbl_phone}: {$config.Company.company_phone}<br />{/if}
 {if $config.Company.company_fax}{$lng.lbl_fax}:   {$config.Company.company_fax}<br />{/if}
-{$lng.lbl_url}: <a href="{$http_location}/" target="_blank">{$config.Company.company_website|default:$http_location}</a>
+<a href="{$http_location}/" target="_blank">{$config.Company.company_website|default:$http_location}</a>
 </font>
 {/capture}
 {include file="mail/html/responsive_row.tpl" content=$smarty.capture.row class="footer"}
