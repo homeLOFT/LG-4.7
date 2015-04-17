@@ -1338,7 +1338,23 @@ a.down-direction:after {
 .list-dialog .title div.sort-box .search-sort-bar {
   margin-top: 2px;
 }
-
+/**
+ * social buttons on category pages
+ */
+.share-btn-cat {
+  width: 35%;
+  float: right;
+  text-align: right;
+  margin-right:5px;
+}
+.share-btn-cat ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.share-btn-cat li {
+  display: inline-block;
+}
 /**
  * Pagination
  */
@@ -1357,7 +1373,6 @@ a.down-direction:after {
   border-top-width: 0;
 }
 ul.simple-list-left.navigation-bar {
-  position: absolute;
   top: 0px;
   right: 10px;
 }
@@ -4003,4 +4018,12 @@ ul.footer li {
 ul.footer span {
   font-size:17px;
 }
+}
+@media screen and (max-width:395px) {
+.share-btn-cat {
+  width: 55%;
+  float: left;
+  text-align: right;
+  margin-top: 25px;
+}	
 }

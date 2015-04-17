@@ -13,6 +13,16 @@ vim: set ts=2 sw=2 sts=2 et:
             {include file="customer/search_sort_by.tpl" url=$products_sort_url}
           {/if}
         </div>
+        <div class="share-btn-cat">
+          <ul>
+            <li>
+              <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a> 
+            </li>
+            <li>
+              <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+            </li>
+          </ul>
+        </div>
       {/if}
     </div>
   {/if}
