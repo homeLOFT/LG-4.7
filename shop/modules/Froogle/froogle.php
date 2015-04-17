@@ -115,7 +115,8 @@ if (!empty($active_modules['Froogle']) && $REQUEST_METHOD == 'POST' && $mode == 
             /* Additional attributes - recommended */
             "expiration_date\t" .
             /* Unique Product Identifiers */
-            "brand"
+            "mpn\t" .
+			"brand"
         ;
 
         // Define header for additional attributes
@@ -376,6 +377,7 @@ if (!empty($active_modules['Froogle']) && $REQUEST_METHOD == 'POST' && $mode == 
                 (empty($config['Froogle']['froogle_currency']) ? "USD" : $config['Froogle']['froogle_currency'])."\t".
                 $product['weight'] . ' ' . $config['Froogle']['froogle_weight_unit']."\t".
                 date("Y-m-d", XC_TIME+(empty($config['Froogle']['froogle_expiration_date']) ? 0.5 : $config['Froogle']['froogle_expiration_date'])*86400)."\t".
+                $product['productcode']."\t".
                 func_froogle_convert($product['manufacturer'], 256).
                 $product_additional_attributes
             ;
