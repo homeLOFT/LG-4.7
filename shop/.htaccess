@@ -3,7 +3,7 @@ DirectoryIndex home.php index.php index.html index.htm
 # If you would like X-Cart to show informative message for errors caused
 # by opening of missing/deleted files (HTTP Error 404), please uncomment
 # the line below.
-# ErrorDocument 404 /404.php
+ErrorDocument 404 /shop/404.php
 
 # NOTE: If you installed X-Cart into a subfolder (for example, to /store folder, so
 # it is available at http://www.example.com/store/home.php), you need to specify
