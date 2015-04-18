@@ -18,12 +18,6 @@ vim: set ts=2 sw=2 sts=2 et:
             {$add_product.amount} x <a href="{$product_url}">{$product.product}</a>
           </div>
 
-          {if $product_options}
-            <div class="options">
-              {include file="modules/Product_Options/display_options.tpl" options=$product_options}
-            </div>
-          {/if}
-
           <div class="price">
             <span class="product-price-value">{currency value=$product.taxed_price}</span>
             <span class="product-alt-price-value">{alter_currency value=$product.taxed_price}</span>
