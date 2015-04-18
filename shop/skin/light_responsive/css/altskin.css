@@ -2515,8 +2515,11 @@ table.product-properties .product-price-value,
 }
 .error-page .description {
   width: 70%;
+  font-family:"open sans" sans-serif;
 }
-
+.error-page .reason {
+  font-weight:600;
+}
 /**
  * Printable
  */
