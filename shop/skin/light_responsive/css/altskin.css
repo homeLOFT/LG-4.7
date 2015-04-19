@@ -476,8 +476,6 @@ a.tollfree {
   top: 27px;
 }
 a.email-link {
-  height: 100%;
-  width: 100%;
   display: block;
   background-image: url(/common/images/wrapper_Sprite.png);
   height: 25px;
@@ -486,6 +484,31 @@ a.email-link {
 }
 a.email-link:hover {
   background-position: -748px -148px;
+}
+.tap2call {
+  display:none;	
+  position:absolute;
+  right:10px;
+  top:55px;
+}
+a.call-link {
+  display: block;
+  background-image: url(/common/images/wrapper_Sprite.png);
+  height: 25px;
+  width: 99px;
+  background-position: -822px -149px;
+}
+a.call-link:hover {
+  background-position: -822px -176px;
+}
+.fa-phone {
+  height:100%;
+  width:100%;
+}
+.fa-phone:before {
+  font-size: 15px;
+  margin-left:78px;
+  line-height:24px;
 }
 .header-links .name {
   opacity: 0.58;
@@ -3532,6 +3555,13 @@ ul.swatchForm {
 	position:relative;
   }
   .contact {
+	right: 111px;
+    top: 54px;
+  }
+  .tap2call {
+	display:block;
+  }
+  #left-bar .search {
 	display:none;
   }
   .mobile-header {
@@ -4049,6 +4079,9 @@ ul.footer li {
 }
 ul.footer span {
   font-size:17px;
+}
+.contact {
+  display:none;
 }
 }
 @media screen and (max-width:395px) {
