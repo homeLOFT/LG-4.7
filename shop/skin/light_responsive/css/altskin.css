@@ -336,7 +336,7 @@ li {
 }
 #header .line3 .item {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 /**
@@ -454,12 +454,11 @@ li {
   display: none;
 }
 .header-links {
-  font-size: .9em;
-  line-height: 1.7em;
+  font-size: 12px;
+  line-height: 12px;
 }
 .header-links a {
-  margin-left: 20px;
-  color: #2a2a2a;
+  margin-left: 8px;
 }
 .header-links a:hover {
   text-decoration:none;
@@ -468,10 +467,29 @@ li {
 .header-links a:first-child {
   margin-left: 0px;
 }
+a.tollfree {
+  color:#676767;
+}
+.contact {
+  position: absolute;
+  right: 10px;
+  top: 27px;
+}
+a.email-link {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-image: url(/common/images/wrapper_Sprite.png);
+  height: 25px;
+  width: 71px;
+  background-position: -748px -175px;
+}
+a.email-link:hover {
+  background-position: -748px -148px;
+}
 .header-links .name {
   opacity: 0.58;
 }
-
 #header div.search {
   top: auto;
   left: auto;
@@ -512,7 +530,6 @@ div.search {
   box-sizing: content-box;
   padding: 0;
 }
-
 /**
  * Mobile header
  */
@@ -564,12 +581,20 @@ div.search {
 .dropdown-menu li a {
   color: #ffffff;
   display: block;
-  padding: 8px 10px;
+  padding: 6px 10px;
   text-decoration: none;
+  font-weight:300;
 }
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
   background-color: #363636;
+}
+.dropdown-menu h2 {
+  font-size: 12px;
+  margin: 10px 0px 4px 8px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #d5d5d5;
 }
 #search-box {
   position: fixed;
@@ -3505,6 +3530,9 @@ ul.swatchForm {
   #header div.search {
     margin:0 auto;
 	position:relative;
+  }
+  .contact {
+	display:none;
   }
   .mobile-header {
     display: block;

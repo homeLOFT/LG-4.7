@@ -4,6 +4,8 @@
 vim: set ts=2 sw=2 sts=2 et:
 *}
 
+{include file="customer/search.tpl"}
+
 <div class="menu-dialog menu-categories">
   <div class="title-bar"><h2>Search by Category</h2></div>
   <div class="content">

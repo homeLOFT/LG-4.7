@@ -23,6 +23,7 @@
 {else}
 
   <div class="header-links">
+      <a class="tollfree" href="tel:+18778887632">1(877) 888-7632</a>
     {if $login eq ''}
       {include file="customer/main/login_link.tpl"}
       <a href="register.php">{$lng.lbl_register}</a>

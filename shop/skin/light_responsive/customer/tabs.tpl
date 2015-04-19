@@ -14,7 +14,17 @@ vim: set ts=2 sw=2 sts=2 et:
   {if $mode eq 'plain_list'}
 
     <ul>
+    <h2>Search by Category</h2>
+      <li><a href="Custom-Leather-Furniture.html">Custom Leather Furniture</a></li>
       {$smarty.capture.menu}
+      <li><a href="Quick-Ship-Leather-Furniture.html">Quick Ship Leather Furniture</a></li>
+      <li><a href="Leather-Cleaning-and-Protection.html">Leather Cleaning and Protection</a></li>
+    </ul>
+    <h2>Search by Brand</h2>
+    <ul>
+      <li><a href="Luke-Leather-Furniture.html">Luke Leather Furniture</a></li>
+      <li><a href="Lane-Leather-Furniture.html">Lane Leather Furniture</a></li>
+      <li><a href="Leather-Italia-Leather-Furniture.html">Leather Italia Leather Furniture</a></li>
     </ul>
 
   {else}

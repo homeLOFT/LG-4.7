@@ -13,12 +13,7 @@ vim: set ts=2 sw=2 sts=2 et:
       <div id="main-menu-box" class="dropdown-menu">
 
         {include file="customer/tabs.tpl" mode="plain_list"}
-        <div class="languages-box">
-          <div class="language-label">{$lng.lbl_language}</div>
-          {include file="customer/language_selector.tpl"}
-          <div class="clearing"></div>
-        </div>
-
+        
       </div>
     </li>
 
