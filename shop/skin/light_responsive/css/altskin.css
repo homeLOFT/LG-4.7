@@ -478,23 +478,23 @@ a.tollfree {
 a.email-link {
   display: block;
   background-image: url(/common/images/wrapper_Sprite.png);
-  height: 25px;
+  height: 29px;
   width: 71px;
-  background-position: -748px -175px;
+  background-position: -748px -176px;
 }
 a.email-link:hover {
-  background-position: -748px -148px;
+  background-position: -748px -149px;
 }
 .tap2call {
   display:none;	
-  position:absolute;
-  right:10px;
-  top:55px;
+  position:fixed;
+  right:3px;
+  top:42px;
 }
 a.call-link {
   display: block;
   background-image: url(/common/images/wrapper_Sprite.png);
-  height: 25px;
+  height: 29px;
   width: 99px;
   background-position: -822px -149px;
 }
@@ -507,8 +507,8 @@ a.call-link:hover {
 }
 .fa-phone:before {
   font-size: 15px;
-  margin-left:78px;
-  line-height:24px;
+  margin-left:83px;
+  line-height:28px;
 }
 .header-links .name {
   opacity: 0.58;
@@ -3555,11 +3555,14 @@ ul.swatchForm {
 	position:relative;
   }
   .contact {
-	right: 111px;
-    top: 54px;
+	position:fixed;
+	right: 102px;
+    top: 42px;
+	z-index:1000;
   }
   .tap2call {
 	display:block;
+	z-index:1000;
   }
   #left-bar .search {
 	display:none;
