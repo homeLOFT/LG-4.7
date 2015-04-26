@@ -915,6 +915,9 @@ div.printable-bar {
 .list-dialog .title,
 .navigation-bar {
   border-top: 1px solid #dfdfdf;
+  margin-bottom: 0;
+  min-height: 25px;
+  max-height: 30px;
 }
 .products-dialog .content {
 }
@@ -1244,6 +1247,10 @@ a.simple-delete-button-woicon {
   height: 34px;
   margin-top: 0;
 }
+.buttons-row.soc-buttons-row {
+  margin-top: 0;
+  height: 22px
+}
 .buttons-row .button-separator {
   width: 7px;
   height: 34px;
@@ -1276,7 +1283,8 @@ td.data-required,
 div.data-required,
 span.star
 {
-  color: #ff0000;
+  color: #cc0000;
+  font-size: 11px;
 }
 .data-table .error-message {
   color: #8f1d1d;
@@ -1294,7 +1302,7 @@ span.star
 .product-details .product-subtitle div,
 .products .product-details-title {
   font-size: 13px;
-  color: #404549;
+  color: #676767;
 }
 .register-section-title div,
 .product-details .product-subtitle div {
@@ -1306,7 +1314,18 @@ span.star
   border-bottom: 1px dashed;
 }
 table.register-table td.data-name {
-  text-align: left;
+  text-align: right;
+  font-weight: 400;
+  font-size: 13px;
+}
+.register-note {
+  color: #676767;
+  margin-bottom: 2px;
+  font-size: 13px;
+  font-weight: 300;
+}
+.register-newbie-note {
+  font-size:13px;
 }
 
 /**
@@ -1411,7 +1430,7 @@ a.down-direction:after {
 }
 .navigation-bar,
 .navigation-bar.simple-list-left {
-  margin-bottom: 21px;
+  margin-bottom: 2px;
 }
 .navigation-bar {
   padding-top: 10px;
@@ -2144,7 +2163,7 @@ ul.subcategories li:first-child {
   max-width: 100%;
 }
 ul.simple-list {
-  padding:10px 0 0 55px;
+  padding:5px 0 0 55px;
 }
 .desctools li {
   display:inline-block;
@@ -2327,7 +2346,7 @@ div.market-price {
   margin-top: auto;
 }
 .products {
-  margin-top: 15px;
+  margin-top: 0;
 }
 .product-title {
   line-height: 1.1;

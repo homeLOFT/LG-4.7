@@ -74,17 +74,7 @@ $(ajax).bind(
         {include file="modules/Socialize/buttons_row.tpl" detailed=true href="`$current_location`/`$canonical_url`"}
       </li>
       {/if}
-
-      {if $config.Company.support_department neq ""} 
-      <li>
-      <div class="ask-question">
-        {include file="customer/buttons/button.tpl" button_title=$lng.lbl_ask_question_about_product style="link" href="javascript: return !popupOpen(xcart_web_dir + '/popup_ask.php?productid=`$product.productid`')"}
-      </div>
-
-      <div class="clearing"></div>
-      </li>
-      {/if}
-
+      
       </ul>
 
     {/if}
