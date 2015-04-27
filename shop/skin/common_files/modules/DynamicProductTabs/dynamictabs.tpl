@@ -132,47 +132,47 @@ if (window.jQuery) {
             $('.wcmtabcontainer').css({height : parseInt($('li.tabs-selected').find('.tabs-container').outerHeight(true)) + 20});
         });
     });
+}
 
-    // Function: Add mobile class if tabs are wider than the container
-    function wcmSetTabWidth(wcmTabsWidth)
-    {
-        if (wcmTabsWidth > parseInt($('.wcmtabcontainer').outerWidth(true)))
-            $wcmTab.addClass('tabs-mobile');
-        else
-            $wcmTab.removeClass('tabs-mobile');
-    }
+// Function: Add mobile class if tabs are wider than the container
+function wcmSetTabWidth(wcmTabsWidth)
+{
+    if (wcmTabsWidth > parseInt($('.wcmtabcontainer').outerWidth(true)))
+        $wcmTab.addClass('tabs-mobile');
+    else
+        $wcmTab.removeClass('tabs-mobile');
+}
 
-    // Function: Get the width of a single tab
-    function wcmGetTabWidth(tab)
-    {
-        return $(tab).outerWidth(true);
-    }
+// Function: Get the width of a single tab
+function wcmGetTabWidth(tab)
+{
+    return $(tab).outerWidth(true);
+}
 
-    // Function: Set the content height when a tab is clicked
-    function wcmSetContentHeight(content)
+// Function: Set the content height when a tab is clicked
+function wcmSetContentHeight(content)
+{
+    if ($(content).hasClass('tabs-hide'))
     {
-        if ($(content).hasClass('tabs-hide'))
+        var $currentTab = $(content).siblings('a.tab-link');
+        if ($(content).parent('li').hasClass('tabs-mobile'))
         {
-            var $currentTab = $(content).siblings('a.tab-link');
-            if ($(content).parent('li').hasClass('tabs-mobile'))
-            {
-                $('.wcmtabcontainer').animate({height : parseInt($(content).outerHeight(true)) + 20}, 200, "linear", function () {
-                    wcmScrollTop($currentTab);
-                });
-            }
-            else
-            {
-                $('.wcmtabcontainer').css({height : parseInt($(content).outerHeight(true)) + 20});
-            }
+            $('.wcmtabcontainer').animate({height : parseInt($(content).outerHeight(true)) + 20}, 200, "linear", function () {
+                wcmScrollTop($currentTab);
+            });
+        }
+        else
+        {
+            $('.wcmtabcontainer').css({height : parseInt($(content).outerHeight(true)) + 20});
         }
     }
+}
 
-    // Function: Scroll to current tab on mobile
-    function wcmScrollTop($tab)
-    {
-        if ($tab.parent('li').hasClass('tabs-mobile'))
-            $("body, html").animate({scrollTop: $tab.position().top + "px"});
-    }
+// Function: Scroll to current tab on mobile
+function wcmScrollTop($tab)
+{
+    if ($tab.parent('li').hasClass('tabs-mobile'))
+        $("body, html").animate({scrollTop: $tab.position().top + "px"});
 }
 {/literal}
 {/capture}
