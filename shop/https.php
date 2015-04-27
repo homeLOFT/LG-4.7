@@ -138,8 +138,9 @@ if ($config['Security']['use_https_login'] == 'Y') {
 }
 
 if (!function_exists('is_https_link')) {
-function is_https_link($link, $https_scripts)
-{
+function is_https_link($link, $https_scripts) {
+return true;
+
     /*
      Corect possible bugs in func_is_always_allowed_link also
     */
