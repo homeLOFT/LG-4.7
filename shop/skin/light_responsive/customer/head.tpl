@@ -29,9 +29,11 @@ vim: set ts=2 sw=2 sts=2 et:
       
 
     </div>
-    <div class="contact"><a href="http://support.leathergroups.com/customer/portal/emails/new" class="email-link" title="Send us an Email"></a></div>
-    <div class="tap2call"><a href="tel:+18778887632" class="call-link" title="Tap to call us"><span class="fa fa-phone"></span></a>
+    <div class="contact"><a class="custcare-link" href="#" rel="noindex">
+    </a>
+      <div id="cc-modal"></div>
     </div>
+
 
   </div>
   <div class="clearing"></div>

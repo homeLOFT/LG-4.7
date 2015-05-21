@@ -38,6 +38,9 @@ vim: set ts=2 sw=2 sts=2 et:
 
       </div>
     </li>
+    
+    <li class="mob-custcare"><a class="custcare-link fa fa-comments-o fa-lg" href="#" rel="noindex">Customer Care</a>
+    </li>
 
   </ul>
 </div>

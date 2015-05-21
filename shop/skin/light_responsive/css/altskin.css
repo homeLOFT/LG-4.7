@@ -485,11 +485,35 @@ a.email-link {
 a.email-link:hover {
   background-position: -748px -149px;
 }
-.tap2call {
-  display:none;	
-  position:fixed;
-  right:3px;
-  top:42px;
+a.custcare-link {
+  display: block;
+  background-image: url(/common/images/wrapper_Sprite.png);
+  height: 29px;
+  width: 110px;
+  background-position: -749px -231px;
+  outline:none;
+}
+a.custcare-link:hover {
+  background-position: -749px -202px;
+}
+li.mob-custcare {
+  margin-right: 100px;
+  float: right !important;
+}
+.mob-custcare a {
+  background-image: none;
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px 0 0;
+  line-height: 18px;
+}
+.mob-custcare a:hover {
+  text-decoration:none;
+}
+.mob-custcare .fa-comments-o:before {
+  font-size: 19px;
+  margin-right: 5px;
 }
 a.call-link {
   display: block;
@@ -513,6 +537,192 @@ a.call-link:hover {
 .header-links .name {
   opacity: 0.58;
 }
+
+/* customer care modal */
+
+.customer-care h2, .customer-care h3, .customer-care h4 {
+  color:#5194c5;
+}
+.mod-content {
+  min-width: 150px;
+  min-height: 100px;
+  background: #fff;
+  position: relative;
+}
+.mod-page {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+}
+.customer-care {
+  width: 100%;
+  padding: 25px 0 0;
+  max-height: 98%;
+  overflow-x: hidden;
+  border-top: 5px solid #676767;
+  font-size: 12px;
+}
+.customer-care h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 5px;
+  }
+.customer-care h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+.customer-care h4 {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+}
+.custcare-body {
+  max-width: 695px;
+  width: 74%;
+  float: left;
+}
+.custcare-contact {
+  width: 24%;
+  float: right;
+}
+a.custcare-tollfree {
+  font-size: 18px;
+  text-decoration: none;
+  color: #2a2a2a;
+  font-weight: 600;
+  margin: 0 0 10px;
+  display: block;
+  outline:none;
+}
+a.custcare-email {
+  background-image: url(/common/images/wrapper_Sprite.png);
+  display: block;
+  width: 167px;
+  height: 41px;
+  background-position: -248px -159px;
+  margin-bottom: 10px;
+}
+a.custcare-email:hover {
+  background-position: -248px -115px;
+}
+a.custcare-txt-email {
+  color: #444;
+  font-weight: 400;
+  text-decoration: none;
+  margin-top: 5px;
+  font-size: 13px;
+}
+.custcare-txt-email.fa-envelope:before {
+  margin-right: 5px;
+  color: #5194c5;
+  font-size: 14px;
+}
+.custcare-faq {
+  font-size: 13px;
+  margin: 0 0 15px 0;
+}
+.cc_faqcol {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+}
+.toggle-list {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.toggle-list a {
+  text-decoration: none;
+  color:#676767;
+  outline:none;
+}
+.toggle-trigger.fa.fa-plus-square:before {
+  color: #999;
+  margin-right:4px;
+}
+.toggle-trigger.fa.fa-minus-square:before {
+  color: #999;
+  margin-right:4px;
+}
+.toggle-answer {
+  color: #717171;
+  margin: 3px;
+  font-size:12px;
+}
+.toggle-answer a {
+  color: #5194c5;
+}
+.contact-block .fa-envelope-o:before {
+  color: #fff;
+  position: relative;
+  top: 14px;
+  left: 12px;
+}
+.contact-block p {
+  margin: 0 0 5px 0;
+}
+.ccmodal {
+  left: 0 !important;
+  top: 0 !important;
+  width: 98% !important;
+  height: 100% !important;
+  overflow-y: scroll !important;
+  background:none !important;
+  border-right: 1px solid #b5b5b5;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0 !important;
+}
+.ccmodal .ui-button {
+  border-radius:2px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.ccmodal .ui-dialog-buttonset {
+  float: none;
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
+.ccmodal .ui-dialog-buttonpane {
+  border:0;
+  margin:0;
+  padding:0;
+}
+.ccmodal .ui-dialog-buttonpane .ui-button.ui-state-hover {
+  background-image: none;
+  background-color: #676767;
+  border: 1px solid #676767;
+}
+.ccmodal .ui-dialog-buttonpane .ui-button.ui-state-default .ui-button-text {
+  color:#717171;
+}
+.ccmodal .ui-dialog-buttonpane .ui-button.ui-state-hover .ui-button-text {
+  color:#fff;
+}
+.ccmodal .ui-widget-content {
+  border:0;
+  color:#676767;
+}
+	
+@media screen and (max-width:740px) {
+.custcare-body {
+/*  width: 98%;
+  margin-left: 5px; */
+  display:none;
+}
+.custcare-contact {
+  width: 98%;
+  float: left;
+  margin-left: 5px;
+}
+}
+
+/* end customer care modal */
 #header div.search {
   top: auto;
   left: auto;
@@ -1555,8 +1765,8 @@ ul.simple-list-left.navigation-bar {
   border-bottom: 1px dashed #d9d9d9;
  }
  .menu-categories ul li a, .menu-brands ul li a {
-  text-transform: uppercase;
-  font-size: 12px;
+  text-transform: capitalize;
+  font-size: 13px;
   font-weight: 300;
  }
 
@@ -2527,7 +2737,7 @@ table.product-properties .product-price-value,
   width:100%;
 }
 .products-div .details {
-  padding: 0;
+  padding: 15px 0 0 8px;
 }
 .products-div .product-title {
   display: block;
@@ -3523,6 +3733,9 @@ ul.swatchForm {
   .product-details #orderform {
 	width:230px;
   }
+  .products-div .details {
+  padding: 0;
+}
   table.product-properties .property-name {
 	font-size:12px;
   }
@@ -3574,14 +3787,7 @@ ul.swatchForm {
 	position:relative;
   }
   .contact {
-	position:fixed;
-	right: 102px;
-    top: 42px;
-	z-index:1000;
-  }
-  .tap2call {
-	display:block;
-	z-index:1000;
+	display:none;
   }
   #left-bar .search {
 	display:none;

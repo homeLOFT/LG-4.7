@@ -32,6 +32,7 @@ vim: set ts=2 sw=2 sts=2 et:
 {load_defer_code type="js"}
 
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+<script src="/js/customer_care.js"></script>
 
 {* WCM - Dynamic Product Tabs *}
 {if $main eq "product" AND $active_modules.WCM_Dynamic_Product_Tabs}
