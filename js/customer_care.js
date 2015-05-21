@@ -13,12 +13,12 @@ $(document).ready(function() {
     	  resizable: false,
 		  draggable:false,
     	  show: {
-    	    effect: "slide",
-    	    duration: 1000
+    	    effect:'slide',
+    	    duration:1500,
     	  },
     	  hide: {
-    	    effect: "slide",
-    	    duration: 1000
+    	    effect:'slide',
+    	    duration:1500,
     	  },
 		  dialogClass: 'ccmodal',
 		  buttons: {
