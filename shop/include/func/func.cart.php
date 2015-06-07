@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    fa579aaaebca2c938fbd8da3d6877b6efa7f4803, v289 (xcart_4_7_0), 2015-03-02 14:37:45, func.cart.php, mixon
+ * @version    e86305c77c1c82d7c5549bb574508ff15abca437, v292 (xcart_4_7_2), 2015-04-24 08:33:14, func.cart.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -213,7 +213,7 @@ function func_get_customer_zones_avail ($user = 0, $provider = 0, $address_type 
         // Generate the zones list
 
         // Possible zones for customer's country...
-        $possible_zones = func_query_column("SELECT $sql_tbl[zone_element].zoneid FROM $sql_tbl[zone_element], $sql_tbl[zones] WHERE $sql_tbl[zone_element].zoneid=$sql_tbl[zones].zoneid AND $sql_tbl[zone_element].field='".$customer_info[$address_prefix."country"]."'  AND $sql_tbl[zone_element].field_type='C' $provider_condition GROUP BY $sql_tbl[zone_element].zoneid ORDER BY NULL");
+        $possible_zones = func_query_column("SELECT $sql_tbl[zone_element].zoneid FROM $sql_tbl[zone_element], $sql_tbl[zones] WHERE $sql_tbl[zone_element].zoneid=$sql_tbl[zones].zoneid AND $sql_tbl[zone_element].field='" . addslashes($customer_info[$address_prefix."country"]) . "'  AND $sql_tbl[zone_element].field_type='C' $provider_condition GROUP BY $sql_tbl[zone_element].zoneid ORDER BY NULL");
 
         if (is_array($possible_zones) && !empty($possible_zones)) {
             if (func_query_first_cell("SELECT COUNT(*) FROM $sql_tbl[zone_element] WHERE field='%'"))
@@ -235,7 +235,7 @@ function func_get_customer_zones_avail ($user = 0, $provider = 0, $address_type 
 
             // Do not use S condtion if the country has disabled states
 
-            $has_states = func_is_display_states($cs_country);
+            $has_states = func_is_display_states(addslashes($cs_country));
 
             if (!$has_states) {
                 unset($z_flags['S']);
@@ -404,8 +404,9 @@ function func_get_paypal_express_incontext_available()
     static $result = null;
 
     if (!isset($result)) {
-        $allowedCountries = array('US', 'GB', 'FR', 'DE');
-        $allowedCurrencies = array('USD', 'EUR', 'GBP');
+        // https://developer.paypal.com/docs/classic/express-checkout/in-context/#eligibility-review
+        $allowedCountries = array('US', 'GB', 'FR', 'DE', 'AU', 'CA', 'IT', 'ES', 'AT', 'BE', 'DK', 'NO', 'NL', 'PL', 'SE', 'CH', 'TR');
+        $allowedCurrencies = array('USD', 'EUR', 'GBP', 'CAD', 'AUD', 'DKK', 'NOK', 'PLN', 'SEK', 'CHF', 'TRY');
 
         x_load('paypal');
         $customerCountry = !empty($cart['b_country'])

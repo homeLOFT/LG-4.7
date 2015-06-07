@@ -1,5 +1,6 @@
 {*
-39dc2317e8d3ff16f34a37865c1be497158705f8, v2 (xcart_4_6_1), 2013-08-28 10:29:51, cc_egold.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v3 (xcart_4_7_1), 2015-03-16 15:05:13, cc_egold.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>E-Gold</h1>
@@ -30,17 +31,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="61"{if $module_data.param03 eq "61"} selected="selected"{/if}>Australian Dollar (AUD)</option>
 <option value="81"{if $module_data.param03 eq "81"} selected="selected"{/if}>Japanese Yen (JPY)</option>
 <option value="85"{if $module_data.param03 eq "85"} selected="selected"{/if}>Euro (EUR)</option>
-<option value="86"{if $module_data.param03 eq "86"} selected="selected"{/if}>Belgian Franc (BEF)</option>
-<option value="87"{if $module_data.param03 eq "87"} selected="selected"{/if}>Austrian Schilling (ATS)</option>
 <option value="88"{if $module_data.param03 eq "88"} selected="selected"{/if}>Greek Drachma (GRD)</option>
-<option value="89"{if $module_data.param03 eq "89"} selected="selected"{/if}>Spanish Peseta (ESP)</option>
-<option value="90"{if $module_data.param03 eq "90"} selected="selected"{/if}>Irish Pound (IEP)</option>
-<option value="91"{if $module_data.param03 eq "91"} selected="selected"{/if}>Italian Lira (ITL)</option>
-<option value="92"{if $module_data.param03 eq "92"} selected="selected"{/if}>Luxembourg Franc (LUF)</option>
-<option value="93"{if $module_data.param03 eq "93"} selected="selected"{/if}>Dutch Guilder (NLG)</option>
-<option value="94"{if $module_data.param03 eq "94"} selected="selected"{/if}>Portuguese Escudo (PTE)</option>
-<option value="95"{if $module_data.param03 eq "95"} selected="selected"{/if}>Finnish Markka (FIM)</option>
-<option value="97"{if $module_data.param03 eq "97"} selected="selected"{/if}>Lithuanian Litas (LTL)</option>
 </select>
 </td>
 </tr>

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    6c76495a41d0ada8c685cc967b72ebac563d321a, v150 (xcart_4_7_0), 2015-03-04 15:33:29, mod_USPS.php, aim
+ * @version    e6fc26b3389c5ce747e6427c22aa08b45b224977, v151 (xcart_4_7_2), 2015-04-22 14:03:03, mod_USPS.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -111,7 +111,7 @@ function func_shipper_USPS($items, $userinfo, $orig_address, $debug, $cart)
 
         $usps_rates = array();
 
-        $packages = func_get_packages($items, $package_limit, ($usps_options['param11'] == "Y") ? 100 : 1);
+        $packages = func_get_packages($items, $package_limit, ($usps_options['param11'] == "Y") ? 200 : 1);
 
         if (!empty($packages) && is_array($packages)) {
 

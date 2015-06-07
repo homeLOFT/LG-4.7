@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v93 (xcart_4_7_0), 2015-02-17 13:29:01, product.php, aim
+ * @version    65fff0b631331f6016371ee9911cb07b2d6ea11e, v96 (xcart_4_7_2), 2015-04-23 09:56:02, product.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v60 (xcart_4_7_0), 2015-02-17 23:56:28, news_send.php, Yuriy
+ * @version    15a1c08c48ed4ba5bc732c77f928e9e5d5fb402c, v61 (xcart_4_7_2), 2015-04-10 18:27:42, news_send.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -93,7 +93,7 @@ function func_spam($message, $recipients, $send_language, $listid)
 
     $signature = func_display($signature_template,$smarty,false);
 
-    if ($config['Email']['use_PHP_mailer'] == 'Y') {
+    if ($config['News_Management']['use_PHP_mailer'] == 'Y') {
 
         // Use PHP mailer for sending newsletter
 

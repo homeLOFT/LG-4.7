@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    efdb1978092cd94543a5472d62e7e28d1ad0aaa0, v263 (xcart_4_7_0), 2015-02-26 17:28:14, configuration.php, aim
+ * @version    f71c35a9a2e55bfde551535fca51fee723f5faff, v265 (xcart_4_7_2), 2015-04-23 16:42:48, configuration.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -1403,7 +1403,7 @@ if ($option == 'Shipping') {
 
             $apache_401_issue
             RewriteCond %{REQUEST_URI} !^%{ENV:FULL_WEB_DIR}/($unallowed_dirs)/
-            RewriteCond %{REQUEST_FILENAME} !\.(gif|jpe?g|png|js|css|swf|php|ico)$
+            RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|js|css|swf|php|ico|svg|tif|avi|mp3|mp4|flv)$
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteCond %{REQUEST_FILENAME} !-l
@@ -1416,7 +1416,7 @@ SHTACCESS;
 
             $apache_401_issue
             RewriteCond %{REQUEST_URI} !^$rewrite_base($unallowed_dirs)/
-            RewriteCond %{REQUEST_FILENAME} !\.(gif|jpe?g|png|js|css|swf|php|ico)$
+            RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|js|css|swf|php|ico|svg|tif|avi|mp3|mp4|flv)$
             RewriteCond %{REQUEST_FILENAME} !-f
             RewriteCond %{REQUEST_FILENAME} !-d
             RewriteCond %{REQUEST_FILENAME} !-l
@@ -1466,7 +1466,7 @@ SHTACCESS;
 
 } elseif ($option == 'PayPal_Login') {
 
-    $smarty->assign('paypal_login_return_url', $http_location . '/pplogin_return.php');
+    $smarty->assign('paypal_login_return_url', ($config['Security']['use_https_login'] == 'Y' ? $https_location : $http_location) . '/pplogin_return.php');
     $smarty->assign('paypal_login_terms_url', $http_location . '/pages.php?alias=conditions');
     $smarty->assign('paypal_login_privacy_url', $http_location . '/pages.php?alias=business');
 }

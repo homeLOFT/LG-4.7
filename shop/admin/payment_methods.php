@@ -37,7 +37,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v120 (xcart_4_7_0), 2015-02-17 13:29:01, payment_methods.php, aim
+ * @version    0ceaf7c079b2b533578e24b21b0dcb1df8237d96, v121 (xcart_4_7_1), 2015-03-19 09:45:37, payment_methods.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -118,6 +118,10 @@ if ($REQUEST_METHOD == 'POST') {
                 func_membership_update('pmethod', $k, $v['membershipids'], 'paymentid');
 
                 unset($v['membershipids']);
+
+                if (!empty($v['payment_method'])) {
+                    $v['payment_method'] = rtrim(func_substr($v['payment_method'], 0, 255), '\\');
+                }
 
                 func_array2update(
                     'payment_methods',

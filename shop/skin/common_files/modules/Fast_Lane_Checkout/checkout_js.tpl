@@ -1,5 +1,6 @@
 {*
-00f6fa8f47972ca7e487d5b6f6916ba35694e9b6, v13 (xcart_4_6_4), 2014-06-09 14:18:46, checkout_js.tpl, random
+08299d41a00c9c181913f71dce0d680ee2969130, v14 (xcart_4_7_2), 2015-04-09 09:27:20, checkout_js.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <script type="text/javascript">
@@ -49,7 +50,7 @@ var checkDBClick = function() {
 
 function checkCheckoutFormXP() {
   if (checkCheckoutForm()) {
-    var isXPCAllowSaveCard = ($('input[type=checkbox][name=allow_save_cards]').is(':checked')) ? 'Y' : '';
+    var isXPCAllowSaveCard = ($('input[type=checkbox][name=allow_save_cards]').is(':checked') || $('input[type=hidden][name=allow_save_cards]').val() == 'Y') ? 'Y' : '';
     var partnerId = ($('input[name=partner_id]').length) ? $('input[name=partner_id]').val() : '';
     $.post(
       'payment/cc_xpc_iframe.php',

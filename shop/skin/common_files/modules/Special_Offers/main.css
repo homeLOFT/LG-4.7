@@ -6,7 +6,7 @@
  * @package    X-Cart
  * @subpackage CSS
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
- * @version    d07c250171e7134c2ce639056f33e6cc5364def1, v5 (xcart_4_7_0), 2015-02-13 10:46:55, main.css, mixon
+ * @version    68a109e73162da02d481d672f2f0ba03b5737719, v6 (xcart_4_7_1), 2015-03-12 17:39:50, main.css, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -115,6 +115,7 @@ a.offers-thumbnail:active img
   height: 50px;
   margin: 0;
   background: transparent url(../../images/special_offer_icon.png) no-repeat left top;
+  background-size: 100%;
 }
 
 .offers-price {

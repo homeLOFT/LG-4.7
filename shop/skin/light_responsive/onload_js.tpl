@@ -1,5 +1,5 @@
 {*
-3f4b2e73d48576ecb68dd150e407a1368c69d297, v2 (xcart_4_7_0), 2015-02-27 19:00:27, onload_js.tpl, aim
+e0b0b84903773bff91264a898b0dc8be08324999, v3 (xcart_4_7_1), 2015-03-10 11:38:55, onload_js.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -120,28 +120,35 @@ var txt_are_you_sure = '{$lng.txt_are_you_sure|wm_remove|escape:"javascript"}';
 {literal}
 /* START: Light Responsive skin code */
 $(document).ready( function() {
+  $('#mobile-header').hover(function() {
 
-  /* Process the onclick event on mobile header */
-  $('a.dropdown-toggle').click(function(e) {
-    $(this)
-    .parent().siblings().removeClass('open') /* hide siblings */
-    .end()
-    .toggleClass('open'); /* toggle dropdown */
+    if ($(this).hasClass('activated-widget'))
+      return;
 
-    return false;
+    $(this).addClass('activated-widget');
+
+    /* Process the onclick event on mobile header */
+    $('a.dropdown-toggle', this).click(function(e) {
+      $(this)
+      .parent().siblings().removeClass('open') /* hide siblings */
+      .end()
+      .toggleClass('open'); /* toggle dropdown */
+
+      return false;
+    });
+
+    $('body').click(
+      function() {
+        $('.dropdown.open', this)
+        .removeClass('open'); /* hide it when clicked on body */
+      }
+    );
+
+    $('.dropdown', this).click(function(e) {
+      e.stopPropagation(); /* do not hide it when clicked on dropdown block */
+    });
+
   });
-
-  $('body').click(
-    function() {
-      $('.dropdown.open')
-      .removeClass('open'); /* hide it when clicked on body */
-    }
-  );
-
-  $('.dropdown').click(function(e) {
-    e.stopPropagation(); /* do not hide it when clicked on dropdown block */
-  });
-
 });
 /* END: Light Responsive skin code */
 {/literal}

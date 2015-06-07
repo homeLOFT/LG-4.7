@@ -1,5 +1,6 @@
 {*
-7bf6e1dae914fb2328491acdf27a9e0080994668, v4 (xcart_4_6_2), 2014-01-05 11:51:40, cc_paypointft.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v5 (xcart_4_7_1), 2015-03-16 15:05:13, cc_paypointft.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>PayPoint Fast Track</h1>
@@ -28,12 +29,10 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "ARS"} selected="selected"{/if} value="ARS">Argentine Peso</option>
 <option{if $module_data.param02 eq "AWG"} selected="selected"{/if} value="AWG">Aruban Guilder</option>
 <option{if $module_data.param02 eq "AUD"} selected="selected"{/if} value="AUD">Australian Dollar</option>
-<option{if $module_data.param02 eq "ATS"} selected="selected"{/if} value="ATS">Schilling</option>
 <option{if $module_data.param02 eq "BSD"} selected="selected"{/if} value="BSD">Bahamian Dollar</option>
 <option{if $module_data.param02 eq "BHD"} selected="selected"{/if} value="BHD">Bahraini Dinar</option>
 <option{if $module_data.param02 eq "BDT"} selected="selected"{/if} value="BDT">Taka</option>
 <option{if $module_data.param02 eq "BBD"} selected="selected"{/if} value="BBD">Barbados Dollar</option>
-<option{if $module_data.param02 eq "BEF"} selected="selected"{/if} value="BEF">Belgian Franc</option>
 <option{if $module_data.param02 eq "BZD"} selected="selected"{/if} value="BZD">Belize Dollar</option>
 <option{if $module_data.param02 eq "BMD"} selected="selected"{/if} value="BMD">Bermudian Dollar</option>
 <option{if $module_data.param02 eq "BOB"} selected="selected"{/if} value="BOB">Boliviano</option>
@@ -71,7 +70,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "EUR"} selected="selected"{/if} value="EUR">European EURO</option>
 <option{if $module_data.param02 eq "FKP"} selected="selected"{/if} value="FKP">Falkland Islands Pound</option>
 <option{if $module_data.param02 eq "FJD"} selected="selected"{/if} value="FJD">Fiji Dollar</option>
-<option{if $module_data.param02 eq "FIM"} selected="selected"{/if} value="FIM">Markka</option>
 <option{if $module_data.param02 eq "FRF"} selected="selected"{/if} value="FRF">French Franc</option>
 <option{if $module_data.param02 eq "XPF"} selected="selected"{/if} value="XPF">CFP Franc</option>
 <option{if $module_data.param02 eq "GMD"} selected="selected"{/if} value="GMD">Dalasi</option>
@@ -92,9 +90,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "IDR"} selected="selected"{/if} value="IDR">Rupiah</option>
 <option{if $module_data.param02 eq "IRR"} selected="selected"{/if} value="IRR">Iranian Rial</option>
 <option{if $module_data.param02 eq "IQD"} selected="selected"{/if} value="IQD">Iraqi Dinar</option>
-<option{if $module_data.param02 eq "IEP"} selected="selected"{/if} value="IEP">Irish Pound</option>
 <option{if $module_data.param02 eq "ILS"} selected="selected"{/if} value="ILS">Shekel</option>
-<option{if $module_data.param02 eq "ITL"} selected="selected"{/if} value="ITL">Italian Lira</option>
 <option{if $module_data.param02 eq "JMD"} selected="selected"{/if} value="JMD">Jamaican Dollar</option>
 <option{if $module_data.param02 eq "JPY"} selected="selected"{/if} value="JPY">Yen</option>
 <option{if $module_data.param02 eq "JOD"} selected="selected"{/if} value="JOD">Jordanian Dinar</option>
@@ -109,8 +105,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "LSL"} selected="selected"{/if} value="LSL">Loti</option>
 <option{if $module_data.param02 eq "LRD"} selected="selected"{/if} value="LRD">Liberian Dollar</option>
 <option{if $module_data.param02 eq "LYD"} selected="selected"{/if} value="LYD">Libyan Dinar</option>
-<option{if $module_data.param02 eq "LTL"} selected="selected"{/if} value="LTL">Lithuanian Litas</option>
-<option{if $module_data.param02 eq "LUF"} selected="selected"{/if} value="LUF">Luxembourg Franc</option>
 <option{if $module_data.param02 eq "MOP"} selected="selected"{/if} value="MOP">Pataca</option>
 <option{if $module_data.param02 eq "MKD"} selected="selected"{/if} value="MKD">Denar</option>
 <option{if $module_data.param02 eq "MGF"} selected="selected"{/if} value="MGF">Malagasy Franc</option>
@@ -128,7 +122,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "NAD"} selected="selected"{/if} value="NAD">Namibian Dollar</option>
 <option{if $module_data.param02 eq "NPR"} selected="selected"{/if} value="NPR">Nepalese Rupee</option>
 <option{if $module_data.param02 eq "ANG"} selected="selected"{/if} value="ANG">Netherlands Antilles Guilder</option>
-<option{if $module_data.param02 eq "NLG"} selected="selected"{/if} value="NLG">Netherlands Guilder</option>
 <option{if $module_data.param02 eq "NZD"} selected="selected"{/if} value="NZD">New Zealand Dollar</option>
 <option{if $module_data.param02 eq "NIO"} selected="selected"{/if} value="NIO">Cordoba Oro</option>
 <option{if $module_data.param02 eq "NGN"} selected="selected"{/if} value="NGN">Naira</option>
@@ -141,7 +134,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "PEN"} selected="selected"{/if} value="PEN">Nuevo Sol</option>
 <option{if $module_data.param02 eq "PHP"} selected="selected"{/if} value="PHP">Philippine Peso</option>
 <option{if $module_data.param02 eq "PLN"} selected="selected"{/if} value="PLN">New Zloty</option>
-<option{if $module_data.param02 eq "PTE"} selected="selected"{/if} value="PTE">Portugese Escudo</option>
 <option{if $module_data.param02 eq "QAR"} selected="selected"{/if} value="QAR">Qatari Rial</option>
 <option{if $module_data.param02 eq "ROL"} selected="selected"{/if} value="ROL">Leu</option>
 <option{if $module_data.param02 eq "RUR"} selected="selected"{/if} value="RUR">Russian Ruble</option>
@@ -156,7 +148,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option{if $module_data.param02 eq "SBD"} selected="selected"{/if} value="SBD">Solomon Islands Dollar</option>
 <option{if $module_data.param02 eq "SOS"} selected="selected"{/if} value="SOS">Somalia Shilling</option>
 <option{if $module_data.param02 eq "ZAR"} selected="selected"{/if} value="ZAR">Rand</option>
-<option{if $module_data.param02 eq "ESP"} selected="selected"{/if} value="ESP">Spanish Peseta</option>
 <option{if $module_data.param02 eq "LKR"} selected="selected"{/if} value="LKR">Sri Lanka Rupee</option>
 <option{if $module_data.param02 eq "SHP"} selected="selected"{/if} value="SHP">St Helena Pound</option>
 <option{if $module_data.param02 eq "SDP"} selected="selected"{/if} value="SDP">Sudanese Pound</option>

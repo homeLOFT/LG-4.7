@@ -1,4 +1,118 @@
-1caa81e92c3a917d5b2469a3c5804c7929db0e5d, v58 (xcart_4_7_0), 2015-03-04 11:41:00, CHANGELOG, aim
+cfa62d4ab5d7bd2eb80ae86135a26ab869fcee8a, v60 (xcart_4_7_2), 2015-04-28 11:16:05, CHANGELOG, aim
+
+------------------ X-CART v4.7.2 RELEASED
+
+*DESIGN AND APPEARANCE*
+[!] 27 Apr 2015, mixon - Bug (0138057): One Page Checkout: The "Please wait" text was positioned incorrectly on the checkout page if the address was selected from the address book. Fixed. [OPC]
+[!] 16 Apr 2015, mixon - Bug (0143737): One Page Checkout: A gray background was displayed on the checkout page around the input fields in the "Payment method" section which was not supposed to be there. Fixed. Thanks to Random. [OPC]
+[!] 14 Apr 2015, aim - Bug (0144025): The 'Add new address' link did not work on the One_Page_Checkout. Fixed. [OPC]
+[!] 06 Apr 2015, mixon - Bug (0113476): The alt tag for the company logo was missing in some skins. Fixed. Thanks to Abr.
+
+*BACKOFFICE*
+[*] 24 Apr 2015, aim - Improvement (0144230): All numeric variables are now displayed in the '1999.53' format on configuration pages to avoid problems with php logic in comparison (i.e. all config variables are shown as saved in the DB).
+[*] 07 Apr 2015, aim - Improvement (0144009): The 'Select a product' popup dialog now uses max browser width to support long product and category names.
+[*] 07 Apr 2015, aim - Improvement (0144009): 'Popup product' dialog uses max browser width to support long product/category names.
+[!] 20 Apr 2015, mixon - Bug (0126501): Inventory updating via import worked incorrectly if productcode and variant id were the same. From now on product variants are identified only by product code during import.
+
+*SHIPPING*
+[*] 22 Apr 2015, aim - Improvement (0144208): Changed Max allowed packages per cart from 100 to 200 packs for USPS shippings. This is used when the option 'Split the shipment into multiple packages if its weight/dimensions exceed the limitations' is enabled.
+
+*CHECKOUT*
+[*] 24 Apr 2015, aim - Improvement (0144048): Added Australia, Austria, Belgium, Canada, Denmark, Italy, Netherlands, Norway, Poland, Spain, Sweden, Switzerland, Turkey buyer's allowed countries for the In-Context Checkout in Express Checkout. Added the Canadian Dollar, Australian Dollar, Danish Krone, Norwegian Krone, Polish Zloty, Swedish Krona, Swiss Franc and Turkish Lira currencies.
+
+*MODULES/ADD-ONS*
+[*] 10 Apr 2015, aim - Improvement (0144058): Egoods: Zero value is no longer allowed for the ' Download key TTL (hours) ' setting. 
+[*] 10 Apr 2015, aim - Improvement (0137700): News Management: Moved the 'Use internal PHP mailer for sending newsletters' setting from the ' Main page :: General settings :: Email' section to ' Main page :: General settings :: News Management'.
+[!] 23 Apr 2015, mixon - Bug (0144223): PayPal Login: The return URL in the configuration instruction could be different from the one actually used in the request. Fixed.
+[!] 23 Apr 2015, aim - Bug (0144189): Recently Viewed: The recently viewed products section was showing the current product as a recently viewed one. Fixed. Thanks to Steve Stoyanov (Cflsystems).
+[!] 15 Apr 2015, aim - Bug (0144093): Stop List: The Stop List module ignored trusted IPs added manually. Fixed. Thanks to Joe Funderburg (Cherie).
+[!] 06 Apr 2015, mixon - Bug (0140405): Discount Coupons: There was no validation for the "time to use" field, which caused SQL errors in logs for non numeric values. Fixed. [DC]
+
+*IMPORT/EXPORT*
+[!] 08 Apr 2015, aim - Bug (0143861): "A heading is missing in section..." error was shown during the import file check up step if column names had fore spaces. Fixed.
+
+*LANGUAGES* 
+[*] 28 Apr 2015, aim - Improvement (0143943): Adjusted the message related to checkout being unavailable due to payment methods missing.
+
+*SECURITY*
+[*] 28 Apr 2015, aim - Improvement (0144269): Improvement related to Customer_Reviews/Advanced_Customer_Reviews modules.
+[*] 13 Apr 2015, aim - Improvement (0144079): Improvement related to customer zones.
+[*] 13 Apr 2015, aim - Improvement (0144089): Improvement related to customer address addition.
+[*] 06 Apr 2015, aim - Improvement (0143983): Improvement related to order search.
+
+*MISCELLANEOUS* 
+[!] 16 Apr 2015, aim - Bug (0134326): Problems like ERR_CONTENT_DECODING_FAILED ( Content Encoding Error ) error on some servers for fCommerce_Go. Fixed.
+[!] 16 Apr 2015, aim - Bug (0144076): Ajax Flyout_Menus were not indexed by Google. Fixed.
+[!] 09 Apr 2015, aim - Bug (0143977): Credit cards were not saved in XPayments when a subscription product was used. Fixed. Thanks to Isden. ['X-Payments Subscriptions', X-Payments Connector']
+
+------------------ X-CART v4.7.1 RELEASED
+
+*DESIGN AND APPEARANCE*
+[*] 13 Mar 2015, aim - Improvement (0143659): Updated jQuery UI to v1.11.4 (2-columns/books_and_magazines/ideal_comfort, light_responsive/ideal_responsive, admin area, js, common_files)
+[*] 04 Feb 2015, aim - Improvement (0143092): Removed some unused admin templates. Thanks to Abr. authbox.tpl, buttons/go_image_menu.tpl, buttons/go_image.tpl, buttons/go.tpl, buttons/login_menu.tpl, buttons/logout_menu.tpl, buttons/search_head.tpl, buttons/search.tpl
+[!] 16 Mar 2015, aim - Bug (0143490, 0143428): light_responsive + MultiCurrency: Language selector did not work. Fixed. Thanks to Polyansky.
+[!] 13 Mar 2015, aim - Bug (0143602, 0143428): light_responsive: Fixed the Advanced search form in the mobile mode. Changes related to Fast_Lane_Checkout. Thanks to Polyansky.
+[!] 12 Mar 2015, aim - Bug (0143591, 0143601, 0143428): light_responsive: Special offer icon overlay the product image in the cart in the mobile mode. Fixed. Changes related to the 'Search for events' calendar. Thanks to Polyansky.
+[!] 12 Mar 2015, aim - Bug (0143541, 0143544, 0143428): light_responsive: Changes related to special offer promo. Fast_Lane_Checkout. 'I accept the "Terms & Conditions" and "Privacy statement"' checkbox. Thanks to Polyansky.
+[!] 09 Mar 2015, aim - Bug (0143452, 0143453, 0143428): light_responsive: Added jcarousel jquery plugin for the skin. Added the 'Move to wishlist' button to the cart. Thanks to Polyansky.
+
+*BACKOFFICE*
+[*] 16 Mar 2015, aim - Improvement (0143694): Removed the 'Lithuanian Litas'(LTL) currency. Removed obsolete eurozone currencies from the payment settings.
+[*] 10 Mar 2015, aim - Improvement (0143600): 'Clear X-Cart cache' now removes compiled templates (var/templates_c) as well if the 'Do not check if templates are changed (Smarty compile_check)' setting is enabled.
+
+*PAYMENTS*
+[!] 05 Mar 2015, aim - Bug (0143524): 'Failed transaction limit in one session, there is IP address placed in the Stop list' setting did not work as declared for the 'Stop List' module. Fixed.
+[!] 05 Mar 2015, aim - Bug (0143523): The fields Shipping address, phone, country and Billing country were not passed/posted to 'Virtual Merchant - Virtual Merchant Provided Form'. Fixed.
+
+*SHIPPING*
+[*] 04 Mar 2015, aim - Improvement (0143335): For the PLUS/ONLINE service, available U.S.P.S. shipping options are now determined according to the dimensions (Length, Width, Height and Girth) of the products being ordered - in the case when all the services are deselected on the U.S.P.S. options page in X-Cart admin area. (Flat Rate options where the packaging is smaller than the dimensions provided are filtered out).
+[!] 16 Mar 2015, aim - Bug (0143663): FedEx(v14) real-time rates were not calculated properly when shipping multiple packages. Fixed.
+
+*TAXES*
+[!] 21 Mar 2015, aim - Bug (0140135): TaxCloud error in AOM (Errors like 'Cart Item Index 51592 is too large. The index cannot exceed 32,767'). Fixed. 
+[!] 10 Mar 2015, aim - Bug (0143596): AvaTax module did not void declined and failed transactions. Fixed.
+
+*CHECKOUT*
+[*] 20 Mar 2015, mixon - Improvement (0143594): One Page Checkout: Field validation was always performed when field lost focus. On blur validation is now performed only if the value has changed. [OPC]
+[!] 27 Mar 2015, mixon - Bug (0143594): One Page Checkout: Form fields had different height and width in different browsers and skins. Fixed. [OPC]
+[!] 25 Mar 2015, mixon - Bug (0142988): One Page Checkout: Email field validation error message was not shown if email was the only incorrect field. Fixed. [OPC]
+[!] 06 Mar 2015, aim - Bug (0138231): Logo for "INTERAC Online service" payment method was not displayed. Removed. 
+
+*ORDERS*
+[*] 20 Mar 2015, aim - Improvement (0143671): Added a new setting 'Send a notification to the product owner when the order status is changed to a custom one' for XOrder_Statuses for gold/golplus editions.
+[!] 13 Mar 2015, aim - Bug (0143420): Google map was not working for orders in the provider area. Fixed.
+
+*MODULES/ADD-ONS*
+[*] 25 Mar 2015, mixon - Improvement (0143775): One Page Checkout: Moved focus to the first input box in the opened section (Create account for this Email, Ship to a different address). [OPC]
+[*] 21 Mar 2015, aim - Improvement (0143707): One Page Checkout: Added the Scroll view to shipping address feature. The control focus is now moved to the first input box in the shipping section as well. [OPC]
+[*] 17 Mar 2015, mixon - Improvement (0143594): One Page Checkout: Improved browser auto-complete support. Added the delayed form check. [OPC]
+[*] 17 Mar 2015, mixon - Improvement (0143594): One Page Checkout: Replaced form submit with ajax form reload for Save links. [OPC]
+[*] 16 Mar 2015, mixon - Improvement (0143594): One Page Checkout: Moved the save link to the second section for the group fields. The link is now shown only if the existing address is modified. [OPC]
+[*] 13 Mar 2015, aim - Improvement (0143662): Custom Order Statuses: changed the default orderby to 10,20,...
+[*] 13 Mar 2015, mixon - Improvement (0143594): One Page Checkout: Moved the 'Create account for this Email' and 'Ship to a different address' checkboxes to the main section. Added the "Submit" button to the main section bottom. [OPC]
+[*] 13 Mar 2015, mixon - Improvement (0143594): One Page Checkout: The "Submit" button is disabled until all the required fields are filled in with the correct values. [OPC]
+[*] 09 Mar 2015, mixon - Improvement (0143564): One Page Checkout: Removed the 'on focus' popup notice for the Email address input field. [OPC]
+[*] 13 Jan 2015, mixon - Improvement (0142429): One Page Checkout - Checkout page improvements: Removed redundant javascripts code. Removed the Continue button. Edit address action is now marked with the Pen icon. Address fields update action is now available inline. Small corrections to CSS related to different skins. Registration form improved. Save link added. Restore value button is hidden. [OPC]
+[!] 23 Mar 2015, mixon - Bug (0143594): One Page Checkout: Image verification section and submit button were not properly aligned in the profile modify section on the checkout page. [OPC]
+[!] 20 Mar 2015, mixon - Bug (0142988): Gift Certificate: If the order total was fully covered by the applied GC and a payment method was selected for zero total orders, the payment method was changed from GC to the selected one. Fixed. [GC]
+[!] 20 Mar 2015, mixon - Bug (0142988): Gift Certificate: The payment section was hidden incorrectly if a 100% discount coupon was used while the payment method specified by "Use this payment method for orders with zero total cost" option had a surcharge. Fixed. [GC]
+[!] 17 Mar 2015, mixon - Bug (0143594): One Page Checkout: Ship to a different address checkbox was misaligned vertically in the address preview. Fixed. [OPC]
+[!] 13 Mar 2015, mixon - Bug (0143594): One Page Checkout: Personal and additional information section titles were not aligned properly. Fixed. [OPC]
+[!] 13 Jan 2015, mixon - Bug (0142429): One Page Checkout: Shipping and payment sections were not blocked on empty profile info reload. Multiple error popups on the last field. [OPC]
+[!] 20 Feb 2015, aim - Bug (0143360): Flyout_Menus cache was not updated when clean URLs were enabled. Fixed.
+
+*PERFORMANCE*
+[*] 17 Mar 2015, abr - Improvement (0143715): REQUEST_FILENAME is replaced with REQUEST_URI in RewriteCond for CleanURL.
+[*] 17 Feb 2015, abr - Improvement (0143282): Absolute path is now used in php include/require. Thanks to Abr.
+[*] 13 Feb 2015, aim - Improvement (0143250, 0143246): Small SEO improvement for the 'Notify me when this item is nearly out of stock' button of the Product_Notifications module. Speed-up for subscribe mode. Thanks to Pero. Thanks to Mike.
+[*] 03 Feb 2015, aim - Improvement (0143113): Images import optimization. HEAD http request is used instead of GET http request.
+[*] 29 Jan 2015, aim - Improvement (0143076): Flyout_Menus is loaded by ajax if the 'Cache the menu' setting is used. Thanks to Abr.
+[*] 15 Dec 2015, aim - Improvement (0142516, 0142513): Session optimization. Session for AJAX calls is not saved by default now.
+
+*MISCELLANEOUS* 
+[*] 26 Mar 2015, mixon - Improvement (0143822): Small improvements for Vat validation debug code.
+[*] 13 Mar 2015, mixon - Improvement (0143594): Added silent form validation support to form check function.
+[!] 13 Mar 2015, mixon - Bug (0143594): The "markErrorField" function was unbinding all the 'keydown' events if the field had a correct value.
 
 ------------------ X-CART v4.7.0 BETA RELEASED
 

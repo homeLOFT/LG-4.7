@@ -1,5 +1,5 @@
 {*
-aad85f2be3e7abf71f38a7de369cbd6188fe4f3b, v9 (xcart_4_7_0), 2015-02-11 09:38:53, account_info.tpl, aim
+e3d24e0673e060caaa5d9485743b85b1f5e3c61e, v10 (xcart_4_7_1), 2015-03-09 18:30:42, account_info.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -18,7 +18,6 @@ vim: set ts=2 sw=2 sts=2 et:
       {if $config.email_as_login ne 'Y' and $login ne ''}
        <input type="hidden" id="uname" name="uname" value="{$userinfo.login|default:$userinfo.uname|escape}" /><br/>
       {/if}
-      <div id="email_note" class="note-box" style="display: none;">{$lng.txt_email_note}</div>
     {/capture}
     {include file="modules/One_Page_Checkout/opc_form_field.tpl" content=$smarty.capture.regfield required=true name=$lng.lbl_email field="email"}
   </li>

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v297 (xcart_4_7_0), 2015-02-17 23:56:28, func.user.php, Yuriy
+ * @version    a8d85b7529b71875cfe8421e77c3bd62d437e068, v298 (xcart_4_7_2), 2015-04-13 15:58:11, func.user.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -2377,7 +2377,7 @@ function func_save_address($userid = 0, $addressid = 0, $data = array())
         && !empty($data['zip4'])
     ) {
 
-        $data['zip4'] = substr(trim($data['zip4']), 0, 4);
+        $data['zip4'] = rtrim(substr(trim($data['zip4']), 0, 4), '\\');
 
     } else {
 

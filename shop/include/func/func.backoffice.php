@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v189 (xcart_4_7_0), 2015-02-17 23:56:28, func.backoffice.php, Yuriy
+ * @version    b05831b89998db1fbec90d961d8920f8993e7bc4, v191 (xcart_4_7_1), 2015-03-26 17:14:46, func.backoffice.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -362,7 +362,7 @@ function func_get_dir_status($directory, $hr = false, $rec_level = 0)
 
 function func_get_configuration_styles() {
 
-    global $active_modules, $used_option_styles;
+    global $active_modules, $used_option_styles, $config, $shop_type;
     x_session_register('used_option_styles', array());
 
     if (
@@ -377,8 +377,11 @@ function func_get_configuration_styles() {
 
     // Cannot be removed as called from func_display where x_session_finish is disabled
     x_session_save('used_option_styles');
+    $l_shop_type = isset($shop_type) ? $shop_type : '';
+    $l_version = isset($config['version']) ? $config['version'] : '';
 
-    return $_GET['option'];
+    return $_GET['option'] . '&t='
+        . urlencode(base64_encode($l_version . '|' . strtolower($l_shop_type)));
 }
 
 

@@ -6,7 +6,7 @@
  * @package     X-Cart
  * @subpackage  CSS
  * @author      Ruslan R. Fazlyev <rrf@x-cart.com>
- * @version     326917223b194fd8e4b13d13595b6689cda0a3a4, v2 (xcart_4_7_0), 2015-03-03 09:57:19, altskin.css, aim
+ * @version     108da0b7e27dee382810f12234168bb0a6c37fa1, v10 (xcart_4_7_1), 2015-03-23 12:48:57, altskin.css, mixon
  * @link        http://www.x-cart.com/
  * @see         ____file_see____
  */
@@ -266,7 +266,9 @@ li {
   clear: both;
   visibility: hidden;
 }
-
+#page-container {
+  z-index: 0;/*to display ui datepicker over flyout categories*/
+}
 #page-container2,
 .wrapper-box {
   width: 990px;
@@ -347,9 +349,6 @@ li {
   top: auto;
   right: auto;
   text-align: inherit;
-}
-#header .languages #mc-selector-menu {
-  max-width: 199px;
 }
 .languages-flags {
   position: relative;
@@ -1671,6 +1670,7 @@ ul.simple-list-left.navigation-bar {
   border: 1px solid #d7e1e8;
   padding: 6px 12px;
   margin-right: 3px;
+  margin-bottom:3px;
 }
 .nav-pages a.right-delimiter:hover,
 .nav-pages > a:last-child:hover {
@@ -1725,7 +1725,7 @@ ul.simple-list-left.navigation-bar {
 .pmap_letters span {
   border: 1px solid #d7e1e8;
   padding: 6px 12px;
-  margin-right: 3px;
+  margin-bottom: 3px;
 }
 .pmap_letters a:hover {
   border-color: #b1c9e0;
@@ -2882,7 +2882,7 @@ table.product-properties .product-price-value,
 .cart .item {
   border-top: 1px solid #dddddd;
   margin-bottom: 0;
-  padding-bottom: 18px;
+  padding-bottom: 11px;
   padding-top: 8px;
 }
 .cart .item.first {
@@ -2915,6 +2915,7 @@ table.product-properties .product-price-value,
 .cart .item .image .simple-delete-button {
   position: absolute;
   left: 0;
+  top: 0;
 }
 .cart .item .image .simple-delete-button span {
   display: inline-block;
@@ -2970,6 +2971,9 @@ table.product-properties .product-price-value,
 .cart .buttons-row {
   margin-top: 15px;
 }
+.cart .buttons-row .button {
+  margin-bottom: 7px;
+}
 .cart .cart-border {
   background: #f6f6f6;
   border-top: 1px solid #dddddd;
@@ -2998,6 +3002,7 @@ table.totals tr td.total-value
 }
 .totals .total-name {
   color: inherit;
+  white-space: normal;
 }
 .totals .total-line img {
   background-color: #dddddd;
@@ -3238,26 +3243,24 @@ table.totals tr.total td.total-value {
 .flc-container #center-main {
   text-align: left;
   width: auto;
-  margin:0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 div.flc-tabs-container {
-  float: left;
-  left: 50%;
+  text-align: center;
 }
 div.flc-tabs{
-  position: relative;
-	left:auto;
-	right: 50%;
-	margin:0 auto;
+  position: static;
+	display: inline-block;
 }
-.flc-tab-marks-line img{
-	background:#d0d0d0;
+.flc-tab-marks-line img {
+	background: #d0d0d0;
 }
 .flc-tab-marks-line .flc-tab-line-full .flc-tab-line-img1,
 .flc-tab-marks-line .flc-tab-line-full .flc-tab-line-img2,
 .flc-tab-marks-line .flc-tab-line-full .flc-tab-line-img3,
 .flc-tab-marks-line .flc-tab-line-half .flc-tab-line-img1,
-.flc-tab-marks-line .flc-tab-line-half .flc-tab-line-img3{
+.flc-tab-marks-line .flc-tab-line-half .flc-tab-line-img3 {
 	background:#1f6e9e;
 }
 .shipping-method a {
@@ -3284,8 +3287,12 @@ ul#opc-sections li.opc-section {
   width: 31.5%;
   margin-right: 2.75%;
 }
-.cart-content tr td, .cart-content tr th {
-	padding: 6px 10px;
+.cart-content tr td {
+  padding: 6px 10px;
+}
+.cart-content tr th {
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 table.cart-content tr td{
 	border-bottom: solid 1px #CCC;
@@ -3323,14 +3330,9 @@ div.address-book-link div.buttons-box {
 .dcoupons-clear img {
   vertical-align: middle;
 }
-div.terms_n_conditions {
-  text-align: left;
+div.iv-box {
+  padding-bottom: 20px;
 }
-div.terms_n_conditions label {
-  font-size: 11px;
-  line-height: inherit;
-}
-
 /* XPC iframe styles */
 .xpc-iframe-hidden {
   height: 0px;
@@ -3383,6 +3385,12 @@ div.address-field {
 .popup-address .address-main .new-address-label {
   padding-top: 38px;
 }
+.address-main .buttons-auto-separator .button {
+  margin-right: 0;
+}
+.address-main .buttons-auto-separator .button + .button {
+  margin-left: 12px;
+}
 
 /**
  * Invoice page
@@ -3390,7 +3398,8 @@ div.address-field {
 .invoice-total-row td {
   border-top: 2px solid #58595b;
 }
-div.order-invoice {
+div.order-invoice,
+.order_message-container .buttons-row {
   max-width: 800px;
 }
 .responsive .invoice-company-icon {
@@ -3415,8 +3424,6 @@ div.order-invoice {
   padding: 10px;
   text-align: center;
 }
-.adv-search table .pattern input, 
-.adv-search table .pattern select,
 select.adv-search-select {
   width: 75%;
 }
@@ -3427,9 +3434,10 @@ select.adv-search-select {
   display: inline-block;
 }
 .adv-search .responsive-search .data-name {
-  margin-top: 10px;
-  width: 20%;
+  width: 24%;
   font-weight: bold;
+  vertical-align: top;
+  word-wrap: break-word;
 }
 .adv-search .responsive-search .data-input.pattern {
   width: 50%;
@@ -3441,18 +3449,27 @@ select.adv-search-select {
 .adv-search .responsive-search .search-button {
   width: 15%;
 }
+.adv-search .responsive-search .button-row .data-name {
+  margin-top: 0;
+  vertical-align: top;
+}
 .adv-search .responsive-search .search-button button{
   vertical-align: middle;
 }
 .adv-search .responsive-search .input-row {
-  width: 75%;
+  width: 71%;
 }
-.adv-search .responsive-search .data-name.search-options {
-  margin-top: 0;
+.adv-search .responsive-search .input-row,
+.adv-search .responsive-search .data-input {
+  margin-bottom: 5px;
 }
 .adv-search .responsive-search .expand-section {
-  margin-left: 20%;
+  margin-left: 24%;
 }
+.adv-search .responsive-search label {
+  line-height: inherit;
+ }
+
 
 .prod-notif {
   padding: 10px 20px;
@@ -3613,7 +3630,13 @@ div.popup-dialog {
   top: -10px;
   background-color: transparent;
 }
-
+/**
+ * X-MultiCurrency module
+ */
+.mc-selector-menu-item {
+  font-weight: inherit;
+  color: inherit;
+}
 /**
  * X-Product configurator module
  */
@@ -4082,10 +4105,18 @@ ul.swatchForm {
 
   .cart .item .image {
     width: 30%;
+    white-space: normal;
   }
   .cart .details {
     width: 70%;
   }
+.cart .item .image .on-sale-icon, .cart .item .image .on-sale-icon-with-so {
+    position: static;
+    display: inline;
+} 
+.cart .item .image .offers-thumbnail {
+    margin-left: 0;
+}
   .cart .product-price-text:before {
     /*line break after "special price for you" text*/
     content: '';
@@ -4150,9 +4181,6 @@ ul.swatchForm {
     margin-right: auto !important;
   }
 
-  div#email_note {
-    margin: -85px 0 0 -152px;
-  }
   .address .address-field input,
   .address .address-field select {
     width: 90%;
@@ -4225,10 +4253,23 @@ ul.swatchForm {
     text-align: left;
     margin-top: 10px;
   }
-  .adv-search table td {
-    white-space: normal;
-    padding: 3px 0px 3px 0;
+  .adv-search .responsive-search .data-name {
+    width: 100%;
   }
+  .adv-search .responsive-search .input-row {
+    width: 100%;
+  }
+  .adv-search .responsive-search .expand-section {
+    margin-left: 0%;
+  }
+  .adv-search .responsive-search .data-name.search-options {
+    display: none;
+  }
+  .adv-search .responsive-search .button-row .data-name,
+  .adv-search .responsive-search .button-row .search-button {
+    width: auto;
+    margin-right: 10px;
+   }
 
   .ui-dialog {
     -webkit-box-shadow: none;

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v54 (xcart_4_7_0), 2015-02-17 23:56:28, func.php, Yuriy
+ * @version    53a85a7d8d36738515dd8899eba5a7f6788acd9b, v58 (xcart_4_7_1), 2015-03-27 19:25:23, func.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -135,6 +135,7 @@ function func_ajax_block_opc_shipping()
     global $xcart_catalogs, $xcart_catalogs_secure, $current_area;
     global $current_carrier, $shop_language;
     global $intershipper_rates, $intershipper_recalc, $dhl_ext_country_store, $checkout_module, $empty_other_carriers, $empty_ups_carrier, $amazon_enabled, $paymentid, $products;
+    global $totals_checksum_init, $totals_checksum;
 
     x_load(
         'cart',
@@ -182,6 +183,7 @@ function func_ajax_block_opc_totals()
     global $xcart_catalogs, $xcart_catalogs_secure;
     global $current_carrier, $shop_language, $current_area, $checkout_module;
     global $intershipper_rates, $intershipper_recalc, $dhl_ext_country_store, $products;
+    global $totals_checksum_init, $totals_checksum;
 
     x_load(
         'cart',
@@ -285,6 +287,7 @@ function func_ajax_block_opc_payment() {
     global $current_carrier, $shop_language, $current_area, $checkout_module;
     global $intershipper_rates, $intershipper_recalc, $dhl_ext_country_store, $products;
     global $https_location, $http_location, $HTTPS;
+    global $totals_checksum_init, $totals_checksum;
 
     x_load(
         'cart',
@@ -301,12 +304,14 @@ function func_ajax_block_opc_payment() {
     // Prepare the products data
     $products = func_products_in_cart($cart, @$userinfo['membershipid']);
 
+    // Get available payment methods
     $payment_methods = check_payment_methods(@$user_account['membershipid'], XCCartDefs::HIDE_PAYMENTS_FOR_ZEROCOST);
 
     if (!empty($active_modules['Klarna_Payments'])) {
         $payment_methods = func_klarna_correct_payments($payment_methods);
     }
 
+    // Currently selected paymentid
     $paymentid = func_cart_get_paymentid($cart, 'One_Page_Checkout');
 
     include $xcart_dir . '/include/cart_calculate_totals.php';
@@ -334,7 +339,25 @@ function func_ajax_block_opc_payment() {
         if (count($payment_methods) == 1
             && $payment_methods[0]['paymentid'] == intval($config['Egoods']['force_offline_paymentid'])
         ) {
-            $paymentid = $payment_methods[0]['paymentid'];
+            // Get currently selected payment method info
+
+            if (
+                func_cart_is_zero_total_cost($cart)
+                && ($payment_method_info = func_query_first("SELECT pm.* FROM $sql_tbl[payment_methods] AS pm WHERE paymentid = '$paymentid'"))
+                && !empty($payment_method_info['payment_script'])
+                && $payment_method_info['payment_script'] == 'payment_giftcert.php'
+            ) {
+                // IF the only available payment method
+                //    is the one defined by $config['Egoods']['force_offline_paymentid']
+                //    AND the order total is zero
+                //    AND the selected payment method is GC
+                //
+                // populate the payment_methods list with the GC payment info
+
+                $payment_methods = array($payment_method_info);
+            } else {
+                $paymentid = $payment_methods[0]['paymentid'];
+            }
         }
     }
 

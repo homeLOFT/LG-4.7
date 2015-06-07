@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v63 (xcart_4_7_0), 2015-02-17 23:56:28, discount_coupons.php, Yuriy
+ * @version    41df6d2abe46bac111e0cb64f079d9b38c2c6fb9, v64 (xcart_4_7_1), 2015-03-20 22:55:49, discount_coupons.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -111,7 +111,12 @@ if ($mode == 'add_coupon') {
 
         $cart['discount_coupon'] = stripslashes($coupon);
 
-        list($cart, $products) = func_generate_products_n_recalculate_cart();
+        if ($checkout_module == 'One_Page_Checkout') {
+            $paymentid = func_cart_get_paymentid($cart, 'One_Page_Checkout');
+            $cart = func_cart_set_paymentid($cart, $paymentid);
+        }
+
+        list($cart, $products) = func_generate_products_n_recalculate_cart($paymentid);
 
         if ($cart['coupon_discount'] == 0 && $cart['coupon_type'] != 'free_ship') {
 

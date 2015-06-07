@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    f7753843bded08de90c93873b4a2fb1ed4ccb574, v175 (xcart_4_7_0), 2015-03-04 09:39:41, order_edit.php, mixon
+ * @version    e44b86db8de0d5fb6c830b5a545165043a629b0c, v176 (xcart_4_7_1), 2015-03-09 10:35:32, order_edit.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -82,6 +82,10 @@ $smarty->assign(
     'address_fields',
     func_get_default_fields('H', 'address_book')
 );
+
+if (defined('DEVELOPMENT_MODE')) {
+    register_shutdown_function('func_aom_dev_check_non_saved_anonymous_userinfo');
+}
 
 /**
  * Check if the modification of the order is permitted

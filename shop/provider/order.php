@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v88 (xcart_4_7_0), 2015-02-17 13:29:01, order.php, aim
+ * @version    18a4c526b62abbebe357b3ca289730715b3f2b1f, v89 (xcart_4_7_1), 2015-03-13 13:01:40, order.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -174,6 +174,15 @@ if ($mode == 'delete') {
 }
 
 $smarty->assign('main','history_order');
+
+if (
+    'edit' !== $mode
+    || 'preview' === $show
+) {
+
+    $smarty->assign('gmap_enabled', 'Y');
+
+}
 
 if (is_readable($xcart_dir.'/modules/gold_display.php')) {
     include $xcart_dir.'/modules/gold_display.php';

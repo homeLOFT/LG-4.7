@@ -1,5 +1,6 @@
 {*
-3440435bf08c4432b5fb826c0f0b68d1d4a0fce6, v9 (xcart_4_6_5), 2014-09-11 12:11:57, register_account.tpl, aim
+a4932c666a373247bd7f62cfd9a6313e7863b1cc, v11 (xcart_4_7_1), 2015-03-10 17:25:09, register_account.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {if $hide_header eq ""}
@@ -12,8 +13,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <td class="data-name" align="right"><label for="email">{$lng.lbl_email}</label></td>
 <td class="data-required">*</td>
 <td nowrap="nowrap">
-<input type="text" id="email" name="email" size="32" class="input-email" maxlength="128" value="{$userinfo.email|escape}" onblur="javascript: $('#email_note').hide();" onfocus="javascript: showNote('email_note', this);" />
-<div id="email_note" class="NoteBox" style="display: none;">{$lng.txt_email_note}<br /></div>
+<input type="text" id="email" name="email" size="32" class="input-email" maxlength="128" value="{$userinfo.email|escape}" />
 </td>
 </tr>
 

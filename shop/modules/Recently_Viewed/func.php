@@ -36,7 +36,7 @@
  * @category   X-Cart
  * @package    Modules
  * @subpackage Recently Viewed
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v21 (xcart_4_7_0), 2015-02-17 23:56:28, func.php, Yuriy
+ * @version    65fff0b631331f6016371ee9911cb07b2d6ea11e, v24 (xcart_4_7_2), 2015-04-23 09:56:02, func.php, aim
  * @since      4.4.0
  */
 
@@ -75,9 +75,12 @@ function rviewed_save_product($id) {//{{{
  * @return array numeric array with products data
  */
 function rviewed_get_products() {//{{{
-    global $sql_tbl;
+    global $sql_tbl, $XCART_SESSION_VARS;
 
-    $_recently_viewed_products = x_session_get_var('recently_viewed_products', array());
+    // XCART_SESSION_VARS is used instead of x_session_get_var('recently_viewed_products' to avoid showing the product in the same session
+    $_recently_viewed_products = !empty($XCART_SESSION_VARS['recently_viewed_products'])
+        ? $XCART_SESSION_VARS['recently_viewed_products']
+        : array();
 
     if (
         !empty($_recently_viewed_products)

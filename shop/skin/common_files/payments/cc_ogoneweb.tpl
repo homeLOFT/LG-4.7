@@ -1,5 +1,6 @@
 {*
-7bf6e1dae914fb2328491acdf27a9e0080994668, v5 (xcart_4_6_2), 2014-01-05 11:51:40, cc_ogoneweb.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v6 (xcart_4_7_1), 2015-03-16 15:05:13, cc_ogoneweb.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>Ogone</h1>
@@ -30,33 +31,23 @@ vim: set ts=2 sw=2 sts=2 et:
 <td>{$lng.lbl_cc_currency}:</td>
 <td>
 <select name="param04">
-<option value="ATS"{if $module_data.param04 eq "ATS"} selected="selected"{/if}>Austrian Shilling</option>
 <option value="AUD"{if $module_data.param04 eq "AUD"} selected="selected"{/if}>Australian Dollar</option>
-<option value="BEF"{if $module_data.param04 eq "BEF"} selected="selected"{/if}>Belgian franc</option>
 <option value="CAD"{if $module_data.param04 eq "CAD"} selected="selected"{/if}>Canadian Dollar</option>
 <option value="CHF"{if $module_data.param04 eq "CHF"} selected="selected"{/if}>Swiss Franc</option>
 <option value="CZK"{if $module_data.param04 eq "CZK"} selected="selected"{/if}>Czech Koruna</option>
 <option value="DEM"{if $module_data.param04 eq "DEM"} selected="selected"{/if}>German mark</option>
 <option value="DKK"{if $module_data.param04 eq "DKK"} selected="selected"{/if}>Danish Kroner</option>
-<option value="ESP"{if $module_data.param04 eq "ESP"} selected="selected"{/if}>Spanish Peseta</option>
 <option value="EUR"{if $module_data.param04 eq "EUR"} selected="selected"{/if}>EURO</option>
-<option value="FIM"{if $module_data.param04 eq "FIM"} selected="selected"{/if}>Finnish Markka</option>
 <option value="FRF"{if $module_data.param04 eq "FRF"} selected="selected"{/if}>French franc</option>
 <option value="GBP"{if $module_data.param04 eq "GBP"} selected="selected"{/if}>British pound</option>
 <option value="HKD"{if $module_data.param04 eq "HKD"} selected="selected"{/if}>Hong Kong Dollar</option>
 <option value="HUF"{if $module_data.param04 eq "HUF"} selected="selected"{/if}>Hungarian Forint</option>
-<option value="IEP"{if $module_data.param04 eq "IEP"} selected="selected"{/if}>Irish Punt</option>
 <option value="ILS"{if $module_data.param04 eq "ILS"} selected="selected"{/if}>New Shekel</option>
-<option value="ITL"{if $module_data.param04 eq "ITL"} selected="selected"{/if}>Italian Lira</option>
 <option value="JPY"{if $module_data.param04 eq "JPY"} selected="selected"{/if}>Japanese Yen</option>
-<option value="LTL"{if $module_data.param04 eq "LTL"} selected="selected"{/if}>Litas</option>
-<option value="LUF"{if $module_data.param04 eq "LUF"} selected="selected"{/if}>Luxembourg franc</option>
 <option value="MXN"{if $module_data.param04 eq "MXN"} selected="selected"{/if}>Peso</option>
-<option value="NLG"{if $module_data.param04 eq "NLG"} selected="selected"{/if}>Dutch Guilders</option>
 <option value="NOK"{if $module_data.param04 eq "NOK"} selected="selected"{/if}>Norwegian Kroner</option>
 <option value="NZD"{if $module_data.param04 eq "NZD"} selected="selected"{/if}>New Zealand Dollar</option>
 <option value="PLN"{if $module_data.param04 eq "PLN"} selected="selected"{/if}>Polish Zloty</option>
-<option value="PTE"{if $module_data.param04 eq "PTE"} selected="selected"{/if}>Portuguese Escudo</option>
 <option value="RUR"{if $module_data.param04 eq "RUR"} selected="selected"{/if}>Rouble</option>
 <option value="SEK"{if $module_data.param04 eq "SEK"} selected="selected"{/if}>Swedish Krone</option>
 <option value="SGD"{if $module_data.param04 eq "SGD"} selected="selected"{/if}>Singapore Dollar</option>

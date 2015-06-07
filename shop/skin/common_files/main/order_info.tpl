@@ -1,11 +1,11 @@
 {*
-63b14304b7080e4c3a8d1aa79cbfc7f1f1d03756, v16 (xcart_4_7_0), 2015-02-19 14:11:28, order_info.tpl, mixon
+64e8bc2a380c93109cd8d0bf86eacd1fa78841fa, v17 (xcart_4_7_1), 2015-03-19 13:52:39, order_info.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {include file="main/subheader.tpl" title=$lng.lbl_products_info}
 
-<table cellspacing="0" cellpadding="0" width="100%">
+<table cellspacing="0" cellpadding="0" width="100%" id='table_order_info'>
 
 {section name=prod_num loop=$products}
 

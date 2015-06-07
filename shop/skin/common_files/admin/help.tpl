@@ -1,5 +1,6 @@
 {*
-91ca986916e1279cf0d2e45d1b72ab30338ca6fc, v17 (xcart_4_6_5), 2014-09-30 07:38:42, help.tpl, aim
+a6b2c90ab352d713d9274c023a3e1a53d2657239, v18 (xcart_4_7_1), 2015-03-05 10:04:06, help.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <li class="menu-item help">
@@ -28,7 +29,7 @@ vim: set ts=2 sw=2 sts=2 et:
             </a>
         </li>
         <li class="menu-item">
-            <a href="https://bt.x-cart.com/bug_report_page.php?product_version={$config.version}&amp;utm_source=xcart&amp;utm_medium=help_menu_link&amp;utm_campaign=help_menu" target="_blank">
+            <a href="https://bt.x-cart.com/bug_report_page.php?project_id=54&amp;product_version={$config.version}&amp;utm_source=xcart&amp;utm_medium=help_menu_link&amp;utm_campaign=help_menu" target="_blank">
                 <i class="icon fa fa-external-link"></i>
                 <span>{$lng.lbl_post_bug}</span>
             </a>

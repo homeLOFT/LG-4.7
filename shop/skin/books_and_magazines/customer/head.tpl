@@ -1,5 +1,6 @@
 {*
-2aca87f302048436ed08b4e6738089849840409f, v7 (xcart_4_5_3), 2012-08-07 09:50:06, head.tpl, tito
+b5c36b3069740cf8dd17b81c4136b8aaa2d5fb92, v9 (xcart_4_7_2), 2015-04-24 12:06:42, head.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <div class="head-main">
@@ -32,7 +33,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <div class="line1">
   <div class="line1_container">
   <div class="logo">
-    <a href="{$catalogs.customer}/home.php"><img src="{$AltImagesDir}/custom/logo.gif" alt="" /></a>
+    <a href="{$catalogs.customer}/home.php"><img src="{$AltImagesDir}/custom/logo.gif" alt="{$config.Company.company_name}" /></a>
   </div>
 
 	<div class="line1-right">

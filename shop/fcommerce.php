@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v9 (xcart_4_7_0), 2015-02-17 23:56:28, fcommerce.php, Yuriy
+ * @version    6e5cc35690fdd0a0f56a06f7d54399153e182da1, v11 (xcart_4_7_2), 2015-04-16 15:19:59, fcommerce.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -156,6 +156,8 @@ $fb_output = serialize($shop_configuration);
 
 /**
  * Compressing output data
+ * Comment on problem like ERR_CONTENT_DECODING_FAILED ( Content Encoding Error )
+ * Error: Something went wrong. Web-store server is not responding
  */
 if (
         extension_loaded('zlib')
@@ -163,7 +165,7 @@ if (
         && stristr($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') != false
 ) {
     header('Content-Encoding: gzip');
-    $fb_output = gzcompress($fb_output, 1);
+    $fb_output = gzencode($fb_output);
 }
 
 /**

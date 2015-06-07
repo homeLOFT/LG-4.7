@@ -1,5 +1,5 @@
 {*
-28e84bab20d5308fa0800cbab39263ed27580ded, v23 (xcart_4_7_0), 2015-01-05 15:43:40, check_registerform_fields_js.tpl, aim 
+e3d24e0673e060caaa5d9485743b85b1f5e3c61e, v24 (xcart_4_7_1), 2015-03-09 18:30:42, check_registerform_fields_js.tpl, mixon 
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -35,11 +35,6 @@ var anonymousFlag = {if $anonymous and $config.General.enable_anonymous_checkout
 {literal}
 
 $(function() {
-  $(document).on({
-      'blur submit' : function(){$('#email_note').hide(); },
-      'focus'       : function(){ showNote('email_note', this, is_js_opc) }
-  }, '#email');
-
   $('#passwd1, #passwd2')
     .bind('change', function() {
       $('#password_is_modified').val('Y');

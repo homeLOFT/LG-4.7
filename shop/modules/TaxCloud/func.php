@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v17 (xcart_4_7_0), 2015-02-17 23:56:28, func.php, Yuriy
+ * @version    6c812efa43d3738da2788208bb6afd837e502fd6, v18 (xcart_4_7_1), 2015-03-21 15:35:21, func.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -372,7 +372,7 @@ function func_taxcloud_lookup_tax(&$products, $origin, $destination, $shipping, 
 
             $cartItem = new CartItem();
 
-            $itemId = isset($product['cartid']) ? $product['cartid'] : $product['itemid'];
+            $itemId = $k;
 
             $productsHash[$itemId] = $k;
 

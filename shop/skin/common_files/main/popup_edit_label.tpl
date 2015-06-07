@@ -1,5 +1,6 @@
 {*
-10d4766a297b130dea8de7e1d6cd01925e213749, v5 (xcart_4_6_0), 2013-04-09 11:07:38, popup_edit_label.tpl, random
+2ef7fb52d397e834fc9f38fab3042a4f96941a06, v6 (xcart_4_7_2), 2015-04-27 17:07:51, popup_edit_label.tpl, mixon
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,24 +15,27 @@ vim: set ts=2 sw=2 sts=2 et:
 {include file="service_css.tpl"}
 <style type="text/css">
 {literal}
-BODY {
-  MARGIN: 5px;
-  PADDING: 0px;
-  BACKGROUND-COLOR: #FFFBD3;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #fffbd3;
 }
-IMG.Icon {
-  BORDER: 0px;
-  VERTICAL-ALIGN: middle;
-  WIDTH: 23px;
-  HEIGHT: 22px;
+form {
+  padding: 6px;
+}
+img.Icon {
+  border: 0px;
+  vertical-align: middle;
+  width: 23px;
+  height: 22px;
 }
 .Head {
-  FONT-SIZE: 12px;
-  FONT-WEIGHT: bold;
+  font-size: 12px;
+  font-weight: bold;
 }
 #labelName {
-  FONT-SIZE: 12px;
-  PADDING-LEFT: 10px;
+  font-size: 12px;
+  padding-left: 10px;
 }
 .webmaster-mode-ie-warn {
   margin: 10px 0;

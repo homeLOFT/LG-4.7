@@ -1,5 +1,6 @@
 {*
-Id$
+a4932c666a373247bd7f62cfd9a6313e7863b1cc, v3 (xcart_4_7_1), 2015-03-10 17:25:09, special.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {capture name=submenu}

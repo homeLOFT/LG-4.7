@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    63b14304b7080e4c3a8d1aa79cbfc7f1f1d03756, v267 (xcart_4_7_0), 2015-02-19 14:11:28, func.order.php, mixon
+ * @version    6baaddca397672f05266e7cfbc61c883e0b3bb5b, v271 (xcart_4_7_2), 2015-04-13 18:04:34, func.order.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -356,7 +356,7 @@ function func_select_order($orderid)
         $current_area != 'C'
         && !empty($active_modules['Stop_List'])
     ) {
-        if (!func_ip_check($order['extra']['proxy_ip'] ? $order['extra']['proxy_ip'] : $order['extra']['ip'])) {
+        if (func_sl_ip_is_blocked($order['extra']['proxy_ip'] ? $order['extra']['proxy_ip'] : $order['extra']['ip'])) {
             $order['blocked'] = 'Y';
         }
     }
@@ -1284,7 +1284,7 @@ function func_place_order($payment_method, $order_status, $order_details, $custo
             'coupon_discount'   => $current_order['coupon_discount'],
             'date'              => XC_TIME,
             'status'            => $order_status,
-            'payment_method'    => addslashes($payment_method),
+            'payment_method'    => rtrim(func_substr(addslashes($payment_method), 0, 255), '\\'),
             'paymentid'         => intval($cart['paymentid']),
             'payment_surcharge' => $current_order['payment_surcharge'],
             'flag'              => 'N',
@@ -1974,8 +1974,10 @@ function func_change_order_status($orderids, $status, $advinfo = '', $override_c
 
             func_decline_order($orderid, $status, $order['status']);
 
-            if ($current_area == 'C')
+            if ($current_area == 'C') {
+                x_session_register('session_failed_transaction');
                 $session_failed_transaction ++;
+            }
 
         } elseif (
             $status == 'C'
@@ -2500,6 +2502,10 @@ function func_decline_order($orderids, $status = 'D', $old_status = 'D')
 
         if (!empty($active_modules['TaxCloud'])) {
             include $xcart_dir . '/modules/TaxCloud/return_order.php';
+        }
+
+        if (!empty($active_modules['AvaTax'])) {
+            func_avatax_cancel_taxes($orderid);
         }
 
         func_delete_1800C_tracking($order);

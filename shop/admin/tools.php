@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v212 (xcart_4_7_0), 2015-02-17 13:29:01, tools.php, aim
+ * @version    8d292860d80cf1a776892a05d37ee5b91f587546, v213 (xcart_4_7_1), 2015-03-10 12:34:19, tools.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -308,7 +308,11 @@ $location[] = array(func_get_langvar_by_name('lbl_maintenance'), '');
 if (@$_GET['mode'] == 'templates') {
     require $xcart_dir . '/include/safe_mode.php';
 
-    $result = func_remove_xcart_caches(false, func_get_cache_dirs());
+    if ($config['General']['skip_check_compile'] == 'Y') {
+        $result = func_remove_xcart_caches(false, array('cache', 'templates_c'));
+    } else {
+        $result = func_remove_xcart_caches(false, func_get_cache_dirs());
+    }
 
     $top_message['content'] = func_get_langvar_by_name('msg_adm_summary_templates_del', array('compile_dir' => $smarty->getCompileDir(), 'cache_dir' => $var_dirs['cache']));
 

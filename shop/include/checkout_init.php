@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v85 (xcart_4_7_0), 2015-02-17 23:56:28, checkout_init.php, Yuriy
+ * @version    6baaddca397672f05266e7cfbc61c883e0b3bb5b, v86 (xcart_4_7_2), 2015-04-13 18:04:34, checkout_init.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -90,8 +90,8 @@ if (isset($dhl_ext_country)) {
  */
 if (
     !empty($active_modules['Stop_List'])
-    && !func_is_allowed_trans()
     && !$func_is_cart_empty
+    && !func_is_allowed_trans()
 ) {
     if(
         $mode == 'checkout'

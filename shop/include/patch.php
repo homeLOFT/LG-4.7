@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v56 (xcart_4_7_0), 2015-02-17 23:56:28, patch.php, Yuriy
+ * @version    353f3760b0b2dc211aadfc6bc48bc66b6192f1f5, v57 (xcart_4_7_3), 2015-04-30 09:53:55, patch.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -558,6 +558,11 @@ function func_correct_files_lst(&$_patch_files, $upgrade_prefix, $installed_modu
     // PART1: correct addons
 
     $addons_list = func_read_lst($upgrade_prefix.'/addons.lst',true);
+    if (isset($addons_list['Hot_Products'])) {
+        // Hot_Products is fake cummulative module name
+        $addons_list['New_Arrivals'] = $addons_list['Hot_Products'];
+        unset($addons_list['Hot_Products']);
+    }
     if (empty($installed_modules))
         $installed_modules = func_query_column("SELECT module_name FROM $sql_tbl[modules]");
     $installed_addons = array_intersect(array_keys($addons_list), $installed_modules);

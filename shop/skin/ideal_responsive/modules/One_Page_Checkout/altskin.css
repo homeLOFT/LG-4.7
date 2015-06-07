@@ -1,3 +1,16 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * One Page Checkout module CSS stylesheet
+ *
+ * @category    X-Cart
+ * @package     X-Cart
+ * @subpackage  CSS
+ * @author      Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version     385fc3d69cb68fda266754f96577b46b39a0d920, v3 (xcart_4_7_1), 2015-03-27 07:00:54, altskin.css, mixon
+ * @link        http://www.x-cart.com/
+ * @see         ____file_see____
+ */
+
 table.totals tr td.total,
 table.totals tr td.total-name,
 table.totals tr td.total-value,
@@ -16,7 +29,38 @@ table.totals tr.total td.total-value-alt {
   vertical-align: bottom;
 }
 
-div.checkout-container textarea {
+div.checkout-container #center input[type=text],
+div.checkout-container #center input[type=password],
+div.checkout-container #center select
+{
+  max-width: 98%;
+}
+
+div.checkout-container #center select
+{
+  width: 82%!important;
+}
+
+div.checkout-container #center textarea {
   max-width: 99%;
-  position: relative;
+}
+
+@media screen and (min-width:768px) and (max-width:1279px) {
+  div.checkout-container #center input[type=text],
+  div.checkout-container #center input[type=password],
+  div.checkout-container #center select
+  {
+    max-width: 76%;
+  }
+
+  div.checkout-container #center select
+  {
+    min-width: 78%;
+  }
+
+  div.checkout-container #center fieldset.registerform ul li.fields-group input[type=text],
+  div.checkout-container #center fieldset.registerform ul li.fields-group input[type=password]
+  {
+    max-width: 100%;
+  }
 }

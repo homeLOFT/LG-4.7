@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v119 (xcart_4_7_0), 2015-02-17 13:29:01, patch.php, aim
+ * @version    b02cf461c759a002346dc46a8e3b3925dca89fe1, v120 (xcart_4_7_1), 2015-03-25 15:52:11, patch.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -532,7 +532,7 @@ if ($dir = @opendir($upgrade_repository)) {
 
             list($source_version, $target_version) = $_versions;
 
-            if ($config['version'] == $source_version) {
+            if (preg_replace('/[^0-9.]/', '', $config['version']) == $source_version) {
 
                 $patch_files_lst = $upgrade_repository . XC_DS . $file . XC_DS . 'file.lst';
 

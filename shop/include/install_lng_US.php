@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    a1b933efb7a01726dec8df69e1121f1bdc8bdce9, v138 (xcart_4_7_0), 2015-02-17 23:56:28, install_lng_US.php, Yuriy
+ * @version    c2831b9105026ebb36efa23f4ad3506d0b14df3b, v139 (xcart_4_7_1), 2015-03-27 12:40:45, install_lng_US.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -365,7 +365,7 @@ Auth code will be used to prevent unauthorized access to {{product}} installatio
 Blowfish key will be used to encrypt all sensitive data in your store including user passwords, order details, etc. This code is supposed to be stored permanently in config.php (the variable $blowfish_key). Please DO NOT change this key manually.<br />
 ',
     "xcart_final_note" => "{{product}} installed successfully. To access your store, use the links below:<br />{{interfaces}}<br />
-Auth code is <strong>{{code}}</strong>.{{change_auth_code}}<br /><br />
+Auth code is <strong>{{code}}</strong> {{change_auth_code}}<br /><br />
 Auth code is used to prevent unauthorized access to the {{product}} installation scripts. If you decide to reinstall {{product}} or install an add-on module, you will be asked to enter this code first. It is not necessary to remember this code: when needed, you can find it in the Summary section of the {{product}} Admin area. Besides, the auth code together with other info is sent to your email address <strong>{{email}}</strong><br /><br />
 <br />{{install_rename}}
 <br /><br />{{post_install_permissions_notice}}

@@ -1,5 +1,5 @@
 {*
-a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, order_invoice.tpl, aim
+5acd2d6ff87a4b37f9db972c919c74e80e5b5620, v2 (xcart_4_7_1), 2015-03-12 12:48:28, order_invoice.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -445,7 +445,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
   
   {if $order.need_giftwrap eq "Y"}
-    <table>
+    <table class="width-100">
       {include file="modules/Gift_Registry/gift_wrapping_invoice.tpl" show=message}
     </table>
   {/if}

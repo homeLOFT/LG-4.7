@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v34 (xcart_4_7_0), 2015-02-17 13:29:01, cc_virtualmerchantpf.php, aim
+ * @version    236a8305c0f727dd23b1339fc12bebe969771fbb, v35 (xcart_4_7_1), 2015-03-05 17:29:07, cc_virtualmerchantpf.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -131,6 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && (isset($_GET['errorCode']) || isset($
     if (!$duplicate)
         db_query("REPLACE INTO $sql_tbl[cc_pp3_data] (ref,sessid) VALUES ('".addslashes($ordr)."','".$XCARTSESSID."')");
 
+    $s_phone = empty($userinfo['s_phone']) ? $userinfo['phone'] : $userinfo['s_phone'];
+
     $fields = array(
         'ssl_invoice_number' => $ordr,
         'ssl_merchant_id' => substr($module_params['param01'], 0, 15),
@@ -158,11 +160,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && (isset($_GET['errorCode']) || isset($
         'ssl_ship_to_company' => substr($userinfo['company'], 0, 50),
         'ssl_ship_to_first_name' => substr($userinfo['s_firstname'], 0, 20),
         'ssl_ship_to_last_name' => substr($userinfo['s_lastname'], 0, 30),
-        'ssl_ship_to_address' => substr($userinfo['s_address'], 0, 30),
+        'ssl_ship_to_address1' => substr($userinfo['s_address'], 0, 30),
+        'ssl_ship_to_address2' => substr($userinfo['s_address_2'], 0, 30),
         'ssl_ship_to_city' => substr($userinfo['s_city'], 0, 30),
         'ssl_ship_to_state' => substr(($userinfo['s_state'] ? $userinfo['s_state'] : 'n/a'), 0, 10),
-        'ssl_ship_to_country' => substr($userinfo['s_country'], 0, 50),
+        'ssl_ship_to_country' => func_get_3letters_country_code($userinfo['s_country']),
         'ssl_ship_to_zip' => substr($userinfo['s_zipcode'], 0, 10),
+        'ssl_ship_to_phone' => substr($s_phone, 0, 20),
 
         'ssl_result_format' => 'ASCII',
         'ssl_receipt_apprvl_method' => 'REDG',

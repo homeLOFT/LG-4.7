@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v65 (xcart_4_7_0), 2015-02-17 13:29:01, inv_update.php, aim
+ * @version    d10493edd2a9037b90dc5bfc183fafe13b096151, v66 (xcart_4_7_2), 2015-04-20 10:59:49, inv_update.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -87,7 +87,7 @@ if ($REQUEST_METHOD=="POST") {
                 } else {
                     $join_product_query = '';
                 }
-                $vid = func_query_first_cell("SELECT $sql_tbl[variants].variantid FROM $sql_tbl[variants] $join_product_query WHERE ($sql_tbl[variants].productcode='$columns[0]' OR $sql_tbl[variants].variantid = '$columns[0]') AND ".XCVariantsSQL::isVariantRow().$provider_condition);
+                $vid = func_query_first_cell("SELECT $sql_tbl[variants].variantid FROM $sql_tbl[variants] $join_product_query WHERE $sql_tbl[variants].productcode='$columns[0]' AND ".XCVariantsSQL::isVariantRow().$provider_condition);
             }
 
             if (empty($pid) && empty($vid)) {

@@ -1,9 +1,9 @@
 {*
-a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, mobile_header.tpl, aim
+e0b0b84903773bff91264a898b0dc8be08324999, v2 (xcart_4_7_1), 2015-03-10 11:38:55, mobile_header.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
-<div class="mobile-header">
+<div class="mobile-header" id="mobile-header">
   <ul class="nav nav-pills">
 
     <li class="dropdown">

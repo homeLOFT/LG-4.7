@@ -1,5 +1,5 @@
 {*
-f7bec3f4032f605a6600728ab99a401672196569, v5 (xcart_4_7_0), 2015-01-29 17:25:19, fancy_categories.tpl, aim
+7b79378dac39e23466f777ebd246768ed6458635, v6 (xcart_4_7_2), 2015-04-16 16:16:33, fancy_categories.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -8,7 +8,7 @@ vim: set ts=2 sw=2 sts=2 et:
   {load_defer file="`$fc_skin_path`/func.js" type="js"}
   <div id="{$fancy_cat_prefix}rootmenu" class="fancycat-icons-scheme {if $config.Flyout_Menus.icons_mode eq 'C'}fancycat-icons-c{else}fancycat-icons-e{/if}">
     {if $fancy_use_cache}
-      {if $smarty.const.XC_FLYOUT_MENU_TYPE eq 'ajax'}
+      {if $fancy_use_ajax}
         <div id="{$fancy_cat_prefix}sub_rootmenu"></div>
         <script type="text/javascript">
         //<![CDATA[

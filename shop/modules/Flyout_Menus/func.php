@@ -36,14 +36,39 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    85983cc381c7b9c1f090571202554c46bf0ddbea, v44 (xcart_4_7_0), 2015-02-20 16:11:48, func.php, aim
+ * @version    4475224d67ccf4d788d60a46771ee7914dcd76a1, v46 (xcart_4_7_2), 2015-04-16 16:27:18, func.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
 
 if ( !defined('XCART_START') ) { header("Location: ../../"); die("Access denied"); }
 
-define('X_FANCYCAT_CACHE_HEADER', "<?php if (!defined('XCART_START')) die(); ?>\n");
+/*
+ define('X_FANCYCAT_CACHE_HEADER', "<?php if (!defined('XCART_START')) die(); ?>\n");
+ X_FANCYCAT_CACHE_HEADER is used when xC_FLYOUT_MENU_TYPE is not ajax
+*/
+define('X_FANCYCAT_CACHE_HEADER', '');
+
+/**
+ * Check whether javascript is enabled and this is not a bot/robot
+ *
+ */
+function func_fc_is_ajax_possible()
+{//{{{
+    global $adaptives;
+    x_session_register('adaptives');
+
+    return
+        !empty($adaptives)
+        && XC_FLYOUT_MENU_TYPE == 'ajax'
+        && !defined('NEW_SESSION')
+        && !defined('IS_ROBOT')
+        && !empty($adaptives['isAjax'])
+        && !empty($adaptives['browser'])
+        && !empty($adaptives['isDOM'])
+        && empty($adaptives['is_first_start']);
+
+}//}}} Func_fc_is_ajax_possible
 
 /**
  * Check whether caching is enabled for the 

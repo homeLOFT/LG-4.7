@@ -6,7 +6,7 @@
  * @package    X-Cart
  * @subpackage CSS
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
- * @version    a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, altskin.css, aim
+ * @version    5acd2d6ff87a4b37f9db972c919c74e80e5b5620, v2 (xcart_4_7_1), 2015-03-12 12:48:28, altskin.css, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -25,6 +25,9 @@
   box-sizing: border-box;
   margin-bottom: 1em;
 }
+.offers-cell > p:first-child {
+  margin-top: 0;
+}
 @media screen and (max-width:767px) {
 
   .offers-short-list {
@@ -36,9 +39,4 @@
     float: none;
     padding: 0;
   }
-
-  .offers-cell p {
-    margin-top: 0;
-  }
-
 }

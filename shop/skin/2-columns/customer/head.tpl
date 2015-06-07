@@ -1,11 +1,12 @@
 {*
-b5099a5f214ad527ead5c73e1366174b4a1a9c51, v9 (xcart_4_5_2), 2012-07-13 13:45:51, head.tpl, tito
+b5c36b3069740cf8dd17b81c4136b8aaa2d5fb92, v11 (xcart_4_7_2), 2015-04-24 12:06:42, head.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <div class="line0">
 
   <div class="logo">
-    <a href="{$catalogs.customer}/home.php"><img src="{$ImagesDir}/xlogo.gif" alt="" /></a>
+    <a href="{$catalogs.customer}/home.php"><img src="{$ImagesDir}/xlogo.gif" alt="{$config.Company.company_name}" /></a>
   </div>
 
   <div class="line1">

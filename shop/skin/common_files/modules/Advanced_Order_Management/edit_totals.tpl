@@ -1,5 +1,5 @@
 {*
-f7753843bded08de90c93873b4a2fb1ed4ccb574, v15 (xcart_4_7_0), 2015-03-04 09:39:41, edit_totals.tpl, mixon
+aeec21898796e999cac61b06abf14286e6dde502, v16 (xcart_4_7_1), 2015-03-12 12:09:17, edit_totals.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -124,7 +124,7 @@ vim: set ts=2 sw=2 sts=2 et:
           <th height="16" align="left">{$lng.lbl_aom_original_value}</th>
         </tr>
 
-        <tr{cycle values=', class="TableSubHead"'}>
+        <tr{cycle values=', class="TableSubHead"'} id="tr_subtotal">
           <td height="18">{$lng.lbl_subtotal}</td>
           <td>
             {currency value=$cart_order.display_subtotal}
@@ -134,7 +134,7 @@ vim: set ts=2 sw=2 sts=2 et:
           </td>
         </tr>
 
-        <tr{cycle values=', class="TableSubHead"' advance=false}>
+        <tr{cycle values=', class="TableSubHead"' advance=false} id="tr_payment_method">
           <td rowspan="2">{$lng.lbl_payment_method}</td>
           <td><input type="text" size="30" maxlength="50" name="total_details[payment_method]" value="{$cart_order.payment_method|escape}" {if $cart_order.use_payment_alt eq 'Y'}disabled="disabled"{/if} {include file="main/attr_orig_data.tpl" data_orig_value=$orig_order.payment_method data_orig_keep_empty='Y'} data-aom-related-ui-control="total_details[use_payment_alt]"/></td>
           <td rowspan="2">{$orig_order.payment_method}</td>
@@ -147,7 +147,7 @@ vim: set ts=2 sw=2 sts=2 et:
               {/section}
             </select></td>
         </tr>
-        <tr class="TableSubHead" data-aom-payment-surcharge-amount>
+        <tr class="TableSubHead" data-aom-payment-surcharge-amount id="tr_payment_surcharge">
           <td rowspan="2">{if $order.payment_surcharge gte 0}{$lng.lbl_payment_method_surcharge}{else}{$lng.lbl_payment_method_discount}{/if}</td>
           <td>
             <div>
@@ -159,7 +159,7 @@ vim: set ts=2 sw=2 sts=2 et:
           </td>
           <td rowspan="2">{currency value=$orig_order.payment_surcharge}</td>
         </tr>
-        <tr class="TableSubHead">
+        <tr class="TableSubHead" id="tr_payment_surcharge_other">
           <td>{$lng.lbl_other}:&nbsp;<input type="checkbox" name="total_details[use_payment_surcharge_alt]" onclick="javascript: MarkElement(this)"{if $cart_order.use_payment_surcharge_alt eq 'Y'} checked="checked"{/if} />
             <input type="text" size="12" maxlength="12" name="total_details[payment_surcharge_alt]" value="{if $cart_order.payment_surcharge_type_alt eq "percent"}{$cart_order.payment_surcharge_alt|formatprice}{else}{$cart_order.payment_surcharge|formatprice}{/if}"{if $cart_order.use_payment_surcharge_alt ne 'Y'} disabled="disabled"{/if} />
             <select name="total_details[payment_surcharge_type_alt]"{if $cart_order.use_payment_surcharge_alt ne 'Y'} disabled="disabled"{/if}>
@@ -175,12 +175,12 @@ vim: set ts=2 sw=2 sts=2 et:
             </tr>
         {/if}
 
-        <tr{cycle values=', class="TableSubHead"' advance=false}>
+        <tr{cycle values=', class="TableSubHead"' advance=false} id="tr_delivery">
           <td rowspan="2">{$lng.lbl_delivery}</td>
           <td><input type="text" size="30" maxlength="50" name="total_details[shipping]" value="{$cart_order.shipping|escape}" {if $cart_order.use_shipping_alt eq 'Y'}disabled="disabled"{/if} {include file="main/attr_orig_data.tpl" data_orig_value=$orig_order.shipping data_orig_keep_empty='Y'} data-aom-related-ui-control="total_details[use_shipping_alt]"/></td>
           <td rowspan="2">{$orig_order.shipping|trademark|default:$lng.lbl_aom_shipmethod_notavail}</td>
         </tr>
-        <tr{cycle values=', class="TableSubHead"'}>
+        <tr{cycle values=', class="TableSubHead"'} id="tr_shipping">
           <td>
             {if $shipping}
               {$lng.lbl_other}:&nbsp;<input type="checkbox" name="total_details[use_shipping_alt]" onclick="javascript: MarkElement(this)" {if $cart_order.use_shipping_alt eq 'Y'}checked="checked"{/if} />
@@ -208,7 +208,7 @@ vim: set ts=2 sw=2 sts=2 et:
               <td>{$orig_order.extra.dhl_ext_country}</td>
             </tr>
         {/if}
-        <tr data-aom-shipping-cost>
+        <tr data-aom-shipping-cost id="tr_shipping_cost">
             <td>{$lng.lbl_shipping_cost}</td>
             <td>
               {if $order.coupon and $order.coupon_type eq "free_ship"}
@@ -232,7 +232,7 @@ vim: set ts=2 sw=2 sts=2 et:
         </tr>
         {if $cart_order.coupon_type ne "free_ship"}
             {assign var="note_shipping_cost" value="1"}
-            <tr>
+            <tr id="tr_shipping_cost_other">
               <td></td>
               <td>{$lng.lbl_other}:&nbsp;<input type="checkbox" name="total_details[use_shipping_cost_alt]" value="Y"{if $cart_order.use_shipping_cost_alt eq "Y"} checked="checked"{/if} onclick="javascript:MarkElement(this)" />
                   <input type="text" size="15" maxlength="15" name="total_details[shipping_cost_alt]" value="{$cart_order.shipping_cost_alt|formatprice}"{if $cart_order.use_shipping_cost_alt eq ""} disabled="disabled"{/if} />
@@ -241,7 +241,7 @@ vim: set ts=2 sw=2 sts=2 et:
             </tr>
         {/if}
 
-        <tr{cycle values=', class="TableSubHead"' advance=false} data-aom-discount-amount>
+        <tr{cycle values=', class="TableSubHead"' advance=false} id="tr_discount" data-aom-discount-amount>
           <td rowspan="2">{$lng.lbl_discount}</td>
           <td>
             <div>
@@ -253,7 +253,7 @@ vim: set ts=2 sw=2 sts=2 et:
           </td>
           <td rowspan="2">{currency value=$orig_order.discount}{if $orig_order.discount gt 0 and $orig_order.extra.discount_info.discount_type eq "percent"} ({$orig_order.extra.discount_info.discount}%){/if}</td>
         </tr>
-        <tr{cycle values=', class="TableSubHead"'}>
+        <tr{cycle values=', class="TableSubHead"'} id="tr_discount_other">
           <td>{$lng.lbl_other}:&nbsp;<input type="checkbox" name="total_details[use_discount_alt]" onclick="javascript: MarkElement(this)"{if $cart_order.use_discount_alt eq 'Y'} checked="checked"{/if} />
             <input type="text" size="12" maxlength="12" name="total_details[discount_alt]" value="{$cart_order.extra.discount_info.discount|escape}"{if $cart_order.use_discount_alt ne 'Y'} disabled="disabled"{/if} />
             <select name="total_details[discount_type_alt]"{if $cart_order.use_discount_alt ne 'Y'} disabled="disabled"{/if}>
@@ -263,7 +263,7 @@ vim: set ts=2 sw=2 sts=2 et:
           </td>
         </tr>
 
-        <tr{cycle values=', class="TableSubHead"' advance=false} data-aom-coupon-discount-amount>
+        <tr{cycle values=', class="TableSubHead"' advance=false} id="tr_coupon_saving" data-aom-coupon-discount-amount>
           <td>{$lng.lbl_coupon_saving}</td>
           <td>
             <div>
@@ -282,7 +282,7 @@ vim: set ts=2 sw=2 sts=2 et:
           </td>
           <td>{currency value=$orig_order.coupon_discount}{if $orig_order.coupon ne ""} ({$orig_order.coupon}){/if}</td>
         </tr>
-        <tr{cycle values=', class="TableSubHead"'}>
+        <tr{cycle values=', class="TableSubHead"'} id="tr_coupon_saving_other">
           <td></td>
           <td>{$lng.lbl_other}:&nbsp;<input type="checkbox" name="total_details[use_coupon_discount_alt]" onclick="javascript: MarkElement(this)"{if $cart_order.use_coupon_discount_alt eq 'Y' and not $cart_order.use_old_coupon_discount} checked="checked"{/if} />
             <input type="text" size="12" maxlength="12" id="coupon_discount_alt" name="total_details[coupon_discount_alt]" value="{$cart_order.extra.discount_coupon_info.discount|escape}"{if $cart_order.use_coupon_discount_alt ne 'Y' or $cart_order.use_old_coupon_discount} disabled="disabled"{/if} />
@@ -296,7 +296,7 @@ vim: set ts=2 sw=2 sts=2 et:
         </tr>
 
         {if $order.discounted_subtotal ne $order.subtotal}
-            <tr{cycle values=', class="TableSubHead"'}>
+            <tr{cycle values=', class="TableSubHead"'} id="tr_discounted_subtotal">
               <td>{$lng.lbl_discounted_subtotal}</td>
               <td>{currency value=$cart_order.display_discounted_subtotal}</td>
               <td>{currency value=$orig_order.display_discounted_subtotal}</td>
@@ -304,7 +304,7 @@ vim: set ts=2 sw=2 sts=2 et:
         {/if}
 
         {if ($orig_order.applied_taxes or $cart_order.applied_taxes) and $config.Taxes.display_taxed_order_totals ne "Y"}
-            <tr{cycle values=', class="TableSubHead"'}>
+            <tr{cycle values=', class="TableSubHead"'} id="tr_taxes">
               <td>{$lng.lbl_taxes}</td>
               <td nowrap="nowrap">
                 {foreach key=tax_name item=tax from=$cart_order.applied_taxes}
@@ -320,21 +320,21 @@ vim: set ts=2 sw=2 sts=2 et:
         {/if}
 
         {if $order.giftcert_discount gt 0}
-            <tr{cycle values=', class="TableSubHead"'}>
+            <tr{cycle values=', class="TableSubHead"'} id="tr_giftcert_discount">
               <td class="LabelStyle" nowrap="nowrap">{$lng.lbl_giftcert_discount}</td>
               <td>{currency value=$cart_order.giftcert_discount}</td>
               <td>{currency value=$orig_order.giftcert_discount}</td>
             </tr>
         {/if}
 
-        <tr{cycle values=', class="TableSubHead"'}>
+        <tr{cycle values=', class="TableSubHead"'} id="tr_total">
           <td><b style="text-transform: uppercase;">{$lng.lbl_total}</b></td>
           <td><b>{currency value=$cart_order.total}</b></td>
           <td><b>{currency value=$orig_order.total}</b></td>
         </tr>
 
         {if ($orig_order.applied_taxes or $cart_order.applied_taxes) and $config.Taxes.display_taxed_order_totals eq "Y"}
-            <tr>
+            <tr id="tr_including_taxes">
               <td><b>{$lng.lbl_including}:</b></td>
               <td nowrap="nowrap">
                 {foreach key=tax_name item=tax from=$cart_order.applied_taxes}

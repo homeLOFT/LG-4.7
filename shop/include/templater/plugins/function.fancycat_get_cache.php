@@ -40,7 +40,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v23 (xcart_4_7_0), 2015-02-17 23:56:28, function.fancycat_get_cache.php, Yuriy
+ * @version    4475224d67ccf4d788d60a46771ee7914dcd76a1, v25 (xcart_4_7_2), 2015-04-16 16:27:18, function.fancycat_get_cache.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -57,9 +57,10 @@ function smarty_function_fancycat_get_cache($params, &$smarty)
     if (!func_fc_has_cache())
         return '';
 
-    $path = func_fc_get_cache_path(XC_FLYOUT_MENU_TYPE == 'ajax' ? 'web_path' : 'server_path');
+    $is_ajax_menu = func_fc_is_ajax_possible();
+    $path = func_fc_get_cache_path($is_ajax_menu ? 'web_path' : 'server_path');
 
-    if (XC_FLYOUT_MENU_TYPE == 'ajax') {
+    if ($is_ajax_menu) {
         return $path;
     }
 

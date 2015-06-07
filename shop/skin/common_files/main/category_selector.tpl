@@ -1,5 +1,6 @@
 {*
-ca665af77f64f59a6fceb508a286bfed4e55f844, v5 (xcart_4_5_3), 2012-09-03 08:27:13, category_selector.tpl, random
+350c1de67ae3adfecfca4eb85c00b3b3f521d895, v6 (xcart_4_7_2), 2015-04-07 14:24:30, category_selector.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {load_defer file="js/category_selector.js" type="js"}
@@ -12,6 +13,6 @@ vim: set ts=2 sw=2 sts=2 et:
   <option value="">&nbsp;</option>
 {/if}
 {foreach from=$allcategories item=c key=catid}
-  <option value="{$catid}"{if $categoryid eq $catid} selected="selected"{/if}>{$c|amp}</option>
+  <option value="{$catid}"{if $categoryid eq $catid} selected="selected"{/if} title="{$c|cat:' (id:'|cat:$catid|strip_tags:false|escape})">{$c|amp}</option>
 {/foreach}
 </select>

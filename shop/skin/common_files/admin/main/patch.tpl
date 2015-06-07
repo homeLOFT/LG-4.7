@@ -1,5 +1,6 @@
 {*
-959739b8f4e683426ff453be2ecccac4a8622de3, v11 (xcart_4_6_5), 2014-10-23 10:35:22, patch.tpl, aim
+36ca354e30763a9200d96a0dbdd3ce922380b2cc, v13 (xcart_4_7_1), 2015-03-31 12:02:24, patch.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {include file="page_title.tpl" title=$lng.lbl_patch_upgrade_center}
@@ -90,7 +91,7 @@ $(document).ready(function () {
     <option>Upgrade cannot be launched when DEVELOPMENT_MODE php constant is defined</option>
 {else}
 {section name=ver loop=$target_versions}
-    <option value="{$config.version|replace:' ':'_'}-{$target_versions[ver]|replace:' ':'_'}">{$target_versions[ver]}</option>
+    <option value="{$config.version|replace:' beta':''|replace:' ':'_'}-{$target_versions[ver]|replace:' ':'_'}">{$target_versions[ver]}</option>
 {/section}
 {/if}
   </select>
@@ -119,7 +120,7 @@ $(document).ready(function () {
 
 {foreach from=$target_versions item=v}
   {if $special_notes[$v]}
-    <tr style="display:none;" id='special_notes{$config.version|replace:' ':'_'}-{$v|replace:' ':'_'}'>
+    <tr style="display:none;" id='special_notes{$config.version|replace:' beta':''|replace:' ':'_'}-{$v|replace:' ':'_'}'>
       <td colspan='2'>{$special_notes[$v]}</td>
     </tr>
   {/if}

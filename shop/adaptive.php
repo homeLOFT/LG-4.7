@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v36 (xcart_4_7_0), 2015-02-17 13:29:01, adaptive.php, aim
+ * @version    7b79378dac39e23466f777ebd246768ed6458635, v37 (xcart_4_7_2), 2015-04-16 16:16:33, adaptive.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -92,7 +92,10 @@ if(
 
     $adaptives['is_first_start'] = '';
 
-    if ($arr[7] == 'C') {
+    // XMLHttpRequest
+    $adaptives['isAjax'] = (!empty($arr[7]) && $arr[7] == 'Y');
+
+    if ($arr[8] == 'C') {
         // Delete expired rows all exept two last years
         if (!mt_rand(0, 600)) {
             // For performance purposes use mt_rand

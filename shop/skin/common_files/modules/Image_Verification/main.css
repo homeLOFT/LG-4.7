@@ -6,13 +6,15 @@
  * @package    X-Cart
  * @subpackage CSS
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
- * @version    5307525d7b7d0f425aef4f633889acf5cf835714, v4 (xcart_4_7_0), 2015-01-13 13:19:29, main.css, mixon
+ * @version    108da0b7e27dee382810f12234168bb0a6c37fa1, v5 (xcart_4_7_1), 2015-03-23 12:48:57, main.css, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
 
 div.iv-box {
   margin-top: 15px;
+  margin-left: 15px;
+  padding-bottom: 15px;
   font-size: 10px;
   line-height: normal;
 }

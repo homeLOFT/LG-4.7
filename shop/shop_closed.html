@@ -10,7 +10,7 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
-	font-family: verdana, arial, helvetica, sans-serif;
+	font-family: 'open sans', sans-serif;
 	font-size: 11px;
 }
 #page-container {
@@ -35,10 +35,9 @@ html, body {
 #header .line2 {
 	width: 100%;
 	border: none;
-	border-top: 1px solid #cb480c;
-	border-bottom: 1px solid #cb480c;
-	background: url(skin/common_files/images/head_linebg.gif) repeat-x top;
-	height: 39px;
+	background: url(/common/images/nav_bg.png) 0px 3px;
+    background-repeat: repeat-x;
+	height: 10px;
 }
 #center {
 	padding-bottom: 60px;
@@ -56,21 +55,23 @@ html, body {
 	width: 100px;
 }
 #dialog-message #main {
-	margin-left: 100px;
+	margin-left: 0;
 }
 #dialog-message h1 {
 	margin: 10px 0px;
 	padding: 0;
-	font-size: 14px;
-	color: #3e3104;
+	font-size: 16px;
+    color: #444;
+    font-weight: 600;
 }
 #dialog-message .message {
-	color: #a10000;
-	font-weight: bold;
+	color: #676767;
+	font-weight: 400;
+	font-size: 14px;
 }
 #dialog-message a {
-	color: #043fa0;
-	font-weight: bold;
+	color: #5194c5;
+	font-weight: normal;
 }
 #footer {
 	height: 39px;
@@ -83,12 +84,9 @@ html, body {
 #footer .box {
   width: 100%;
   border: none;
-  border-top: 1px solid #cb480c;
   padding: 0px;
 }
 #footer .subbox {
-  border-top: #ffd30d 1px solid;
-  background: #f4f5f7 none;
   height: 40px;
   vertical-align: middle;
   padding: 0px;
@@ -99,6 +97,13 @@ html, body {
   line-height: 40px;
   vertical-align: middle;
 }
+#footer .line2 {
+	width: 100%;
+	border: none;
+	background: url(/common/images/nav_bg.png) 0px 3px;
+    background-repeat: repeat-x;
+	height: 10px;
+}
 -->
 </style>
 </head>
@@ -108,7 +113,7 @@ html, body {
   	<div id="header">
 		<div class="line1">
 			<div class="logo">
-				<img src="skin/common_files/images/xlogo.gif" alt="" />
+				<img src="/common/images/logo.png" alt="" />
 			</div>
 		</div> 
 		<div class="line2">
@@ -118,20 +123,23 @@ html, body {
 
 	<div id="center">
 		<div id="dialog-message">
-			<div id="icon">
-				<img src="skin/common_files/images/lock.jpg" alt="" />
-			</div>
 			<div id="main">
-				<h1>The store is closed</h1>
-				<p class="message">We are temporarily closed for maintenance. Sorry for the inconvenience. Please check back soon.</p>
+				<h1>We're upgrading and polishing a few things right now :)</h1>
+				<p class="message">Check back in just a bit, and we'll be back online with these necessary upgrades.<br /><br />
+                If we've inconvenienced you, please accept this Instant 7% Savings Coupon Code* as our apology for the trouble! - <strong>SITECLOSED7</strong><br />
+                *valid on new purchases or $1200 or more, through midnight Sunday 6/7/15</p>
+                <p class="message">If you need immediate assistance, call us at 1(877) 888-7632 or <a href="http://support.leathergroups.com/customer/portal/emails/new">email us here</a> and we'll be happy to help!</p>
 			</div>
 		</div>
 	</div>
 
 	<div id="footer">
+        <div class="line2">
+			&nbsp;
+        </div>
 		<div class="box">
 		  <div class="subbox">
-    		<div class="left">Powered by X-Cart shopping cart software</div>
+    		<div class="left">homeloft Incorporated - LeatherGroups.com</div>
   		  </div>
 		</div>		
 	</div>

@@ -1,5 +1,5 @@
 {*
-16fd72c950254a8d4861815dac0d6147af93e43f, v6 (xcart_4_7_0), 2014-12-23 10:13:26, payment_methods.tpl, aim 
+41a7db88b4fdfacafff825f3000018830487caf7, v7 (xcart_4_7_1), 2015-03-06 11:40:23, payment_methods.tpl, aim 
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -44,15 +44,14 @@ vim: set ts=2 sw=2 sts=2 et:
 
       <table cellspacing="0" cellpadding="0">
         <tr>
-          <td style="text-align: center;">
-            <img src="https://beanstreamsupport.pbworks.com/f/interac_logo.jpg" alt="INTERAC Online service" height="50" /><br />
-            <a href="http://www.interaconline.com/learn/" style="font-size: 9px;">{$lng.lbl_cc_beani_learn_more}</a>
-          </td>
           <td>
             <label for="pm{$payment.paymentid}">INTERACO<sup>&reg;</sup> Online</label>
             <div class="checkout-payment-descr" style="padding-top: 3px;">
               {$payment.payment_details}
             </div>
+          </td>
+          <td style="text-align: center;">
+            <a href="http://www.interaconline.com/learn/" style="font-size: 9px;" target="_blank">{$lng.lbl_cc_beani_learn_more}</a>
           </td>
         </tr>
       </table>

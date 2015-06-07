@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v37 (xcart_4_7_0), 2015-02-17 23:56:28, func.debug.php, Yuriy
+ * @version    1b26c486a6cd0bd0f981507e7354865b1be154e4, v38 (xcart_4_7_1), 2015-03-05 13:28:43, func.debug.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -295,7 +295,11 @@ function func_dev_check_non_saved_session_vars() {//{{{
 
     //$absent_globals = array_diff_assoc($old_data, $global_session_data); //not major array
     $absent_globals = $session_data = array();
+
     $not_saved_globals = func_array_diff_assoc_recursive($global_session_data, $old_data);
+
+    // non-critical variables can be excluded from checking
+    func_unset($not_saved_globals, 'last_working_url', 'xauth_last_url');
 
     foreach ($not_saved_globals as $varname => $value) {
         if ($XCART_SESSION_VARS[$varname] === $GLOBALS[$varname]) {
@@ -305,7 +309,7 @@ function func_dev_check_non_saved_session_vars() {//{{{
         }
     }
 
-    assert('!empty($old_data) && empty($not_saved_globals) /*'.__FUNCTION__.' Some session vars were not saved via x_session_save()' . "\n\n<br /><br />sessions ". print_r($session_data, true) . "\n<br />---------------------\n<br />globals " . print_r($not_saved_globals, true) . '*/');
+    assert('!empty($old_data) && empty($not_saved_globals) /*'.__FUNCTION__.' Some session vars were not saved via x_session_save()' . "\n\n<br /><br />SESSIONS ". print_r($session_data, true) . "\n<br />---------------------\n<br />GLOBALS " . print_r($not_saved_globals, true) . '*/');
 }//}}}
 
 ?>

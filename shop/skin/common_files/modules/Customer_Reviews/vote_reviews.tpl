@@ -1,5 +1,6 @@
 {*
-d535dcb897b6742472d0812607fe010967b7655e, v10 (xcart_4_4_4), 2011-09-19 11:43:35, vote_reviews.tpl, aim
+19a665e952ea288f200d0536678c05c0853d0fc9, v11 (xcart_4_7_2), 2015-04-28 09:30:17, vote_reviews.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {if $printable ne 'Y' or $reviews}
@@ -74,7 +75,7 @@ vim: set ts=2 sw=2 sts=2 et:
               <td class="data-name"><label for="review_author">{$lng.lbl_your_name}</label>:</td>
               <td class="data-required">*</td>
               <td>
-                <input type="text" size="24" maxlength="128" name="review_author" id="review_author" value="{$review.author|amp}" />
+                <input type="text" size="24" maxlength="128" name="review_author" id="review_author" value="{$review.author|escape}" />
                 {if $review.author eq "" and $review.error}
                   <span class="data-required">&lt;&lt;</span>
                 {/if}
@@ -85,7 +86,7 @@ vim: set ts=2 sw=2 sts=2 et:
               <td class="data-name"><label for="review_message">{$lng.lbl_your_message}</label>:</td>
               <td class="data-required">*</td>
               <td>
-                <textarea cols="40" rows="4" name="review_message" id="review_message">{$review.message|amp}</textarea>
+                <textarea cols="40" rows="4" name="review_message" id="review_message">{$review.message|escape}</textarea>
                 {if $review.message eq "" and $review.error}
                   <span class="data-required">&lt;&lt;</span>
                 {/if}

@@ -1,5 +1,6 @@
 {*
-39dc2317e8d3ff16f34a37865c1be497158705f8, v2 (xcart_4_6_1), 2013-08-28 10:29:51, cc_worldpay.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v3 (xcart_4_7_1), 2015-03-16 15:05:13, cc_worldpay.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>{$module_data.module_name}</h1>
@@ -50,7 +51,6 @@ vim: set ts=2 sw=2 sts=2 et:
       <option value="NZD"{if $module_data.param02 eq 'NZD'} selected="selected"{/if}>New Zealand Dollar</option>
       <option value="PHP"{if $module_data.param02 eq 'PHP'} selected="selected"{/if}>Philippine Peso</option>
       <option value="PLN"{if $module_data.param02 eq 'PLN'} selected="selected"{/if}>New Polish Zloty</option>
-      <option value="PTE"{if $module_data.param02 eq 'PTE'} selected="selected"{/if}>Portugese Escudo</option>
       <option value="SEK"{if $module_data.param02 eq 'SEK'} selected="selected"{/if}>Swedish Krone</option>
       <option value="SGD"{if $module_data.param02 eq 'SGD'} selected="selected"{/if}>Singapore Dollar</option>
       <option value="THB"{if $module_data.param02 eq 'THB'} selected="selected"{/if}>Thai Baht</option>

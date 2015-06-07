@@ -1,5 +1,5 @@
 {*
-a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, product_details.tpl, aim
+d1f618d07bfb3ccbea7c1b9571ffe6befc1e9ff0, v2 (xcart_4_7_2), 2015-04-08 12:02:21, product_details.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -237,7 +237,7 @@ var product_avail = 1;
         {/if}
 
         {if $product.appearance.buy_now_buttons_enabled}
-          {if $product.forsale ne "B"}
+          {if $product.forsale ne "B" and not ($smarty.get.pconf ne "" and $active_modules.Product_Configurator)}
             <div class="buttons-row">
 
               {* Uncomment this line if you don't want buy more button behavior:
@@ -258,7 +258,7 @@ var product_avail = 1;
               {/if}
 
             </div>
-          {else}
+          {elseif $product.forsale eq "B"}
 
             {$lng.txt_pconf_product_is_bundled}
 

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v9 (xcart_4_7_0), 2015-02-17 23:56:28, class.VatNumberChecker.php, Yuriy
+ * @version    c97612cbc7d78e3603978832158bfb3e9e2b4532, v10 (xcart_4_7_1), 2015-03-26 11:41:30, class.VatNumberChecker.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -129,6 +129,11 @@ class XCIsVATAppSpot extends AXCTaxNumberChecker { // {{{
             //
             if (
                 defined('XC_VAT_NUMBER_CHECKER_DEBUG')
+                && (
+                    defined('XC_VAT_NUMBER_CHECKER_EMULATE_VALID')
+                    ||
+                    defined('XC_VAT_NUMBER_CHECKER_EMULATE_INVALID')
+                )
             ) {
                 $result = defined('XC_VAT_NUMBER_CHECKER_EMULATE_VALID')
                     ? AXCTaxNumberChecker::VALID_TAX_NUMBER

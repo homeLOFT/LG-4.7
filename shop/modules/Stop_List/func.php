@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v36 (xcart_4_7_0), 2015-02-17 23:56:28, func.php, Yuriy
+ * @version    6baaddca397672f05266e7cfbc61c883e0b3bb5b, v37 (xcart_4_7_2), 2015-04-13 18:04:34, func.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -55,6 +55,11 @@ function func_is_allowed_trans()
         return true;
     }
 
+    // Allow trusted IP
+    if (func_sl_ip_is_trusted($REMOTE_ADDR)) {
+        return true;
+    }
+
     // Check transaction limit
     if ($config['Stop_List']['slist_max_transaction'] > 0) {
 
@@ -65,8 +70,8 @@ function func_is_allowed_trans()
 
     }
 
-    // Check stop list
-    if (!func_ip_check($REMOTE_ADDR))
+    // Check blocked IP stop list
+    if (func_sl_ip_is_blocked($REMOTE_ADDR))
         return false;
 
     // Check failed transaction limit
@@ -103,7 +108,7 @@ function func_is_allowed_trans()
 
                     if (
                         ($v['counter'] == count($pids))
-                        && !func_ip_check($v['value'])
+                        && func_sl_ip_is_blocked($v['value'])
                     ) {
 
                         func_add_ip_to_slist($REMOTE_ADDR, 'P');
@@ -232,13 +237,32 @@ function func_ip_exist_slist($ip)
 /**
  * IP address check in Stop list
  */
-function func_ip_check($ip)
-{
+function func_sl_get_ip_type($ip)
+{//{{{
     global $sql_tbl;
 
     $octet = explode('.', $ip);
+    if (empty($octet)) {
+        return false;
+    }
 
-    return (func_query_first_cell("SELECT ip_type FROM $sql_tbl[stop_list] WHERE octet1 IN ('$octet[0]', '-1') AND octet2 IN ('$octet[1]', '-1') AND octet3 IN ('$octet[2]', '-1') AND octet4 IN ('$octet[3]', '-1')") == 'B' ? false : true);
-}
+    return func_query_first_cell("SELECT ip_type FROM $sql_tbl[stop_list] WHERE octet1 IN ('$octet[0]', '-1') AND octet2 IN ('$octet[1]', '-1') AND octet3 IN ('$octet[2]', '-1') AND octet4 IN ('$octet[3]', '-1')");
+} //}}}func_sl_get_ip_type
+
+/**
+ * Check if the IP is blocked
+ */
+function func_sl_ip_is_blocked($ip)
+{//{{{
+    return func_sl_get_ip_type($ip) === 'B';
+}// }}} func_sl_ip_is_blocked
+
+/**
+ * Check if the IP is trusted
+ */
+function func_sl_ip_is_trusted($ip)
+{//{{{
+    return func_sl_get_ip_type($ip) === 'T';
+}// }}} func_sl_ip_is_trusted
 
 ?>

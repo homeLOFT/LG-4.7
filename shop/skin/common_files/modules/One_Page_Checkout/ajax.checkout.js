@@ -6,7 +6,7 @@
  * @package    X-Cart
  * @subpackage JS Library
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
- * @version    64fa790a419d77d82f31ca99b4725797585efa6c, v75 (xcart_4_7_0), 2015-01-19 22:05:01, ajax.checkout.js, mixon
+ * @version    fdda9fe14150465abffb77cbcb45a76a6fc1f305, v86 (xcart_4_7_2), 2015-04-27 13:28:27, ajax.checkout.js, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -25,7 +25,7 @@ ajax.widgets.checkout = function(elm) {
   }
 
   return true;
-}
+};
 
 // Class
 ajax.widgets.checkout.obj = function(elm) {
@@ -86,70 +86,70 @@ ajax.widgets.checkout.obj = function(elm) {
           break;
       }
     }
-  }
+  };
 
   s._doUpdateProfile = function(e) {
     return !s.doUpdateProfile(this, e);
-  }
+  };
   
   s._changeProfile = function(e) {
     return !s.changeProfile(this, e);
-  }
+  };
 
   s._selectAddress = function(e) {
     return !s.selectAddress(this, e);
-  }
+  };
 
   s._selectShipping = function(e) {
     !s.selectShipping(this, e);
     // Do not return false to work IE8 properly bt:136746
     return true;
-  }
+  };
 
   s._updateShipping = function(e) {
     return !s.updateShipping(this, e);
-  }
+  };
 
   s._updateTotals = function(e) {
     return !s.updateTotals(this, e);
-  }
+  };
 
   s._updatePayment = function(e) {
     return !s.updatePayment(this, e);
-  }
+  };
 
   s._changePMethod = function(e) {
     !s.selectPMethod(this, e);
     // Do not return false to work IE8 properly bt:136746
     return true;
-  }
+  };
   
   s._applyCoupon = function(e) {
     return !s.applyCoupon(this, e);
-  }
+  };
   
   s._unsetCoupon = function(e) {
     return !s.unsetCoupon(this, e);
-  }
+  };
  
   s._unsetCert = function(e) {
     return !s.unsetCert(this, e);
-  }
+  };
 
   s._applyGC = function(e) {
     return !s.applyGC(this, e);
-  }
+  };
 
   s._unsetGC = function(e) {
     return !s.unsetGC(this, e);
-  }
+  };
   
   s._onProceedCheckout = function(e) {
     return s.onProceedCheckout(this, e);
-  }
+  };
 
   s._prepareCheckout();
-}
+};
 
 // Properties
 ajax.widgets.checkout.obj.prototype.errorTTL      = 3000;
@@ -176,7 +176,7 @@ ajax.widgets.checkout.obj.prototype.timer_id_typing  = false;
 // Widget :: check widget status
 ajax.widgets.checkout.obj.prototype.isReady = function() {
   return this.elm$.length > 0 && this.checkElement();
-}
+};
 
 // Widget :: ajax callback
 ajax.widgets.checkout.obj.prototype.callback = function(state, a, b, c, d) {
@@ -199,7 +199,7 @@ ajax.widgets.checkout.obj.prototype.callback = function(state, a, b, c, d) {
   }
 
   return true;
-}
+};
 
 // Widget :: check element
 ajax.widgets.checkout.obj.prototype.checkElement = function(elm) {
@@ -209,7 +209,7 @@ ajax.widgets.checkout.obj.prototype.checkElement = function(elm) {
   }
 
   return elm && $(elm).hasClass('opc-container');
-}
+};
 
 // Widget :: display error message
 ajax.widgets.checkout.obj.prototype.showMessage = function(msg, type) {
@@ -223,7 +223,7 @@ ajax.widgets.checkout.obj.prototype.showMessage = function(msg, type) {
   showTopMessage(msg, type);
 
   return true;
-}
+};
 
 // Widget :: display popup message
 ajax.widgets.checkout.obj.prototype.showPopup = function(msg, type) {
@@ -237,7 +237,7 @@ ajax.widgets.checkout.obj.prototype.showPopup = function(msg, type) {
   xAlert(msg, '', type);
 
   return true;
-}
+};
 
 // Widget :: update personal details
 ajax.widgets.checkout.obj.prototype.doUpdateProfile = function(e) {
@@ -274,7 +274,7 @@ ajax.widgets.checkout.obj.prototype.doUpdateProfile = function(e) {
     }
   ) !== false;
 
-}
+};
 
 // Widget :: load personal details
 ajax.widgets.checkout.obj.prototype.loadProfile = function() {
@@ -295,13 +295,24 @@ ajax.widgets.checkout.obj.prototype.loadProfile = function() {
         _s.enableCheckout();
       }
   });
-}
+};
 
 // Widget :: edit personal details
 ajax.widgets.checkout.obj.prototype.changeProfile = function() {
 
   if (!this.isReady() || !this.checkElement()) {
     return false;
+  }
+
+  var control = arguments[0] ? arguments[0] : null;
+  var scrollTo = null;
+
+  if (
+    control
+    && $('a.edit-profile', this.profile).length === 2
+    && $('a.edit-profile:last', this.profile).get(0) === control
+  ) {
+    scrollTo = '#ship2diff';
   }
 
   this.hideWaitMessage = true;
@@ -311,10 +322,18 @@ ajax.widgets.checkout.obj.prototype.changeProfile = function() {
 
   var _s = this;
   return ajax.core.loadBlock(this.profile, 'opc_profile', { edit_profile: true }, function() {
-      $('form', this).find("input[autofocus]").eq(0).focus();
+      $('form', this).find('input[autofocus]').eq(0).focus();
+      if (scrollTo) {
+        // scroll down to shipping address section
+        $('html, body').animate({
+          scrollTop: $(scrollTo).offset().top
+        }, 1500);
+        // move focus to the first text inputbox
+        $('#ship2diff_box', this).find('input[type="text"]:first').eq(0).focus();
+      }
       _s.attachInteractiveFormHandlers();
   });
-}
+};
 
 // Widget :: update shipping block
 ajax.widgets.checkout.obj.prototype.updateShipping = function() {
@@ -330,7 +349,7 @@ ajax.widgets.checkout.obj.prototype.updateShipping = function() {
     shippingid = $('input[name=shippingid]:checked', this.shipping).val();
     _s._updateCodPaymentMethods();
   });
-}
+};
 
 // Widget :: update totals block
 ajax.widgets.checkout.obj.prototype.updateTotals = function() {
@@ -342,7 +361,7 @@ ajax.widgets.checkout.obj.prototype.updateTotals = function() {
   $(this.totals).block();
 
   return ajax.core.loadBlock(this.totals, 'opc_totals');
-}
+};
 
 ajax.widgets.checkout.obj.prototype.updatePayment = function() {
 
@@ -353,7 +372,7 @@ ajax.widgets.checkout.obj.prototype.updatePayment = function() {
   $(this.payment).block();
   
   return ajax.core.loadBlock(this.payment, 'opc_payment', {}, reloadXPCIframe);
-}
+};
 
 // Widget :: select address from address book
 ajax.widgets.checkout.obj.prototype.selectAddress = function(elm) {
@@ -367,7 +386,11 @@ ajax.widgets.checkout.obj.prototype.selectAddress = function(elm) {
 
   $('.popup-dialog').dialog('close');
 
-  $.blockUI();
+  $.blockUI({
+      css: {
+        left:  $(window).width()/2-100
+      }
+    });
 
   var s = this;
 
@@ -384,7 +407,7 @@ ajax.widgets.checkout.obj.prototype.selectAddress = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: select shipping (switch shipping method)
 ajax.widgets.checkout.obj.prototype.selectShipping = function(elm) {
@@ -421,7 +444,7 @@ ajax.widgets.checkout.obj.prototype.selectShipping = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: reload XPC iframe
 ajax.widgets.checkout.obj.prototype.reloadXPCIframe = function() {
@@ -431,7 +454,7 @@ ajax.widgets.checkout.obj.prototype.reloadXPCIframe = function() {
   } else {
     this.selectPMethod($('input:radio[name=paymentid]:checked', this.payment).get(0));
   }
-}
+};
 
 // Widget :: select payment method
 ajax.widgets.checkout.obj.prototype.selectPMethod = function(elm) {
@@ -482,12 +505,12 @@ ajax.widgets.checkout.obj.prototype.selectPMethod = function(elm) {
     ) !== false;
 
 
-}
+};
 
 // Widget :: check if payment method is XPC iframe payment method
 ajax.widgets.checkout.obj.prototype.isXPCPayment = function(paymentid) {
   return $.inArray(parseInt(paymentid), xpc_paymentids) != -1;
-}
+};
 
 // Widget :: check if widget has XPC iframe payment methods
 ajax.widgets.checkout.obj.prototype.hasXPCPayments = function() {
@@ -497,7 +520,7 @@ ajax.widgets.checkout.obj.prototype.hasXPCPayments = function() {
   }
 
   return false;
-}
+};
 
 // Widget :: apply coupon
 ajax.widgets.checkout.obj.prototype.applyCoupon = function(elm) {
@@ -524,7 +547,7 @@ ajax.widgets.checkout.obj.prototype.applyCoupon = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: unset coupon
 ajax.widgets.checkout.obj.prototype.unsetCoupon = function(elm) {
@@ -550,7 +573,7 @@ ajax.widgets.checkout.obj.prototype.unsetCoupon = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: unset exemption certificate (TaxCloud)
 ajax.widgets.checkout.obj.prototype.unsetCert = function(elm) {
@@ -576,7 +599,7 @@ ajax.widgets.checkout.obj.prototype.unsetCert = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: apply gift certificate
 ajax.widgets.checkout.obj.prototype.applyGC = function(elm) {
@@ -605,7 +628,7 @@ ajax.widgets.checkout.obj.prototype.applyGC = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: unset GC
 ajax.widgets.checkout.obj.prototype.unsetGC = function(elm) {
@@ -631,7 +654,7 @@ ajax.widgets.checkout.obj.prototype.unsetGC = function(elm) {
       }
     }
   ) !== false;
-}
+};
 
 // Widget :: final check and submit
 ajax.widgets.checkout.obj.prototype.onProceedCheckout = function(elm) {
@@ -704,7 +727,7 @@ ajax.widgets.checkout.obj.prototype.onProceedCheckout = function(elm) {
     if (this.xpcShown) {
       // Update "Save card" value and then submit payment
 
-      var isXPCAllowSaveCard = ($('input[type=checkbox][name=allow_save_cards]:visible', this.payment).is(':checked')) ? 'Y' : '';
+      var isXPCAllowSaveCard = ($('input[type=checkbox][name=allow_save_cards]:visible', this.payment).is(':checked') || $('.payment-details:visible', this.payment).find('input[type=hidden][name=allow_save_cards]').eq(0).val() == 'Y') ? 'Y' : '';
       var partnerId = ($('#partner_id').length) ? $('#partner_id').val() : '';
       var XPCIframeSubmitFunction = function() {
           var message = {
@@ -764,7 +787,7 @@ ajax.widgets.checkout.obj.prototype.onProceedCheckout = function(elm) {
   }
 
   return false;
-}
+};
 
 // Widget :: block whole page and show "Please wait..." message
 ajax.widgets.checkout.obj.prototype.blockPage = function() {
@@ -777,7 +800,7 @@ ajax.widgets.checkout.obj.prototype.blockPage = function() {
   });
 
   return true;
-}
+};
 
 // Widget :: disable checkout sections and button during profile change
 ajax.widgets.checkout.obj.prototype.disableCheckout = function() {
@@ -789,7 +812,7 @@ ajax.widgets.checkout.obj.prototype.disableCheckout = function() {
   this.disableCheckoutButton();
   this.disablePaymentSelection();
   this.disableShippingSelection();
-}
+};
 
 // Widget :: enable checkout sections and button after profile change
 ajax.widgets.checkout.obj.prototype.enableCheckout = function() {
@@ -811,7 +834,7 @@ ajax.widgets.checkout.obj.prototype.enableCheckout = function() {
     );
   }
 
-}
+};
 
 ajax.widgets.checkout.obj.prototype.blockSection = function (elem, showMessage) {
   var opts = {
@@ -825,27 +848,27 @@ ajax.widgets.checkout.obj.prototype.blockSection = function (elem, showMessage) 
     opts['message'] = null;
 
   $(elem).block(opts);
-}
+};
 
 ajax.widgets.checkout.obj.prototype.unblockSection = function (elem) {
   $(elem).unblock();
-}
+};
 
 ajax.widgets.checkout.obj.prototype.disableShippingPaymentColumn = function () {
   this.blockSection('#opc_shipping_payment', this.isXPCPayment(paymentid) && this.hideWaitMessage !== true);
-}
+};
 
 ajax.widgets.checkout.obj.prototype.enableShippingPaymentColumn = function () {
   this.unblockSection('#opc_shipping_payment');
-}
+};
 
 ajax.widgets.checkout.obj.prototype.disableSummaryColumn = function () {
   this.blockSection('#opc_summary_li');
-}
+};
 
 ajax.widgets.checkout.obj.prototype.enableSummaryColumn = function () {
   this.unblockSection('#opc_summary_li');
-}
+};
 
 // Widget :: enable checkout button
 ajax.widgets.checkout.obj.prototype.enableCheckoutButton = function() {
@@ -876,7 +899,7 @@ ajax.widgets.checkout.obj.prototype.enableCheckoutButton = function() {
   this.timer_id_check_button = false;
   this.cbutton.removeClass('inactive').unbind('click');
   return true;
-}
+};
 
 // Widget :: disable checkout button
 ajax.widgets.checkout.obj.prototype.disableCheckoutButton = function() {
@@ -899,21 +922,21 @@ ajax.widgets.checkout.obj.prototype.disableCheckoutButton = function() {
     e.stopPrapagation;
     return false;
   });
-}
+};
 
 // Widget :: disable selection of shipping methods
 ajax.widgets.checkout.obj.prototype.disableShippingSelection = function() {
   $('input, select', this.shipping).prop('disabled', true);
 
   this.disableShippingPaymentColumn();
-}
+};
 
 // Widget :: disable selection of payment methods
 ajax.widgets.checkout.obj.prototype.disablePaymentSelection = function() {
   //$('input, select', this.payment).prop('disabled', true);
 
   this.disableShippingPaymentColumn();
-}
+};
 
 // Widget :: enable selection of shipping methods
 ajax.widgets.checkout.obj.prototype.enableShippingSelection = function() {
@@ -922,7 +945,7 @@ ajax.widgets.checkout.obj.prototype.enableShippingSelection = function() {
   this.enableShippingPaymentColumn();
 
   return true;
-}
+};
 
 // Widget :: enable selection of payment methods
 ajax.widgets.checkout.obj.prototype.enablePaymentSelection = function() {
@@ -931,7 +954,7 @@ ajax.widgets.checkout.obj.prototype.enablePaymentSelection = function() {
   this.enableShippingPaymentColumn();
 
   return true;
-}
+};
 
 // Widget :: check if all data is collected
 // need_shipping global var is changed 
@@ -953,7 +976,7 @@ ajax.widgets.checkout.obj.prototype.isCheckoutReady = function() {
   }
  
   return true;
-}
+};
 
 // Widget :: profile form update listener
 ajax.widgets.checkout.obj.prototype._callbackUpdateProfile = function(data) {
@@ -1008,8 +1031,7 @@ ajax.widgets.checkout.obj.prototype._callbackUpdateProfile = function(data) {
   }
 
   return true;
-
-}
+};
 
 // Widget :: totals update listener
 ajax.widgets.checkout.obj.prototype._callbackUpdateTotals = function(data) {
@@ -1017,7 +1039,7 @@ ajax.widgets.checkout.obj.prototype._callbackUpdateTotals = function(data) {
   this.switchXPCIframe(this.paymentid);
 
   return this._updateTotals();
-}
+};
 
 // Widget :: profile form update listener
 ajax.widgets.checkout.obj.prototype._callbackSelectAddress = function(data) {
@@ -1032,7 +1054,7 @@ ajax.widgets.checkout.obj.prototype._callbackSelectAddress = function(data) {
   }
 
   return true;
-}
+};
 
 // Widget :: apply coupon listener
 ajax.widgets.checkout.obj.prototype._callbackUpdateCoupon = function(data) {
@@ -1062,7 +1084,7 @@ ajax.widgets.checkout.obj.prototype._callbackUpdateCoupon = function(data) {
   this.switchXPCIframe(this.paymentid);
 
   return true;
-}
+};
 
 // Widget :: unset GC listener
 ajax.widgets.checkout.obj.prototype._callbackUpdateGC = function(data) {
@@ -1105,7 +1127,7 @@ ajax.widgets.checkout.obj.prototype._callbackUpdateGC = function(data) {
   this.payment.unblock();
 
   return true;
-}
+};
 
 // Widget :: shipping change listener
 ajax.widgets.checkout.obj.prototype._callbackShippingChanged = function(data) {
@@ -1115,7 +1137,7 @@ ajax.widgets.checkout.obj.prototype._callbackShippingChanged = function(data) {
   this._updateCodPaymentMethods();
 
   return true;
-}
+};
 
 // Widget :: payment change listener
 ajax.widgets.checkout.obj.prototype._callbackPaymentChanged = function(data) {
@@ -1130,7 +1152,7 @@ ajax.widgets.checkout.obj.prototype._callbackPaymentChanged = function(data) {
   this.switchXPCIframe(this.paymentid);
 
   return true;
-}
+};
  
 // Widget :: payment method list change listener
 ajax.widgets.checkout.obj.prototype._callbackPaymentMethodListChanged = function(data) {
@@ -1150,7 +1172,7 @@ ajax.widgets.checkout.obj.prototype._callbackPaymentMethodListChanged = function
   }
 
   return true;
-}
+};
 
 
 // Display/Hide COD payment methods and set current paymentid(optional)
@@ -1169,7 +1191,7 @@ ajax.widgets.checkout.obj.prototype._updateCodPaymentMethods = function() {
   }
 
   return true;
-}
+};
 
 /**
  * Private methods 
@@ -1260,21 +1282,6 @@ ajax.widgets.checkout.obj.prototype._prepareCheckout = function() {
 
 };
 
-ajax.widgets.checkout.obj.prototype.findLastRequiredField = function(form, labels) {
-    var fields = [];
-    // labels iterator
-    labels.each(function () {
-        // filtered fields collector
-        var filtered = filterFormField(form, this);
-        // check if this field is required
-        if (!$.isEmptyObject(filtered)) {
-            fields.push(filtered['field']);
-        }
-    });
-    // last field reference
-    return $(fields).last();
-};
-
 ajax.widgets.checkout.obj.prototype.attachInteractiveFormHandlers = function () {
     // get form reference
     var form = $('form[name=registerform]').get(0);
@@ -1283,13 +1290,13 @@ ajax.widgets.checkout.obj.prototype.attachInteractiveFormHandlers = function () 
     // make sure form exists
     if (form) {
         // get save button proto
-        this.update_profile_button_proto = $('.buttons-box:first a.update-profile', form);
+        _s.update_profile_button_proto = $('.buttons-box:first a.update-profile', form);
         // attach handler to save button
-        this.update_profile_button_proto.on('click', {form: form, widget: _s}, _s.preFormSubmitHandler);
+        _s.update_profile_button_proto.on('click', {form: form, widget: _s}, _s.onUpdateProfileButtonClick);
         // get restore button proto
-        this.restore_value_button_proto = $('.buttons-box:first a.restore-value', form);
+        _s.restore_value_button_proto = $('.buttons-box:first a.restore-value', form);
         // attach handler to restore button
-        this.restore_value_button_proto.on('click', {form: form, widget: this}, function(event) {
+        _s.restore_value_button_proto.on('click', {form: form, widget: this}, function(event) {
             var control = $('#' + $(event.target).attr('data-opc-control-id'));
 
             var form = event.data.form;
@@ -1310,147 +1317,181 @@ ajax.widgets.checkout.obj.prototype.attachInteractiveFormHandlers = function () 
             var controlEvent = {target: control.get(0), data: {form: form, widget: widget}};
             ajax.widgets.checkout.obj.prototype.onRegisterFormUserInput.apply(_s, [controlEvent]);
         });
-        // get form labels
-        var labels = $('label[for]', form);
+        // get default form labels list
+        var labels = _s.getDefaultFormLabelsList(form);
         // attach validation handler for each form field
         labels.each(function () {
             var control = $('#' + this.htmlFor, form);
-            // get button template
+            // get button templates
             var btnSave = _s.update_profile_button_proto.clone(true);
             var btnRest = _s.restore_value_button_proto.clone(true);
-            // append buttons
+            // append control buttons
             _s.addFormElementControlButtons(control, [btnSave, btnRest]);
-            // save original value
+            // save control original value
             control.attr(_s.original_value_attr, _s.getFormElementControlValue(control));
             // attach focus handler
             control.on('focus', {form: form, widget: _s}, _s.onRegisterFormUserFocus);
+            // attach blur handler
+            control.on('blur', {form: form, widget: _s}, _s.onRegisterFormUserBlur);
             // attach input handler
             control.on('input paste change', {form: form, widget: _s}, _s.onRegisterFormUserInput);
             // attach enter key handler
-            control.on('keydown', {form: form, widget: _s}, _s.onRegisterFormEnterKeyPressed);
-        });
-        // attach handlers for edit profile button
-        $('a.edit-profile', form).on('mouseenter', function (event) {
-            var links = $(event.target).closest('.address-book-link');
-            var container = $(event.target).closest('.opc-section-container');
-            if (links.length > 0) {
-                links.addClass('edit-mark');
-                links.next().addClass('edit-mark');
-            }
-            if (container.length > 0) {
-                container.addClass('edit-mark');
-            }
-        });
-        $('a.edit-profile', form).on('mouseleave', function (event) {
-            var links = $(event.target).closest('.address-book-link');
-            var container = $(event.target).closest('.opc-section-container');
-            if (links.length > 0) {
-                links.removeClass('edit-mark');
-                links.next().removeClass('edit-mark');
-            }
-            if (container.length > 0) {
-                container.removeClass('edit-mark');
-            }
+            control.on('keydown', {form: form, widget: _s}, _s.onRegisterFormKeyDown);
         });
         // attach handlers for cancel edit button
         $('a.cancel-edit', form).first().on('click', function () {
-            _s.loadProfile();
+            var result = checkFormFields(form, 'silentCheck');
+            if (result) {
+                _s.loadProfile();
+            } else {
+                _s.changeProfile();
+            }
         });
         $('a.cancel-edit', form).last().on('click', function () {
-            $('#ship2diff').click();
+            $('#ship2diff').trigger('click');
         });
-        // attach handler for new account and different shipping address checkboxes
-        $('#create_account, #ship2diff', form).on('click', {form: form, labels: labels}, function () {
-            var lastRequiredField = _s.findLastRequiredField(form, labels);
-            // attach submit handler to last required field
-            lastRequiredField.on('blur', {form: form, widget: _s}, _s.preFormSubmitHandler);
+        // attach show / hide handlers to create account and ship to diff sections
+        $('#create_account_box, #ship2diff_box').on('show', function() {
+            _s.updateProfileUpdateButtonState(form);
+            // move focus to the first password or text inputbox
+            $(this).find('input[type="password"]:first, input[type="text"]:first').eq(0).focus();
         });
-        // detach previously attached handlers for last required field
-        $('#create_account, #ship2diff', form).on('checked', {form: form, labels: labels}, function () {
-            var lastRequiredField = _s.findLastRequiredField(form, labels);
-            // detach submit handler to last required field
-            lastRequiredField.off('blur', {form: form, widget: _s}, _s.preFormSubmitHandler);
+        $('#create_account_box, #ship2diff_box').on('hide', function() {
+            _s.updateProfileUpdateButtonState(form);
         });
-        // find last required form field
-        var lastRequiredField = _s.findLastRequiredField(form, labels);
-        // attach submit handler to last required field
-        lastRequiredField.on('blur', {form: form, widget: _s}, _s.preFormSubmitHandler);
-    }
-};
-
-ajax.widgets.checkout.obj.prototype.preFormSubmitHandler = function (event) {
-    var form = event.data.form;
-    var widget = event.data.widget;
-    var result = checkFormFields(form, event.target);
-    if (
-        result
-        && checkFormFields(form)
-        && widget.user_is_typing === false
-    ) {
-        widget.timer_id_submit = setTimeout(
-            function() {
-                if (
-                    result
-                    && checkFormFields(form)
-                    && widget.user_is_typing === false
-                ) {
-                    form.submit();
-                }
+        // check form and update submit button state
+        _s.updateProfileUpdateButtonState(form);
+        // for pageload autocomplete plugins
+        _s.timer_id_typing = setTimeout (function() {
+            // delay 1.6 seconds to allow autocomplete plugins to apply
+                _s.updateProfileUpdateButtonState(form);
             },
-            1000
+            1600
         );
     }
 };
 
+ajax.widgets.checkout.obj.prototype.getDefaultFormLabelsList = function(form) {
+    return $('label[for]', form)
+            .not('label[for="new_B"]')
+            .not('label[for="existing_B"]')
+            .not('label[for="new_S"]')
+            .not('label[for="existing_B"]')
+            .not('label[for="create_account"]')
+            .not('label[for="ship2diff"]');
+}
+
+ajax.widgets.checkout.obj.prototype.findLastRequiredField = function(form, labels) {
+    // check if form labels were passed
+    if ($.isEmptyObject(labels)) {
+        // get form labels
+        labels = this.getDefaultFormLabelsList(form);
+    }
+    var fields = [];
+    // labels iterator
+    labels.each(function () {
+        // filtered fields collector
+        var filtered = filterFormField(form, this);
+        // check if this field is required
+        if (!$.isEmptyObject(filtered)) {
+            fields.push(filtered['field']);
+        }
+    });
+    // last field reference
+    return $(fields).last();
+};
+
+ajax.widgets.checkout.obj.prototype.updateProfileUpdateButtonState = function(form) {
+    // get button reference
+    var button = $('button.update-profile', form);
+    // check form and update submit button state
+    if (checkFormFields(form, 'silentCheck')) {
+        button.prop('disabled', false)
+            .removeClass('inactive');
+    } else {
+        button.prop('disabled', true)
+            .addClass('inactive');
+    }
+};
+
+ajax.widgets.checkout.obj.prototype.onUpdateProfileButtonClick = function (event) {
+    // get widget
+    var _s = event.data.widget;
+    // update profile
+    _s._doUpdateProfile(event);
+};
+
 ajax.widgets.checkout.obj.prototype.onRegisterFormUserInput = function (event) {
-    // check form field
-    checkFormFields(event.data.form, event.target);
     // update control view
     ajax.widgets.checkout.obj.prototype.updateFormElementControls.apply(event.data.widget, [event.data.form, event.target, event.type]);
+    // update profile update button
+    if (!event.data.widget.user_is_typing) {
+        // only if user is not typing
+        ajax.widgets.checkout.obj.prototype.updateProfileUpdateButtonState.apply(event.data.widget, [event.data.form]);
+    }
 };
 
 ajax.widgets.checkout.obj.prototype.onRegisterFormUserFocus = function (event) {
     // update control view
     ajax.widgets.checkout.obj.prototype.updateFormElementControls.apply(event.data.widget, [event.data.form, event.target, event.type]);
+    // update profile update button
+    ajax.widgets.checkout.obj.prototype.updateProfileUpdateButtonState.apply(event.data.widget, [event.data.form]);
 };
 
-ajax.widgets.checkout.obj.prototype.onRegisterFormEnterKeyPressed = function (event) {
+ajax.widgets.checkout.obj.prototype.onRegisterFormUserBlur = function (event) {
+    // update control view
+    ajax.widgets.checkout.obj.prototype.updateFormElementControls.apply(event.data.widget, [event.data.form, event.target, event.type]);
+    // update profile update button
+    ajax.widgets.checkout.obj.prototype.updateProfileUpdateButtonState.apply(event.data.widget, [event.data.form]);
+    // run check only for changed controls
+    if ($(event.target).hasClass('value-is-changed')) {
+        // check form field
+        checkFormFields(event.data.form, event.target);
+    }
+};
+
+ajax.widgets.checkout.obj.prototype.onRegisterFormKeyDown = function (event) {
+    // get data
+    var _ed = event.data;
+    // get widget
+    var _s = _ed.widget;
+    // check key code
     if (event.which === 13) {
-        // enter key pressed
-        var result = checkFormFields(event.data.form);
-        if (result) {
-            event.data.form.submit();
-        }
+        // enter key pressed - check form
+        _s.onUpdateProfileButtonClick(event);
     } else {
         // any other key
-        var _s = event.data.widget;
         _s.user_is_typing = true;
-        _s.timer_id_typing = setTimeout(
-            // clear user is typing flag after 2 seconds of inactivity
+        // set timput timer
+        _s.timer_id_typing = setTimeout (
+            // clear user is typing flag after 0.8 seconds of inactivity
             function () {
                 _s.user_is_typing = false;
+                // update update profile button
+                ajax.widgets.checkout.obj.prototype.updateProfileUpdateButtonState.apply(_ed.widget, [_ed.form]);
             },
-            2000
-            );
-        }
+            800
+        );
+    }
 };
 
 ajax.widgets.checkout.obj.prototype.addFormElementControlButtons = function (element, buttons) {
-    $(buttons).each(function(index) {
+    $(buttons).each(function() {
         var button = $(this);
         var control = $(element);
-        if (control.attr('id') === 'passwd2') {
-            control.next('.validate-mark').after(button);
-        } else if (
-            control.attr('id') === 'create_account'
-            || control.attr('id') === 'ship2diff'
+        if (
+            $.inArray(
+                control.attr('id'),
+                [
+                    'b_title',
+                    'b_firstname',
+                    'b_zipcode',
+                    's_title',
+                    's_firstname',
+                    's_zipcode'
+                ]
+            ) === -1
         ) {
-            if (index === 0) {
-                control.parent().append(button);
-            } else {
-                control.parent().find('a:last-child').before(button);
-            }
-        } else {
             control.after(button);
         }
         button.attr('data-opc-control-id', control.attr('id'));
@@ -1461,9 +1502,9 @@ ajax.widgets.checkout.obj.prototype.getFormElementControlValue = function (contr
     var controlValue = control.val();
 
     if (
-        control.prop('tagName').toLowerCase() === 'input'
+        control.prop('tagName').toUpperCase() === 'INPUT'
         && control.attr('type')
-        && control.attr('type').toLowerCase() === 'checkbox'
+        && control.attr('type').toUpperCase() === 'CHECKBOX'
     ) {
         controlValue = control.is(':checked');
     }
@@ -1473,11 +1514,11 @@ ajax.widgets.checkout.obj.prototype.getFormElementControlValue = function (contr
 
 ajax.widgets.checkout.obj.prototype.setFormElementControlValue = function (control, value) {
     if (
-        control.prop('tagName').toLowerCase() === 'input'
-        && control.attr('type').toLowerCase() === 'checkbox'
+        control.prop('tagName').toUpperCase() === 'INPUT'
+        && control.attr('type').toUpperCase() === 'CHECKBOX'
     ) {
         control.prop('checked', value);
-        control.click(); // emulate user click
+        control.click(); // emulate user click to fire other related events
     } else {
         control.val(value);
     }
@@ -1491,19 +1532,36 @@ ajax.widgets.checkout.obj.prototype.updateFormElementControls = function (form, 
     $('.field-container a.restore-value', form).hide();
     // control value
     var value = this.getFormElementControlValue(control);
+    // existing address
+    var existingAddress = $('#b_id, #s_id').length > 0;
     // check if value is changed
     if (value.toString() !== control.attr(this.original_value_attr)) {
         // add value changed class
         control.addClass('value-is-changed');
         control.parent().addClass('value-is-changed');
-        // show buttons
-        control.parent().find('a.update-profile, a.restore-value').show();
+        // buttons are shown only in case of existing address modification
+        if (existingAddress) {
+            if ((parent = control.closest('.fields-group')).length > 0) {
+                // find last field in group
+                if (parent.hasClass('last')) {
+                    parent.find('a.update-profile, a.restore-value').show();
+                } else {
+                    parent.next('.last').find('a.update-profile, a.restore-value').show();
+                }
+            } else {
+                // show buttons
+                control.parent().find('a.update-profile, a.restore-value').show();
+            }
+        }
     } else {
         // remove value changed class
         control.removeClass('value-is-changed');
         control.parent().removeClass('value-is-changed');
-        // find last edited value and add buttons
-        $('.value-is-changed:last', form).parent().find('a.update-profile, a.restore-value').show();
+        // buttons are shown only in case of existing address modification
+        if (existingAddress) {
+            // find last edited value and add buttons
+            $('.value-is-changed:last', form).parent().find('a.update-profile, a.restore-value').show();
+        }
     }
 };
 
@@ -1545,7 +1603,7 @@ ajax.widgets.checkout.obj.prototype.messageListener = function (event) {
 
     }
   }
-}
+};
 
 /**
  * Check whether XPC iframe should be shown and if necessary switch it
@@ -1561,7 +1619,7 @@ ajax.widgets.checkout.obj.prototype.switchXPCIframe = function(paymentid) {
     if (paymentid == xpc_paymentids[i])
       this.showXPCIframe(paymentid);
   }
-}
+};
 
 ajax.widgets.checkout.obj.prototype.prepareXPCIframe = function(paymentid) {
   if (this.isXPCPayment(paymentid)) {
@@ -1569,7 +1627,7 @@ ajax.widgets.checkout.obj.prototype.prepareXPCIframe = function(paymentid) {
 
     this.disableCheckout();
   }
-}
+};
  
 /**
  * Hide XPC iframe
@@ -1580,7 +1638,7 @@ ajax.widgets.checkout.obj.prototype.hideXPCIframe = function(paymentid) {
   iframe.height(0);
 
   this.xpcShown = false;
-}
+};
 
 /**
  * Show XPC iframe for specified paymentid
@@ -1592,7 +1650,7 @@ ajax.widgets.checkout.obj.prototype.showXPCIframe = function(paymentid) {
   iframe.attr('src', 'payment/cc_xpc_iframe.php?paymentid=' + paymentid);
 
   this.xpcShown = iframe[0];
-}
+};
 
 /**
  * Onload handler 
@@ -1605,4 +1663,3 @@ $(ajax).bind(
     return result;
   }
 );  
-

@@ -1,5 +1,5 @@
 {*
-c0b7a742f56d4cd9d5875fb9a121be48c4674208, v4 (xcart_4_7_0), 2014-12-20 17:15:41, order_invoice_print.tpl, aim
+2ef7fb52d397e834fc9f38fab3042a4f96941a06, v5 (xcart_4_7_2), 2015-04-27 17:07:51, order_invoice_print.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -29,12 +29,14 @@ vim: set ts=2 sw=2 sts=2 et:
 {include file="meta.tpl"}
 <style type="text/css">
 <!--
-BODY {ldelim}
-    FONT-FAMILY: Verdana, Arial, Helvetica, Sans-serif;
-    FONT-SIZE: 11px;
-    MARGIN: 10px;
-    PADDING: 10px;
-{rdelim}
+{literal}
+body {
+    font-family: Verdana, Arial, Helvetica, Sans-serif;
+    font-size: 11px;
+    margin: 10px;
+    padding: 10px;
+}
+{/literal}
 -->
 </style>
 </head>

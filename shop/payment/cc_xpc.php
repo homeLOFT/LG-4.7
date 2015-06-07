@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    7935adb949cac5546ce2160f50d39aac3b49a0ff, v59 (xcart_4_7_0), 2015-02-19 17:47:45, cc_xpc.php, random
+ * @version    3ffa496e8098a538e8366aef4504a1e4398b9381, v60 (xcart_4_7_1), 2015-03-27 16:31:10, cc_xpc.php, random
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -291,6 +291,15 @@ if (
     // Check logs (if enabled) for them.
     ini_set('display_errors', 0);
     ini_set('display_startup_errors', 0);
+    if (defined('DEVELOPMENT_MODE')) {
+        function func_xpc_assert_handler($file, $line, $code) {
+            x_log_add('Assertion', debug_backtrace(!DEBUG_BACKTRACE_PROVIDE_OBJECT));
+            if (strpos($code, '(EE)') !== FALSE) {
+                die;
+            }
+        }
+        assert_options(ASSERT_CALLBACK, 'func_xpc_assert_handler');
+    }
 
     // Check module
     if (empty($active_modules['XPayments_Connector'])) {
@@ -449,9 +458,13 @@ if (
 
             $customer_notes = $customer_extras['customer_notes'];
 
-            // Restore real customer IP
+            // Restore real customer IP and other saved data
             $CLIENT_IP = $customer_extras['ip'];
             $PROXY_IP = $customer_extras['proxy_ip'];
+
+            if (!empty($active_modules['XMultiCurrency'])) {
+                $store_currency = $customer_extras['store_currency'];
+            }
 
             $orderids = func_place_order(
                 $payment_method_text,

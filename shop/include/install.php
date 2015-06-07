@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b0f361c15ee795f22593d21ebfd350bb056f61c, v229 (xcart_4_7_0), 2015-02-24 13:56:21, install.php, aim
+ * @version    22cfd9fa4ff7e959fc33667f3e705663d45d2c27, v231 (xcart_4_7_2), 2015-04-20 17:54:14, install.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -1599,7 +1599,7 @@ function func_is_compatible_version()
     return 
         defined('COMPATIBLE_VERSION') 
             && (
-                constant('COMPATIBLE_VERSION') == '4.7.0'
+                constant('COMPATIBLE_VERSION') == '4.7.2'
                 || constant('COMPATIBLE_VERSION') == '4.7.x'
             );
 }

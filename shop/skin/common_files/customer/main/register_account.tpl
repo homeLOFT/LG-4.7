@@ -1,5 +1,6 @@
 {*
-3440435bf08c4432b5fb826c0f0b68d1d4a0fce6, v6 (xcart_4_6_5), 2014-09-11 12:11:57, register_account.tpl, aim
+a4932c666a373247bd7f62cfd9a6313e7863b1cc, v8 (xcart_4_7_1), 2015-03-10 17:25:09, register_account.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {if $config.Security.use_complex_pwd eq 'Y' and $userinfo.login|default:$userinfo.uname eq ''}
@@ -21,7 +22,6 @@ vim: set ts=2 sw=2 sts=2 et:
     <td class="data-required">*</td>
     <td>
       <input type="text" id="email" name="email" class="input-required input-email" size="32" maxlength="128" value="{$userinfo.email|escape}" autocomplete="off" />
-      <div id="email_note" class="note-box" style="display: none;">{$lng.txt_email_note}</div>
     </td>
   </tr>
 

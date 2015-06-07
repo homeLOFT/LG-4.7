@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v141 (xcart_4_7_0), 2015-02-17 23:56:28, import.php, Yuriy
+ * @version    6e72db36b302748ae6ded6f9a5983d72a27b3fe4, v143 (xcart_4_7_2), 2015-04-08 11:07:22, import.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -1098,65 +1098,76 @@ loaded = true;
         if (
             !empty($section)
             && empty($colnames)
-            && count(preg_grep("/^\s*\!([\w\d_]+)\s*$/S", $columns)) == count($columns)
         ) {
 
-            for ($i = 0; $i < count($columns); $i++) {
+            // Prepare column names
+            $columns = array_map('trim', $columns);
 
-                $colnames[$i] = func_import_get_colname($section, trim(strtolower(substr($columns[$i], 1))), $i);
+            // Remove Non-breaking spaces &nbsp;->0xA0
+            $columns = array_map(
+                function($s) {return trim($s, chr(0xC2).chr(0xA0));}
+            , $columns);
 
-                if (func_import_col_is_deprecated($section, $colnames[$i])) {
+            if (count(preg_grep("/^\s*\!([\w\d_]+)\s*$/S", $columns)) == count($columns))
+            {//{{{
 
-                    unset($colnames[$i]);
-                    unset($renamed_cols[$i]);
+                for ($i = 0; $i < count($columns); $i++) {
 
-                    $deprecated_cols[] = $i;
+                    $colnames[$i] = func_import_get_colname($section, trim(strtolower(substr($columns[$i], 1))), $i);
 
-                    continue;
+                    if (func_import_col_is_deprecated($section, $colnames[$i])) {
 
-                }
+                        unset($colnames[$i]);
+                        unset($renamed_cols[$i]);
 
-                // Column name does not comply with defined for this section
-                if (!isset($import_specification[$section]['columns'][$colnames[$i]])) {
+                        $deprecated_cols[] = $i;
 
-                    func_import_error(
-                        'msg_err_import_log_message_4',
-                        array(
-                            'column'  => strtoupper($colnames[$i]),
-                            'section' => strtoupper($section),
-                        )
-                    );
+                        continue;
 
-                    $section = '';
+                    }
 
-                    break;
+                    // Column name does not comply with defined for this section
+                    if (!isset($import_specification[$section]['columns'][$colnames[$i]])) {
 
-                }
+                        func_import_error(
+                            'msg_err_import_log_message_4',
+                            array(
+                                'column'  => strtoupper($colnames[$i]),
+                                'section' => strtoupper($section),
+                            )
+                        );
 
-            }
+                        $section = '';
 
-            if (!empty($deprecated_cols))
-                $colnames = array_values($colnames);
-
-            if (!empty($section)) {
-
-                foreach ($import_specification[$section]['columns'] as $cn => $cv) {
-
-                    if (
-                        !empty($cv['required'])
-                        && !in_array($cn, $colnames)
-                    ) {
-
-                        func_import_error('msg_err_import_log_message_7', array('column' => strtoupper($cn)));
+                        break;
 
                     }
 
                 }
 
-            }
+                if (!empty($deprecated_cols))
+                    $colnames = array_values($colnames);
 
-            continue;
+                if (!empty($section)) {
 
+                    foreach ($import_specification[$section]['columns'] as $cn => $cv) {
+
+                        if (
+                            !empty($cv['required'])
+                            && !in_array($cn, $colnames)
+                        ) {
+
+                            func_import_error('msg_err_import_log_message_7', array('column' => strtoupper($cn)));
+
+                        }
+
+                    }
+
+                }
+
+                continue;
+
+            } //}}} if (count(preg_grep("/^\s*\!([\w\d_]+)\s*$/S", $columns)) == count($columns))
         }
 
         // Next row if column names was not defined...

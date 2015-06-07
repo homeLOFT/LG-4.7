@@ -1,5 +1,5 @@
 {*
-a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59, cart.tpl, aim
+00dcd2f82b80a21d8d2d70cbd1a8ec45d81d6b84, v2 (xcart_4_7_1), 2015-03-09 16:54:17, cart.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -23,7 +23,10 @@ vim: set ts=2 sw=2 sts=2 et:
 
       <form action="cart.php" method="post" name="cartform">
 
-        <input type="hidden" name="action" value="update" />
+        <input type="hidden" name="action" id="action" value="update" />
+        <input type="hidden" name="mode" value="" />
+        <input type="hidden" name="productid" id="productid" value="" />
+        <input type="hidden" name="pindex" id="pindex" value="" />
 
         {foreach from=$products item=product name=products}
           {if $product.hidden eq ""}
@@ -102,6 +105,11 @@ vim: set ts=2 sw=2 sts=2 et:
 
                   <div class="buttons-row buttons-auto-separator">
                     {include file="customer/buttons/button.tpl" button_title=$lng.lbl_update_item href="javascript: return updateCartItem(`$product.cartid`);" additional_button_class="light-button"}
+
+                    {if $active_modules.Wishlist ne '' && ($login || $config.Wishlist.add2wl_unlogged_user_cart eq 'Y')}
+                      {include file="customer/buttons/button.tpl" button_title=$lng.lbl_move_to_wl href="javascript: move_to_wl('`$product.productid`','`$product.cartid`');" additional_button_class="light-button wl-button"}
+                    {/if}
+
                     {if $active_modules.XAuth}
                       {include file="modules/XAuth/rpx_ss_cart_item.tpl"}
                     {/if}
@@ -204,4 +212,15 @@ vim: set ts=2 sw=2 sts=2 et:
 
 {if $cart.coupon_discount eq 0 and $products and $active_modules.Discount_Coupons}
   {include file="modules/Discount_Coupons/add_coupon.tpl"}
+{/if}
+
+{getvar func='func_tpl_is_jcarousel_is_needed'}
+{if $active_modules.Wishlist ne '' and $func_tpl_is_jcarousel_is_needed}
+{if !$products}
+  {assign var=additional_class value="empty-cart"}
+{/if}
+  {capture name=dialog}
+    {include file="modules/Wishlist/wl_carousel.tpl" products=$wl_products giftcerts=$wl_giftcerts}
+  {/capture}
+  {include file="customer/dialog.tpl" title=$lng.lbl_wl_products content=$smarty.capture.dialog additional_class="wl-dialog $additional_class"}
 {/if}

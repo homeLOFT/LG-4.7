@@ -6,7 +6,7 @@
  * @package    X-Cart
  * @subpackage CSS
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
- * @version    b998a39d95c8c4775aec13f44af2ce76cf1e062a, v29 (xcart_4_7_0), 2015-02-06 15:56:41, main.css, mixon
+ * @version    599bd50c9c671e7d91824708193a44d40c0203e1, v38 (xcart_4_7_2), 2015-04-16 04:03:13, main.css, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -142,6 +142,10 @@ fieldset.registerform {
   margin: 0;
 }
 
+fieldset#personal_details {
+  background: #f5f5f5;
+}
+
 div.opc-section-container {
   padding: 10px 0;
   margin: 0;
@@ -165,25 +169,49 @@ div.opc-section-container div.text-block {
 }
 
 div.checkout-container #center input[type=text],
-div.checkout-container input[type=password],
-div.checkout-container textarea, 
-div.checkout-container select {
-  max-width: 250px;
+div.checkout-container #center input[type=password],
+div.checkout-container #center textarea,
+div.checkout-container #center select
+{
   font-size: 12px;
+  margin: 0px;
+  padding: 2px;
+  border: solid 1px #bbb;
+}
+
+div.checkout-container #center input[type=text]:focus,
+div.checkout-container #center input[type=password]:focus,
+div.checkout-container #center textarea:focus,
+div.checkout-container #center select:focus
+{
+  font-size: 12px;
+  border: solid 1px #999;
 }
 
 div.checkout-container #center input[type=text],
-div.checkout-container input[type=password],
-div.checkout-container select {
+div.checkout-container #center input[type=password]
+{
+  max-width: 205px;
+}
+
+div.checkout-container #center select {
+  max-width: 211px; // width for <select> includes borders
+}
+
+div.checkout-container #center input[type=text],
+div.checkout-container #center input[type=password],
+div.checkout-container #center select
+{
   height: 18px;
 }
 
-div.checkout-container textarea {
-  width: 100%;
+div.checkout-container #center select {
+  height: 24px; // height for <select> includes borders
 }
 
-div.checkout-container select {
-  height: 22px;
+div.checkout-container #center textarea {
+  height: auto;
+  width: 98%;
 }
 
 fieldset.registerform ul li {
@@ -205,6 +233,11 @@ fieldset.registerform ul.first {
 
 fieldset.registerform ul li {
   padding-bottom: 10px;
+}
+
+fieldset.registerform .button-row {
+  margin-top: 5px;
+  padding-bottom: 15px;
 }
 
 fieldset.registerform ul li.clearing {
@@ -248,8 +281,9 @@ li.single-field input.image-button {
 
 
 div.optional-label {
-  margin: 10px 5px;
-  background-color: #fff;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 div.optional-label label {
@@ -333,28 +367,26 @@ label[for=ship2diff] a {
   display: none;
 }
 
-.field-container .value-is-changed a,
-label[for=create_account].value-is-changed a,
-label[for=ship2diff].value-is-changed a {
-  display: inline-block;
-}
-
 .field-container a.update-profile,
 label[for=create_account] a.update-profile,
-label[for=ship2diff] a.update-profile {
+label[for=ship2diff] a.update-profile
+{
   padding: 0 10px 0 25px;
   line-height: 20px;
   background: transparent url(../../images/icon_checked.png) no-repeat left top;
+  display: inline-block;
 }
 
 label[for=create_account] a.update-profile,
-label[for=ship2diff] a.update-profile {
+label[for=ship2diff] a.update-profile
+{
   padding-left: 40px;
 }
 
 .field-container a.restore-value,
 label[for=create_account] a.restore-value,
-label[for=ship2diff] a.restore-value {
+label[for=ship2diff] a.restore-value
+{
   background: transparent url(../../images/icon_restore.png) no-repeat left top;
 }
 
@@ -369,15 +401,16 @@ div.buttons-box a.cancel-edit {
   margin: 5px 5px;
 }
 
+#ship2diff_box a.cancel-edit {
+  display: none;
+}
+
 input.value-is-changed,
 input.value-is-changed:focus,
 select.value-is-changed,
-select.value-is-changed:focus {
+select.value-is-changed:focus
+{
   background-color: #fcfcdd;
-}
-
-div#email_note {
-  margin-left: 60px;
 }
 
 ul#opc-sections li.opc-section div.opc-checkout-profile h3 {
@@ -392,6 +425,10 @@ div.opc-checkout-profile div.address-line {
 ul#opc-sections li.opc-section div.news-register-item-descr {
   font-size: 10px;
   font-style: italic;
+}
+
+button.update-profile:disabled {
+  cursor: not-allowed;
 }
 
 /**
@@ -541,7 +578,8 @@ table.totals span.total-name
 }
 
 #opc_summary table.totals tr td.total,
-#opc_summary table.totals tr td.total-name {
+#opc_summary table.totals tr td.total-name
+{
   width: 70%;
 }
 
@@ -594,7 +632,7 @@ div.terms_n_conditions label {
   font-size: 13px;
 }
 
-.place-order-button button.inactive {
+button.inactive {
   opacity: .3;
   filter:Alpha(Opacity=30);
   cursor: default;
@@ -612,8 +650,10 @@ div.paypal-express-sel-note {
   margin-bottom: 20px;
 }
 
-ul#opc-sections li.opc-section h3 {
-  margin-bottom: 20px;
+ul#opc-sections li.opc-section fieldset h3 {
+  margin-top: 5px;
+  margin-bottom: -10px;
+  margin-left: 15px;
 }
 
 #show_coupon_code {

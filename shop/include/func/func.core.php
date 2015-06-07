@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v612 (xcart_4_7_0), 2015-02-17 23:56:28, func.core.php, Yuriy
+ * @version    1b0933531436a1aa7ba738be5c44c1645473eeb7, v614 (xcart_4_7_1), 2015-03-19 11:28:02, func.core.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -6608,6 +6608,11 @@ function func_substr()
             $args[3] = $default_charset;
         }
 
+        if (empty($args[3])) {
+            assert( 'false /* '.__FUNCTION__.': default_charset is not set2 */');
+            $args[3] = 'UTF-8';
+        }
+
         return call_user_func_array('mb_substr', $args);
     } else {
         return call_user_func_array('substr', $args);
@@ -6728,6 +6733,15 @@ class XCRobots {
             ),
             'NetEase Inc' => array(
                 'YodaoBot',
+            ),
+            'YandexBot' => array(
+                'YandexBot',
+            ),
+            'TwengaBot' => array(
+                'TwengaBot',
+            ),
+            'TheFind'    => array(
+                'http://www.thefind.com/crawler',
             ),
         );
         return $_ua;

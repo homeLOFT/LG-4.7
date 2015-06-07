@@ -2,14 +2,15 @@
 /**
  * One Page Checkout module CSS stylesheet
  *
- * @category   X-Cart
- * @package    X-Cart
- * @subpackage CSS
- * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
- * @version    0a922533bc368382b94c56b723f764008cf4c0a5, v3 (xcart_4_7_0), 2015-02-12 22:35:54, altskin.css, mixon
- * @link       http://www.x-cart.com/
- * @see        ____file_see____
+ * @category    X-Cart
+ * @package     X-Cart
+ * @subpackage  CSS
+ * @author      Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version     385fc3d69cb68fda266754f96577b46b39a0d920, v4 (xcart_4_7_1), 2015-03-27 07:00:54, altskin.css, mixon
+ * @link        http://www.x-cart.com/
+ * @see         ____file_see____
  */
+
 table.totals tr td.total,
 table.totals tr td.total-name,
 table.totals tr td.total-value,
@@ -30,4 +31,15 @@ table.totals tr.total td.total-value-alt {
 
 .field-container a {
   margin: -2px -2px -4px 5px;
+}
+
+div.checkout-container #center input[type=text],
+div.checkout-container #center input[type=password],
+div.checkout-container #center textarea
+{
+  max-width: 205px;
+}
+
+div.checkout-container #center select {
+  max-width: 211px; // width for <select> includes borders
 }

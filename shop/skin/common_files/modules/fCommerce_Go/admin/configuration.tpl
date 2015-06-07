@@ -1,4 +1,8 @@
-{* f59133b7b20d358a6fd0fbe8cb159553d7446418, v2 (xcart_4_6_0), 2013-05-13 16:49:46, configuration.tpl, aim *}
+{*
+352ade9d4c5e19ed7b895b1004fc09349fa35799, v3 (xcart_4_7_2), 2015-04-24 12:04:22, configuration.tpl, aim
+
+vim: set ts=2 sw=2 sts=2 et:
+*}
 <tr style="display: none;">
   <td width="30" id="fb_init_head">
     {if $active_modules.HTML_Editor && $config.version lt 4.3}
@@ -78,7 +82,7 @@
     <b>{$lng.opt_products_per_page}</b>
   </td>
   <td colspan="2">
-    <input type="text" size="5" name="fb_shop_config[per_page]" value="{$fb_shop_config.per_page|formatnumeric|default:6}" />
+    <input type="text" size="5" name="fb_shop_config[per_page]" value="{$fb_shop_config.per_page|default:6}" />
   </td>
 </tr>
 
@@ -191,12 +195,12 @@
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_cat_thumb_width}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[cat_tmbn_width]" value="{$fb_shop_config.cat_tmbn_width|formatnumeric|default:90}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[cat_tmbn_width]" value="{$fb_shop_config.cat_tmbn_width|default:90}" /> </td>
 </tr>
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_cat_thumb_height}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[cat_tmbn_height]" value="{$fb_shop_config.cat_tmbn_height|formatnumeric|default:90}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[cat_tmbn_height]" value="{$fb_shop_config.cat_tmbn_height|default:90}" /> </td>
 </tr>
 
 <tr>
@@ -205,12 +209,12 @@
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_prod_thumb_width}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_tmbn_width]" value="{$fb_shop_config.prod_tmbn_width|formatnumeric|default:120}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_tmbn_width]" value="{$fb_shop_config.prod_tmbn_width|default:120}" /> </td>
 </tr>
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_prd_thumb_height}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_tmbn_height]" value="{$fb_shop_config.prod_tmbn_height|formatnumeric|default:120}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_tmbn_height]" value="{$fb_shop_config.prod_tmbn_height|default:120}" /> </td>
 </tr>
 
 <tr>
@@ -219,12 +223,12 @@
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_prod_image_width}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_image_width]" value="{$fb_shop_config.prod_image_width|formatnumeric|default:200}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_image_width]" value="{$fb_shop_config.prod_image_width|default:200}" /> </td>
 </tr>
 
 <tr>
   <td nowrap="nowrap"> <b>{$lng.lbl_fb_adm_prod_image_height}</b> </td>
-  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_image_height]" value="{$fb_shop_config.prod_image_height|formatnumeric|default:200}" /> </td>
+  <td colspan="2"><input type="text" size="10" name="fb_shop_config[prod_image_height]" value="{$fb_shop_config.prod_image_height|default:200}" /> </td>
 </tr>
 
 <tr>

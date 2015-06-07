@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v74 (xcart_4_7_0), 2015-02-17 13:29:01, coupons.php, aim
+ * @version    8b7fea6b5e3a815129fb96fa951d684195ca0e74, v75 (xcart_4_7_2), 2015-04-06 11:38:46, coupons.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -154,6 +154,7 @@ if ($REQUEST_METHOD == 'POST') {
 
         if (
             empty($coupon_new)
+            || intval($times_new) == 0
             || preg_match("/" . func_coupon_validation_regexp() . "/", $coupon_new)
             || (
                 $discount_new <= 0

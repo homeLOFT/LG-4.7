@@ -6,7 +6,7 @@
  * @package    X-Cart
  * @subpackage JS Library
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
- * @version    ec2ca39cb71eff2cf859558b4f67f561a1b9efe4, v2 (xcart_4_4_0_beta_2), 2010-05-27 13:43:06, browser_identificator.js, igoryan
+ * @version    7b79378dac39e23466f777ebd246768ed6458635, v3 (xcart_4_7_2), 2015-04-16 16:16:33, browser_identificator.js, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -26,6 +26,7 @@ setTimeout(
       (localIsCookie ? "Y" : "N") + "|" + 
       screen.width + "|" + 
       screen.height + "|" + 
+      (window.XMLHttpRequest ? "Y" : "N") + "|" +
       current_area;
     document.getElementsByTagName('head')[0].appendChild(scriptNode);
   },

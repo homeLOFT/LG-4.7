@@ -1,5 +1,5 @@
 {*
-4d257716ae94929979cffed4fd32952cf54685ad, v10 (xcart_4_7_0), 2015-02-28 19:15:32, edit_products.tpl, mixon
+aeec21898796e999cac61b06abf14286e6dde502, v11 (xcart_4_7_1), 2015-03-12 12:09:17, edit_products.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -70,19 +70,19 @@ vim: set ts=2 sw=2 sts=2 et:
   <th width="30%" height="16" align="left">{$lng.lbl_aom_original_value}</th>
 </tr>
 
-<tr>
+<tr id="tr_sku_{$product.productid}">
   <td valign="top">{$lng.lbl_sku}</td>
   <td valign="top">{$product.productcode|default:"-"}</td>
   <td valign="top">{if $product.new}{else}{$orig_product.productcode|default:"-"}{/if}</td>
 </tr>
 
-<tr class="TableSubHead">
+<tr class="TableSubHead" id="tr_provider_{$product.productid}">
   <td valign="top">{$lng.lbl_provider}</td>
   <td valign="top">{$product.provider_name}</td>
   <td valign="top">{$orig_product.provider_name}</td>
 </tr>
 
-<tr class="TableSubHead">
+<tr class="TableSubHead" id="tr_price_{$product.productid}">
   <td valign="top">{$lng.lbl_price}, {$config.General.currency_symbol}</td>
   <td valign="top" class="aom-current aom-product-price">
     {if $product.deleted}
@@ -116,7 +116,7 @@ vim: set ts=2 sw=2 sts=2 et:
   </td>
 </tr>
 
-<tr class="TableSubHead">
+<tr class="TableSubHead" id="tr_taxes_{$product.productid}">
   <td valign="top">{$lng.lbl_taxes}</td>
   <td valign="top">
     {include file="modules/Advanced_Order_Management/product_taxes.tpl" product=$product}
@@ -129,7 +129,7 @@ vim: set ts=2 sw=2 sts=2 et:
   </td>
 </tr>
 
-<tr class="TableSubHead">
+<tr class="TableSubHead" id="tr_aom_display_price_{$product.productid}">
   <td valign="top">{$lng.lbl_aom_display_price}, {$config.General.currency_symbol}</td>
   <td valign="top" class="aom-current aom-display-price">
     {if $product.is_calculated_price eq 'Y'}
@@ -153,7 +153,7 @@ vim: set ts=2 sw=2 sts=2 et:
   </td>
 </tr>
 
-<tr>
+<tr id="tr_aom_quantity_items_{$product.productid}">
   <td valign="top">{$lng.lbl_aom_quantity_items}
     {if $active_modules.RMA and $product.returns ne ""}
       <br /><br />
@@ -184,7 +184,7 @@ vim: set ts=2 sw=2 sts=2 et:
   <td valign="top" class="aom-original aom-product-quantity">{$orig_product.amount}</td>
 </tr>
 
-<tr class="TableSubHead">
+<tr class="TableSubHead" id="tr_weight_{$product.productid}">
   <td valign="top">{$lng.lbl_weight}</td>
   <td valign="top">
     <input type="text" name="product_details[{$smarty.section.prod_num.index}][weight]" size="5" maxlength="5" value="{$product.weight|escape}" {include file="main/attr_orig_data.tpl" data_orig_value=$orig_product.weight|escape data_orig_keep_empty='Y'} />
@@ -193,7 +193,7 @@ vim: set ts=2 sw=2 sts=2 et:
 </tr>
 
 {if $active_modules.Product_Options ne "" and ($orig_product.product_options ne "" or $product.display_options ne "")}
-<tr>
+<tr id="tr_selected_options_{$product.productid}">
   <td valign="top">{$lng.lbl_selected_options}<br />{$lng.lbl_aom_considered_in_price}</td>
   <td valign="top" class="aom-current aom-product-options">
   {if $product.adv_option_choice eq "Y"}

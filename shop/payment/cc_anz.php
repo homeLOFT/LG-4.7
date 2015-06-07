@@ -36,9 +36,14 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v38 (xcart_4_7_0), 2015-02-17 13:29:01, cc_anz.php, aim
+ * @version    6f0bef36d56cbe397cbf4af0af6a3f660c05b580, v39 (xcart_4_7_2), 2015-04-14 15:46:18, cc_anz.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
+ */
+
+
+/**
+ * http://www.anz.com.au/australia/business/merchant/DownloadDevKit.asp / Virtual Payment Client
  */
 
 if (!isset($_GET['vpc_TxnResponseCode'])) {

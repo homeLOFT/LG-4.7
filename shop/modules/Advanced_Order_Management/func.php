@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    f7753843bded08de90c93873b4a2fb1ed4ccb574, v59 (xcart_4_7_0), 2015-03-04 09:39:41, func.php, mixon
+ * @version    e44b86db8de0d5fb6c830b5a545165043a629b0c, v60 (xcart_4_7_1), 2015-03-09 10:35:32, func.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -602,6 +602,14 @@ function func_aom_generate_anonymous_userinfo($order_info)
     $logged_userid = $order_info['userinfo']['userid'];
     $user_account = $order_info['userinfo'];
 
+    if (defined('DEVELOPMENT_MODE')) {
+        global $aom_debug_generated_anonymous_userinfos;
+        x_session_register('aom_debug_generated_anonymous_userinfos', array());
+
+        assert('empty($aom_debug_generated_anonymous_userinfos) /* '.__FUNCTION__.' Two calls of Func_aom_generate_anonymous_userinfo are registered.func_aom_restore_anonymous_userinfo should be called after each Func_aom_generate_anonymous_userinfo*/');
+        $aom_debug_generated_anonymous_userinfos[md5(serialize($xaom_saved_data))] = debug_backtrace();
+    }
+
     func_set_anonymous_userinfo($order_info['userinfo'], 'skip_x_session_save');
 } // }}}
 
@@ -624,8 +632,25 @@ function func_aom_restore_anonymous_userinfo()
 
     func_set_anonymous_userinfo($old_anonymous_userinfo, 'skip_x_session_save');
 
+    if (defined('DEVELOPMENT_MODE')) {
+        global $aom_debug_generated_anonymous_userinfos;
+        x_session_register('aom_debug_generated_anonymous_userinfos');
+        $ind = md5(serialize($xaom_saved_data));
+
+        assert('isset($aom_debug_generated_anonymous_userinfos[$ind]) && count($aom_debug_generated_anonymous_userinfos) == 1/* '.__FUNCTION__.' One and only one element is allowed in the aom_debug_generated_anonymous_userinfos var*/');
+        unset($aom_debug_generated_anonymous_userinfos[$ind]);
+    }
     unset($xaom_saved_data);
 } // }}}
+
+function func_aom_dev_check_non_saved_anonymous_userinfo()
+{//{{{
+    global $aom_debug_generated_anonymous_userinfos;
+
+    x_session_register('aom_debug_generated_anonymous_userinfos');
+
+    assert('empty($aom_debug_generated_anonymous_userinfos) /* '.__FUNCTION__.' It seems func_aom_restore_anonymous_userinfo was not called after Func_aom_generate_anonymous_userinfo*/');
+}//}}}
 
 /**
  * Get available payment methods for provided order info

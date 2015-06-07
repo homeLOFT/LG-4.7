@@ -1,5 +1,6 @@
 {*
-79da6f427fcd3e1846b7f3755a5e1868217f8117, v7 (xcart_4_6_5), 2014-10-05 18:17:27, cc_gge4_hc.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v8 (xcart_4_7_1), 2015-03-16 15:05:13, cc_gge4_hc.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>First Data Global Gateway e4 - Hosted Payment Pages</h1>
@@ -48,7 +49,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="PAB"{if $module_data.param05 eq "PAB"} selected="selected"{/if}>Balboa (Panama)</option>
 <option value="BBD"{if $module_data.param05 eq "BBD"} selected="selected"{/if}>Barbados Dollar (Barbados)</option>
 <option value="BYB"{if $module_data.param05 eq "BYB"} selected="selected"{/if}>Belarussian Ruble (Belarus)</option>
-<option value="BEF"{if $module_data.param05 eq "BEF"} selected="selected"{/if}>Belgian Franc (Belgium)</option>
 <option value="BZD"{if $module_data.param05 eq "BZD"} selected="selected"{/if}>Belize Dollar (Belize)</option>
 <option value="BMD"{if $module_data.param05 eq "BMD"} selected="selected"{/if}>Bermudian Dollar (Bermuda)</option>
 <option value="VEB"{if $module_data.param05 eq "VEB"} selected="selected"{/if}>Bolivar (Venezuela)</option>
@@ -106,8 +106,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="INR"{if $module_data.param05 eq "INR"} selected="selected"{/if}>Indian Rupee (India)</option>
 <option value="IRR"{if $module_data.param05 eq "IRR"} selected="selected"{/if}>Iranian Rial (Islamic Republic Of Iran)</option>
 <option value="IQD"{if $module_data.param05 eq "IQD"} selected="selected"{/if}>Iraqi Dinar (Iraq)</option>
-<option value="IEP"{if $module_data.param05 eq "IEP"} selected="selected"{/if}>Irish Pound (Ireland)</option>
-<option value="ITL"{if $module_data.param05 eq "ITL"} selected="selected"{/if}>Italian Lira (Italy)</option>
 <option value="JMD"{if $module_data.param05 eq "JMD"} selected="selected"{/if}>Jamaican Dollar (Jamaica)</option>
 <option value="JOD"{if $module_data.param05 eq "JOD"} selected="selected"{/if}>Jordanian Dinar (Jordan)</option>
 <option value="KES"{if $module_data.param05 eq "KES"} selected="selected"{/if}>Kenyan Shilling (Kenya)</option>
@@ -129,14 +127,11 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="LRD"{if $module_data.param05 eq "LRD"} selected="selected"{/if}>Liberian Dollar (Liberia)</option>
 <option value="LYD"{if $module_data.param05 eq "LYD"} selected="selected"{/if}>Libyan Dinar (Libyan Arab Jamahiriya)</option>
 <option value="SZL"{if $module_data.param05 eq "SZL"} selected="selected"{/if}>Lilangeni (Swaziland)</option>
-<option value="LTL"{if $module_data.param05 eq "LTL"} selected="selected"{/if}>Lithuanian Litas (Lithuania)</option>
 <option value="LSL"{if $module_data.param05 eq "LSL"} selected="selected"{/if}>Loti (Lesotho)</option>
-<option value="LUF"{if $module_data.param05 eq "LUF"} selected="selected"{/if}>Luxembourg Franc (Luxembourg)</option>
 <option value="MGF"{if $module_data.param05 eq "MGF"} selected="selected"{/if}>Malagasy Franc (Madagascar)</option>
 <option value="MYR"{if $module_data.param05 eq "MYR"} selected="selected"{/if}>Malaysian Ringgit (Malaysia)</option>
 <option value="MTL"{if $module_data.param05 eq "MTL"} selected="selected"{/if}>Maltese Lira (Malta)</option>
 <option value="TMM"{if $module_data.param05 eq "TMM"} selected="selected"{/if}>Manat (Turkmenistan)</option>
-<option value="FIM"{if $module_data.param05 eq "FIM"} selected="selected"{/if}>Markka (Finland)</option>
 <option value="MUR"{if $module_data.param05 eq "MUR"} selected="selected"{/if}>Mauritius Rupee (Mauritius)</option>
 <option value="MZM"{if $module_data.param05 eq "MZM"} selected="selected"{/if}>Metical (Mozambique)</option>
 <option value="MXN"{if $module_data.param05 eq "MXN"} selected="selected"{/if}>Mexican Peso (Mexico)</option>
@@ -149,7 +144,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="NAD"{if $module_data.param05 eq "NAD"} selected="selected"{/if}>Namibia Dollar (Namibia)</option>
 <option value="NPR"{if $module_data.param05 eq "NPR"} selected="selected"{/if}>Nepalese Rupee (Nepal)</option>
 <option value="ANG"{if $module_data.param05 eq "ANG"} selected="selected"{/if}>Netherlands (Netherlands)</option>
-<option value="NLG"{if $module_data.param05 eq "NLG"} selected="selected"{/if}>Netherlands Guilder (Netherlands)</option>
 <option value="YUM"{if $module_data.param05 eq "YUM"} selected="selected"{/if}>New Dinar (Yugoslavia)</option>
 <option value="ILS"{if $module_data.param05 eq "ILS"} selected="selected"{/if}>New Israeli Sheqel (Israel)</option>
 <option value="AON"{if $module_data.param05 eq "AON"} selected="selected"{/if}>New Kwanza (Angola)</option>
@@ -168,7 +162,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="UYU"{if $module_data.param05 eq "UYU"} selected="selected"{/if}>Peso Uruguayo (Uruguay)</option>
 <option value="PHP"{if $module_data.param05 eq "PHP"} selected="selected"{/if}>Philippine Peso (Philippines)</option>
 <option value="XPT"{if $module_data.param05 eq "XPT"} selected="selected"{/if}>Platinum</option>
-<option value="PTE"{if $module_data.param05 eq "PTE"} selected="selected"{/if}>Portuguese Escudo (Portugal)</option>
 <option value="GBP"{if $module_data.param05 eq "GBP"} selected="selected"{/if}>Pound Sterling (United Kingdom)</option>
 <option value="BWP"{if $module_data.param05 eq "BWP"} selected="selected"{/if}>Pula (Botswana)</option>
 <option value="QAR"{if $module_data.param05 eq "QAR"} selected="selected"{/if}>Qatari Rial (Qatar)</option>
@@ -183,14 +176,12 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="RUR"{if $module_data.param05 eq "RUR"} selected="selected"{/if}>Russian Ruble (Russian Federation)</option>
 <option value="RWF"{if $module_data.param05 eq "RWF"} selected="selected"{/if}>Rwanda Franc (Rwanda)</option>
 <option value="SAR"{if $module_data.param05 eq "SAR"} selected="selected"{/if}>Saudi Riyal (Saudi Arabia)</option>
-<option value="ATS"{if $module_data.param05 eq "ATS"} selected="selected"{/if}>Schilling (Austria)</option>
 <option value="SCR"{if $module_data.param05 eq "SCR"} selected="selected"{/if}>Seychelles Rupee (Seychelles)</option>
 <option value="XAG"{if $module_data.param05 eq "XAG"} selected="selected"{/if}>Silver</option>
 <option value="SGD"{if $module_data.param05 eq "SGD"} selected="selected"{/if}>Singapore Dollar (Singapore)</option>
 <option value="SBD"{if $module_data.param05 eq "SBD"} selected="selected"{/if}>Solomon Islands Dollar (Solomon Islands)</option>
 <option value="KGS"{if $module_data.param05 eq "KGS"} selected="selected"{/if}>Som (Kyrgyzstan)</option>
 <option value="SOS"{if $module_data.param05 eq "SOS"} selected="selected"{/if}>Somali Shilling (Somalia)</option>
-<option value="ESP"{if $module_data.param05 eq "ESP"} selected="selected"{/if}>Spanish Peseta (Spain)</option>
 <option value="LKR"{if $module_data.param05 eq "LKR"} selected="selected"{/if}>Sri Lanka Rupee (Sri Lanka)</option>
 <option value="SHP"{if $module_data.param05 eq "SHP"} selected="selected"{/if}>St Helena Pound (St Helena)</option>
 <option value="ECS"{if $module_data.param05 eq "ECS"} selected="selected"{/if}>Sucre (Ecuador)</option>

@@ -6,7 +6,7 @@
  * @package     X-Cart
  * @subpackage  CSS
  * @author      Ruslan R. Fazlyev <rrf@x-cart.com>
- * @version     5307525d7b7d0f425aef4f633889acf5cf835714, v43 (xcart_4_7_0), 2015-01-13 13:19:29, altskin.css, mixon
+ * @version     e3d24e0673e060caaa5d9485743b85b1f5e3c61e, v44 (xcart_4_7_1), 2015-03-09 18:30:42, altskin.css, mixon
  * @link        http://www.x-cart.com/
  * @see         ____file_see____
  */
@@ -3079,9 +3079,6 @@ select.adv-search-select {
   }
   .flc-right-dialog {
     margin-left: 0;
-  }
-  #email_note {
-    margin: -85px 0 0 -152px;
   }
   .address .address-field input,
   .address .address-field select {

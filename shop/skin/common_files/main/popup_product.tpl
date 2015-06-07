@@ -1,5 +1,5 @@
 {*
-63b14304b7080e4c3a8d1aa79cbfc7f1f1d03756, v12 (xcart_4_7_0), 2015-02-19 14:11:28, popup_product.tpl, mixon
+350c1de67ae3adfecfca4eb85c00b3b3f521d895, v13 (xcart_4_7_2), 2015-04-07 14:24:30, popup_product.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -125,7 +125,7 @@ function checkCategory () {
 <b>{$lng.lbl_products}:</b><br />
 <select name="productid" size="20" style="width: 100%" ondblclick="javascript: setProductInfo();" onchange="javascript: showTitle(this.options[this.selectedIndex].text, 'left');">
 {section name=prod_idx loop=$products}
-    <option value="{$products[prod_idx].productid}">{$products[prod_idx].product} ({$products[prod_idx].productcode})</option>
+    <option value="{$products[prod_idx].productid}" title="{$products[prod_idx].product|cat:' ('|cat:$products[prod_idx].productcode|strip_tags:false|escape})">{$products[prod_idx].product} ({$products[prod_idx].productcode})</option>
 {/section}
 </select><br /><br />
 <center>

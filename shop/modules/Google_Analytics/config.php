@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v9 (xcart_4_7_0), 2015-02-17 23:56:28, config.php, Yuriy
+ * @version    786a9944edba11226877bfd6eec8f47aa836cbc4, v10 (xcart_4_7_1), 2015-03-31 10:10:54, config.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -58,9 +58,14 @@ if (
     func_constant('AREA_TYPE') == 'C'
     && empty($config['Google_Analytics']['ganalytics_code'])
 ) {
+    global $smarty;
     // Disable module for customer area
     unset($active_modules['Google_Analytics']);
-    $smarty->assign('active_modules', $active_modules);
+
+    if (!empty($smarty)) {
+        $smarty->assign('active_modules', $active_modules);
+    }
+
     return;
 }
 

@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v26 (xcart_4_7_0), 2015-02-17 23:56:28, fancy_categories.php, Yuriy
+ * @version    7b79378dac39e23466f777ebd246768ed6458635, v27 (xcart_4_7_2), 2015-04-16 16:16:33, fancy_categories.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -72,6 +72,7 @@ if (!$fancy_use_cache) {
 }
 
 $smarty->assign('fancy_use_cache', $fancy_use_cache);
+$smarty->assign('fancy_use_ajax', func_fc_is_ajax_possible());
 
 $css_files['Flyout_Menus'] = array(
     array('subpath' => $config['Flyout_Menus']['fancy_categories_skin'] . '/'),

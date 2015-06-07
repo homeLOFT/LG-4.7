@@ -1,5 +1,5 @@
 {*
-c0b7a742f56d4cd9d5875fb9a121be48c4674208, v29 (xcart_4_7_0), 2014-12-20 17:15:41, product_details.tpl, aim
+d1f618d07bfb3ccbea7c1b9571ffe6befc1e9ff0, v30 (xcart_4_7_2), 2015-04-08 12:02:21, product_details.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -288,7 +288,7 @@ var product_avail = 1;
 
   </table>
 
-  {if $product.forsale ne "B"}
+  {if $product.forsale ne "B" and not ($smarty.get.pconf ne "" and $active_modules.Product_Configurator)}
 
     <ul class="simple-list">
     {if $product.appearance.buy_now_buttons_enabled}
@@ -335,7 +335,7 @@ var product_avail = 1;
 
     </ul>
 
-  {elseif $product.appearance.buy_now_buttons_enabled}
+  {elseif $product.appearance.buy_now_buttons_enabled and $product.forsale eq "B"}
 
     {$lng.txt_pconf_product_is_bundled}
 

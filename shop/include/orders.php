@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v166 (xcart_4_7_0), 2015-02-17 23:56:28, orders.php, Yuriy
+ * @version    6baaddca397672f05266e7cfbc61c883e0b3bb5b, v167 (xcart_4_7_2), 2015-04-13 18:04:34, orders.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -861,7 +861,7 @@ if ($mode == 'search') {
 
                         $order_proxy_ip = func_query_first_cell("SELECT value FROM $sql_tbl[order_extras] WHERE khash = 'proxy_ip' AND orderid = '$v[orderid]'");
 
-                                               $orders[$k]['blocked'] = !func_ip_check($order_proxy_ip ? $order_proxy_ip : $order_ip) ? 'Y' : 'N';
+                                               $orders[$k]['blocked'] = func_sl_ip_is_blocked($order_proxy_ip ? $order_proxy_ip : $order_ip) ? 'Y' : 'N';
                         $orders[$k]['ip'] = $order_ip;
 
                     }

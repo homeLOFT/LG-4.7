@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v24 (xcart_4_7_0), 2015-02-17 23:56:28, mod_FEDEX_RateService_v14.php, Yuriy
+ * @version    632599ba952d5dba1b9cafac3013bf8092aa9308, v25 (xcart_4_7_1), 2015-03-16 18:04:39, mod_FEDEX_RateService_v14.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -599,7 +599,7 @@ function func_fedex_prepare_items_soap($packages, $fedex_options, $userinfo)
 
     $i = 1;
 
-    foreach ($packages as $pack) {
+    foreach ($packages as $key=>$pack) {
 
         if ($fedex_options['param02'] == 'Y') {
             $pack = func_array_merge($pack, $specified_dims);
@@ -610,24 +610,23 @@ function func_fedex_prepare_items_soap($packages, $fedex_options, $userinfo)
         $dimensions_soap = func_fedex_prepare_dimensions_soap($pack, $fedex_options);
         $special_services = func_fedex_prepare_special_services_package_soap($pack, $fedex_options, $userinfo);
 
-        $items_soap = array(
-            'RequestedPackageLineItems' => array(
-                'SequenceNumber' => $i,
-                'GroupPackageCount' => 1,
-                'Weight' => array(
-                    'Units' => 'LB',
-                    'Value' => $pack['weight'],
-                ),
-                'Dimensions' => $dimensions_soap,
-                'SpecialServicesRequested' => $special_services
-            )
+        $_item_soap = array(
+            'SequenceNumber' => $i,
+            'GroupPackageCount' => 1,
+            'Weight' => array(
+                'Units' => 'LB',
+                'Value' => $pack['weight'],
+            ),
+            'Dimensions' => $dimensions_soap,
+            'SpecialServicesRequested' => $special_services
         );
 
         if (!$is_smartpost_request) {
-            $items_soap['RequestedPackageLineItems']['InsuredValue'] = func_fedex_prepare_insured_value_soap($pack, $fedex_options);
+            $_item_soap[$key]['InsuredValue'] = func_fedex_prepare_insured_value_soap($pack, $fedex_options);
         }
 
         $i++;
+        $items_soap['RequestedPackageLineItems'][] = $_item_soap;
     }
 
     return $items_soap;

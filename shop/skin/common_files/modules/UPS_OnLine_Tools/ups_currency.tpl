@@ -1,5 +1,6 @@
 {*
-7bf6e1dae914fb2328491acdf27a9e0080994668, v3 (xcart_4_6_2), 2014-01-05 11:51:40, ups_currency.tpl, aim
+8aa48be3738200137a0388bf014095a89b5a1a77, v4 (xcart_4_7_1), 2015-03-16 15:05:13, ups_currency.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <option value="AFN" {if $selected eq "AFN"} selected="selected"{/if}>Afghani, AFN</option>
@@ -85,7 +86,6 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="LRD" {if $selected eq "LRD"} selected="selected"{/if}>Liberian Dollar, LRD</option>
 <option value="LYD" {if $selected eq "LYD"} selected="selected"{/if}>Libyan Dinar, LYD</option>
 <option value="SZL" {if $selected eq "SZL"} selected="selected"{/if}>Lilangeni, SZL</option>
-<option value="LTL" {if $selected eq "LTL"} selected="selected"{/if}>Lithuanian Litas, LTL</option>
 <option value="LSL" {if $selected eq "LSL"} selected="selected"{/if}>Loti, LSL</option>
 <option value="MGA" {if $selected eq "MGA"} selected="selected"{/if}>Malagascy Ariary, MGA</option>
 <option value="MYR" {if $selected eq "MYR"} selected="selected"{/if}>Malaysian Ringgit, MYR</option>

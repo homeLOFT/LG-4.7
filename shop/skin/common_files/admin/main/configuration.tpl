@@ -1,5 +1,5 @@
 {*
-4cf872650c331fbccd85b315692f96ff27d39ed0, v39 (xcart_4_7_0), 2014-12-30 17:01:14, configuration.tpl, aim
+352ade9d4c5e19ed7b895b1004fc09349fa35799, v40 (xcart_4_7_2), 2015-04-24 12:04:22, configuration.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -224,7 +224,7 @@ $('#alt_image').attr('src', ssPreviewSrc);
 
       {elseif $configuration[cat_num].type eq "numeric"}
 
-        <input id="{$configuration[cat_num].name}" type="text" size="10" name="{$configuration[cat_num].name}" value="{$configuration[cat_num].value|formatnumeric}" />
+        <input id="{$configuration[cat_num].name}" type="text" size="10" name="{$configuration[cat_num].name}" value="{$configuration[cat_num].value}" />
 
       {elseif $configuration[cat_num].type eq "text" or $configuration[cat_num].type eq "trimmed_text"}
 

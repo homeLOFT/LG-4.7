@@ -1,10 +1,11 @@
 {*
-2a30536f400a253c86be1a18eb00603b4ad45f18, v1 (xcart_4_5_1), 2012-06-22 11:52:57, head.tpl, aim
+b5c36b3069740cf8dd17b81c4136b8aaa2d5fb92, v3 (xcart_4_7_2), 2015-04-24 12:06:42, head.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <div class="line1">
   <div class="logo">
-    <a href="{$catalogs.customer}/home.php"><img src="{$AltImagesDir}/custom/logo.png" alt="" /></a>
+    <a href="{$catalogs.customer}/home.php"><img src="{$AltImagesDir}/custom/logo.png" alt="{$config.Company.company_name}" /></a>
   </div>
   <div class="header-links">
 		<div class="wrapper">

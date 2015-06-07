@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v33 (xcart_4_7_0), 2015-02-17 13:29:01, stop_list.php, aim
+ * @version    6baaddca397672f05266e7cfbc61c883e0b3bb5b, v34 (xcart_4_7_2), 2015-04-13 18:04:34, stop_list.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -44,8 +44,9 @@
 require __DIR__.'/auth.php';
 require $xcart_dir.'/include/security.php';
 
-if(empty($active_modules['Stop_List']))
+if(empty($active_modules['Stop_List'])) {
     func_403(28);
+}
 
 $location[] = array(func_get_langvar_by_name('lbl_stop_list'), '');
 
@@ -55,7 +56,7 @@ $dialog_tools_data['left'][] = array('link' => "stop_list.php?mode=add", 'title'
 /**
  * Add/Modify IP
  */
-if ($mode == 'add' && $octet && @count($octet) == 4) {
+if ($mode == 'add' && !empty($octet) && count($octet) == 4) {
     $flag_int = true;
     foreach ($octet as $k => $v) {
         if ($v != '*')

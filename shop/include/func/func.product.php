@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v256 (xcart_4_7_0), 2015-02-17 23:56:28, func.product.php, Yuriy
+ * @version    c38fc08c3f2a968971d19b9e6ba7337618e67024, v257 (xcart_4_7_1), 2015-03-17 11:41:49, func.product.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -305,7 +305,7 @@ class XCRangeProductIds extends XCSQLRanges {
 
         $rangeSize = ($this->max_nav_pages+2) * $this->objects_per_page;
         $rangeSize = max(intval(self::MIN_RANGE_SIZE / $this->objects_per_page) * $this->objects_per_page, $rangeSize, $this->objects_per_page);
-        $offset = intval($first_page / $rangeSize) * $rangeSize;
+        $offset = abs(intval($first_page / $rangeSize) * $rangeSize);
 
         $this->sqlOffset = $offset;
         $this->offsetInRange = $first_page >= $offset 

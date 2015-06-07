@@ -1,10 +1,12 @@
 {*
-44bfc83815ad5e5c06a58f653cbba8c5f1b89b87, v16 (xcart_4_7_0), 2015-03-02 13:29:05, opc_profile.tpl, aim
+859c724068bc5ea8332a5711e6c0acf7f8de6a10, v18 (xcart_4_7_1), 2015-03-16 20:39:00, opc_profile.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
 
 <div id="opc_profile">
+
+  {load_defer file="modules/One_Page_Checkout/lib/jquery.hide-show.min.js" type="js"}
 
   <h2>{$lng.lbl_name_and_address}</h2>
   <script type="text/javascript">
@@ -44,8 +46,20 @@ vim: set ts=2 sw=2 sts=2 et:
         {include file='modules/One_Page_Checkout/profile/newslist_info.tpl' hide_header=true}
         ***}
 
+        {if $login ne ''}
+            {assign var="button_label" value=$lng.lbl_save}
+        {else}
+            {assign var="button_label" value=$lng.lbl_submit}
+        {/if}
+
+        {include file="customer/buttons/button.tpl" button_title=$button_label additional_button_class="main-button update-profile" type="input" assign="submit_button"}
+
         {if $active_modules.Image_Verification and $show_antibot.on_registration eq 'Y' and $display_antibot}
-            {include file="modules/Image_Verification/spambot_arrest.tpl" mode="simple" id=$antibot_sections.on_registration antibot_err=$reg_antibot_err}
+            {include file="modules/Image_Verification/spambot_arrest.tpl" mode="simple" id=$antibot_sections.on_registration antibot_err=$reg_antibot_err button_code=$submit_button}
+        {else}
+        <div class="button-row" align="center">
+            {$submit_button}
+        </div>
         {/if}
   
       </fieldset>

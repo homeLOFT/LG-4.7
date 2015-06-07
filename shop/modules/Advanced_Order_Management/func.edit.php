@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    afcfe679f47a233f4ee1908321b6732676a15465, v63 (xcart_4_7_0), 2015-03-03 21:59:53, func.edit.php, mixon
+ * @version    19083a0be06baecd0a2e9948692c7a4ca7bb7013, v64 (xcart_4_7_1), 2015-03-09 10:50:11, func.edit.php, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -126,7 +126,7 @@ function func_aom_update_prices($products, $customer_info)
         }
 
         // Update product taxes
-        $products[$k]['extra_data']['taxes'] = $products[$k]['taxes'] = $_taxes;
+        $products[$k]['taxes'] = $_taxes;
     }
     return $products;
 } // }}}
@@ -225,6 +225,11 @@ function func_recalculate_totals($cart)
             $cart['paymentid']
         )
     );
+
+    // Update product taxes extra data with calculated tax values bt:0143563
+    foreach ($cart['products'] as $k => $v) {
+        $cart['products'][$k]['extra_data']['taxes'] = $cart['products'][$k]['taxes'];
+    }
 
     $cart['total'] = $cart['total_cost'];
 

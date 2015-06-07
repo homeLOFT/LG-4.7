@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v306 (xcart_4_7_0), 2015-02-17 23:56:28, init.php, Yuriy
+ * @version    233b03f96d1a001701a8875b30c4d46db58f5290, v307 (xcart_4_7_1), 2015-03-05 15:49:22, init.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -1268,6 +1268,7 @@ if (defined('DEVELOPMENT_MODE')) {
     if (
         !defined('XCART_INSTALLER')
         && !defined('DO_NOT_START_SESSION')
+        && defined('XC_DEBUG_CHECK_NON_SAVED_SESSION_VARS')
     ) {
         register_shutdown_function('func_dev_check_non_saved_session_vars');
     }

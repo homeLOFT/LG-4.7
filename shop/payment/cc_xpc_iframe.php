@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    7935adb949cac5546ce2160f50d39aac3b49a0ff, v20 (xcart_4_7_0), 2015-02-19 17:47:45, cc_xpc_iframe.php, random
+ * @version    3ffa496e8098a538e8366aef4504a1e4398b9381, v22 (xcart_4_7_1), 2015-03-27 16:31:10, cc_xpc_iframe.php, random
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -121,6 +121,11 @@ if ($xpc_action == 'xpc_end') {
     $lbl_ok = func_get_langvar_by_name('lbl_ok', NULL, FALSE, TRUE);
     $close_action = ($type != XPC_IFRAME_ALERT) ? 'window.location.reload();' : '$'+"(o.element).dialog('destroy').remove();";
 
+    if (func_strlen($payment_method) > 32) {
+        // Strip too long payment method name because it will not fit popup 
+        $payment_method = func_substr($payment_method, 0, 32). '...';
+    }
+
     $jscode = <<<JS
 var buttons = {};
 buttons['$lbl_ok'] = function() {
@@ -130,7 +135,6 @@ buttons['$lbl_ok'] = function() {
 $(o.element).dialog(
     {
         title: '$payment_method',
-        maxWidth: '350px',
         close: function() {
             $close_action
         },
@@ -182,6 +186,7 @@ JS;
             'customer_notes' => !empty($Customer_Notes) ? $Customer_Notes : '',
             'ip' => $CLIENT_IP,
             'proxy_ip' => $PROXY_IP,
+            'store_currency' => !empty($store_currency) ? $store_currency : '',
         );
         xpc_set_customer_extras_in_session($extras);
     } elseif (!empty($Customer_Notes)) {

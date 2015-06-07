@@ -8,7 +8,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com> 
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    686a4c944b1bab093a0d60e12aff76ce8db05664, v43 (xcart_4_7_0), 2015-02-18 13:16:20, common.js, aim
+ * @version    b28ef3c02cb1fa1782a63e70c3387d0e483c1117, v46 (xcart_4_7_1), 2015-03-25 15:43:07, common.js, mixon
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -1065,20 +1065,27 @@ function checkFormFields() {
 
   var errFields = [];
 
-  if (!this.tagName || this.tagName.toUpperCase() != 'FORM') {
+  if (!this.tagName || this.tagName.toUpperCase() !== 'FORM') {
 
     if (
       arguments.length > 0
       && arguments[0]
       && arguments[0].tagName
-      && arguments[0].tagName.toUpperCase() == 'FORM'
+      && arguments[0].tagName.toUpperCase() === 'FORM'
     ) {
-      arguments[0].fieldToCheck =
+        arguments[0].silentCheck =
+            arguments[1]
+                // skip any interaction with user, just return the validation result
+                && (silentCheck = (arguments[1] === 'silentCheck'))
+            ? silentCheck : false;
+
+        arguments[0].fieldToCheck =
             $(arguments[1]).is('input, select')
+                // validate provided field update its UI state and return validation result
                 && (fieldLabel = $('label[for="' + arguments[1].id + '"]', $(arguments[1]).parents())).length > 0
             ? fieldLabel : false;
 
-      return checkFormFields.call(arguments[0]);
+        return checkFormFields.call(arguments[0]);
     }
 
     return true;
@@ -1166,17 +1173,20 @@ function checkFormFields() {
 
     if (err) {
       error_found = true;
-      if (!first_obtained_err) {
-        markErrorField(f, empty ? lbl_field_required: '');
-      } else {
-        markErrorField(f, errMsg == txt_email_invalid ? txt_email_invalid : '');
-      }
 
+      if (frm.silentCheck === false) {
+        if (!first_obtained_err) {
+          markErrorField(f, empty ? lbl_field_required : (errMsg === txt_email_invalid ? txt_email_invalid : ''));
+        } else {
+          markErrorField(f, errMsg === txt_email_invalid ? txt_email_invalid : '');
+        }
+      }
       if (
         is_admin_editor
         || (
             !first_obtained_err
             && frm.fieldToCheck === false
+            && frm.silentCheck === false
         )
       ) {
         $(f).focus();
@@ -1187,7 +1197,11 @@ function checkFormFields() {
           errFields[errFields.length] = $(this).html();
       }
       else {
-        if (!first_obtained_err && frm.fieldToCheck === false) {
+        if (
+            !first_obtained_err
+            && frm.fieldToCheck === false
+            && frm.silentCheck === false
+        ) {
           xAlert(substitute(errMsg,
             'field',
             $(this).html()),
@@ -1239,13 +1253,13 @@ function markErrorField(f, errLabel) {
       $(document.createElement('div')).attr('class', 'error-label').appendTo($(f).parent()).html(errLabel);
     }
 
-    $(f).bind('keydown', function(event) {
+    $(f).bind('keydown', kdf = function(event) {
       if (event.keyCode == '13') {
         event.preventDefault();
       }
       if ($.trim($(this).val() + String.fromCharCode(event.keyCode)) != '') {
         $(container).removeClass('fill-error').find('div.error-label').remove();
-        $(this).unbind('keydown');
+        $(this).unbind('keydown', kdf);
       }
     });
   }

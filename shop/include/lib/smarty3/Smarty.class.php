@@ -1613,7 +1613,7 @@ class SmartyException extends Exception
 
     public function __toString()
     {
-        return ' --> Smarty: ' . (self::$escape ? htmlentities($this->message) : $this->message) . "\nBacktrace:" . print_r($this->getTrace(), true) . ' <-- ';
+        return ' --> Smarty: ' . (self::$escape ? htmlentities($this->message) : $this->message) . ' <-- ';
     }
 }
 

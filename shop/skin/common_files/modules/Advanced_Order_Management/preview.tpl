@@ -1,5 +1,5 @@
 {*
-9b60d75728318a07bf48c3e1baed27812035ad61, v2 (xcart_4_7_0), 2015-03-02 11:01:49, preview.tpl, mixon
+64e8bc2a380c93109cd8d0bf86eacd1fa78841fa, v3 (xcart_4_7_1), 2015-03-19 13:52:39, preview.tpl, aim
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -15,7 +15,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <br />
 {/if}
 {capture name=dialog}
-<table width="100%">
+<table width="100%" id="table_aom_order_preview">
 <tr> 
 <td valign="top"> 
 <br />

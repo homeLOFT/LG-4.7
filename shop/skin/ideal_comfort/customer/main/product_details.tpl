@@ -1,5 +1,5 @@
 {*
-c0b7a742f56d4cd9d5875fb9a121be48c4674208, v18 (xcart_4_7_0), 2014-12-20 17:15:41, product_details.tpl, aim
+d1f618d07bfb3ccbea7c1b9571ffe6befc1e9ff0, v19 (xcart_4_7_2), 2015-04-08 12:02:21, product_details.tpl, mixon
 
 vim: set ts=2 sw=2 sts=2 et:
 *}
@@ -257,7 +257,7 @@ var product_avail = 1;
           <span class="product-min-amount">{$lng.txt_need_min_amount|substitute:"items":$product.min_amount}</span>
       {/if}
 		{if $product.appearance.buy_now_buttons_enabled}
-			 {if $product.forsale ne "B"}
+			{if $product.forsale ne "B" and not ($smarty.get.pconf ne "" and $active_modules.Product_Configurator)}
 			<div class="buttons-row">
 
       {* Uncomment this line if you don't want buy more button behavior:
@@ -280,7 +280,7 @@ var product_avail = 1;
 			{/if}
 
 			</div>
-			{else}
+			{elseif $product.forsale eq "B"}
 
 			  {$lng.txt_pconf_product_is_bundled}
 
@@ -320,7 +320,7 @@ var product_avail = 1;
     {include file="modules/Bill_Me_Later/banner.tpl" bml_page='product'}
   {/if}
 
-  {if $product.forsale ne "B"}
+  {if $product.forsale ne "B" and not ($smarty.get.pconf ne "" and $active_modules.Product_Configurator)}
 
     {if $active_modules.Socialize or $config.Company.support_department neq ""}
       <ul class="simple-list">
@@ -343,7 +343,7 @@ var product_avail = 1;
       </ul>
     {/if}
 
-  {elseif $product.appearance.buy_now_buttons_enabled}
+  {elseif $product.appearance.buy_now_buttons_enabled and $product.forsale eq "B"}
 
     {$lng.txt_pconf_product_is_bundled}
 

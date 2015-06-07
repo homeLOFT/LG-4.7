@@ -1,5 +1,6 @@
 {*
-3f3719a06f22d5abd58d928af3b760f1bef26a28, v9 (xcart_4_5_4), 2012-10-17 13:05:29, address_box.tpl, random 
+00ff796773a5eb6baebb428c09de3b8f40e2132e, v10 (xcart_4_7_2), 2015-04-13 16:29:42, address_box.tpl, aim 
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 {if $mode eq "select" and not $add_new}
@@ -17,7 +18,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
       {if $add_new}
           <div class="new-address-label">
-            <a class="new-address" href="popup_address.php" onclick="javascript: return !popupOpen('popup_address.php{if $mode eq 'select'}?return=select&for={$for}&type={$type}{/if}');">{$lng.lbl_add_new_address}</a>
+            <a class="new-address" href="popup_address.php" onclick="javascript: return !popupOpen('popup_address.php{if $mode eq 'select'}?return=select&for={$for|escape:'html'}&type={$type|escape:'html'}{/if}');">{$lng.lbl_add_new_address}</a>
           </div>
 
       {else}

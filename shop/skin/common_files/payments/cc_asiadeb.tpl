@@ -1,5 +1,6 @@
 {*
-850e5138e855497e58a9e99e00c2e8e04e3f7234, v1 (xcart_4_4_0_beta_2), 2010-05-21 08:31:50, cc_asiadeb.tpl, joy
+8aa48be3738200137a0388bf014095a89b5a1a77, v2 (xcart_4_7_1), 2015-03-16 15:05:13, cc_asiadeb.tpl, aim
+
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <h1>AsiaDebit</h1>
@@ -25,16 +26,7 @@ vim: set ts=2 sw=2 sts=2 et:
 <option value="USD"{if $module_data.param02 eq "USD"} selected="selected"{/if}>US dollar</option>
 <option value="EUR"{if $module_data.param02 eq "EUR"} selected="selected"{/if}>Euro</option>
 <option value="GBP"{if $module_data.param02 eq "GBP"} selected="selected"{/if}>British pound</option>
-<option value="ATS"{if $module_data.param02 eq "ATS"} selected="selected"{/if}>Austria Schilling</option>
-<option value="BEF"{if $module_data.param02 eq "BEF"} selected="selected"{/if}>Belgium Franc</option>
-<option value="FIM"{if $module_data.param02 eq "FIM"} selected="selected"{/if}>Finland Markka</option>
-<option value="IEP"{if $module_data.param02 eq "IEP"} selected="selected"{/if}>Ireland Punt</option>
-<option value="ITL"{if $module_data.param02 eq "ITL"} selected="selected"{/if}>Italy Lira</option>
-<option value="LUF"{if $module_data.param02 eq "LUF"} selected="selected"{/if}>Luxembourg Francs</option>
-<option value="NLG"{if $module_data.param02 eq "NLG"} selected="selected"{/if}>Netherlands (Dutch) Guilders</option>
 <option value="NOK"{if $module_data.param02 eq "NOK"} selected="selected"{/if}>Norway Kroner</option>
-<option value="PTE"{if $module_data.param02 eq "PTE"} selected="selected"{/if}>Portugal Escudo</option>
-<option value="ESP"{if $module_data.param02 eq "ESP"} selected="selected"{/if}>Spain Pesetas</option>
 <option value="CHF"{if $module_data.param02 eq "CHF"} selected="selected"{/if}>Switzerland Francs</option>
 <option value="THB"{if $module_data.param02 eq "THB"} selected="selected"{/if}>Thailand Baht</option>
 <option value="SGD"{if $module_data.param02 eq "SGD"} selected="selected"{/if}>Singapore Dollars</option>

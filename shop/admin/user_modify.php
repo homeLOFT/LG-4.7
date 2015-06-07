@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    3968cba5ecdb78320d43cbe05a25fe35597bc800, v86 (xcart_4_7_0), 2015-02-17 13:29:01, user_modify.php, aim
+ * @version    74263836b15b91831b023701d21dcf13b36a0447, v87 (xcart_4_7_2), 2015-04-10 10:08:37, user_modify.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -83,8 +83,9 @@ if (isset($_loc_type[$_usertype])) {
     $location[] = array(func_get_langvar_by_name($_loc_type[$_usertype]), '');
 
 } elseif (!empty($_usertype)) {
+    $_msg_array = array('B' => 'txt_wrong_usertype_modifyB');
     $top_message = array(
-        'content' => func_get_langvar_by_name('txt_wrong_usertype_modify'),
+        'content' => func_get_langvar_by_name(isset($_msg_array[$_usertype]) ? $_msg_array[$_usertype] : 'txt_wrong_usertype_modify'),
         'type' => 'E'
     );
 

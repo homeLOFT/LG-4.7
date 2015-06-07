@@ -36,7 +36,7 @@
  * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
  * @copyright  Copyright (c) 2001-2015 Qualiteam software Ltd <info@x-cart.com>
  * @license    http://www.x-cart.com/license.php X-Cart license agreement
- * @version    2b39e63712da5477e1aaf5cfa80d1370f583bce9, v134 (xcart_4_7_0), 2015-02-17 23:56:28, wishlist.php, Yuriy
+ * @version    529b9420324e8dab959f98bca9b77a78f458cad2, v135 (xcart_4_7_2), 2015-04-13 13:21:02, wishlist.php, aim
  * @link       http://www.x-cart.com/
  * @see        ____file_see____
  */
@@ -286,7 +286,7 @@ if ($mode == 'addgc2wl') {
         func_array2update(
             'wishlist',
             array(
-                'amount' => $amount + $oamount,
+                'amount' => intval($amount + $oamount),
             ),
             "wishlistid='$_wishlistid'"
         );
@@ -296,12 +296,12 @@ if ($mode == 'addgc2wl') {
         func_array2insert(
             'wishlist',
             array(
-                'userid'    => $logged_userid,
-                'productid' => $productid,
-                'amount'    => $amount,
+                'userid'    => intval($logged_userid),
+                'productid' => intval($productid),
+                'amount'    => intval($amount),
                 'options'   => $_options,
                 'object'    => $object,
-                'event_id'  => $eventid,
+                'event_id'  => intval($eventid),
             )
         );
     }
