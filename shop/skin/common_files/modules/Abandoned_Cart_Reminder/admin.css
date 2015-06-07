@@ -1,0 +1,119 @@
+/* vim: set ts=2 sw=2 sts=2 et: */
+/**
+ * Abandoned Cart Reminder module CSS stylesheet
+ *
+ * @category   X-Cart
+ * @package    X-Cart
+ * @subpackage CSS
+ * @author     Ruslan R. Fazlyev <rrf@x-cart.com>
+ * @version    $Id$
+ * @link       http://www.x-cart.com/
+ * @see        ____file_see____
+ */
+
+#abcr-search-pattern {
+  width: 360px;
+}
+
+#abcr-search-results-table {
+  width: 100%;
+}
+
+#abcr-search-results-table td {
+  vertical-align: top;
+  text-align: center;
+}
+
+#abcr-search-results-table .abcr-product-column {
+  min-width: 350px;
+}
+
+#abcr-search-results-table .abcr-search-result {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#abcr-search-results-table .abcr-product-column,
+#abcr-search-results-table .abcr-profile-column
+{
+  text-align: left;
+}
+
+#abcr-search-results-table .address-line,
+#abcr-search-results-table .address-section
+{
+  margin: 5px 0;
+}
+
+#abcr-search-results-table .address-box {
+  text-align: left;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+#abcr-search-results-table .address-section {
+  margin: 5px 0;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.abcr-product-column .abcr-product-list {
+  padding-left: 10px;
+}
+
+#abcr-coupon-params-header {
+  line-height: 24px;
+}
+
+#abcr-order-statistic {
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#abcr-order-statistic .abcr-orders-cell {
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#abcr-order-statistic .abcr-orders-cell .abcr-order-entry {
+  width: 100%;
+  line-height: 20px;
+}
+
+#abcr-order-statistic #abcr-total {
+  padding-top: 10px;
+  text-align: left;
+}
+
+#abcr-search-by-date, #abcr-search-by-email {
+  padding-right: 20px;
+}
+
+
+.abcr-submit-search {
+  width: 90px;
+}
+
+.abcr-notified-cart {
+  background-color: #DFF1E1;
+}
+
+.abcr-notified-cart.TableSubHead {
+  background-color: #CDE3C3;
+}
+
+#abcr-filter-order-statistic {
+  margin-bottom: 30px;
+}
+
+#abcr-filter-order-statistic .abcr-header {
+  padding-right: 80px;
+}
+
+#abcr-filter-order-statistic .abcr-start-date, #abcr-filter-order-statistic .abcr-end-date {
+  padding-right: 20px;
+}
+
