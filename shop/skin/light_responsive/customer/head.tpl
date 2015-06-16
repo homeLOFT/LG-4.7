@@ -26,9 +26,13 @@ vim: set ts=2 sw=2 sts=2 et:
 
       </div>
 
-      
-
     </div>
+    
+    <div class="swatch"><a class="swatchreq-link" href="#" rel="noindex">
+      </a>
+        <div id="sr-modal"></div>
+      </div>
+    
     <div class="contact"><a class="custcare-link" href="#" rel="noindex">
     </a>
       <div id="cc-modal"></div>

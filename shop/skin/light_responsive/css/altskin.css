@@ -537,6 +537,164 @@ a.call-link:hover {
   opacity: 0.58;
 }
 
+/* swatch request link */
+
+.swatch {
+  position: absolute;
+  right: 124px;
+  top: 27px;
+}
+a.swatchreq-link {
+  display: block;
+  background-image: url(/common/images/wrapper_Sprite.png);
+  height: 29px;
+  width: 110px;
+  background-position: -864px -231px;
+  outline:none;
+}
+a.swatchreq-link:hover {
+  background-position: -864px -202px;
+}
+
+/* swatch request modal */
+
+#sr-modal {
+  	max-height:90% !important;
+}
+.srmodal {
+  	left: 0 !important;
+  	top: 0 !important;
+  	width: 98% !important;
+  	height: 100% !important;
+  	overflow-y: scroll !important;
+  	background:none !important;
+  	border-right: 1px solid #b5b5b5;
+  	border-top: 0;
+  	border-bottom: 0;
+  	border-left: 0;
+  	border-radius: 0 !important;
+}
+.srmodal .ui-button {
+  	border-radius:2px;
+  	text-transform: uppercase;
+  	font-size: 13px !important;
+}
+.srmodal .ui-dialog-buttonset {
+	float: none;
+  	position: absolute;
+  	top: 4px;
+  	right: 10px;
+}
+.srmodal .ui-dialog-buttonpane {
+  	border:0;
+  	margin:0;
+  	padding:0;
+}
+.srmodal .ui-dialog-buttonpane .ui-button.ui-state-hover {
+  	background-image: none;
+  	background-color: #676767;
+  	border: 1px solid #676767;
+}
+.srmodal .ui-dialog-buttonpane .ui-button.ui-state-default .ui-button-text {
+  	color:#717171;
+}
+.srmodal .ui-dialog-buttonpane .ui-button.ui-state-hover .ui-button-text {
+  	color:#fff;
+}
+.srmodal .ui-widget-content {
+  	border:0 !important;
+  	color:#676767;
+}
+.swatchreq-body {
+  	width: 56%;
+  	float: right;
+  	padding: 0 11px 0 0;
+}
+.swatchreq-body p {
+  	font-size: 15px;
+  	font-weight: 300;
+  	margin: 2px 0px 0px;
+}
+.swatchreq-body .fa-plus-square:before {
+  	color: #5194c5 !important;
+}
+.swatchreq-body .desctools{
+	max-width:100%;
+}
+.swatchreq-side {
+	width:35%;
+	float:right;
+}
+a.swatchreq-email {
+  	background-image: url(/common/images/wrapper_Sprite.png);
+  	display: block;
+  	width: 167px;
+  	height: 41px;
+  	background-position: -552px -511px;
+}
+a.swatchreq-email:hover {
+  	background-position: -552px -467px;
+}
+.swatchreq-body .swatchTile img {
+	width:120px;
+	height:auto;
+}
+.swatch-request .mod-page {
+  	max-width: 100%;
+}
+.swatchreq-body .toggle-list a {
+  	font-size: 13px;
+}
+.LGstyleGrid ul {
+  	width: 100%;
+  	margin: 0px;
+  	padding: 0px;
+}
+.LGstyleGrid li {
+  	width: 25%;
+  	height: auto;
+  	display: inline-block;
+  	border: 1px dashed #d5d5d5;
+  	margin: 3px 10px 10px 0;
+  	padding: 10px 10px 5px;
+}
+.LGstyleGrid li img {
+  	width: 100%;
+  	height: auto;
+}
+ul.swatchGrid {
+  	list-style: none;
+  	padding:0;
+}
+.swatchGrid li {
+  	display: inline-block;
+	max-width: 23%;
+}
+.swatchGrid .swatchTile {
+  	max-width: 110px;
+  	margin: 0 4px 0 0;
+}
+.swatchGrid .swatchTile img {
+  	max-width: 100%;
+  	height: auto;
+}
+.swatchRoller {
+  	margin-top:30%;
+}
+.swatchRoller #swatchName_display2 {
+  	font-size: 17px;
+  	margin-bottom: 2px;
+  	font-weight: 400;
+  	color: #5194c5;
+}
+.swatchRoller #swatchTitle {
+  	font-size: 15px;
+  	color: #717171;
+  	font-weight: 300;
+  	margin-right: 20%;
+}
+/* end swatch request modal */
+
 /* customer care modal */
 
 .customer-care h2, .customer-care h3, .customer-care h4 {
@@ -3887,7 +4045,7 @@ ul.swatchForm {
 	margin:1px 0 0 0;
   }
   .menu-dialog .title-bar h2 {
-  font-size:17px;
+  	font-size:17px;
   }
    .product-details #orderform {
 	width:360px;
@@ -3900,11 +4058,14 @@ ul.swatchForm {
   }
   .products .buy-now .quantity,
 .quantity-row .quantity {
-  font-size:14px;
+  	font-size:14px;
   }
   select#product_avail {
-  font-size:13px;
+  	font-size:13px;
 }
+.swatch {
+  	right: 0;
+  	top: 46px;
 }
 @media screen and (min-width:960px) and (max-width:989px) {
 
@@ -4351,6 +4512,15 @@ ul.footer span {
 }
 .contact {
   display:none;
+}
+a.swatchreq-email {
+  	width: 110px;
+  	height: 29px;
+  	background-position: -864px -229px;
+}
+.swatchRoller #swatchTitle {
+  font-size: 12px;
+  margin-right: 9%;
 }
 }
 @media screen and (max-width:395px) {

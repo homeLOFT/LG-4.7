@@ -33,6 +33,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 <script src="/js/customer_care.js"></script>
+<script src="/js/swatch_req.js"></script>
 
 {* WCM - Dynamic Product Tabs *}
 {if $main eq "product" AND $active_modules.WCM_Dynamic_Product_Tabs}
