@@ -70,7 +70,7 @@
   width: auto;
 }
 .product-added .upselling.details {
-  width: 32%;
+  width: 31%;
   text-align: left;
 }
 .product-added .upselling .buy-now br {
@@ -115,7 +115,10 @@
   margin-right: -5px;
   margin-left: 6px;
 }
-
+.proceed-to-checkout .fa.fa-shopping-cart {
+  padding-left: 6px;
+  color: #fff;
+}
 @media screen and (max-width:767px) {
   .product-added.ui-dialog .ui-dialog-content {
     overflow-y: scroll !important;
