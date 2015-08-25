@@ -25,21 +25,21 @@ ga('send', 'pageview');
   // Ecommerce Tracking for order_message page
   {foreach from=$orders item="order"}
     ga('ecommerce:addTransaction', {ldelim}
-      'ID'          : "{$order.order.orderid}",           // order ID - required
-      'Affiliation' : "{$partner|default:'Main stock'}",  // affiliation or store name
-      {if $order.order.shipping_cost gt 0}'Shipping' : '{$order.order.shipping_cost}',{/if} // shipping
-      {if $order.order.tax gt 0}'Tax' : '{$order.order.tax}',{/if}  // tax
-      'Revenue'     : "{$order.order.total}"          // total - required
+      'id'          : "{$order.order.orderid}",           // order ID - required
+      'affiliation' : "{$partner|default:'Main stock'}",  // affiliation or store name
+      'revenue'     : "{$order.order.total}",          // total - required
+      'shipping'    : "{$order.order.shipping_cost}",  // shipping
+      'tax'         : "{$order.order.tax}"    // tax
     {rdelim});
 
     {foreach from=$order.products item="product"}
       ga('ecommerce:addItem', {ldelim}
-        'ID'        : "{$order.order.orderid}",           // order ID - required
-        'SKU'       : "{$product.productcode|wm_remove|escape:javascript}", // SKU/code - required
-        'Name'      : "{$product.product|wm_remove|escape:javascript}{if $active_modules.Product_Options ne "" and $product.product_options_txt} ({$product.product_options_txt|replace:"\n":", "|wm_remove|escape:javascript}){/if}", // product name
-        'Category'  : "{$product.category|default:'Unknown category'}", // category or variation
-        'Price'     : "{$product.price}",          // unit price - required
-        'Quantity'  : "{$product.amount}"          // quantity - required
+        'id'        : "{$order.order.orderid}",           // order ID - required
+        'sku'       : "{$product.productcode|wm_remove|escape:javascript}", // SKU/code - required
+        'name'      : "{$product.product|wm_remove|escape:javascript}{if $active_modules.Product_Options ne "" and $product.product_options_txt} ({$product.product_options_txt|replace:"\n":", "|wm_remove|escape:javascript}){/if}", // product name
+        'category'  : "{$product.category|default:'Unknown category'}", // category or variation
+        'price'     : "{$product.price}",          // unit price - required
+        'quantity'  : "{$product.amount}"          // quantity - required
       {rdelim});
     {/foreach}
 
