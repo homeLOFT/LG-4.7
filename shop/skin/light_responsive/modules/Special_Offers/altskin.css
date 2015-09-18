@@ -11,7 +11,7 @@
  * @see        ____file_see____
  */
 .offers-short-list {
-  padding-right: 130px;
+  padding-right: 10px;
   position: relative;
   margin-bottom: 0;
 }
@@ -21,9 +21,13 @@
   right: 0;
   width: 130px;
 }
+.offers-more-info {
+	display:none;
+}
 .offers-cell {
   box-sizing: border-box;
   margin-bottom: 1em;
+  width:100% !important;
 }
 .offers-cell > p:first-child {
   margin-top: 0;

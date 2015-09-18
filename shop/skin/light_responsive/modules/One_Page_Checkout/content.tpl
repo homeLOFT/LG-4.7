@@ -72,6 +72,10 @@ If a "Special Order" is refused because of color, seating
 firmness, size, or the customer decides they do not like the product, LeatherGroups.com 
 will not accept the item and the customer will be responsible for any additional 
 shipping charges incurred. No refunds will be issued for Special Orders.
+<h2>Full Grain Leather</h2>
+Full Grain leather is leather that is not corrected, meaning that scars and natural markings are not "corrected" or buffed/sanded away as with Corrected Top Grain leather, or other more processed leathers. Natural scars and markings are celebrated as part of the natural beauty of Full Grain leather. Unless a scar affects comfort or is affecting the structural integrity of the leather, we will not repair, issue credits, replace parts or replace furniture for natural scars on full grain leather furniture.
+<h2>Dimensions</h2>
+All dimensions for our leather furniture are approximate. This is because padded, upholstered furniture can vary from stated dimensions due to the solid wood frames being wrapped in padding and having leather tightly wrapped around them.  Unless dimensions are off by over 2 inches, we will not repair, issue credits, or replace furniture for normal dimensional variances. 
 <h2>Color Accuracy</h2>
 LeatherGroups.com makes every effort to provide the most accurate pictures of the merchandise sold by LeatherGroups.com. All digital photography used to represent the products sold by LeatherGroups.com are studio shots of the actual models that are sold. Computer monitors can vary in display, and leather is an imperfect product with shade variations a very real possibility. LeatherGroups.com will not be held responsible for matching any colors to your existing decor, or any shade variances inherent with all leather products. Any "In-Stock" Order return due to color is subject to our Cancellation and Return Policy. Special Orders cannot be returned.
 <h2>Sales Tax</h2>
@@ -80,7 +84,7 @@ LeatherGroups.com is not required to collect sales tax on orders delivered outsi
 For "In-Stock" orders, payment in full is required at the time of purchase in order to initiate the order. For "Special Orders" LeatherGroups.com will allow the customer to place a 50% non-refundable deposit, if it is specified to us at the time of the order. Otherwise, LeatherGroups.com reserves the right to charge the entire amount of the order at the time of purchase.
 <h2>Warranties</h2>
 All products offered through LeatherGroups.com come with the full, standard manufacturer warranty. These warranties vary in length from one year to limited lifetime. All specific details regarding warranties to a particular piece of furniture can be relayed to you by a LeatherGroups.com representative and may be displayed on our product detail pages. Manufacturer warranty begins at the time of delivery of your merchandise. LeatherGroups.com will not be responsible for any indirect, special or consequential damages related to warranty of product, delivery or delivery timing other than specifically described. Manufacturers may dispatch a trained repair or evaluation professional to handle warranty claims, however, the customer is responsible for any transportation charges between customer location and local repair facility, except when indicated in a specific third party warrany product. The manufacturers of products sold at LeatherGroups.com reserve the right to repair, or replace, at their discretion, any pieces included in a warranty claim.
-<h2>Copright, Content and Applicable Law</h2>All content included and/or 
+<h3>Copright, Content and Applicable Law</h3>All content included and/or 
 used on this Web site, such as logos, text, graphics, photographs, images, and 
 software is the property of LeatherGroups.com or its suppliers, and is copyrighted 
 unless otherwise noted, and is protected by US and international copyright laws. 
