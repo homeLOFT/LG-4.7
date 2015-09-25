@@ -73,28 +73,3 @@ vim: set ts=2 sw=2 sts=2 et:
 
 {/capture}
 {include file="customer/dialog.tpl" title=$lng.lbl_invoice content=$smarty.capture.dialog noborder=true}
-
-{literal}
-
-<!-- Google Code for Made a purchase Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 1071958683;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "iU7dCOH3p18Qm5WT_wM";
-var google_conversion_value = 100.00;
-var google_conversion_currency = "USD";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1071958683/?value=100.00&amp;currency_code=USD&amp;label=iU7dCOH3p18Qm5WT_wM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-
-{/literal}
