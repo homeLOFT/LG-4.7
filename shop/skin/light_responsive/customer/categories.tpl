@@ -7,6 +7,21 @@ vim: set ts=2 sw=2 sts=2 et:
 {include file="customer/search.tpl"}
 
 <div class="menu-dialog menu-categories">
+  <div class="title-bar"><h2>Styles we make here in America!</h2></div>
+  <div class="content">
+    <ul>
+    <li><a href="Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather">Arizona Leather Furniture Collection</a></li>
+    <li><a href="Bonham-Leather-Furniture-Collection">Bonham Leather Furniture Collection</a></li>
+    <li><a href="Braxton-Leather-Furniture-Collection">Braxton Leather Furniture Collection</a></li>
+    <li><a href="Dexter-Leather-Furniture-Collection">Dexter Leather Furniture Collection</a></li>
+    <li><a href="Langston-Leather-Furniture-Collection">Langston Leather Furniture Collection</a></li>
+    <li><a href="Midtown-Leather-Furniture-Collection">Midtown Leather Furniture Collection</a></li>
+    <li><a href="Reno-Leather-Furniture-Collection">Reno Leather Furniture Collection</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dialog menu-categories">
   <div class="title-bar"><h2>Search by Category</h2></div>
   <div class="content">
     <ul>
