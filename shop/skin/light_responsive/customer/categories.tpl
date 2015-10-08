@@ -7,7 +7,12 @@ vim: set ts=2 sw=2 sts=2 et:
 {include file="customer/search.tpl"}
 
 <div class="menu-dialog menu-categories">
-  <div class="title-bar"><h2>Styles we make here in America!</h2></div>
+  <div class="title-bar">
+    <h2>
+      <span style="text-transform: lowercase;">home<span style="color: #5194c5;">loft</span>
+     </span> Leather Collections
+    </h2>
+  </div>
   <div class="content">
     <ul>
     <li><a href="Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather">Arizona Leather Furniture Collection</a></li>
