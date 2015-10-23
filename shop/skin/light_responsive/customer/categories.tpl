@@ -23,6 +23,7 @@ vim: set ts=2 sw=2 sts=2 et:
     <li><a href="Midtown-Leather-Furniture-Collection">Midtown Leather Furniture Collection</a></li>
     <li><a href="Reno-Leather-Furniture-Collection">Reno Leather Furniture Collection</a></li>
     </ul>
+    <div class="sidepromo">{$lng.lbl_sidepromo}</div>
   </div>
 </div>
 
