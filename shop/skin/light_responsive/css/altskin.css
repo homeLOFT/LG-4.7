@@ -865,7 +865,47 @@ a.custcare-txt-email {
   border:0;
   color:#676767;
 }
-	
+
+/* Construction Tech */
+
+#suspension-tech, #frame-tech, #cushion-tech {
+    margin: 20px 0;
+    border-top: 2px solid #d5d5d5;
+    padding-top: 12px;
+}
+#suspension-tech h2, #frame-tech h2, #cushion-tech h2 {
+	font-size: 1.2em;
+	margin: 0;
+}
+ul.tech-block {
+    list-style:none;
+    width: 100%;	
+}
+li.tech-image {
+    max-width:49%;
+    display:inline-block;	
+}
+li.tech-image img {
+	width:475px;
+    max-width: 100%;
+    padding: 15px 0 0;
+}
+li.tech-desc {
+	max-width:49%;
+    display: inline-block;
+    vertical-align: top;
+    font-style: italic;
+	border-bottom: none;
+}
+.tech-text {
+	padding: 18px 15px 0;
+    line-height: 1.5;
+}
+.tech-text h3 {
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+    font-weight: 600;
+}
 @media screen and (max-width:740px) {
 .custcare-body {
 /*  width: 98%;
@@ -1159,6 +1199,7 @@ a.bread-crumb {
   padding-right: 7px;
   padding-left: 7px;
 }
+
 @media screen {
   /*home icon in location bar*/
   #location > a:first-child {
@@ -4066,6 +4107,18 @@ ul.swatchForm {
 .swatch {
   	right: 0;
   	top: 46px;
+}
+#suspension-tech, #frame-tech, #cushion-tech {
+    margin: 18px 0 0;
+    border-top: none;
+    padding-top: 0;  
+}
+li.tech-image, li.tech-desc {
+	max-width:100%;
+}
+li.tech-desc {
+	border-bottom: 1px dashed #676767;
+	padding-bottom: 12px;
 }
 }
 @media screen and (min-width:960px) and (max-width:989px) {
