@@ -2345,6 +2345,11 @@ div.button a {
   background-image: url(/common/images/wrapper_Sprite.png);
   width:215px;
 }
+a.sidenavLinkGE, a.sidenavLinkVIP {
+    display: block;
+    height: 100%;
+    width: 215px;
+}
 .menu-secure {
   height:100px;
 }
