@@ -63,7 +63,7 @@ vim: set ts=2 sw=2 sts=2 et:
   </div><!-- /center -->
 </div><!-- /center-main -->
 
-{if ($main neq 'cart' or $cart_empty) and $main neq 'checkout'}
+{if ($main neq 'cart' or $cart_empty) and $main neq 'checkout' and $main neq 'pages'}
 <div id="left-bar">
   {include file="customer/left_bar.tpl"}
 </div>

@@ -292,6 +292,10 @@ li {
 #center-main {
   margin: 0 0 0 285px;
 }
+.pages-container #center-main {
+  text-align: left;
+  margin: 0 15px;
+}
 #header {
   top: 0;
   left: 0;
