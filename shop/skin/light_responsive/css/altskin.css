@@ -12,7 +12,7 @@
  */
 
 html, body{
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   min-width: 0;
 }
@@ -21,9 +21,9 @@ input,
 select,
 textarea,
 button {
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color: #333333;
+  color: #3f3f3f;
 }
 body {
   line-height: 1.42857143;
@@ -97,9 +97,9 @@ a.bread-crumb:hover
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4,.h5, .h6 {
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.1;
-  color: #404549;
+  color: #3f3f3f;
 }
 h1, h2, h3,
 .h1, .h2, .h3 {
@@ -111,8 +111,9 @@ h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 14px;
-  margin: 0 0 10px 4px;
+  font-size: 20px;
+  margin: 0 0 5px 4px;
+  font-weight:lighter;
 }
 h2, .h2 {
   font-size: 24px;
@@ -1255,18 +1256,20 @@ div.printable-bar {
   border-bottom-width: 0;
   height: auto;
   width: auto;
-  padding: 8px 4px 0;
+  padding:15px 4px 0;
   margin-bottom: 8px;
   overflow: visible;
 }
 .menu-dialog .title-bar h2 {
-  font-size: 12px;
-  color: #333333;
+  font-size: 14px;
+  color: #3f3f3f;
   font-weight: 300;
   height: auto;
   line-height: 1.1;
   white-space: inherit;
-  text-transform:uppercase;
+}
+.menu-dialog .title-bar a {
+  color: #3f3f3f;
 }
 .menu-dialog .content {
   padding: 0 5px 5px;
@@ -1367,7 +1370,7 @@ button.button .button-left {
   background-image: none;
   padding-right: 5px;
   padding-left: 15px;
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #597e90;
   font-weight: normal;
   font-size: 13px;
@@ -1395,7 +1398,7 @@ div.button div {
   padding-right: 0px;
   padding-left: 10px;
   line-height: 32px;
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #5194c5;
   font-weight: normal;
   font-size: 16px;
@@ -1584,7 +1587,7 @@ button.main-button.add-to-cart-button .button-left .fa {
 .products-div button.add-to-cart-button.do-add2cart-success .button-left,
 .products-div button.add-to-cart-button.do-add2cart-error .button-left {
   font-size: 9px !important;
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .products-div button.add-to-cart-button .button-left .fa {
   width: 100%;
@@ -1789,7 +1792,7 @@ a.search-sort-link:hover {
 a.up-direction:after,
 a.down-direction:after {
   margin-left: 5px;
-  font-family: "open sans",sans-serif;
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
 }
 a.up-direction:after {
@@ -2463,15 +2466,17 @@ a.sidenavLinkGE, a.sidenavLinkVIP {
 }
 .welcome-img h1 {
   text-align: left;
-  margin: 7px 0px 2px 5px;
-  text-transform: uppercase;
-  color: #5194c5;
+  margin: 15px 0px 2px 5px;
+  color: #3f3f3f;
+  font-size: 18px;
+  font-weight: lighter;
 }
 .welcome-img p {
-  color: rgb(103, 103, 103);
+  color: #6f6f6f	;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   margin: 5px 5px 20px 5px;
+  font-weight:lighter;
 }
 .welcome-img a {
   text-decoration:none;
@@ -2508,8 +2513,9 @@ ul.subcategories li:first-child {
   margin-top: 0;
 }
 .catTextDesc {
-  font-size:12px;
-  margin:0 2px;
+  font-size:13px;
+  margin:0 5px 11px;
+  font-weight:lighter;
 }
 .labels {
   display: inline-block;
@@ -3000,7 +3006,7 @@ table.product-properties .product-price-value,
 }
 .error-page .description {
   width: 70%;
-  font-family:"open sans" sans-serif;
+  font-family:'Open Sans', sans-serif;
   font-size:12px;
 }
 .error-page .reason {

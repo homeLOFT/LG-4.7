@@ -9,19 +9,20 @@ vim: set ts=2 sw=2 sts=2 et:
 <div class="menu-dialog menu-categories">
   <div class="title-bar">
     <h2>
+      <a href="homeloft-Leather-Furniture-Collections.html">
       <span style="text-transform: lowercase;">home<span style="color: #5194c5;">loft</span>
-     </span> Leather Collections
+     </span> Leather Collections</a>
     </h2>
   </div>
   <div class="content">
     <ul>
-    <li><a href="Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather">Arizona Leather Furniture Collection</a></li>
-    <li><a href="Bonham-Leather-Furniture-Collection">Bonham Leather Furniture Collection</a></li>
-    <li><a href="Braxton-Leather-Furniture-Collection">Braxton Leather Furniture Collection</a></li>
-    <li><a href="Dexter-Leather-Furniture-Collection">Dexter Leather Furniture Collection</a></li>
-    <li><a href="Langston-Leather-Furniture-Collection">Langston Leather Furniture Collection</a></li>
-    <li><a href="Midtown-Leather-Furniture-Collection">Midtown Leather Furniture Collection</a></li>
-    <li><a href="Reno-Leather-Furniture-Collection">Reno Leather Furniture Collection</a></li>
+    <li><a href="Arizona-Leather-Furniture-Collection.html">Arizona Leather Furniture Collection</a></li>
+    <li><a href="Bonham-Leather-Furniture-Collection.html">Bonham Leather Furniture Collection</a></li>
+    <li><a href="Braxton-Leather-Furniture-Collection.html">Braxton Leather Furniture Collection</a></li>
+    <li><a href="Dexter-Leather-Furniture-Collection.html">Dexter Leather Furniture Collection</a></li>
+    <li><a href="Langston-Leather-Furniture-Collection.html">Langston Leather Furniture Collection</a></li>
+    <li><a href="Midtown-Leather-Furniture-Collection.html">Midtown Leather Furniture Collection</a></li>
+    <li><a href="Reno-Leather-Furniture-Collection.html">Reno Leather Furniture Collection</a></li>
     </ul>
     <div class="sidepromo">{$lng.lbl_sidepromo}</div>
   </div>
@@ -37,8 +38,6 @@ Furniture Sets</a></li>
 Sofas</a></li>
     <li><a href="Leather-Sectional-Sofas.html">Leather 
 Sectional Sofas</a></li>
-    <li><a href="Leather-Home-Theater-Seating.html">Leather 
-Home Theater Furniture</a></li>
     <li><a href="Reclining-Leather-Furniture.html">Leather 
 Reclining Furniture</a></li>
     <li><a href="Leather-Loveseats.html">Leather 
@@ -55,13 +54,12 @@ Ottomans</a></li>
 </div>
 
 <div class="menu-dialog menu-brands">
-  <div class="title-bar"><h2>Search by Brand</h2></div>
+  <div class="title-bar"><h2>Guest Manufacturers</h2></div>
   <div class="content">
     <ul>
       <li><a href="Luke-Leather-Furniture.html">Luke Leather Furniture</a></li>
       <li><a href="Lane-Leather-Furniture.html">Lane Leather Furniture</a></li>
       <li><a href="Leather-Italia-Leather-Furniture.html">Leather Italia Leather Furniture</a></li>
-      <li><a href="Bradington-Young-Leather-Furniture.html">Bradington Young Leather Furniture</a></li>
       <li><a href="Coaster-Leather-Furniture.html">Coaster Leather Furniture</a></li>
     </ul>
   </div>
