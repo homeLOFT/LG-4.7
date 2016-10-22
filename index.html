@@ -37,12 +37,6 @@ function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window
 
 <!-- InstanceBeginEditable name="head" -->
 
-<script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-</script>
-
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -52,7 +46,13 @@ function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window
       });
     });
   
-  </script>  
+  </script> 
+  
+<script>
+$(document).ready( function() {
+    $("#promo-dock").load("promo-text.html");
+});
+</script>
 
 <!-- InstanceEndEditable -->
 <script type="text/javascript">
@@ -223,7 +223,7 @@ $(document).ready(function () {
     </div>  
   
     <div id="widget_703" class="content-widget promo-text-band zeroTopPad zeroBottomPad">
-      <div class="txtBandContent"><a href="http://support.leathergroups.com/customer/portal/topics/664561-sales-promotions/articles">For Limited Time, <strong>10% OFF EVERYTHING</strong> When you add to Cart. Read More &raquo;</a></div>
+      <div id="promo-dock" class="txtBandContent"></div>
     </div>
 
     <div id="widget_702" class="content-widget text-band zeroTopPad zeroBottomPad">
