@@ -2923,6 +2923,8 @@ table.product-properties .product-price-value,
 
 .products-div {
   margin-left: -16px;
+  position:relative;
+  clear:both;
 }
 .products-div .item {
   display: inline-block;
