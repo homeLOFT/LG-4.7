@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html><!-- InstanceBegin template="../leathergroups-4.7_ignore/templates/content_pages.dwt" codeOutsideHTMLIsLocked="false" -->
+<html><!-- InstanceBegin template="/Templates/content_pages.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
 
@@ -10,12 +10,12 @@
 <title>American Made Leather Furniture, Leather Sofas, Leather Chairs, Leather Sectionals, Custom Leather Furniture from LeatherGroups.com</title>
 <!-- InstanceEndEditable -->
 
-<link rel="stylesheet" type="text/css" href="common/lg44/css/lander.css" />
+<link rel="stylesheet" type="text/css" href="/common/css/lander.css" />
 <link rel="stylesheet" type="text/css" href="/shop/skin/common_files/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="/shop/skin/light_responsive/lib/jqueryui/jquery.ui.theme.css" />
 <link rel="stylesheet" type="text/css" href="/shop/skin/common_files/css/jquery_ui.css" />
-<link rel="stylesheet" type="text/css" href="common/lg44/js/slick/slick.css" />
-<link rel="stylesheet" type="text/css" href="common/lg44/js/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="/common/js/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="/common/js/slick/slick-theme.css" />
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet"> 
 
@@ -24,16 +24,46 @@
 
 <!-- InstanceBeginEditable name="meta" -->
 <meta name="Description" content="American Made  Leather Furniture, Custom Leather Sofas, Leather Sectional Sofas, Leather Chairs, Italian Brompton Leather Sofa Originals with Free Nationwide Delivery, LeatherGroups.com" /> 
-<meta name="Keywords" content="american made leather furniture, leather sofas, leather sofa, leather chair, leather sectionals, leathergroups, leather groups, custom leather furniture, custom leather sofa, italian brompton leather, catalog home furnishings, decorating, interior, design, sofa, brompton leather sofa, berkshire leather sectional, chair, entertaining, accessories, brompton leather sectional, leather, sectional, media seating" /> 
+<meta name="Keywords" content="american made leather furniture, leather sofas, leather sofa, leather chair, leather sectionals, leathergroups, leather groups, custom leather furniture, custom leather sofa, italian brompton leather, catalog home furnishings, decorating, interior, design, sofa, brompton leather sofa, berkshire leather sectional, chair, entertaining, accessories, brompton leather sectional, leather, sectional, media seating" />
 <!-- InstanceEndEditable -->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/common/lg44/js/slick/slick.min.js"></script>
+<script type="text/javascript" src="/common/js/slick/slick.min.js"></script>
 
-<!--<script type="text/javascript"> 
-function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window.open(URLtoOpen, windowName, windowFeatures); }
-</script>-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+$(function () {
+
+    $('#contact-form').validator();
+
+    $('#contact-form').on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
+            var url = "/common/php/contact.php";
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function (data)
+                {
+                    var messageAlert = 'alert-' + data.type;
+                    var messageText = data.message;
+
+                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    if (messageAlert && messageText) {
+                        $('#contact-form').find('.messages').html(alertBox);
+                        $('#contact-form')[0].reset();
+                    }
+                }
+            });
+            return false;
+        }
+    })
+});
+</script>
 
 <!-- InstanceBeginEditable name="head" -->
 
@@ -65,277 +95,584 @@ $(document).ready( function() {
   ga('send', 'pageview');
 
 </script>
-<script type="text/javascript">
-$(document).ready(function () {
 
-    $(".swatchreq-link").click(function (event) {
-        event.preventDefault();
-        $("#sr-modal").dialog({
-            autoOpen: false,
-            closeOnEscape: true,
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 2000,
-            modal: true,
-            fluid: true, //new option
-            resizable: false,
-            draggable: false,
-            dialogClass: 'srmodal',
-            buttons: {
-                "Close Window": function () {
-                    $("#sr-modal").dialog("close");
-                }
-            }
-        });
-
-        $(".ui-dialog-titlebar").hide();
-
-        $.get("/common/modal/pages/request-swatches.html", function (html) {
-
-            $("#sr-modal").html(html).dialog('open', {
-                show: {
-                    effect: 'slide',
-                    duration: 1500
-                },
-                hide: {
-                    effect: 'slide',
-                    duration: 1500
-                }
-            });
-        });
-    });
-});
-
-function swatchTitle(title){
-		document.getElementById("swatchTitle").innerHTML = title;
-}
-</script>
-<script type="text/javascript">
-$(document).ready(function () {
-
-    $(".custcare-link").click(function (event) {
-        event.preventDefault();
-        $("#cc-modal").dialog({
-            autoOpen: false,
-            closeOnEscape: true,
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 2000,
-            modal: true,
-            fluid: true, //new option
-            resizable: false,
-            draggable: false,
-            dialogClass: 'ccmodal',
-            buttons: {
-                "Close Window": function () {
-                    $("#cc-modal").dialog("close");
-                }
-            }
-        });
-
-        $(".ui-dialog-titlebar").hide();
-
-        $.get("/common/modal/pages/customer-care.html", function (html) {
-
-            $("#cc-modal").html(html).dialog('open', {
-                show: {
-                    effect: 'slide',
-                    duration: 1500
-                },
-                hide: {
-                    effect: 'slide',
-                    duration: 1500
-                }
-            });
-        });
-    });
-});
-</script>
 </head>
 
 <body style="margin:0px;">
-    <!-- begin header -->
+
+<!-- navbar header -->
   
-    <header>
-      <div class="logo"><a href="https://www.leathergroups.com"><img src="common/images/logo.png" alt="Leather Groups.com"></a></div>
-      <div class="phone"><a href="tel:+18778887632">1(877)888-7632</a> 7 DAYS/WEEK 9AM-7PM PST</div>
-      <div class="phone600"><a href="tel:+18778887632" class="phoneNumB">1(877) 888-7632</a><br>7 DAYS/WEEK<br>9AM-7PM PST</div>
-      <div class="swatch"><a class="swatchreq-link" href="#">
-      </a>
-        <div id="sr-modal"></div>
-      </div>
-      <div class="contact"><a class="custcare-link" href="#">
-      </a>
-        <div id="cc-modal"></div>
-      </div>
-    </header>
-    
-    <!-- begin nav -->
-    
-    <nav>
-      <span class="nav-btn"></span>
-      <ul class="nav">
-        <li><a href="/shop/Leather-Furniture-Sets.html">Leather Furniture Sets</a></li>
-        <li><a href="/shop/Leather-Sofas.html">Leather Sofas</a></li>
-        <li class="third"><a href="/shop/Leather-Sectional-Sofas.html">Leather Sectional</a></li>
-        <li><a href="/shop/Leather-Chairs.html">Leather Chairs</a></li>
-        <li><a href="/shop/Reclining-Leather-Furniture.html">Reclining Leather</a></li>
-        <li class="mobcat"><a href="/shop/Custom-Leather-Furniture.html">Custom Leather Furniture</a></li>
-        <li class="mobcat"><a href="/shop/Quick-Ship-Leather-Furniture.html">Quick Ship Leather Furniture</a></li>
-        <li class="mobcat"><a href="/shop/Luke-Leather-Furniture.html">Luke Leather Furniture</a></li>
-        <li class="mobcat"><a href="/shop/Lane-Leather-Furniture.html">Lane Leather Furniture</a></li>
-        <li class="last"><a href="/shop/Clearance-Leather-Furniture.html">Clearance</a></li>
+ <div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" id="navfluid">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.leathergroups.com/"><img src="/common/images/logo.png"  alt="Leather Groups.com"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop <span class="caret visible-xs-inline-block"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Sofas</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Sofas.html">Leather Sofas</a></li>
+			  <li><a href="/shop/Fabric-Sofas.html">Fabric Sofas</a></li>
+			  <li><a href="/shop/Small-Scale-Leather-Sofas.html">Small Scale Sofas</a></li>
+			  <li><a href="/shop/Deep-Leather-Sofas.html">Deep Sofas</a></li>
+            </ul>
+            <ul>
+              <li class="main-dd-header dropdown-header">Chairs</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Chairs.html">Chairs</a></li>
+			  <li><a href="/shop/Deep-Leather-Chairs">Deep Chairs</a></li>
+            </ul>
+            <ul>
+			  <li class="divider"></li>
+              <li><span class="detail-shop"><a href="/shop/Clearance-Leather-Furniture.html">Clearance Items</a></span></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Sectionals</li>
+			  <li class="divider"></li>
+			  <li><a href="/shop/Leather-Sectional-Sofas.html">Leather Sectionals</a></li>
+			  <li><a href="/shop/Fabric-Sectional-Sofas.html">Fabric Sectionals</a></li>
+			  <li><a href="/shop/Small-Scale-Leather-Sectional-Sofas.html">Small Scale Sectionals</a></li>              
+			  <li><a href="/shop/Deep-Leather-Sectional-Sofas.html">Deep Sectionals</a></li>
+            </ul>
+            <ul>
+              <li class="main-dd-header dropdown-header">Ottomans</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Ottomans.html">Ottomans</a></li>
+			  <li><a href="/shop/Leather-Cocktail-Ottomans.html">Cocktail Ottomans</a></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header dd-brand">homeloft</li>
+		      <li class="divider"></li>
+              <li><a href="/shop/homeloft-Leather-Sofas.html">Sofas</a></li>
+              <li><a href="/shop/homeloft-Leather-Sectional-Sofas.html">Sectionals</a></li>
+			  <li><a href="/shop/homeloft-Leather-Chairs.html">Chairs</a></li>
+              <li><a href="/shop/homeloft-Leather-Ottomans.html">Ottomans</a></li>
+              <li class="divider"></li>
+			  <li><a href="/shop/Arizona-Leather-Furniture-Collection.html">Arizona</a></li>
+			  <li><a href="/shop/Bonham-Leather-Furniture-Collection.html">Bonham</a></li>
+			  <li><a href="/shop/Braxton-Leather-Furniture-Collection.html">Braxton</a></li>
+			  <li><a href="/shop/Dexter-Leather-Furniture-Collection.html">Dexter</a></li>
+			  <li><a href="/shop/Langston-Leather-Furniture-Collection.html">Langston</a></li>
+			  <li><a href="/shop/Midtown-Leather-Furniture-Collection.html">Midtown</a></li>
+			  <li><a href="/shop/Reno-Leather-Furniture-Collection.html">Reno</a></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Guest Brands</li>
+			  <li class="divider"></li>
+			  <li><a href="/shop/Leather-Sofas-from-our-Guest-Brand-Partners.html">Leather Sofas</a></li>
+			  <li><a href="/shop/Leather-Sectionals-from-our-Guest-Brand-Partners.html">Leather Sectionals</a></li>
+              <li><a href="/shop/Leather-Loveseats-from-our-Guest-Brand-Partners.html">Leather Loveseats</a></li>
+			  <li><a href="/shop/Leather-Chairs-from-our-Guest-Brand-Partners.html">Leather Chairs</a></li>
+			  <li><a href="/shop/Leather-Ottomans-from-our-Guest-Brand-Partners.html">Leather Ottomans</a></li>
+			  <li class="divider"></li>
+			  <li class="drop-down-sub">by Guest Brand</li>
+              <li><a href="/shop/Luke-Leather-Furniture.html">Luke Leather</a></li>
+              <li><a href="/shop/Lane-Furniture.html">Lane Furniture</a>
+              <li><a href="/shop/Coaster-Company.html">Coaster</a></li>
+            </ul>
+          </li>
+          <li id="swaSwitch" class="col-md-4">
+					<a href="/our-leathers.html#request-leathers"><img class="img-responsive swaDropImg" src="https://leathergroups.imgix.net/Free-Leather-Samples.png?auto=format&q=60"  alt="Request Free Samples at LeatherGroups.com"></a>
+					</li>
+				<li class="col-md-12 shop-sec-section">
+						<div class="col-sm-3 section-resource">
+						<h4>Additional Info:</h4>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Financing</span>
+						<span class="detail-shop">We offer Deferred Interest Financing options through Synchrony Financial. <a href="/financing.html">Apply Now</a></span>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Our Process</span>
+						<span class="detail-shop">We've tried to build a process that creates a great experience for our customers. <a href="/order-process.html">Learn More</a></span>
+						</div>
+						<div style="border-right:none;" class="col-sm-3 section-resource">
+						<span class="heading-shop">Customization</span>
+						<span class="detail-shop">We can customize just about anything about the Leather Furniture that we build. <a href="/customization.html">Start Customizing</a></span>
+						</div>
+					</li>
       </ul>
-    </nav>
+    </li>
+    <li class="nonDrop"><a href="/shop/homeloft-Leather-Furniture-Collections.html">Collections</a></li>
+    <li class="nonDrop"><a href="/blog/category/customer-testimonials">Reviews</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Learn <span class="caret visible-xs-inline-block"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">About Us</li>
+			<li class="divider"></li>
+			<li><a href="/about-us.html">Our Story</a></li>
+            <li><a href="/quality.html">Craftsmanship</a></li>
+			<li><a href="/order-process.html">Our Process</a></li>
+			<li><a href="/guest-brands.html">Guest Brands</a></li>
+          </ul>
+        </li>
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">Resources</li>
+			<li class="divider"></li>
+			<li><a href="/construction.html">Quality Construction</a></li>
+			<li><a href="/our-leathers.html">Our Leathers</a></li>
+			<li><a href="/our-fabrics.html">Our Fabrics</a></li>
+			<li><a href="/shipping.html">Shipping</a></li>
+			<li><a href="/price-match.html">Price Match</a></li>
+			<li><a href="/returns.html">Returns</a></li>
+			<li><a href="/to-the-trade.html">To the Trade</a></li>
+			<li><a href="/financing.html">Financing</a></li>
+          </ul>
+        </li>
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">Inspiration</li>
+			<li class="divider"></li>
+			<li><a href="/customization.html">Customization</a></li>
+            <li><a href="https://www.leathergroups.com/blog/category/custom-leather-furniture-order-feed">Customer Orders </a></li>
+          </ul>
+        </li>
+        <li class="col-sm-4 hidden-sm learnDrop">
+					<a href="https://www.leathergroups.com/shop/Reno-Leather-Furniture-Collection.html"><img class="img-responsive learnDropImg" src="https://lg-cat.imgix.net/Reno-Leather-Furniture-Collection.png?auto=format&q=60"  alt="Reno Leather Furniture Collection at LeatherGroups.com">
+                    <h2>The Reno Leather Collection</h2></a>
+					</li>	
+				<li class="col-md-12 shop-sec-section">
+						<div class="col-sm-3 section-resource">
+						<h4>More About Us:</h4>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Our Collections</span>
+						<span class="detail-shop">American made Leather Furniture collections in top shelf leathers from Italy. <a href="/shop/homeloft-Leather-Furniture-Collections.html">Shop Collections</a></span>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Guest Brands</span>
+						<span class="detail-shop">Some products on our site are built by select Guest Brands. <a href="/guest-brands.html">Learn More</a></span>
+						</div>
+						<div style="border-right:none;" class="col-sm-3 section-resource">
+						<span class="heading-shop">Customization</span>
+						<span class="detail-shop">We can customize just about anything about the Leather Furniture that we build. <a href="/customization.html">Start Customizing</a></span>
+						</div>
+					</li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right hidden-xs">
+        <li class="dropdown"><span class="swatchNavBtn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Samples</a></span>
+          <ul class="dropdown-menu swatchNav">
+            <li>
+            <form id="contact-form" method="post" action="/common/php/contact.php" role="form" autocomplete="off">
+            <h2>Free Samples</h2>
+            <p>Nothing compares to seeing them in person</p>
+            <div class="row swatchNavImg">
+              <div class="col-sm-3"><div class="row swaGrid">
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Cocoa-Mocha.jpg" alt="Italian Brompton Cocoa Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Cocoa-Mocha2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Classic-Vintage.jpg" alt="Italian Brompton Classic Vintage Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Classic-Vintage2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Walnut.jpg" alt="Italian Brompton Walnut Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Walnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Cocoa.jpg" alt="Italian Berkshire Cocoa Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Cocoa2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Oxblood.jpg" alt="Italian Berkshire Oxblood Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Oxblood2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Pewter.jpg" alt="Italian Berkshire Pewter Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Pewter2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Camel.jpg" alt="Italian Berkshire Camel Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Camel2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Anthracite.jpg" alt="Italian Berkshire Anthracite Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Anthracite2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Chestnut.jpg" alt="" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Chestnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Timberwolf.jpg" alt="Italian Glove Timberwolf Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Timberwolf2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Truffle.jpg" alt="Italian Glove Truffle Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Truffle2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Chestnut.jpg" alt="Italian Glove Chestnut Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Chestnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Ruby.jpg" alt="Italian Glove Ruby Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Ruby2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Domaine-Bronze.jpg" alt="Italian Domaine Bronze Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Domaine-Bronze2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brentwood-Tan.jpg" alt="Italian Brentwood Tan Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brentwood-Tan2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Captains-Choice-Saddle.jpg" alt="Captains Choice Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Captains-Choice-Saddle2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Diablo-Tan.jpg" alt="Diablo Tan Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Diablo-Tan2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+<div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Range-Chocolate.jpg" alt="Range Chocolate Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Range-Chocolate2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Range-Black.jpg" alt="Range Black Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Range-Black2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Chaps.jpg" alt="Halter Chaps Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Chaps2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Oatmeal.jpg" alt="Halter Oatmeal Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Oatmeal2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Ranch.jpg" alt="Halter Ranch Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Ranch2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="aniline">Aniline Leathers</label>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="row swaGrid">
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Buckskin.jpg" alt="Jet Buckskin" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Buckskin-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Sand.jpg" alt="Jet Sand" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Sand-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Antique.jpg" alt="Jet Antique" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Antique-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Acajou.jpg" alt="Jet Acajou" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Acajou-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Peatmoss.jpg" alt="Jet Peatmoss" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Peatmoss-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Chestnut.jpg" alt="Jet Chestnut" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Chestnut-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Root.jpg" alt="Jet Root" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Root-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Carubo.jpg" alt="Jet Carubo" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Carubo-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="protected-earth-tones">Protected Leathers<br />(Browns and Earth Tones)</label>
+              </div>
+            </div>
+            <div class="col-sm-3"><div class="row swaGrid">
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Dash.jpg" alt="Jet Dash" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Dash-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Soul-White.jpg" alt="Jet Soul White" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Soul-White-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Lemon-Grass.jpg" alt="Jet Lemon Grass" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Lemon-Grass-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Parrot.jpg" alt="Jet Parrot" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Parrot-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Turquoise.jpg" alt="Jet Turquoise" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Turquoise-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Indigo.jpg" alt="Jet Indigo" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Indigo-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Iron.jpg" alt="Jet Iron" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Iron-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Black-Ink.jpg" alt="Jet Black Ink" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Black-Ink-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+            </div>
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" name="protected-bright-tones">Protected Leathers<br />(Whites, Colors, Bright Tones)</label>
+            </div>
+          </div>
+          <div class="col-sm-3"><div class="row swaGrid">
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Charcoal.png" alt="Belfast Charcoal" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Charcoal.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Grey.png" alt="Belfast Grey" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Grey.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Taupe.png" alt="Belfast Taupe" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Taupe.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/ENGLAND_Gravel.png" alt="England Gravel" onMouseOver="Tip('<img src=/color/swatches/pl/ENGLAND_Gravel.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/ENGLAND_Navy.png" alt="England Navy" onMouseOver="Tip('<img src=/color/swatches/pl/ENGLAND_Navy.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/GENEVA_Champagne.png" alt="Geneva Champagne" onMouseOver="Tip('<img src=/color/swatches/pl/GENEVA_Champagne.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/GENEVA_Charcoal.png" alt="Geneva Charcoal" onMouseOver="Tip('<img src=/color/swatches/pl/GENEVA_Charcoal.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/KLEIN_Otter.png" alt="Klein Otter" onMouseOver="Tip('<img src=/color/swatches/pl/KLEIN_Otter.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/KLEIN_Saffron.png" alt="Klein Saffron" onMouseOver="Tip('<img src=/color/swatches/pl/KLEIN_Saffron.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Black.png" alt="Loft Black" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Black.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Magnolia.png" alt="Loft Magnolia" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Magnolia.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Spa.png" alt="Loft Spa" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Spa.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/MARLOW_Burlap.png" alt="Marlow Burlap" onMouseOver="Tip('<img src=/color/swatches/pl/MARLOW_Burlap.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/MARLOW_Red.png" alt="Marlow Red" onMouseOver="Tip('<img src=/color/swatches/pl/MARLOW_Red.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/SAND_Azure.png" alt="Sand Azure" onMouseOver="Tip('<img src=/color/swatches/pl/SAND_Azure.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/SAND_Granite.png" alt="Sand Granite" onMouseOver="Tip('<img src=/color/swatches/pl/SAND_Granite.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+            </div>
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" name="fabrics">Stain Resistant Fabrics</label>
+            </div>
+          </div>
+        </div>
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required data-error="We need a name!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_address" type="text" name="address" class="form-control" placeholder="Full Street Address" required data-error="Where are we going to be sending these?">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required data-error="We'll need an email to send tracking :)">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_city" type="text" name="city" class="form-control" placeholder="City" required data-error="Don't forget your City!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-phone">
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number is Optional">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+	<div class="col-sm-10">
+		<select class="form-control" id="state" name="state" required data-error="Don't forget your State!">
+			<option value="">State</option>
+			<option value="AK">Alaska</option>
+			<option value="AL">Alabama</option>
+			<option value="AR">Arkansas</option>
+			<option value="AZ">Arizona</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DC">District of Columbia</option>
+			<option value="DE">Delaware</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="IA">Iowa</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MD">Maryland</option>
+			<option value="ME">Maine</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MO">Missouri</option>
+			<option value="MS">Mississippi</option>
+			<option value="MT">Montana</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="NE">Nebraska</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NV">Nevada</option>
+			<option value="NY">New York</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="PR">Puerto Rico</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VA">Virginia</option>
+			<option value="VT">Vermont</option>
+			<option value="WA">Washington</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WV">West Virginia</option>
+			<option value="WY">Wyoming</option>
+		</select>
+        <div class="help-block with-errors"></div>
+	</div>
+</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input id="form_zip" type="tel" name="zip" class="form-control" placeholder="Zip" required data-error="We need a zip code!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send my free samples">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+
+</form></li>
+            
+          </ul>
+        </li>
+        <li class="dropdown"><span class="ccNavBtn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</a></span>
+          <ul class="dropdown-menu ccNav">
+            <li>
+            <div class="col-md-3"><h2>Service</h2>
+            <p>However you contact us, we're here to help</p></div>
+            <div class="col-md-3">
+              <h3>Phone</h3>
+                <img src="https://leathergroups.imgix.net/Call-Us.png?auto=format&amp;q=60" alt="Call LeatherGroups.com">
+                <p class="ccSubNote"><span class="ccSubTel">1(877)888-7632</span> - 7am-7pm PST</p></div>
+            <div class="col-md-3">
+              <a href="http://support.leathergroups.com/customer/portal/emails/new"><div class="col-sm-12">
+              <h3>Email</h3>
+                <img src="https://leathergroups.imgix.net/Email-Us.png?auto=format&amp;q=60" alt="Email LeatherGroups.com">
+                <p class="ccSubNote">Click here to send us an email.  We' respond within a few hours at the most.</p></div></a></div>
+            <div class="col-md-3">
+              <h3>Chat</h3>
+                <img src="https://leathergroups.imgix.net/Chat-with-Us.png?auto=format&amp;q=60" alt="Chat with us here at LeatherGroups.com">
+                <p class="ccSubNote">Jump on with us right now at the bottom of your screen & we'll help you on the spot!</p></div>
+            </li>
+          </ul>
+        </li>
+        <li class="nonDrop"><a class="glyphicon glyphicon-shopping-cart" href="/shop/cart.php"></a></li>
+        <li class="nonDrop"><a class="glyphicon glyphicon-user" href="/shop/login.php"></a></li>
+      </ul>
+  </div>
+  </div>
+</div>
     
   <!-- InstanceBeginEditable name="MainArea" -->
-
-  <!-- begin main welcome panels --> 
-
-  <article>
-    <div id="widget_600" class="content-widget slick-page-hero zeroBottomPad zeroTopPad clearfix ">
-      <div class="slick-slider">
-        <div><a href="https://www.leathergroups.com/shop/Braxton-Leather-Sofa-Chaise-Sectional.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Braxton-Sofa-Chaise-Sectional-Italian-Destroyed-Leather-hero.png?auto=format&q=60" alt="Braxton Sofa Chaise Sectional in Italian Destroyed Leather "> 
+   
+<article>
+<div class="boot-widget slick-page-hero zeroBottomPad">
+    <div class="slick-slider">
+      <div><a href="https://www.leathergroups.com/shop/Braxton-Leather-Sofa-Chaise-Sectional.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Braxton-Sofa-Chaise-Sectional-Italian-Destroyed-Leather-hero.png?auto=format&q=60" alt="Braxton Sofa Chaise Sectional in Italian Destroyed Leather "> 
           <div class="slide-caption">
             <h2>Braxton</h2>
               <p>Italian Ragtime (Destroyed) Leather</p>
           </div></a>
-        </div>
-        <div><a href="https://www.leathergroups.com/shop/Langston-Leather-Sofa.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Langston-Leather-Sofa-Italian-Brentwood-Tan-front-view.png?auto=format&q=60" alt="Langston Leather Sofa in Italian Brentwood Tan Leather">
+      </div>
+      <div><a href="https://www.leathergroups.com/shop/Langston-Leather-Sofa.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Langston-Leather-Sofa-Italian-Brentwood-Tan-front-view.png?auto=format&q=60" alt="Langston Leather Sofa in Italian Brentwood Tan Leather">
           <div class="slide-caption">
             <h2>Langston</h2>
             <p>Italian Brentwood Tan</p>
           </div></a>
-        </div>
-        <div><a href="https://www.leathergroups.com/shop/Reno-Leather-Sectional-Sofa-with-Cuddler-Top-Grain-Aniline-Leather-Leather-Trend.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Reno-Leather-Sectional-Sofa-Italian-Glove-Timberwolf.png?auto=format&q=60" alt="Reno Leather Sectional Sofa with Cuddler in Italian Glove Timberwolf Leather">
+      </div>
+      <div><a href="https://www.leathergroups.com/shop/Reno-Leather-Sectional-Sofa-with-Cuddler-Top-Grain-Aniline-Leather-Leather-Trend.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Reno-Leather-Sectional-Sofa-Italian-Glove-Timberwolf.png?auto=format&q=60" alt="Reno Leather Sectional Sofa with Cuddler in Italian Glove Timberwolf Leather">
           <div class="slide-caption">
             <h2>Reno</h2>
             <p>Italian Glove Timberwolf</p>
           </div></a>
-        </div> 
-        <div><a href="https://www.leathergroups.com/shop/Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Arizona-Leather-Sofa-Chaise-Sectional-Italian-Brompton-Cocoa.png?auto=format&q=60" alt="Arizona Leather Sofa Chaise Sectional in Italian Brompton Classic Vintage Leather">
+      </div> 
+      <div><a href="https://www.leathergroups.com/shop/Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather.html"><img style="max-width:100%;" src="https://leathergroups.imgix.net/Arizona-Leather-Sofa-Chaise-Sectional-Italian-Brompton-Cocoa.png?auto=format&q=60" alt="Arizona Leather Sofa Chaise Sectional in Italian Brompton Classic Vintage Leather">
           <div class="slide-caption">
             <h2>Arizona</h2>
             <p>Italian Brompton Cocoa</p>
           </div></a>
-        </div>  
-      </div>
-    </div>  
-  
-    <div id="widget_703" class="content-widget promo-text-band zeroTopPad zeroBottomPad">
-      <div id="promo-dock" class="txtBandContent"></div>
+      </div>  
     </div>
-
-    <div id="widget_702" class="content-widget text-band zeroTopPad zeroBottomPad">
-      <div class="txtBandContent">Since 2002, We've Been Changing the way People buy Leather Furniture.</div>
+  </div>  
+  <div class="boot-widget promo-text-band zeroTopPad zeroBottomPad">
+    <div id="promo-dock" class="txtBandContent"></div>
+  </div>
+  <div class="boot-widget text-band zeroTopPad zeroBottomPad">
+    <div class="txtBandContent">Since 2002, We've Been Changing the way People buy Leather Furniture.</div>
+  </div>
+</article>
+  
+<!-- our collections -->
+  
+<article>
+  <div class="boot-widget zeroBottomPad">
+    <div class="introBox">
+      <h1>Our Collections</h1>
+      <p>American Made Leather Furniture, Built by Hand & Fully Customizable.</p>
     </div>
-  </article>
+  </div>   
+   
+<div class="boot-widget zeroTopPad zeroBottomPad">  
+  <ul class="landGrid">
+    <li><a href="shop/Braxton-Leather-Collection"><img src="https://leathergroups.imgix.net/Braxton-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Braxton Leather Furniture Collection in Italian Brompton Cocoa Leather" />
+        <h2>Braxton</h2></a>
+    </li>
+    <li><a href="shop/Langston-Leather-Collection"><img src="https://leathergroups.imgix.net/Langston-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Langston Leather Furniture Collection in Brompton Waxed Pullup Leather" />
+        <h2>Langston</h2></a>
+    </li>
+    <li><a href="shop/Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather.html"><img src="https://leathergroups.imgix.net/Arizona-Leather-Sofa-Chaise-Sectional.jpg?auto=format&q=60" alt="The Arizona Leather Sectional Sofa in Italian Brompton Vintage" />
+        <h2>Arizona</h2></a>
+    </li>
+    <li><a href="shop/Reno-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Reno-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="American Made Reno Leather Furniture Collection in Glove Timberwolf" />
+        <h2>Reno</h2></a>
+    </li>
+  </ul>
+</div>
+</article>
   
-  <!-- our collections -->
-  
-  <article>
-    <div id="widget_308" class="content-widget contentTopIntro zeroBottomPad">
-      <div class="introBox">
-        <h1>Our Collections</h1>
-        <p>American Made Leather Furniture, Built by Hand & Fully Customizable.</p>
-      </div>
-    </div>    
-    <ul class="landGrid">
-      <li><a href="shop/Braxton-Leather-Collection"><img src="https://leathergroups.imgix.net/Braxton-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Braxton Leather Furniture Collection in Italian Brompton Cocoa Leather" />
-        <h2>The Braxton Leather Collection</h2></a>
-      </li>
-      <li><a href="shop/Langston-Leather-Collection"><img src="https://leathergroups.imgix.net/Langston-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Langston Leather Furniture Collection in Brompton Waxed Pullup Leather" />
-        <h2>The Langston Leather Collection</h2></a>
-      </li>
-      <li><a href="shop/Arizona-Leather-Sectional-Sofa-with-Chaise-Top-Grain-Aniline-Leather.html"><img src="https://leathergroups.imgix.net/Arizona-Leather-Sofa-Chaise-Sectional.jpg?auto=format&q=60" alt="The Arizona Leather Sectional Sofa in Italian Brompton Vintage" />
-        <h2>Arizona Leather Sofa Chaise Sectional</h2></a>
-      </li>
-      <li><a href="shop/Reno-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Reno-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="American Made Reno Leather Furniture Collection in Glove Timberwolf" />
-        <h2>The Reno Leather Collection</h2></a>
-      </li>
-    </ul>
-  
-		<!-- specs -->
+	  <!-- specs -->
  
-    <div id="widget_309" class="content-widget contentTopIntro zeroBottomPad">
-      <div class="introBox">
-        <h2>Craftsmanship</h2>
-        <p></p>
-      </div>
+<article class="clearfix">
+  <div class="boot-widget zeroBottomPad">
+    <div class="introBox">
+      <h2>Craftsmanship</h2>
+      <p></p>
     </div>
-  
-    <div id="widget_406" class="content-widget multi-col-detail zeroTopPad clearfix">
-      <div class="content-det-3-col">
+  </div>
+  <div class="boot-widget col-md-12 zeroTopPad">
+    <div class="row content-3-det-row">
+      <div class="col-md-4 col-sm-4 content-det-col">
         <div class="content-det-icon content-det-rnd-img sm-rnd-img"><img src="https://leathergroups.imgix.net/8-way-Hand-Tied-Suspension-rnd.png?auto=format&w=300&h=300&q=60" alt="Choice of True 8-way Hand Tied Suspension or Heavy 9 Gauge Sinuous Spring Suspension">
         </div>
         <h3>Suspension Options</h3>
         <p>Choice of heavy gauge Sinuous Spring or true 8-way Hand Tied</p>
       </div>	
-      <div class="content-det-3-col">
+      <div class="col-md-4 col-sm-4 content-det-col">
         <div class="content-det-icon content-det-rnd-img sm-rnd-img"><img src="https://leathergroups.imgix.net/Solid-Hardwood-Frame-det.png?auto=format&w=300&h=300&q=60" alt="Kil Dried Solid Hardwood Frame, Reinforced and Built by hand in America">
         </div>
-          <h3>Solid Hardwood Frame</h3>
-          <p>Kiln-dried solid hardwood, reinforced for durability</p>
+        <h3>Solid Hardwood Frame</h3>
+        <p>Kiln-dried solid hardwood, reinforced for durability</p>
       </div>
-      <div class="content-det-3-col">
+      <div class="col-md-4 col-sm-4 content-det-col">
         <div class="content-det-icon content-det-rnd-img sm-rnd-img"><img src="https://leathergroups.imgix.net/Feather-and-Down-Seat-Cushions.png?auto=format&w=300&h=300&q=60" alt="Feather & Down Blend used in both the Seat & Back Cushions">
         </div>
-        <h3>Feather & Down Cushions</h3>
+        <h3>Feather & Down</h3>
         <p>Feather & Down blend in both the Seat & Back cushions</p>
       </div>
-      <div class="moreBox"><a href="https://www.leathergroups.com/construction.html">
-        <span class="blockBtn blueBtn">Learn More</span></a>
-      </div>	
     </div>
+    <div class="row col-md-12 content-3-det-row">
+    <div class="moreBox singleBtn"><a href="https://www.leathergroups.com/construction.html">
+      <span class="blockBtn blueBtn">Learn More</span></a>
+    </div>
+  </div>	
+  </div>
+</article>
 
-    <ul class="landGrid">
-      <li><a href="shop/Bonham-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Bonham-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Bonham Leather Furniture Collection in Italian Brentwood Tan" />
-        <h2>The Bonham Leather Collection</h2></a>
-      </li>
-      <li><a href="shop/Dexter-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Dexter-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Dexter Leather Furniture Collection in Boulevard Cocoa" />
-        <h2>The Dexter Leather Collection</h2></a>
-      </li>
-      <li><a href="shop/Midtown-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Midtown-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Midtown Leather Furniture Collection in Captains Choice Saddle" />
-        <h2>The Midtown Leather Collection</h2></a>
-      </li>
-      <li><a href="shop/homeloft-Fabric-Furniture-Collections"><img src="https://leathergroups.imgix.net/Fabric-Upholstered-Furniture-at-LeatherGroups.jpg?auto=format&q=60" alt="Upholstered Fabric Sofas and Sectionals" />
-        <h2>Fabric Upholstered Sofa Collections</h2></a>
-      </li>
-    </ul>
-  </article>        
+<div class="boot-widget zeroTopPad">
+  <ul class="landGrid">
+    <li><a href="shop/Bonham-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Bonham-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Bonham Leather Furniture Collection in Italian Brentwood Tan" />
+        <h2>Bonham</h2></a>
+    </li>
+    <li><a href="shop/Dexter-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Dexter-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Dexter Leather Furniture Collection in Boulevard Cocoa" />
+        <h2>Dexter</h2></a>
+    </li>
+    <li><a href="shop/Midtown-Leather-Furniture-Collection.html"><img src="https://leathergroups.imgix.net/Midtown-Leather-Furniture-Collection.jpg?auto=format&q=60" alt="The Midtown Leather Furniture Collection in Captains Choice Saddle" />
+        <h2>Midtown</h2></a>
+    </li>
+    <li><a href="shop/homeloft-Fabric-Furniture-Collections"><img src="https://leathergroups.imgix.net/Fabric-Upholstered-Furniture-at-LeatherGroups.jpg?auto=format&q=60" alt="Upholstered Fabric Sofas and Sectionals" />
+        <h2>Fabric</h2></a>
+    </li>
+  </ul>
+</div>
 
   
-  <!-- guest manufacturers -->
+<!-- guest manufacturers -->
   
-  <article>
-    <div id="widget_310" class="content-widget contentTopIntro zeroBottomPad">
-      <div class="introBox">
-        <h1>Guest Manufacturers</h1>
-        <p>We also feature a few select Guest Brands</p>
-      </div>
+<article>
+  <div class="boot-widget zeroTopPad zeroBottomPad">
+    <div class="introBox">
+      <h1>Guest Brands</h1>
+      <p>We offer select Guest Brand Products in addition to the Collections produced by Us</p>
     </div>
+  </div>
     
-    <ul class="landGrid">
-      <li><a href="shop/Luke-Leather-Furniture.html"><img src="https://leathergroups.imgix.net/Luke-Leather-Furniture.jpg?auto=format&q=60" alt="The Mark Leather Sofa by Luke Leather Furniture" />
-        <h2>Luke Leather Furniture</h2></a>
-      </li>
-      <li><a href="shop/Lane-Leather-Furniture.html"><img src="https://leathergroups.imgix.net/Lane-Leather-Furniture.jpg?auto=format&q=60" alt="The Emerson Leather Sofa by Lane Furniture" />
-        <h2>Lane Leather Furniture</h2></a>
-      </li>
-    </ul>
-  </article>
-  
-  <!-- InstanceEndEditable -->
+<div class="boot-widget zeroTopPad zeroBottomPad">
+  <ul class="landGrid">
+    <li><a href="shop/Luke-Leather-Furniture.html"><img src="https://leathergroups.imgix.net/Luke-Leather-Furniture.jpg?auto=format&q=60" alt="The Mark Leather Sofa by Luke Leather Furniture" />
+        <h2>Luke Leather</h2></a>
+    </li>
+    <li><a href="shop/Lane-Leather-Furniture.html"><img src="https://leathergroups.imgix.net/Lane-Leather-Furniture.jpg?auto=format&q=60" alt="The Emerson Leather Sofa by Lane Furniture" />
+        <h2>Lane Furniture</h2></a>
+    </li>
+  </ul>
+</div>
+</article>
+ 
+<!-- InstanceEndEditable -->
   
   <!-- Swatch Request Band -->
   
-<article id="widget_800" class="content-widget img-band zeroTopPad zeroBottomPad">
+<div class="boot-widget col-md-12 img-band zeroSidePad zeroTopPad zeroBottomPad">
   <div class="imgBandBg swatch-box">
-    <h3>Free Swatches</h3>
+    <h3>Free Samples</h3>
     <p>The best way to understand our Leathers <br><span style="font-size:22px;">We'll send them out right away :)</span></p>
-    <a href="https://www.leathergroups.com/shop/Swatch-Request-LeatherGroups-Leather-Furniture.html"><span class="blockBtn blueBtn swaBox">Request Swatches</span></a>
+    <a href="https://www.leathergroups.com/our-leathers.html"><span class="blockBtn blueBtn swaBox">Request Samples</span></a>
   </div>
-</article>
+</div> 
   
   <!-- Bottom Area/Nav -->
   <footer>
@@ -345,54 +682,50 @@ $(document).ready(function () {
       </li>
       <li><a href="/shop/register.php">Register</a>
       </li>
-      <li><a href="/shop/login.php">Order History</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1432288-tracking-shipments">Track An Order</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1433285-contact-us">Contact Us</a>
-      </li>
-    </ul>
-      
-    <ul class="footer">
-      <li><a href="http://support.leathergroups.com/customer/portal/topics/615801-ordering-from-leathergroups-com/articles">Ordering Information</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1433253-privacy-policy">Privacy Policy</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1433265-security">Secure Shopping</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/topics/615846-shipping-information/articles">Shipping Policy</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434643-return-policy">30-Day Return Policy</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434895-our-satisfaction-guarantee">Our Guarantee</a>
-      </li>
-    </ul>
-      
-    <ul class="footer">
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434894-why-shop-with-leathergroups-com-">Why Buy From Us</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/topics/664561-sales-promotions/articles">Sales And Promotions</a>
-      </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434891-shop-confidently-with-supreme-service">Customer Service</a>
+      <li><a href="/shop/register.php?mode=update">My Account</a>
       </li>
       <li><a href="/shop/cart.php">Shopping Cart</a>
       </li>
-      <li><a href="/blog">Leather Furniture Blog</a>
+      <li><a href="http://support.leathergroups.com/customer/portal/emails/new">Contact Us</a></li>
+    </ul>
+      
+    <ul class="footer">
+      <li><a href="/order-process.html">Order Process</a>
+      </li>
+      <li><a href="/shipping.html">Shipping</a>
+      </li>
+      <li><a href="/price-match.html">Price Match</a>
+      </li>
+      <li><a href="/returns.html">Returns</a>
+      </li>
+      <li><a href="/financing.html">Financing</a>
       </li>
     </ul>
       
     <ul class="footer">
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434885-who-we-are">Who We Are</a>
+      <li><a href="/our-leathers.html">Our Leathers</a>
       </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1434888-our-mission">Our Mission</a>
+      <li><a href="/our-fabrics.html">Our Fabrics	</a>
       </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434895-our-satisfaction-guarantee">Our Guarantee</a>
+        <li><a href="/construction.html">Construction</a>
       </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1433280-affiliate-program?b_id=2410">Affiliate Program</a>
+      <li><a href="/customization.html">Customization</a>
       </li>
-      <li><a href="http://support.leathergroups.com/customer/portal/articles/1433273-become-a-supplier-?b_id=2410">Become A Supplier</a>
+      <li><a href="/blog/category/custom-leather-furniture-order-feed">Customer Order Feed</a>
       </li>
     </ul>
+    
+    <ul class="footer">
+      <li><a href="/about-us.html">Our Story</a>
+      </li>
+      <li><a href="/quality.html">Craftsmanship</a>
+      </li>
+      <li><a href="/guest-brands.html">Guest Brands</a>
+      </li>
+      <li><a href="/to-the-trade.html">To the Trade</a>
+      </li>
+    </ul>
+    
   </footer>
     
   <div class="copyright">Questions? Call us toll free:1(877) 888-7632<br> 
@@ -415,21 +748,9 @@ var google_remarketing_only = true;
 </div>
 </noscript>
 
-<!-- category nav buttons -->
+<script src="/common/js/validator.js"></script> 
 
-<script>
-	$('span.nav-btn') .click(function () {
-		
-		$('ul.nav').slideToggle();
-		})
-		
-	$(window).resize(function (){
-		if ( $(window).width() > 600 ) {
-				
-		$('ul.nav').removeAttr('style');
-			}
-		})
-</script>       
+<script type="text/javascript" src="/js/wz_tooltip.js"></script>
 
 </body>
 <!-- InstanceEnd --></html>
