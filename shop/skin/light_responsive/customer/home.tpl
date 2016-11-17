@@ -18,11 +18,435 @@ vim: set ts=2 sw=2 sts=2 et:
 {if $main eq 'product' and $is_admin_preview}
   {include file="customer/main/product_admin_preview_top.tpl"}
 {/if}
+
+<div id="header">
+       
+<!-- bootstrap nav -->
+       
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" id="navfluid">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.leathergroups.com/"><img src="/common/images/logo.png"  alt="Leather Groups.com"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop <span class="caret visible-xs-inline-block"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Sofas</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Sofas.html">Leather Sofas</a></li>
+			  <li><a href="/shop/Fabric-Sofas.html">Fabric Sofas</a></li>
+			  <li><a href="/shop/Small-Scale-Leather-Sofas.html">Small Scale Sofas</a></li>
+			  <li><a href="/shop/Deep-Leather-Sofas.html">Deep Sofas</a></li>
+            </ul>
+            <ul>
+              <li class="main-dd-header dropdown-header">Chairs</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Chairs.html">Chairs</a></li>
+			  <li><a href="/shop/Deep-Leather-Chairs">Deep Chairs</a></li>
+            </ul>
+            <ul>
+			  <li class="divider"></li>
+              <li><span class="detail-shop"><a href="/shop/Clearance-Leather-Furniture.html">Clearance Items</a></span></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Sectionals</li>
+			  <li class="divider"></li>
+			  <li><a href="/shop/Leather-Sectional-Sofas.html">Leather Sectionals</a></li>
+			  <li><a href="/shop/Fabric-Sectional-Sofas.html">Fabric Sectionals</a></li>
+			  <li><a href="/shop/Small-Scale-Leather-Sectional-Sofas.html">Small Scale Sectionals</a></li>              
+			  <li><a href="/shop/Deep-Leather-Sectional-Sofas.html">Deep Sectionals</a></li>
+            </ul>
+            <ul>
+              <li class="main-dd-header dropdown-header">Ottomans</li>
+			  <li class="divider"></li>
+              <li><a href="/shop/Leather-Ottomans.html">Ottomans</a></li>
+			  <li><a href="/shop/Leather-Cocktail-Ottomans.html">Cocktail Ottomans</a></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header dd-brand">homeloft</li>
+		      <li class="divider"></li>
+              <li><a href="/shop/homeloft-Leather-Sofas.html">Sofas</a></li>
+              <li><a href="/shop/homeloft-Leather-Sectional-Sofas.html">Sectionals</a></li>
+			  <li><a href="/shop/homeloft-Leather-Chairs.html">Chairs</a></li>
+              <li><a href="/shop/homeloft-Leather-Ottomans.html">Ottomans</a></li>
+              <li class="divider"></li>
+			  <li><a href="/shop/Arizona-Leather-Furniture-Collection.html">Arizona</a></li>
+			  <li><a href="/shop/Bonham-Leather-Furniture-Collection.html">Bonham</a></li>
+			  <li><a href="/shop/Braxton-Leather-Furniture-Collection.html">Braxton</a></li>
+			  <li><a href="/shop/Dexter-Leather-Furniture-Collection.html">Dexter</a></li>
+			  <li><a href="/shop/Langston-Leather-Furniture-Collection.html">Langston</a></li>
+			  <li><a href="/shop/Midtown-Leather-Furniture-Collection.html">Midtown</a></li>
+			  <li><a href="/shop/Reno-Leather-Furniture-Collection.html">Reno</a></li>
+            </ul>
+          </li>
+          <li class="col-sm-3 col-md-2">
+            <ul>
+              <li class="main-dd-header dropdown-header">Guest Brands</li>
+			  <li class="divider"></li>
+			  <li><a href="/shop/Leather-Sofas-from-our-Guest-Brand-Partners.html">Leather Sofas</a></li>
+			  <li><a href="/shop/Leather-Sectionals-from-our-Guest-Brand-Partners.html">Leather Sectionals</a></li>
+              <li><a href="/shop/Leather-Loveseats-from-our-Guest-Brand-Partners.html">Leather Loveseats</a></li>
+			  <li><a href="/shop/Leather-Chairs-from-our-Guest-Brand-Partners.html">Leather Chairs</a></li>
+			  <li><a href="/shop/Leather-Ottomans-from-our-Guest-Brand-Partners.html">Leather Ottomans</a></li>
+			  <li class="divider"></li>
+			  <li class="drop-down-sub">by Guest Brand</li>
+              <li><a href="/shop/Luke-Leather-Furniture.html">Luke Leather</a></li>
+              <li><a href="/shop/Lane-Furniture.html">Lane Furniture</a>
+              <li><a href="/shop/Coaster-Company.html">Coaster</a></li>
+            </ul>
+          </li>
+          <li id="swaSwitch" class="col-md-4">
+					<a href="/our-leathers.html#request-leathers"><img class="img-responsive swaDropImg" src="https://leathergroups.imgix.net/Free-Leather-Samples.png?auto=format&q=60"  alt="Request Free Samples at LeatherGroups.com"></a>
+					</li>
+				<li class="col-md-12 shop-sec-section">
+						<div class="col-sm-3 section-resource">
+						<h4>Additional Info:</h4>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Financing</span>
+						<span class="detail-shop">We offer Deferred Interest Financing options through Synchrony Financial. <a href="/financing.html">Apply Now</a></span>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Our Process</span>
+						<span class="detail-shop">We've tried to build a process that creates a great experience for our customers. <a href="/order-process.html">Learn More</a></span>
+						</div>
+						<div style="border-right:none;" class="col-sm-3 section-resource">
+						<span class="heading-shop">Customization</span>
+						<span class="detail-shop">We can customize just about anything about the Leather Furniture that we build. <a href="/customization.html">Start Customizing</a></span>
+						</div>
+					</li>
+      </ul>
+    </li>
+    <li class="nonDrop"><a href="/shop/homeloft-Leather-Furniture-Collections.html">Collections</a></li>
+    <li class="nonDrop"><a href="/blog/category/customer-testimonials">Reviews</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Learn <span class="caret visible-xs-inline-block"></span></a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">About Us</li>
+			<li class="divider"></li>
+			<li><a href="/about-us.html">Our Story</a></li>
+            <li><a href="/quality.html">Craftsmanship</a></li>
+			<li><a href="/order-process.html">Our Process</a></li>
+			<li><a href="/guest-brands.html">Guest Brands</a></li>
+          </ul>
+        </li>
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">Resources</li>
+			<li class="divider"></li>
+			<li><a href="/construction.html">Quality Construction</a></li>
+			<li><a href="/our-leathers.html">Our Leathers</a></li>
+			<li><a href="/our-fabrics.html">Our Fabrics</a></li>
+			<li><a href="/shipping.html">Shipping</a></li>
+			<li><a href="/price-match.html">Price Match</a></li>
+			<li><a href="/returns.html">Returns</a></li>
+			<li><a href="/to-the-trade.html">To the Trade</a></li>
+			<li><a href="/financing.html">Financing</a></li>
+          </ul>
+        </li>
+        <li class="col-sm-2">
+          <ul>
+            <li class="main-dd-header dropdown-header">Inspiration</li>
+			<li class="divider"></li>
+            <li><a href="/customization.html">Customization</a></li>
+			<li><a href="https://www.leathergroups.com/blog/category/custom-leather-furniture-order-feed">Customer Orders </a></li>
+          </ul>
+        </li>
+        <li class="col-sm-4 hidden-sm learnDrop">
+					<a href="https://www.leathergroups.com/shop/Reno-Leather-Furniture-Collection.html"><img class="img-responsive learnDropImg" src="https://lg-cat.imgix.net/Reno-Leather-Furniture-Collection.png?auto=format&q=60"  alt="Reno Leather Furniture Collection at LeatherGroups.com">
+                    <h2>The Reno Leather Collection</h2></a>
+					</li>	
+				<li class="col-md-12 shop-sec-section">
+						<div class="col-sm-3 section-resource">
+						<h4>More About Us:</h4>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Our Collections</span>
+						<span class="detail-shop">American made Leather Furniture collections in top shelf leathers from Italy. <a href="/shop/homeloft-Leather-Furniture-Collections.html">Shop Collections</a></span>
+						</div>
+						<div class="col-sm-3 section-resource">
+						<span class="heading-shop">Guest Brands</span>
+						<span class="detail-shop">Some products on our site are built by select Guest Brands. <a href="/guest-brands.html">Learn More</a></span>
+						</div>
+						<div style="border-right:none;" class="col-sm-3 section-resource">
+						<span class="heading-shop">Customization</span>
+						<span class="detail-shop">We can customize just about anything about the Leather Furniture that we build. <a href="/customization.html">Start Customizing</a></span>
+						</div>
+					</li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right hidden-xs">
+        <li class="dropdown"><span class="swatchNavBtn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Samples</a></span>
+          <ul class="dropdown-menu swatchNav">
+            <li>
+            <form id="contact-form" method="post" action="/common/php/contact.php" role="form" autocomplete="off">
+            <h2>Free Samples</h2>
+            <p>Nothing compares to seeing them in person</p>
+            <div class="row swatchNavImg">
+              <div class="col-sm-3"><div class="row swaGrid">
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Cocoa-Mocha.jpg" alt="Italian Brompton Cocoa Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Cocoa-Mocha2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Classic-Vintage.jpg" alt="Italian Brompton Classic Vintage Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Classic-Vintage2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brompton-Walnut.jpg" alt="Italian Brompton Walnut Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brompton-Walnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Cocoa.jpg" alt="Italian Berkshire Cocoa Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Cocoa2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Oxblood.jpg" alt="Italian Berkshire Oxblood Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Oxblood2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Pewter.jpg" alt="Italian Berkshire Pewter Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Pewter2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Camel.jpg" alt="Italian Berkshire Camel Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Camel2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Anthracite.jpg" alt="Italian Berkshire Anthracite Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Anthracite2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Berkshire-Chestnut.jpg" alt="" onMouseOver="Tip('<img src=/color/swatches/el/Berkshire-Chestnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Timberwolf.jpg" alt="Italian Glove Timberwolf Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Timberwolf2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Truffle.jpg" alt="Italian Glove Truffle Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Truffle2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Chestnut.jpg" alt="Italian Glove Chestnut Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Chestnut2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Glove-Ruby.jpg" alt="Italian Glove Ruby Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Glove-Ruby2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Domaine-Bronze.jpg" alt="Italian Domaine Bronze Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Domaine-Bronze2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Brentwood-Tan.jpg" alt="Italian Brentwood Tan Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Brentwood-Tan2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Captains-Choice-Saddle.jpg" alt="Captains Choice Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Captains-Choice-Saddle2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Diablo-Tan.jpg" alt="Diablo Tan Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Diablo-Tan2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+<div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Range-Chocolate.jpg" alt="Range Chocolate Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Range-Chocolate2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Range-Black.jpg" alt="Range Black Full Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Range-Black2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Chaps.jpg" alt="Halter Chaps Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Chaps2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Oatmeal.jpg" alt="Halter Oatmeal Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Oatmeal2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Halter-Ranch.jpg" alt="Halter Ranch Top Grain Leather" onMouseOver="Tip('<img src=/color/swatches/el/Halter-Ranch2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="aniline">Aniline Leathers</label>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="row swaGrid">
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Buckskin.jpg" alt="Jet Buckskin" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Buckskin-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Sand.jpg" alt="Jet Sand" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Sand-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Antique.jpg" alt="Jet Antique" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Antique-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Acajou.jpg" alt="Jet Acajou" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Acajou-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Peatmoss.jpg" alt="Jet Peatmoss" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Peatmoss-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Chestnut.jpg" alt="Jet Chestnut" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Chestnut-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Root.jpg" alt="Jet Root" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Root-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+                <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Carubo.jpg" alt="Jet Carubo" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Carubo-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="protected-earth-tones">Protected Leathers<br />(Browns and Earth Tones)</label>
+              </div>
+            </div>
+            <div class="col-sm-3"><div class="row swaGrid">
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Dash.jpg" alt="Jet Dash" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Dash-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Soul-White.jpg" alt="Jet Soul White" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Soul-White-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Lemon-Grass.jpg" alt="Jet Lemon Grass" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Lemon-Grass-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Parrot.jpg" alt="Jet Parrot" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Parrot-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Turquoise.jpg" alt="Jet Turquoise" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Turquoise-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Indigo.jpg" alt="Jet Indigo" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Indigo-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Iron.jpg" alt="Jet Iron" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Iron-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/el/Jet-Black-Ink.jpg" alt="Jet Black Ink" onMouseOver="Tip('<img src=/color/swatches/el/Jet-Black-Ink-2.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+            </div>
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" name="protected-bright-tones">Protected Leathers<br />(Whites, Colors, Bright Tones)</label>
+            </div>
+          </div>
+          <div class="col-sm-3"><div class="row swaGrid">
+              <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Charcoal.png" alt="Belfast Charcoal" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Charcoal.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Grey.png" alt="Belfast Grey" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Grey.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/BELFAST_Taupe.png" alt="Belfast Taupe" onMouseOver="Tip('<img src=/color/swatches/pl/BELFAST_Taupe.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/ENGLAND_Gravel.png" alt="England Gravel" onMouseOver="Tip('<img src=/color/swatches/pl/ENGLAND_Gravel.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/ENGLAND_Navy.png" alt="England Navy" onMouseOver="Tip('<img src=/color/swatches/pl/ENGLAND_Navy.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/GENEVA_Champagne.png" alt="Geneva Champagne" onMouseOver="Tip('<img src=/color/swatches/pl/GENEVA_Champagne.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/GENEVA_Charcoal.png" alt="Geneva Charcoal" onMouseOver="Tip('<img src=/color/swatches/pl/GENEVA_Charcoal.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/KLEIN_Otter.png" alt="Klein Otter" onMouseOver="Tip('<img src=/color/swatches/pl/KLEIN_Otter.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/KLEIN_Saffron.png" alt="Klein Saffron" onMouseOver="Tip('<img src=/color/swatches/pl/KLEIN_Saffron.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Black.png" alt="Loft Black" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Black.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Magnolia.png" alt="Loft Magnolia" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Magnolia.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/LOFT_Spa.png" alt="Loft Spa" onMouseOver="Tip('<img src=/color/swatches/pl/LOFT_Spa.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/MARLOW_Burlap.png" alt="Marlow Burlap" onMouseOver="Tip('<img src=/color/swatches/pl/MARLOW_Burlap.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/MARLOW_Red.png" alt="Marlow Red" onMouseOver="Tip('<img src=/color/swatches/pl/MARLOW_Red.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/SAND_Azure.png" alt="Sand Azure" onMouseOver="Tip('<img src=/color/swatches/pl/SAND_Azure.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+    <div class="col-md-2 col-sm-2 col-xs-3 swatchSelect swatchTile"><a href="#" onClick="return false;"><img src="/color/swatches/pl/SAND_Granite.png" alt="Sand Granite" onMouseOver="Tip('<img src=/color/swatches/pl/SAND_Granite.jpg width=400 height=300>');" onMouseOut="UnTip()"/></a></div>
+            </div>
+            <div class="checkbox">
+            <label>
+              <input type="checkbox" name="fabrics">Stain Resistant Fabrics</label>
+            </div>
+          </div>
+        </div>
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required data-error="We need a name!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_address" type="text" name="address" class="form-control" placeholder="Full Street Address" required data-error="Where are we going to be sending these?">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required data-error="We'll need an email to send tracking :)">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input id="form_city" type="text" name="city" class="form-control" placeholder="City" required data-error="Don't forget your City!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-phone">
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number is Optional">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+	<div class="col-sm-10">
+		<select class="form-control" id="state" name="state" required data-error="Don't forget your State!">
+			<option value="">State</option>
+			<option value="AK">Alaska</option>
+			<option value="AL">Alabama</option>
+			<option value="AR">Arkansas</option>
+			<option value="AZ">Arizona</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DC">District of Columbia</option>
+			<option value="DE">Delaware</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="IA">Iowa</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MD">Maryland</option>
+			<option value="ME">Maine</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MO">Missouri</option>
+			<option value="MS">Mississippi</option>
+			<option value="MT">Montana</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="NE">Nebraska</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NV">Nevada</option>
+			<option value="NY">New York</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="PR">Puerto Rico</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VA">Virginia</option>
+			<option value="VT">Vermont</option>
+			<option value="WA">Washington</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WV">West Virginia</option>
+			<option value="WY">Wyoming</option>
+		</select>
+        <div class="help-block with-errors"></div>
+	</div>
+</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <input id="form_zip" type="tel" name="zip" class="form-control" placeholder="Zip" required data-error="We need a zip code!">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send my free samples">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+
+</form></li>
+            
+          </ul>
+        </li>
+        <li class="dropdown"><span class="ccNavBtn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</a></span>
+          <ul class="dropdown-menu ccNav">
+            <li>
+            <div class="col-md-3"><h2>Service</h2>
+            <p>However you contact us, we're here to help</p></div>
+            <div class="col-md-3">
+              <h3>Phone</h3>
+                <img src="https://leathergroups.imgix.net/Call-Us.png?auto=format&amp;q=60" alt="Call LeatherGroups.com">
+                <p class="ccSubNote"><span class="ccSubTel">1(877)888-7632</span> - 7am-7pm PST</p></div>
+            <div class="col-md-3">
+              <a href="http://support.leathergroups.com/customer/portal/emails/new"><div class="col-sm-12">
+              <h3>Email</h3>
+                <img src="https://leathergroups.imgix.net/Email-Us.png?auto=format&amp;q=60" alt="Email LeatherGroups.com">
+                <p class="ccSubNote">Click here to send us an email.  We' respond within a few hours at the most.</p></div></a></div>
+            <div class="col-md-3">
+              <h3>Chat</h3>
+                <img src="https://leathergroups.imgix.net/Chat-with-Us.png?auto=format&amp;q=60" alt="Chat with us here at LeatherGroups.com">
+                <p class="ccSubNote">Jump on with us right now at the bottom of your screen & we'll help you on the spot!</p></div>
+            </li>
+          </ul>
+        </li>
+        <li class="nonDrop"><a class="glyphicon glyphicon-shopping-cart" href="/shop/cart.php"></a></li>
+        <li class="nonDrop"><a class="glyphicon glyphicon-user" href="/shop/login.php"></a></li>
+      </ul>
+  </div>
+  </div>
+</div>
+
+<!-- end bootstrap nav -->
+       
+    </div>
+
 <div id="page-container"{if $page_container_class} class="{$page_container_class}"{/if}>
   <div id="page-container2">
     <div id="content-container">
 
-      {include file="customer/tabs.tpl"}
+      {*include file="customer/tabs.tpl"*}
 
       {if ($main neq 'cart' or $cart_empty) and $main neq 'checkout'}
         {if $main neq "catalog" or $current_category.category neq ""}
@@ -51,11 +475,7 @@ vim: set ts=2 sw=2 sts=2 et:
     </div>
 
     <div class="clearing">&nbsp;</div>
-
-    <div id="header">
-      {include file="customer/head.tpl"}
-    </div>
-
+    
     <div id="footer">
 
       {include file="customer/bottom.tpl"}

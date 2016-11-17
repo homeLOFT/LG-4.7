@@ -11,63 +11,71 @@ vim: set ts=2 sw=2 sts=2 et:
       {include file="modules/Users_online/menu_users_online.tpl"}
     {/if}
     
-    <footer>  
-      <ul class="footer"><span>My Account</span>
-        <li><a href="/shop/login.php">Sign In</a>
-        </li>
-        <li><a href="/shop/register.php">Register</a>
-        </li>
-        <li><a href="/shop/login.php">Order History</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1432288-tracking-shipments">Track An Order</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1433285-contact-us">Contact Us</a>
-        </li>
-      </ul>
+<!-- Swatch Request Band -->
+  
+<div class="boot-widget col-md-12 img-band zeroSidePad zeroTopPad zeroBottomPad">
+  <div class="imgBandBg swatch-box">
+    <h3>Free Samples</h3>
+    <p>The best way to understand our Leathers <br><span style="font-size:22px;">We'll send them out right away :)</span></p>
+    <a href="https://www.leathergroups.com/our-leathers.html"><span class="blockBtn blueBtn swaBox">Request Samples</span></a>
+  </div>
+</div> 
+  
+  <!-- Bottom Area/Nav -->    
+    
+<footer>
       
-      <ul class="footer"><span>Info & Policies</span>
-        <li><a href="http://support.leathergroups.com/customer/portal/topics/615801-ordering-from-leathergroups-com/articles">Ordering Information</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1433253-privacy-policy">Privacy Policy</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1433265-security">Secure Shopping</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/topics/615846-shipping-information/articles">Shipping Policy</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434643-return-policy">30-Day Return Policy</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434895-our-satisfaction-guarantee">Our Guarantee</a>
-        </li>
-      </ul>
+    <ul class="footer">
+      <li><a href="/shop/login.php">Sign In</a>
+      </li>
+      <li><a href="/shop/register.php">Register</a>
+      </li>
+      <li><a href="/shop/register.php?mode=update">My Account</a>
+      </li>
+      <li><a href="/shop/cart.php">Shopping Cart</a>
+      </li>
       
-      <ul class="footer"><span>Shop with Confidence</span>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434894-why-shop-with-leathergroups-com-">Why Buy From Us</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/topics/664561-sales-promotions/articles">Sales And Promotions</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434891-shop-confidently-with-supreme-service">Customer Service</a>
-        </li>
-        <li><a href="/shop/cart.php">Shopping Cart</a>
-        </li>
-        <li><a href="/blog">Leather Furniture Blog</a>
-        </li>
-        <li><a href="javascript:CreateBookmarkLink('Leather Groups.com', 'http://www.leathergroups.com')">Bookmark This Site</a>
-        </li>
-      </ul>
+      <li><a href="http://support.leathergroups.com/customer/portal/emails/new">Contact Us</a></li>
+    </ul>
       
-      <ul class="footer"><span>About homeloft</span>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434885-who-we-are">Who We Are</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434888-our-mission">Our Mission</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1434895-our-satisfaction-guarantee">Our Guarantee</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1433280-affiliate-program?b_id=2410">Affiliate Program</a>
-        </li>
-        <li><a href="http://support.leathergroups.com/customer/portal/articles/1433273-become-a-supplier-?b_id=2410">Become A Supplier</a>
-        </li>
-      </ul>
-    </footer>
+    <ul class="footer">
+      <li><a href="/order-process.html">Order Process</a>
+      </li>
+      <li><a href="/shipping.html">Shipping</a>
+      </li>
+      <li><a href="/price-match.html">Price Match</a>
+      </li>
+      <li><a href="/returns.html">Returns</a>
+      </li>
+      <li><a href="/financing.html">Financing</a>
+      </li>
+    </ul>
+      
+    <ul class="footer">
+      <li><a href="/our-leathers.html">Our Leathers</a>
+      </li>
+      <li><a href="/our-fabrics.html">Our Fabrics	</a>
+      </li>
+        <li><a href="/construction.html">Construction</a>
+      </li>
+      <li><a href="/customization.html">Customization</a>
+      </li>
+      <li><a href="/blog/category/custom-leather-furniture-order-feed">Customer Order Feed</a>
+      </li>
+    </ul>
+    
+    <ul class="footer">
+      <li><a href="/about-us.html">Our Story</a>
+      </li>
+      <li><a href="/quality.html">Craftsmanship</a>
+      </li>
+      <li><a href="/guest-brands.html">Guest Brands</a>
+      </li>
+      <li><a href="/to-the-trade.html">To the Trade</a>
+      </li>
+    </ul>
+    
+  </footer>
     
     <div class="subbox">
       <div class="copyright">

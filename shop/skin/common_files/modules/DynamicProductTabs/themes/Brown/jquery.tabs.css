@@ -63,8 +63,8 @@
 }
 .tabs-nav > li > a, .tabs-nav > li > a span {
     display: block;
-    padding: 0 15px;
-    background: url(tab.png) no-repeat;
+    padding: 0 15px 3px;
+    background: #6f6f6f;
 }
 .tabs-nav > li > a {
     position: relative;
@@ -78,6 +78,9 @@
     text-align: center;
     text-decoration: none;
     white-space: nowrap; /* required in IE 6 */
+}
+.tabs-nav .tabs-selected a, .tabs-nav .tabs-selected a span {
+	background: #ffffff;
 }
 .tabs-nav .tabs-selected > a {
     color: #000;

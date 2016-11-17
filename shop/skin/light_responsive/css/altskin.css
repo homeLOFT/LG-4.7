@@ -111,9 +111,9 @@ h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 20px;
-  margin: 0 0 5px 4px;
-  font-weight:lighter;
+  font-size: 20px !important;
+  margin: 0 0 5px 4px !important;
+  font-weight:lighter !important;
 }
 h2, .h2 {
   font-size: 24px;
@@ -280,7 +280,7 @@ li {
 .checkout-container #content-container,
 .printable #content-container
 {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 #content-container,
 .uo-container #content-container {
@@ -300,19 +300,21 @@ li {
 #header {
   top: 0;
   left: 0;
+  position:static !important;
 }
 #header,
 .error-page #header,
 .checkout-container #header,
 .printable #header
 {
-  height: 59px;
+  height: auto;
 }
 #footer {
   left: 0;
   max-height: 140px;
   font-size: 12px;
   overflow: visible;
+  position:relative !important;
 }
 #footer,
 .uo-container #footer {
@@ -984,7 +986,7 @@ div.search {
 .nav-pills > li {
   float: left;
 }
-.dropdown-toggle {
+/*.dropdown-toggle {
   display: block;
   padding: 11px 14px 12px;
   text-decoration: none !important;
@@ -1030,7 +1032,7 @@ div.search {
   font-weight: 300;
   text-transform: uppercase;
   color: #d5d5d5;
-}
+}*/
 #search-box {
   position: fixed;
   left: 0;
@@ -1135,7 +1137,7 @@ ul.soc-footer-links li:first-child {
 /**
  * Top horizontal menu
  */
-.navbar {
+/*.navbar {
   margin-bottom: 8px;
   min-height: 28px;
   position: relative;
@@ -1176,7 +1178,7 @@ ul.soc-footer-links li:first-child {
 .nav > li {
   display: block;
   position: relative;
-}
+}*/
 
 /**
  * Location bar
@@ -3772,9 +3774,82 @@ div.popup-dialog {
 /**
  * Custom styles for jQuery UI popup box
  */
+ #Add_to_cart_popup_window {
+    padding: 30px 30px 10px;
+}
+.product-added .cart {
+    padding: 10px 4px 15px;
+}
+ .product-added .cart .header {
+    /* border-bottom: 1px solid #a0a0a0; */
+    font-weight: 300;
+    text-transform: uppercase;
+ }
+ .product-added .added-buttons {
+    height: 45px;
+    margin: 5px 0 25px;
+}
+ .product-added .added-buttons div{
+    display: inline-block;
+}
 .product-added .cart {
 	border: 1px solid #d5d5d5;
 	border-radius:4px;
+    width: 170px;
+}
+.product-added .cart .label {
+    font-weight: lighter;
+    color: #3f3f3f;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.product-added .continue-shopping {
+    padding: 8px 15px;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .05em;
+    color: #3f3f3f;
+	vertical-align: middle !important;
+}
+.product-added .cart-outer {
+	padding-left: 35px;
+	background-size: 35px;
+}
+.product-added.ui-widget {
+	font-size:18px;
+}
+a.proceed-to-checkout.main-button {
+    padding: 8px 15px;
+    background: #73a571;
+    border-radius: 4px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .05em;
+    color: #fff;
+    border: 1px solid #73a571;
+	text-decoration: none;
+}
+.proceed-to-checkout .fa.fa-shopping-cart {
+    display: none;
+}
+a.view-cart {
+    padding: 6px 13px;
+    background: #73a571;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .05em;
+}
+.product-added .upselling.details {
+	width:33% !important;
+}
+.product-added .upselling .title {
+    min-height: 20px;
 }
 /**
  * Custom styles for jQuery UI popup box
@@ -4002,20 +4077,21 @@ ul.swatchForm {
   .checkout-container #content-container,
   .printable #content-container
   {
-    margin-top: 100px;
+    padding:30px 0;
+    margin:0;
   }
-  #header,
+  /*#header,
   .error-page #header,
   .checkout-container #header,
   .printable #header
   {
     height: 100px;
-  }
+  }*/
 
-  .navbar,
+  /*.navbar,
   #header .line3 {
     display: none;
-  }
+  }*/
   #header .line1 .logo {
     width: 100%;
     text-align: left;
@@ -4204,7 +4280,13 @@ li.tech-desc {
   .visible-xs {
     display: block;
   }
-
+  #header,
+  .error-page #header,
+  .checkout-container #header,
+  .printable #header
+  {
+    height: auto;
+  }
   #page-container2,
   .wrapper-box {
     width: auto;

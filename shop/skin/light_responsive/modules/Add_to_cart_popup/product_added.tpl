@@ -45,7 +45,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
         <hr />
         <div class="added-buttons">
-          <a href="#" class="continue-shopping">{$lng.lbl_continue_shopping}</a>
+          <div><a href="#" class="continue-shopping">{$lng.lbl_continue_shopping}</a></div>
           <div class="checkout-btn-container">
             <a href="cart.php?mode=checkout" class="proceed-to-checkout main-button" autofocus >{$lng.lbl_proceed_to_checkout}<span class='fa fa-shopping-cart'></span></a>
             {if $paypal_express_active || $amazon_pa_enabled}
@@ -72,7 +72,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
             {if $p}
               <div class="upselling details">
-                <div class="upselling-image"{if $config.Appearance.thumbnail_height gt 0 or $product.tmbn_y gt 0 or $max_images_height gt 0} style="height: {$max_images_height|default:$config.Appearance.thumbnail_height|default:$product.tmbn_y}px;line-height: {$max_images_height|default:$config.Appearance.thumbnail_height|default:$product.tmbn_y}px;"{/if}>
+                <div class="upselling-image" style="height: 150px;line-height: 150px;">
                   <a href="{$p.product_url}">{include file="product_thumbnail.tpl" productid=$p.productid image_x=$p.tmbn_x image_y=$p.tmbn_y product=$p.product tmbn_url=$p.tmbn_url}</a>
                 </div>
                 <div class="title">
