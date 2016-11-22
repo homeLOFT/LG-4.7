@@ -103,6 +103,9 @@ vim: set ts=2 sw=2 sts=2 et:
       {/if}
       </td>
     </tr>
+    <tr>
+      <td>{$lng.lbl_pdp_promo_text}</td>
+    </tr>
     {/if}
       
     {if $active_modules.Product_Notifications ne '' and $config.Product_Notifications.prod_notif_enabled_P eq 'Y' and ($product.taxed_price ne 0 or $variant_price_no_empty)}

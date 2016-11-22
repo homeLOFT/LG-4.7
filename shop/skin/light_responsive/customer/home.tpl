@@ -58,6 +58,12 @@ vim: set ts=2 sw=2 sts=2 et:
             <ul>
 			  <li class="divider"></li>
               <li><span class="detail-shop"><a href="/shop/Clearance-Leather-Furniture.html">Clearance Items</a></span></li>
+              <li><span class="detail-shop"><a href="/shop/Black-Friday-Deals.html" style="
+    color: #404040;
+"><strong>Black Friday Deals</strong></a></span></li>
+              <li><span class="detail-shop"><a href="/black-friday-leathers.html" style="
+    color: #404040;
+"><strong>Black Friday Leathers</strong></a></span></li>
             </ul>
           </li>
           <li class="col-sm-3 col-md-2">

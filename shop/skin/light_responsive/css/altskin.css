@@ -2660,6 +2660,7 @@ table.product-properties .property-name {
   vertical-align: middle;
   color: inherit;
   font-size: 13px;
+  padding-left:20px;
 }
 table.product-properties .property-value {
   width: auto;
