@@ -1258,7 +1258,7 @@ div.printable-bar {
   border-bottom-width: 0;
   height: auto;
   width: auto;
-  padding:15px 4px 0;
+  padding:15px 0 0;
   margin-bottom: 8px;
   overflow: visible;
 }
