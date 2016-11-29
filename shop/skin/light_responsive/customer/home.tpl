@@ -12,6 +12,11 @@ vim: set ts=2 sw=2 sts=2 et:
 </head>
 <body{if $body_onload ne ''} onload="javascript: {$body_onload}"{/if} class="{if $container_classes}{foreach from=$container_classes item=c}{$c} {/foreach}{/if}{if $main eq 'catalog' and $current_category.category eq ''}home-container {/if}{$main}-container">
 <script type="text/javascript" src="/js/wz_tooltip.js"></script>
+<script>
+$(document).ready( function() {
+    $("#nav-promo").load("/nav-promo.html");
+});
+</script>
 {if $active_modules.EU_Cookie_Law ne ""}
 {include file="modules/EU_Cookie_Law/info_panel.tpl"}
 {/if}
@@ -55,15 +60,7 @@ vim: set ts=2 sw=2 sts=2 et:
               <li><a href="/shop/Leather-Chairs.html">Chairs</a></li>
 			  <li><a href="/shop/Deep-Leather-Chairs">Deep Chairs</a></li>
             </ul>
-            <ul>
-			  <li class="divider"></li>
-              <li><span class="detail-shop"><a href="/shop/Clearance-Leather-Furniture.html">Clearance Items</a></span></li>
-              <li><span class="detail-shop"><a href="/shop/Black-Friday-Deals.html" style="
-    color: #404040;
-"><strong>Black Friday Deals</strong></a></span></li>
-              <li><span class="detail-shop"><a href="/black-friday-leathers.html" style="
-    color: #404040;
-"><strong>Black Friday Leathers</strong></a></span></li>
+            <ul id="nav-promo">
             </ul>
           </li>
           <li class="col-sm-3 col-md-2">
