@@ -196,8 +196,8 @@ $(document).ready( function() {
       </ul>
     </li>
   </ul>
-  <ul class="nav navbar-nav navbar-right hidden-xs">
-        <li class="dropdown"><span class="swatchNavBtn">
+  <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><span class="swatchNavBtn hidden-xs">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Samples</a></span>
           <ul class="dropdown-menu swatchNav">
             <li>
@@ -412,7 +412,7 @@ $(document).ready( function() {
             
           </ul>
         </li>
-        <li class="dropdown"><span class="ccNavBtn">
+        <li class="dropdown"><span class="ccNavBtn hidden-xs">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</a></span>
           <ul class="dropdown-menu ccNav">
             <li>
