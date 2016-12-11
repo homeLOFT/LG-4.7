@@ -548,8 +548,6 @@ __lc.license = 6260361;
 })();
 </script>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us1.list-manage.com","uuid":"3a207743b8ba80508fe2aeb12","lid":"66bbd06486"}) })</script>
-
 {/literal}
 
 </body>
