@@ -207,7 +207,9 @@ $(document).ready( function() {
 			<li><a href="/about-us.html">Our Story</a></li>
             <li><a href="/quality.html">Craftsmanship</a></li>
 			<li><a href="/order-process.html">Our Process</a></li>
+			<li><a href="/returns.html">Returns</a></li>
 			<li><a href="/guest-brands.html">Guest Brands</a></li>
+			<li><a href="/to-the-trade.html">To the Trade</a></li>
           </ul>
         </li>
         <li class="col-sm-2">
@@ -217,10 +219,10 @@ $(document).ready( function() {
 			<li><a href="/construction.html">Quality Construction</a></li>
 			<li><a href="/our-leathers.html">Our Leathers</a></li>
 			<li><a href="/our-fabrics.html">Our Fabrics</a></li>
+			<li><a href="/order-process.html#leatherTBD">Leather TBD</a></li>
 			<li><a href="/shipping.html">Shipping</a></li>
+			<li><a href="/shipping.html#canada">Shipping to Canada</a></li>
 			<li><a href="/price-match.html">Price Match</a></li>
-			<li><a href="/returns.html">Returns</a></li>
-			<li><a href="/to-the-trade.html">To the Trade</a></li>
 			<li><a href="/financing.html">Financing</a></li>
           </ul>
         </li>
@@ -229,7 +231,7 @@ $(document).ready( function() {
             <li class="main-dd-header dropdown-header">Inspiration</li>
 			<li class="divider"></li>
 			<li><a href="/customization.html">Customization</a></li>
-            <li><a href="https://www.leathergroups.com/blog/category/custom-leather-furniture-order-feed">Customer Orders </a></li>
+            <li><a href="https://www.leathergroups.com/blog/category/custom-leather-furniture-order-feed">Customer Order Gallery </a></li>
           </ul>
         </li>
         <li class="col-sm-4 hidden-sm learnDrop">
@@ -391,8 +393,8 @@ $(document).ready( function() {
             <div class="col-sm-3">
                 <div class="form-group">
 	<div class="col-sm-10">
-		<select class="form-control" id="state" name="state" required data-error="Don't forget your State!">
-			<option value="">State</option>
+		<select class="form-control" id="state" name="state" required data-error="Don't forget your State/Province!">
+			<option value="">State/Province</option>
 			<option value="AK">Alaska</option>
 			<option value="AL">Alabama</option>
 			<option value="AR">Arkansas</option>
@@ -445,6 +447,20 @@ $(document).ready( function() {
 			<option value="WI">Wisconsin</option>
 			<option value="WV">West Virginia</option>
 			<option value="WY">Wyoming</option>
+            <option value="">Canadian Provinces</option>
+            <option value="AB">Alberta</option>
+			<option value="BC">British Columbia</option>
+			<option value="MB">Manitoba</option>
+			<option value="NB">New Brunswick</option>
+			<option value="NL">Newfoundland and Labrador</option>
+			<option value="NS">Nova Scotia</option>
+			<option value="ON">Ontario</option>
+			<option value="PE">Prince Edward Island</option>
+			<option value="QC">Quebec</option>
+			<option value="SK">Saskatchewan</option>
+			<option value="NT">Northwest Territories</option>
+			<option value="NU">Nunavut</option>
+			<option value="YT">Yukon</option>
 		</select>
         <div class="help-block with-errors"></div>
 	</div>
@@ -599,6 +615,8 @@ $(document).ready( function() {
   <div class="introBox">
     <h3>Order Flow</h3>
     <p>We quote approximately 6-8 weeks for production of our furniture, but our average production time is about 6 weeks. White Glove Delivery will take approximately 10-14 business days nationwide (closer to 3 weeks on a calendar). Here is how the order flow works:</p>
+    <p class="content-det-note">
+        <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp; Delivery timing estimates cannot be guaranteed. Some regions and/or times of year can require additional time. See our <a style="font-weight:400;" href="https://www.leathergroups.com/shop/Terms-and-Conditions.html">Full Terms here</a></p>
   </div>
 </div>
 
@@ -648,6 +666,18 @@ $(document).ready( function() {
       <h4>Order Tracking</h4>
       <p>Once pickup has occurred, we'll send tracking and delivery will take approximately 10-14 business days.</p>
     </div>	
+  </div>
+</div>
+
+<div id="leatherTBD" class="boot-widget col-md-12 l-img-txt">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://leathergroups.imgix.net/Italian-Brompton-Classic-Vintage-Waxed-Pull-up-Leather.jpg?auto=format&q=60" alt="Place your order, and select a leather when Samples arrive">
+    </div>
+    <div class="col-md-6 r-text">
+      <h2>Leather TBD</h2>
+      <p>If you would like to get your order started, even before samples arrive, you can place your order as "Leather TBD" by selecting any leather in the product options then stating "Leather TBD" in the Customer Notes section of Checkout. Leather is not cut for 3-4 weeks, so you'll have time to narrow down your selection to the perfect leather!</p>
+    </div>
   </div>
 </div>
 
@@ -715,6 +745,8 @@ $(document).ready( function() {
       </li>
       <li><a href="/to-the-trade.html">To the Trade</a>
       </li>
+      <li><a href="/shop/Terms-and-Conditions.html">Terms and Conditions</a>
+      </li>
     </ul>
     
   </footer>
@@ -753,6 +785,8 @@ __lc.license = 6260361;
 <script src="/common/js/validator.js"></script> 
 
 <script type="text/javascript" src="/js/wz_tooltip.js"></script>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us1.list-manage.com","uuid":"3a207743b8ba80508fe2aeb12","lid":"66bbd06486"}) })</script>
 
 </body>
 <!-- InstanceEnd --></html>
