@@ -92,7 +92,9 @@ $(document).ready( function() {
 			  <li><a href="/shop/Bonham-Leather-Furniture-Collection.html">Bonham</a></li>
 			  <li><a href="/shop/Braxton-Leather-Furniture-Collection.html">Braxton</a></li>
 			  <li><a href="/shop/Dexter-Leather-Furniture-Collection.html">Dexter</a></li>
+              <li><a href="/shop/Julien-Leather-Furniture-Collection.html">Julien</a></li>
 			  <li><a href="/shop/Langston-Leather-Furniture-Collection.html">Langston</a></li>
+              <li><a href="/shop/Las-Vegas-Leather-Furniture-Collection.html">Las Vegas	</a></li>
 			  <li><a href="/shop/Midtown-Leather-Furniture-Collection.html">Midtown</a></li>
 			  <li><a href="/shop/Reno-Leather-Furniture-Collection.html">Reno</a></li>
             </ul>
