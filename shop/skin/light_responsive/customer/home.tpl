@@ -416,10 +416,15 @@ $(document).ready( function() {
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <input type="submit" class="btn btn-success btn-send" value="Send my free samples">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="6Lf-kBQUAAAAADNsN1l1Rp7eAq68Sntj2SDzKTfV" style="float:right;"></div>
             </div>
-        </div>
+          </div>
+          <div class="col-md-6">
+                <input type="submit" class="btn btn-success btn-send disabled" value="Send my free samples">
+          </div>
+        </div>	
         <div class="row">
             <div class="col-md-12">
             </div>

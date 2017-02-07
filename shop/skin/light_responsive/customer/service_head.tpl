@@ -59,6 +59,7 @@ $(function () {
                     if (messageAlert && messageText) {
                         $('#contact-form').find('.messages').html(alertBox);
                         $('#contact-form')[0].reset();
+						grecaptcha.reset();
                     }
                 }
             });
@@ -68,6 +69,7 @@ $(function () {
 });
 </script>
 <script src="/common/js/validator.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>  
 
 {* WCM - Dynamic Product Tabs *}
 {if $main eq "product" AND $active_modules.WCM_Dynamic_Product_Tabs}
