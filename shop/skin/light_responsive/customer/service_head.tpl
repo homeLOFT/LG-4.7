@@ -88,3 +88,4 @@ $(function() { $(".wcmtabcontainer").tabs(); });
 <![endif]-->
 {/if}
 {* / WCM - Dynamic Product Tabs *}
+{literal}<script type="text/javascript"> var _iub = _iub || []; _iub.csConfiguration = {"lang":"en","siteId":237585,"cookiePolicyInOtherWindow":true,"banner":{"backgroundColor":"#5b8aab"},"cookiePolicyId":716182}; </script><script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>{/literal}
