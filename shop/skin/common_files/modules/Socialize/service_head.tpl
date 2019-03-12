@@ -7,7 +7,8 @@ vim: set ts=2 sw=2 sts=2 et:
     <meta property="og:title" content="{$product.product|escape}"/>
     <meta property="og:description" content="{$prod_descr|truncate:'500':'...':false|escape}" />
     <meta property="og:url" content="{$current_location}/{$canonical_url}" />
-    <meta property="og:image" content="{if $product.tmbn_url && !$product.default_image}{$product.tmbn_url}{else}{$current_location}{if $product.default_image}/{$product.default_image|replace:'./':''}{else}/image.php?type={$type|default:'T'}&amp;id={$product.productid}{/if}{/if}" />
+    <meta property="og:image" content="{if $product.tmbn_url && !$product.default_image}{$product.tmbn_url}{else}{$current_location}{if $product.default_image}/{$product.default_image|replace:'./':''}{else}/image.php?type={$type|default:'P'}&id={$product.productid}{/if}{/if}" />
+    <meta property="og:image:secure_url" content="{if $product.tmbn_url && !$product.default_image}{$product.tmbn_url}{else}{$current_location}{if $product.default_image}/{$product.default_image|replace:'./':''}{else}/image.php?type={$type|default:'P'}&id={$product.productid}{/if}{/if}" />
     {* Admin field. Use it for Insights
     <meta property="fb:admins" content="%YOUR_FB_USERID_HERE%" />
     *}
