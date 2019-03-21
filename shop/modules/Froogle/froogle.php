@@ -192,6 +192,7 @@ if (!empty($active_modules['Froogle']) && $REQUEST_METHOD == 'POST' && $mode == 
                 AND $sql_tbl[quick_prices].productid = $sql_tbl[products].productid
                 AND $sql_tbl[products].forsale = 'Y'
                 AND $sql_tbl[products_categories].avail = 'Y'
+                AND $sql_tbl[products_categories].main = 'Y'
                 AND $sql_tbl[pricing].quantity = 1
                 $where
             $group_by
