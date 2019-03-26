@@ -8,7 +8,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
 <div class="packing-slip">
     <div class="company-logo">
-        <img src="/common/images/logo.png" alt="" />
+        <img src="/common/images/logo.png" width="300" height="57" alt="" />
         {* {$config.Company.company_name} *}
     </div>
     <div class="page-title">
