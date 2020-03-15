@@ -35,7 +35,7 @@ vim: set ts=2 sw=2 sts=2 et:
       <li><a href="/shop/cart.php">Shopping Cart</a>
       </li>
       
-      <li><a href="http://support.leathergroups.com/customer/portal/emails/new">Contact Us</a></li>
+      <li><a href="https://leathergroups.force.com/support/s/contactsupport" target="_blank">Contact Us</a></li>
     </ul>
       
     <ul class="footer">
