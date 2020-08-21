@@ -153,7 +153,6 @@ $(document).ready( function() {
             <li><a href="/quality.html">Craftsmanship</a></li>
 			<li><a href="/order-process.html">Our Process</a></li>
 			<li><a href="/returns.html">Returns</a></li>
-			<li><a href="/guest-brands.html">Guest Brands</a></li>
 			<li><a href="/to-the-trade.html">To the Trade</a></li>
           </ul>
         </li>

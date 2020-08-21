@@ -69,8 +69,6 @@ vim: set ts=2 sw=2 sts=2 et:
       </li>
       <li><a href="/quality.html">Craftsmanship</a>
       </li>
-      <li><a href="/guest-brands.html">Guest Brands</a>
-      </li>
       <li><a href="/to-the-trade.html">To the Trade</a>
       </li>
       <li><a href="Terms-and-Conditions.html">Terms and Conditions</a>
