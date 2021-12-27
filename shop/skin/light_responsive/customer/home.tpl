@@ -89,6 +89,11 @@ $(document).ready( function() {
 			  <li><a href="/shop/Fabric-Sectional-Sofas.html">Fabric Sectionals</a></li>
 			  <li><a href="/shop/Small-Scale-Leather-Sectional-Sofas.html">Small Scale Sectionals</a></li>              
 			  <li><a href="/shop/Deep-Leather-Sectional-Sofas.html">Deep Sectionals</a></li>
+			  <li class="divider"></li>
+			  <li class="drop-down-sub">LEATHER SECTIONAL INFO</li>
+			  <li><a href="/what-is-a-sectional-sofa.html#sectional-configurations">- Configurations</a></li>
+			  <li><a href="/what-is-a-sectional-sofa.html#sectional-pieces">- Pieces used</a></li>
+              <li><a href="/what-is-a-sectional-sofa.html#popular-leather-sectional-sofas">- Popular Leather Sectionals</a></li>
             </ul>
             <ul>
               <li class="main-dd-header dropdown-header">Ottomans</li>
@@ -153,7 +158,6 @@ $(document).ready( function() {
             <li><a href="/quality.html">Craftsmanship</a></li>
 			<li><a href="/order-process.html">Our Process</a></li>
 			<li><a href="/returns.html">Returns</a></li>
-			<li><a href="/guest-brands.html">Guest Brands</a></li>
 			<li><a href="/to-the-trade.html">To the Trade</a></li>
           </ul>
         </li>
