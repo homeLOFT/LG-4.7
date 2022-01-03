@@ -30,8 +30,6 @@ vim: set ts=2 sw=2 sts=2 et:
       </li>
       <li><a href="/shop/register.php">Register</a>
       </li>
-      <li><a href="/shop/register.php?mode=update">My Account</a>
-      </li>
       <li><a href="/shop/cart.php">Shopping Cart</a>
       </li>
       

@@ -77,7 +77,7 @@ $(document).ready( function() {
 			  <li class="divider"></li>
               <li><a href="/shop/Leather-Chairs.html">Leather Chairs</a></li>
               <li><a href="/shop/Leather-Swivel-Chairs.html">Leather Swivel Chairs</a></li>
-			  <li><a href="/shop/Deep-Leather-Chairs">Deep Leather Chairs</a></li>
+			  <li><a href="/shop/Deep-Leather-Chairs.html">Deep Leather Chairs</a></li>
               <li class="divider"></li>
             </ul>
           </li>
