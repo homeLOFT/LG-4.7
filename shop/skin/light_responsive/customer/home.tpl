@@ -48,6 +48,9 @@ $(document).ready( function() {
           <ul class="dropdown-menu" role="menu">
             <li class="col-sm-3 col-md-2">
               <ul>
+				<li class="divider"></li>
+			    <li class="drop-down-sub"><a href="https://www.leathergroups.com/blog/customer-order-gallery" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Customer Order Gallery');">Customer Order Gallery ›</a></li>
+			    <li class="divider"></li>
                 <li class="main-dd-header dropdown-header">Sofas</li>
 			    <li class="divider"></li>
                 <li><a href="/shop/Leather-Sofas.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Leather Sofas');">Leather Sofas</a></li>
@@ -102,10 +105,7 @@ $(document).ready( function() {
 			    <li><a href="/shop/Langston-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Langston Collection');">Langston</a></li>
 			    <li><a href="/shop/Midtown-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Midtown Collection');">Midtown</a></li>
 			    <li><a href="/shop/Oscar-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Oscar Collection');">Oscar</a></li>
-			    <li><a href="/shop/Reno-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Reno Collection');">Reno</a></li>
-			    <li class="divider"></li>
-			    <li class="drop-down-sub"><a href="https://www.leathergroups.com/blog/customer-order-gallery" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Customer Order Gallery');">Customer Order Gallery ›</a></li>
-			    <li class="divider"></li>
+			    <li><a href="/shop/Reno-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Reno Collection');">Reno</a></li>    
               </ul>
             </li>
 			<li class="col-sm-3 col-md-2">
