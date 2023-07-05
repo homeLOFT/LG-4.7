@@ -8,6 +8,16 @@ vim: set ts=2 sw=2 sts=2 et:
 {config_load file="$skin_config"}
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"{if $active_modules.Socialize} xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"{/if}>
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6WD77NWS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+	{literal}function gtag(){dataLayer.push(arguments);}{/literal}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FK6WD77NWS');
+</script>
+	
   {include file="customer/service_head.tpl"}
 </head>
 <body{if $body_onload ne ''} onload="javascript: {$body_onload}"{/if} class="{if $container_classes}{foreach from=$container_classes item=c}{$c} {/foreach}{/if}{if $main eq 'catalog' and $current_category.category eq ''}home-container {/if}{$main}-container">
