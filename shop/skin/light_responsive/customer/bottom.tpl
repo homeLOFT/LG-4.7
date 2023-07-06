@@ -41,8 +41,6 @@ vim: set ts=2 sw=2 sts=2 et:
       </li>
       <li><a href="/shipping.html">Shipping</a>
       </li>
-      <li><a href="/price-match.html">Price Match</a>
-      </li>
       <li><a href="/returns.html">Returns</a>
       </li>
       <li><a href="/financing.html">Financing</a>
@@ -52,9 +50,7 @@ vim: set ts=2 sw=2 sts=2 et:
     <ul class="footer">
       <li><a href="/our-leathers.html">Our Leathers</a>
       </li>
-      <li><a href="/our-fabrics.html">Our Fabrics	</a>
-      </li>
-        <li><a href="/construction.html">Construction</a>
+      <li><a href="/construction.html">Construction</a>
       </li>
       <li><a href="/customization.html">Customization</a>
       </li>
