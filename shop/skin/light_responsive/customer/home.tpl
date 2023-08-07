@@ -327,8 +327,6 @@ $(document).ready( function() {
 <noscript><a href="https://www.livechat.com/chat-with/6260361/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
 <!-- End of LiveChat code -->
 
-<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us1.list-manage.com","uuid":"3a207743b8ba80508fe2aeb12","lid":"66bbd06486"}) })</script>
-
 {/literal}
 
 </body>
