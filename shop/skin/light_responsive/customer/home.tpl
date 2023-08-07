@@ -8,19 +8,21 @@ vim: set ts=2 sw=2 sts=2 et:
 {config_load file="$skin_config"}
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"{if $active_modules.Socialize} xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"{/if}>
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FK6WD77NWS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-	{literal}function gtag(){dataLayer.push(arguments);}{/literal}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FK6WD77NWS');
-</script>
+<!-- Google Tag Manager -->
+{literal}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJVPHCV');</script>{/literal}
+<!-- End Google Tag Manager -->
 	
   {include file="customer/service_head.tpl"}
 </head>
 <body{if $body_onload ne ''} onload="javascript: {$body_onload}"{/if} class="{if $container_classes}{foreach from=$container_classes item=c}{$c} {/foreach}{/if}{if $main eq 'catalog' and $current_category.category eq ''}home-container {/if}{$main}-container">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJVPHCV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <script type="text/javascript" src="/js/wz_tooltip.js"></script>
 <script>
 $(document).ready( function() {
@@ -310,47 +312,11 @@ $(document).ready( function() {
 {include file="customer/service_body_js.tpl"}
 {load_defer_code type="js"}
 
-<!-- Google Code for Remarketing Tag -->
-<!--------------------------------------------------
-Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
---------------------------------------------------->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 1071958683;
-var google_custom_params = window.google_tag_params;
-var google_remarketing_only = true;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1071958683/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-
 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 
 <a href="https://plus.google.com/100479727098477541780" rel="publisher"></a>
 
 {literal}
-<script type="text/javascript">
-adroll_adv_id = "JEHEX27TQJA2HG7QVBM2DH";
-adroll_pix_id = "UL5SJ3VDO5CGDN4ANSB5ZP";
-(function () {
-var oldonload = window.onload;
-window.onload = function(){
-   __adroll_loaded=true;
-   var scr = document.createElement("script");
-   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
-   scr.setAttribute('async', 'true');
-   scr.type = "text/javascript";
-   scr.src = host + "/j/roundtrip.js";
-   ((document.getElementsByTagName('head') || [null])[0] ||
-    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
-   if(oldonload){oldonload()}};
-}());
-</script>
 
 <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
