@@ -4,7 +4,7 @@ a74fe6885509c651f2ee37e8b41267a193293cc7, v1 (xcart_4_7_0), 2015-02-27 17:35:59,
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <?xml version="1.0" encoding="{$default_charset|default:"utf-8"}"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 {config_load file="$skin_config"}
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"{if $active_modules.Socialize} xmlns:g="http://base.google.com/ns/1.0" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"{/if}>
 <head>
@@ -312,9 +312,11 @@ $(document).ready( function() {
 {include file="customer/service_body_js.tpl"}
 {load_defer_code type="js"}
 
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-
-<a href="https://plus.google.com/100479727098477541780" rel="publisher"></a>
+<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
 
 {literal}
 

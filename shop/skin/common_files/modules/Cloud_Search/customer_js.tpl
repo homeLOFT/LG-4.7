@@ -70,7 +70,7 @@ var Cloud_Search = {ldelim}
 
 (function () {
   var cs = document.createElement('script'); cs.type = 'text/javascript'; cs.async = true;
-  cs.src = '//cdn-qualiteamsoftwar.netdna-ssl.com/cloud_search_xcart.js';
+  cs.src = 'https://e9h3u4j8.stackpathcdn.com/cloud_search_xcart.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cs, s);
 })();
 

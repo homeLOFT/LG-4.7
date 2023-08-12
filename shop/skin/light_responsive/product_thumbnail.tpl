@@ -5,7 +5,7 @@ vim: set ts=2 sw=2 sts=2 et:
 *}
 {strip}
 <img
-{if $id ne ''} id="{$id}"{/if} src="
+{if $id ne ''} id="{$id}"{/if} width="250" height="188" src="
 {if $tmbn_url}
 {$tmbn_url|amp}
 {else}
