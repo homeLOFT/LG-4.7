@@ -90,9 +90,3 @@ $(function() { $(".wcmtabcontainer").tabs(); });
 <![endif]-->
 {/if}
 {* / WCM - Dynamic Product Tabs *}
-{literal}<script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {"cookiePolicyInOtherWindow":true,"countryDetection":true,"enableGdpr":false,"enableUspr":true,"lang":"en","siteId":237585,"whitelabel":false,"cookiePolicyId":716182, "banner":{ "backgroundColor":"#5b8aab","closeButtonDisplay":false,"position":"bottom" }};
-</script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>{/literal}
