@@ -28,6 +28,12 @@ vim: set ts=2 sw=2 sts=2 et:
   {include file="modules/Lexity/service_head.tpl"}
 {/if}
 
+{* BCSE Begin - Google Analytics 4 *}
+{if $active_modules.Bcse_Ga4}
+  {include file="modules/Bcse_Ga4/service_head.tpl"}
+{/if}
+{* BCSE End*}
+
 {load_defer_code type="css"}
 {load_defer_code type="js"}
 
