@@ -113,6 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="/shop/Julien-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Julien Collection');">Julien</a></li>
 			    <li><a href="/shop/Langston-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Langston Collection');">Langston</a></li>
 			    <li><a href="/shop/Midtown-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Midtown Collection');">Midtown</a></li>
+			    <li><a href="/shop/Muir-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Muir Collection');">Muir</a></li>
 			    <li><a href="/shop/Oscar-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Oscar Collection');">Oscar</a></li>
 			    <li><a href="/shop/Reno-Leather-Furniture-Collection.html" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Reno Collection');">Reno</a></li>    
               </ul>
@@ -138,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			    <li class="divider"></li>
               </ul>
             </li>
-            <li id="swaSwitch" class="col-md-4"><a href="/our-leathers.html#request-leathers" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Free Sample Image');"><img class="img-responsive swaDropImg" src="https://leathergroups.imgix.net/Free-Leather-Samples.png?auto=format&q=60"  alt="Request Free Samples at LeatherGroups.com"></a></li>
+            <li id="swaSwitch" class="col-md-4"><a href="/our-leathers.html#request-leathers" onClick="ga('send', 'event', 'Shop Menu', 'Click', 'Free Sample Image');"><img class="img-responsive swaDropImg" src="https://lg.imgix.net/lander/Free-Leather-Samples.png?auto=format&q=60"  alt="Request Free Samples at LeatherGroups.com"></a></li>
 		    <li class="col-md-12 shop-sec-section">
 		      <div style="border-right:none;" class="col-sm-4 section-resource">
 			    <span class="heading-shop">Free Samples</span>
@@ -235,17 +236,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>However you contact us, we're here to help</p></div>
             <div class="col-md-3">
               <h3>Phone</h3>
-                <img src="https://leathergroups.imgix.net/Call-Us.png?auto=format&amp;q=60" alt="Call LeatherGroups.com">
+                <img src="https://lg.imgix.net/lander/Call-Us.png?auto=format&amp;q=60" alt="Call LeatherGroups.com">
                 <p class="ccSubNote"><span class="ccSubTel">1(877)888-7632</span> - 9am-5pm PST</p></div>
             <div class="col-md-3">
               <a href="https://leathergroups.force.com/support/s/contactsupport" target="_blank" onClick="ga('send', 'event', 'Nav Contact', 'Click', 'Email Support');"><div class="col-sm-12">
               <h3>Email</h3>
-                <img src="https://leathergroups.imgix.net/Email-Us.png?auto=format&amp;q=60" alt="Email LeatherGroups.com">
+                <img src="https://lg.imgix.net/lander/Email-Us.png?auto=format&amp;q=60" alt="Email LeatherGroups.com">
                 <p class="ccSubNote">Click here to send us an email.  We' respond within a few hours at the most.</p></div></a></div>
             <div class="col-md-3">
               <a href="#" onClick="LiveChatWidget.call('maximize');return false; ga('send', 'event', 'Nav Contact', 'Click', 'Chat with us');"><div class="col-sm-12">
 			  <h3>Chat</h3>
-                <img src="https://leathergroups.imgix.net/Chat-with-Us.png?auto=format&amp;q=60" alt="Chat with us here at LeatherGroups.com">
+                <img src="https://lg.imgix.net/lander/Chat-with-Us.png?auto=format&amp;q=60" alt="Chat with us here at LeatherGroups.com">
                 <p class="ccSubNote">Jump on Chat with us at the bottom of your screen from 9am-5pm PST</p></div></a></div>
             </li>
           </ul>
