@@ -444,7 +444,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+			<div class="col-md-6">
+			  <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LeEcRwpAAAAABeeEZcjnRpoIJHOQSgv0XfyOCbD" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                <div class="help-block with-errors"></div>
+              </div>
+			</div>
+            <div class="col-md-6">
                 <input type="submit" class="btn btn-success btn-send" value="Sign Up for Trade Account">
             </div>
         </div>
@@ -462,6 +469,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 $(function () {
 
+	 window.verifyRecaptchaCallback = function (response) {
+        $('input[data-recaptcha]').val(response).trigger('change')
+    }
+
+    window.expiredRecaptchaCallback = function () {
+        $('input[data-recaptcha]').val("").trigger('change')
+    }
+	
     $('#trade-contact-form').validator();
 
     $('#trade-contact-form').on('submit', function (e) {
@@ -481,6 +496,7 @@ $(function () {
                     if (messageAlert && messageText) {
                         $('#trade-contact-form').find('.messages').html(alertBox);
                         $('#trade-contact-form')[0].reset();
+						grecaptcha.reset();
                     }
                 }
             });
@@ -555,6 +571,7 @@ Copyright &copy; 2002 - 2022 Leather Groups.com
   </div>
 <!-- InstanceBeginEditable name="script" -->
 <script defer src="/common/js/validator.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <!-- InstanceEndEditable --> 
 
 </body>
