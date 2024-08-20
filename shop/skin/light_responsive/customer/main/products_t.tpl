@@ -83,7 +83,7 @@ vim: set ts=2 sw=2 sts=2 et:
                 {if $product.appearance.has_market_price and $product.appearance.market_price_discount gt 0}
                   <div class="labels">
                     <div class="label market-price">
-                      {$lng.lbl_save_price} {$product.appearance.market_price_discount}%
+                      {$product.appearance.market_price_discount}% {$lng.lbl_save_price}
                     </div>
                   </div>
                 {/if}

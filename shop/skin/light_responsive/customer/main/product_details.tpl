@@ -74,7 +74,7 @@ vim: set ts=2 sw=2 sts=2 et:
 
           <div class="labels">
             <div class="label market-price" id="save_percent_box">
-              {$lng.lbl_save_price} <span id="save_percent">{$product.appearance.market_price_discount}</span>%
+              <span id="save_percent">{$product.appearance.market_price_discount}</span>% {$lng.lbl_save_price}
             </div>
           </div>
 
