@@ -86,7 +86,7 @@ vim: set ts=2 sw=2 sts=2 et:
       {include file="modules/XPayments_Subscriptions/customer/product_details.tpl"}
     {else}
     <tr>
-      <td class="property-name product-price" valign="top">{$lng.lbl_our_price}:</td>
+      <!--<td class="property-name product-price" valign="top">{$lng.lbl_our_price}:</td>-->
       <td class="property-value" valign="top" colspan="2">
       {if $product.taxed_price ne 0 or $variant_price_no_empty}
         <span class="product-price-value">{currency value=$product.taxed_price tag_id="product_price"}</span>
