@@ -8,6 +8,21 @@ vim: set ts=2 sw=2 sts=2 et:
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta http-equiv="Content-Language" content="{$shop_language}" />
+{if $main eq "product"}
+  {assign var="prod_descr" value=$product.descr|default:$product.fulldescr}
+  <meta property="og:type" content="product" />	
+  <meta property="og:title" content="{$product.product|escape}" />
+  <meta property="og:description" content="{$prod_descr}" />
+  <meta property="og:image" content="{$product.image_url}" />
+  <meta property="product:price:amount" content="{$product.price}" />
+  <meta property="product:price:currency" content="USD" />
+{elseif $main eq "catalog" and $cat ne "0"}
+  {assign var="cat_descr" value=$current_category.meta_description}
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="{$cat_descr}" />
+  <meta property="og:title" content="{$meta_title}" />
+  <meta property="og:image" content="https://{$smarty.server.HTTP_HOST}/{$current_category.image_path}" />
+{/if}
 {if $printable}
   <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
 {else}
