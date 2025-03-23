@@ -3,8 +3,8 @@
 vim: set ts=2 sw=2 sts=2 et:
 *}
 <div id="productImageBox" class="image-box">
-{assign var="cloudzoom_general_popup_params" value="tint: '#fff', position: 'right', smoothMove: 3, adjustX: 10, adjustY: -4"}
-{assign var="cloudzoom_default_image_popup_sizes" value="zoomWidth: `$images.0.cloudzoom_popup_width`, zoomHeight: `$images.0.cloudzoom_popup_height`"}
+{assign var="cloudzoom_general_popup_params" value="tint: '#fff', position: 'right', smoothMove: 3, adjustX: 15, adjustY: -4"}
+{assign var="cloudzoom_default_image_popup_sizes" value="zoomHeight: 400, lensWidth: 220, lensHeight: 165"}
 <a href="{$images.0.image_url}" class="cloud-zoom" id="cloud_zoom_image" rel="{$cloudzoom_general_popup_params}, {$cloudzoom_default_image_popup_sizes}">
 {include file="product_thumbnail.tpl" productid=$images.0.id image_x=$images.0.thbn_image_x image_y=$images.0.thbn_image_y product=$product.product tmbn_url=$images.0.thbn_url id="product_thumbnail" type="D"}
 </a>
@@ -34,3 +34,34 @@ vim: set ts=2 sw=2 sts=2 et:
 </div>
 
 {/if}
+{literal}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const zoomAnchor = document.getElementById('cloud_zoom_image');
+  const productDetails = document.querySelector('.product-details');
+  const mainImage = document.querySelector('.image'); // Or more specifically if needed
+
+  if (zoomAnchor && productDetails && mainImage) {
+    const productDetailsRight = productDetails.getBoundingClientRect().right;
+    const imageRight = mainImage.getBoundingClientRect().right;
+
+    // Calculate space to the right of main image
+    const availableWidth = Math.floor(productDetailsRight - imageRight - 10); // 10px buffer
+
+    // Get the current `rel` string and update it
+    let rel = zoomAnchor.getAttribute('rel') || '';
+    rel = rel.replace(/zoomWidth:\s*\d+/, ''); // Remove existing zoomWidth if present
+    rel = rel.replace(/,+\s*$/, ''); // Clean up trailing commas
+    rel += (rel ? ', ' : '') + `zoomWidth: ${availableWidth}`;
+
+    // Apply the updated rel attribute
+    zoomAnchor.setAttribute('rel', rel);
+
+    // Re-initialize CloudZoom
+    if (typeof jQuery !== 'undefined' && jQuery.fn.CloudZoom) {
+      jQuery('#cloud_zoom_image').CloudZoom();
+    }
+  }
+});
+</script>
+{/literal}
