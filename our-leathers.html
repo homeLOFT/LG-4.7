@@ -271,6 +271,13 @@ if (!recaptchaInput || !recaptchaInput.value.trim()) {
         const success = config.buildExtraFields(form, e);
         if (!success) return;
       }
+	  const recaptcha = form.querySelector('[name="g-recaptcha-response"]');
+if (!recaptcha || !recaptcha.value.trim()) {
+  alert('Please verify that you are not a robot.');
+  e.preventDefault();
+  return;
+}
+
 
   if (typeof config.combineAddress === 'function') {
   const fullAddress = config.combineAddress(form);
@@ -868,6 +875,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<input type="hidden" name="orgid" value="00D6g000006uqDF">
 					<input type="hidden" name="retURL" value="https://www.leathergroups.com/sample-request-received.html">
 					<input type="hidden" name="subject" value="Leather Sample Request">
+					<input type="hidden" name="captcha_settings" value='{"keyname":"LGreCAPTCHA","fallback":"true","orgId":"00D6g000006uqDF","ts":""}'>
 					<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 					<h2>Free Samples</h2>
 					<p>Nothing compares to seeing them in person.
@@ -1416,6 +1424,20 @@ function UnTip() {
   const tooltip = document.getElementById('tooltip');
   tooltip.style.display = 'none';
 }
+
+</script>
+<script>
+	function timestamp()
+	{
+		var response = document.getElementById("g-recaptcha-response");
+		if (response == null || response.value.trim() == "")
+		{
+			var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+			elems["ts"] = JSON.stringify(new Date().getTime());
+			document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+		}
+	}
+	setInterval(timestamp, 500);
 
 </script>
 </div>
