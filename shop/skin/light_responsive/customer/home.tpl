@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJVPHCV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script type="text/javascript" src="/js/wz_tooltip.js" defer></script>
+<script type="text/javascript" src="/common/js/custom.js" defer></script>
 	
 {if $active_modules.EU_Cookie_Law ne ""}
 {include file="modules/EU_Cookie_Law/info_panel.tpl"}
@@ -314,6 +314,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     async defer
     src="//assets.pinterest.com/js/pinit.js"
 ></script>
-
+<!-- Tooltip container -->
+<div id="LGtooltip">
+  <img src="" style="width:400px; max-width:100%;">
+</div>
 </body>
 </html>
