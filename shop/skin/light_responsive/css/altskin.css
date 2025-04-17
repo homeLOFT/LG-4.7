@@ -32,7 +32,7 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: #5194c5;
+  color: #5b8aab;
   text-decoration: none;
 }
 a:hover {
@@ -57,7 +57,7 @@ a.simple-button,
 #footer .subbox a,
 .languages-flags li.current span.lng
 {
-  color: #5194c5;
+  color: #5b8aab;
 }
 
 .menu-dialog .content a:hover,
