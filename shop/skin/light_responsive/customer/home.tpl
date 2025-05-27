@@ -224,7 +224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav navbar-nav navbar-right">
 	<li class="nonDrop"><span class="ccNavBtn visible-xs"><a href="#" onClick="LiveChatWidget.call('maximize');return false; ga('send', 'event', 'Mobile Main Nav', 'Click', 'Chat with us');">Chat with us</a></span>
     </li>
-    <li class="nonDrop"><span class="ccNavBtn visible-xs"><a href="https://leathergroups.force.com/support/s/contactsupport" target="_blank" onClick="ga('send', 'event', 'Mobile Main Nav', 'Click', 'Email Support');">Email us</a></span>
+    <li class="nonDrop"><span class="ccNavBtn visible-xs"><a href="https://leathergroups.my.site.com/support/s/contactsupport" target="_blank" onClick="ga('send', 'event', 'Mobile Main Nav', 'Click', 'Email Support');">Email us</a></span>
     </li>
 	<li class="nonDrop"><a class="glyphicon glyphicon-shopping-cart" href="/shop/cart.php" onClick="ga('send', 'event', 'Main Nav', 'Click', 'Shopping Cart');"></a></li>
     <li class="nonDrop"><a class="glyphicon glyphicon-user" href="/shop/login.php" onClick="ga('send', 'event', 'Main Nav', 'Click', 'My Account');"></a></li>
@@ -239,7 +239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="https://lg.imgix.net/lander/Call-Us.png?auto=format&amp;q=60" loading="lazy" decoding="async" alt="Call LeatherGroups.com">
                 <p class="ccSubNote"><span class="ccSubTel">1(877)888-7632</span> - 9am-5pm PST</p></div>
             <div class="col-md-3">
-              <a href="https://leathergroups.force.com/support/s/contactsupport" target="_blank" onClick="ga('send', 'event', 'Nav Contact', 'Click', 'Email Support');"><div class="col-sm-12">
+              <a href="https://leathergroups.my.site.com/support/s/contactsupport" target="_blank" onClick="ga('send', 'event', 'Nav Contact', 'Click', 'Email Support');"><div class="col-sm-12">
               <h3>Email</h3>
                 <img src="https://lg.imgix.net/lander/Email-Us.png?auto=format&amp;q=60" loading="lazy" decoding="async" alt="Email LeatherGroups.com">
                 <p class="ccSubNote">Click here to send us an email.  We' respond within a few hours at the most.</p></div></a></div>
